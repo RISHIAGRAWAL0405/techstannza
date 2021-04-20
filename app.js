@@ -16,7 +16,7 @@ const ExpressError=require("./utils/Expresserror");
 const catchAsync=require("./utils/catchAsync");
 const Story=require("./models/stories");
 const { inflate } = require("zlib");
-const dbUrl=process.env.DB_URL;
+const dbUrl=process.env.DB_URL || "mongodb://localhost:27017/mobile_site";
 
 // mongodb://localhost:27017/mobile_site
 mongoose.connect(dbUrl, {
@@ -41,6 +41,8 @@ app.use(bodyParser.json());
 app.engine("ejs",ejsMate);
 app.set("view engine","ejs");
 app.use(express.urlencoded({ extended: true }));
+
+app.set('views', path.join(__dirname, 'views'));
 
 // app.use(express.bodyParser());
 
@@ -179,7 +181,7 @@ app.use((err,req,res,next)=>{
     res.status(statusCode).render("error",{err});
 })
 
-const port=process.env.PORT;
+const port=process.env.PORT || 3000;
 app.listen(port,()=>{
  console.log(`listening in port ${port}`);   
 })
