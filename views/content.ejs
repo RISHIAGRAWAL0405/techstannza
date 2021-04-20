@@ -1,0 +1,189 @@
+<% layout("layouts/boilerplate")%>
+<link rel="stylesheet" href="/css/contentPageStyles.css">
+
+
+<section class="whole">
+<div class="leftSide">
+    <div class="message">
+        <p>
+            Similar Just Like This
+        </p>
+    </div>
+    <%for(let each of similar){%>
+    <a href="/<%=each._id%>" style="text-decoration: none; color: black;">
+        <div class="card mb-3 eachSimilar" style="max-width: 540px; margin-top: 2px;">
+        <div class="row">
+          <div class="col-md-5" style="margin: 0;">
+            <img src="<%=each.image%>" alt="..." width="100%" height="100%">
+          </div>
+          <div class="col-md-7" style="margin: 0; padding: 0;">
+            <div class="card-body">
+              <h6 class="card-title"><%=each.name%></h6>
+              <h7>&#8377;<%=each.price%></h7>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+      <%}%>
+
+</div>
+<div class="" style="height: 100%;width:50%;border-radius: 10px;  margin-left: 5px; box-shadow: 0px 0px 5px black;">
+   <div class="outerContent">
+       <div class="inner">
+           <div style="display: flex; justify-content: space-between;">
+              <ul type="none" >
+                  <li class="sap"><i class="fas fa-camera"></i><%=mobile.frontCamera.pixels[0].pixel%> mp</li>
+                  <li class="sap"><i class="fas fa-table"></i>Launched<%=mobile.launchDate%></li>
+                  <li class="sap"><i class="fas fa-microchip"></i><%=mobile.ram%></li>
+                  <li class="sap"><i class="fas fa-network-wired"></i><%=mobile.network%></li>
+              </ul>
+
+              <p style="font-size: x-large; padding: 10px; align-self: center;">
+                  <%=mobile.name%>
+              </p>
+            </div>
+
+            <div class="down">
+                <a href="" type="button" class="btn compare">Compare</a>
+                <span>Launch Price:&#8377;<%=mobile.price%></span>
+            </div>
+       </div>
+       <img src="<%=mobile.image%>" alt="" width="50%" style="border-radius: 10px;" class="image">
+
+   </div>
+<br>
+    <div>
+        <p>
+            <strong>Detailed Description</strong>
+        </p>
+
+        <table class="table table-striped">
+          <tr>
+            <td class='left'>Name</td>
+            <td class='right'><%=  mobile.name %> </td>
+          </tr>
+          <tr>
+            <td class='left'>Price</td>
+            <td class='right'><%=  mobile.price %></td>
+          </tr>
+          <tr>
+            <td class='left'>Number of Rear Camera</td>
+            <td class='right'><%=  mobile.mainCamera.noOfCameras %></td>
+          </tr>
+          <tr>
+            <td class='left'>Pixels</td>
+            <td class='right'><%= mobile.mainCamera.pixels[0].pixel %></td>
+          </tr>
+          <tr>
+            <td class='left'>Picture Quality</td>
+            <td class='right'><%= mobile.mainCamera.pixels[0].description %></td>
+          </tr>
+          <tr>
+            <td class='left'>Number of front Camera</td>
+            <td class='right'><%= mobile.frontCamera.noOfCameras %></td>
+          </tr>
+          <tr>
+            <td class='left'>Pixels</td>
+            <td class='right'><%= mobile.frontCamera.pixels[0].pixel  %></td>
+          </tr>
+          <tr>
+            <td class='left'>Picture Quality</td>
+            <td class='right'><%=  mobile.frontCamera.pixels[0].description %></td>
+          </tr>
+          <tr>
+            <td class='left'>Brand</td>
+            <td class='right'><%= mobile.brand %></td>
+          </tr>
+          <tr>
+            <td class='left'>Launch Date</td>
+            <td class='right'><%= mobile.launchDate %></td>
+          </tr>
+          <tr>
+            <td class='left'>Oprating system</td>
+            <td class='right'><%= mobile.os %></td>
+          </tr>
+          <tr>
+            <td class='left'>RAM</td>
+            <td class='right'><%= mobile.ram %></td>
+          </tr>
+          <tr>
+            <td class='left'>Product Dimensions</td>
+            <td class='right'><%= mobile.ProductDimensions %></td>
+          </tr>
+          <tr>
+            <td class='left'>Batteries</td>
+            <td class='right'><%= mobile.batteries %></td>
+          </tr>
+          <tr>
+            <td class='left'>Wireless Communication Technologies</td>
+            <td class='right'><%= mobile.WirelessCommunicationTechnologies %></td>
+          </tr>
+          <tr>
+            <td class='left'>ConnectivityTechnologies</td>
+            <td class='right'><%= mobile.ConnectivityTechnologies %></td>
+          </tr>
+          <tr>
+            <td class='left'>Special Features</td>
+            <td class='right'><%= mobile.SpecialFeatures %></td>
+          </tr>
+          <tr>
+            <td class='left'>Display Technology</td>
+            <td class='right'><%= mobile.DisplayTechnology %></td>
+          </tr>
+          <tr>
+            <td class='left'>Other Display Features</td>
+            <td class='right'><%= mobile.OtherDisplayFeatures %></td>
+          </tr>
+          <tr>
+            <td class='left'>Device Interface</td>
+            <td class='right'><%= mobile.DeviceInterface %></td>
+          </tr>
+          <tr>
+            <td class='left'>Audion Jack</td>
+            <td class='right'><%= mobile.AudioJack %></td>
+          </tr>
+          <tr>
+            <td class='left'>Colour</td>
+            <td class='right'><%= mobile.Colour %></td>
+          </tr>
+          <tr>
+            <td class='left'>Battery Power Rating</td>
+            <td class='right'><%= mobile.BatteryPowerRating %></td>
+          </tr>
+          <tr>
+            <td class='left'>Phone Talk Time</td>
+            <td class='right'><%= mobile.PhoneTalkTime %></td>
+          </tr>
+          <tr>
+            <td class='left'>PhoneStandbyTimeWithData</td>
+            <td class='right'><%= mobile.PhoneStandbyTimeWithData %></td>
+          </tr>
+          <tr>
+            <td class='left'>WhatsInTheBox</td>
+            <td class='right'><%= mobile.WhatsInTheBox %></td>
+          </tr>
+          <tr>
+            <td class='left'>Manufacturer</td>
+            <td class='right'><%= mobile.Manufacturer %></td>
+          </tr>
+          <tr>
+            <td class='left'>CountryOfOrigin</td>
+            <td class='right'><%= mobile.CountryOfOrigin %></td>
+          </tr>
+          <tr>
+            <td class='left'>ItemWeight</td>
+            <td class='right'><%= mobile.ItemWeight %></td>
+          </tr>
+
+
+        </table>
+
+    </div>
+
+</div>
+
+
+</section>

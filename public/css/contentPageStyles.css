@@ -1,0 +1,63 @@
+.down {
+  border-top: 1px solid lightgrey;
+  /* border-bottom: 0.5px solid black; */
+
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.message {
+  width: 100%;
+  background-color: #adb5bd;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  border-radius: 10px;
+}
+
+.eachSimilar:hover {
+  border: 1px solid black;
+  transition: 0.5s;
+}
+.leftSide {
+  width: 23%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px lightgray;
+}
+.inner {
+  background: linear-gradient(90deg, #3c677d, whitesmoke, #a9d6e5);
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: black;
+  font-weight: bolder;
+}
+.compare {
+  background-color: #ffd60a;
+  color: #10002b;
+}
+.compare:hover {
+  background-color: #ffff3f;
+  transition: 0.5s;
+}
+.outerContent {
+  display: flex;
+  height: 30%;
+}
+.image {
+  /* border-left: 3px solid grey; */
+  margin-left: 5px;
+}
+.sap {
+  padding: 3px;
+  font-weight: lighter;
+}
+.whole {
+  display: flex;
+  justify-content: center;
+}

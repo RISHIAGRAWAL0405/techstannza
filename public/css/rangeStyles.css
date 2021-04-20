@@ -1,0 +1,86 @@
+.wholesection {
+  display: flex;
+
+  height: 1000px;
+  width: 80%;
+  /* background-color: black; */
+  /* margin: 0; */
+  padding: 0;
+}
+
+.filtervalues {
+  width: 20%;
+  background-color: whitesmoke;
+  margin: 0;
+  border-radius: 20px;
+}
+.filteredresult {
+  display: flex;
+  width: 60%;
+  margin-left: 2%;
+}
+.title {
+  display: block;
+}
+
+.particular {
+  width: 100%;
+  max-height: 200px;
+  display: flex;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+}
+.detail {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+}
+.topfeatures {
+  display: flex;
+  width: 50%;
+  /* flex-direction: col  umn; */
+}
+.mobilePricebutton {
+  align-self: flex-end;
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 10px;
+  /* padding-left: 20px */
+  text-align: center;
+  background-color: darkred;
+  color: lightgray;
+  width: 25%;
+  margin-right: 20px;
+  /* height: 70%; */
+  text-align: center;
+  /* padding-bot/tom: 20px; */
+  font-size: smaller;
+}
+.individualfea {
+  margin-right: 10px;
+}
+.viewsection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gotomobilephone {
+  text-decoration: none;
+
+  border: 1px solid grey;
+  border-radius: 10px;
+  /* padding: 3px; */
+  /* padding-top: 6px; */
+  text-align: center;
+  width: 14%;
+  background-color: blue;
+  color: aliceblue;
+  font-size: small;
+  height: 50%;
+  margin-top: 5px;
+}
+.gotomobilephone:hover {
+  background-color: lightblue;
+}
