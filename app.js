@@ -64,7 +64,7 @@ app.get("/phone",(req,res)=>{
 
 })
 app.get("/about",(req,res)=>{
-    res.render("aboutus",{home:1});
+    res.render("about",{home:1});
 })
 
 app.post("/search",catchAsync(async (req,res)=>{
