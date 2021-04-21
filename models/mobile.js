@@ -1,18 +1,22 @@
 const mongoose=require("mongoose");
-// mongoose.connect('mongodb://localhost:27017/mobile_site', {
+// const dbUrl=process.env.DB_URL;
+
+
+
+// const url = `mongodb+srv://Atishay:WMTU4NnUcnka5rm6@cluster0.upzac.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+
+// const connectionParams={
 //     useNewUrlParser: true,
 //     useCreateIndex: true,
-//     useUnifiedTopology: true
-// });
-
-// const db = mongoose.connection;
-
-// db.on("error", console.error.bind(console, "connection error:"));
-// db.once("open", () => {
-//     console.log("Database connected");
-// });
-
-
+//     useUnifiedTopology: true 
+// }
+// mongoose.connect(url,connectionParams)
+//     .then( () => {
+//         console.log('Connected to database ')
+//     })
+//     .catch( (err) => {
+//         console.error(`Error connecting to the database. \n${err}`);
+//     })
 
 
 
