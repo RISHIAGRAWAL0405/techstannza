@@ -204,7 +204,14 @@
       let p = 0;
 
 
-      const imagesPerSlide = 2;
+      const imagesPerSlide
+      if(window.innerWidth<=600){
+         imagesPerSlide=2;
+
+      }
+      else{
+        imagesPerSlide=3;
+      }
 
 
       let k;
