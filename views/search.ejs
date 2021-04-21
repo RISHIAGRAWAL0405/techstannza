@@ -1,10 +1,14 @@
 <%layout("layouts/boilerplate")%>
 
-<h3 style="text-align: center;">"results based on your search"</h1>
 
-  <%if(!result){%>
-     <h4> OOOPS!!! nothing found against your search result</h1>
+
+  <%if(result.length==0){%>
+     <h4 class="text-center" style="margin-bottom: 300px;"> OOOPS!!! nothing found against your search result</h1>
 <%}%>
+    <%if(result.length!=0){%>
+      <h3 style="text-align: center;">"results based on your search"</h1>
+
+    <%}%>
 
 
 <section class="container"> 
@@ -21,7 +25,7 @@
           <h5 class="card-title"><%=mobile.name%></h5>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          <a href="" class="card-text" style="margin: 0; padding: 0;">view</a>
+          <a href="/<%=mobile._id%>" class="card-text" style="margin: 0; padding: 0;">view</a>
         </div>
         
       </div>

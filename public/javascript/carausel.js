@@ -3,8 +3,23 @@ let i = 0;
 images[0].classList.add("show");
 let prevImg = document.querySelector(".prev");
 let nextImg = document.querySelector(".next");
-prevImg.addEventListener("click", () => {
 
+prevImg.addEventListener("click", () => {
+     prevfunction();
+   
+})
+nextImg.addEventListener("click", () => {
+
+    nextfunction();
+})
+
+
+setInterval(() => {
+  nextfunction();    
+}, 4000);
+
+
+let prevfunction=()=>{
     let j;
     for (j = 0; j < images.length; j++) {
         images[j].style.display = "none";
@@ -18,9 +33,8 @@ prevImg.addEventListener("click", () => {
         images[i].style.display = "block";
 
     }
-})
-nextImg.addEventListener("click", () => {
-
+}
+let nextfunction=()=>{
     let j;
     for (j = 0; j < images.length; j++) {
         images[j].style.display = "none";
@@ -33,5 +47,6 @@ nextImg.addEventListener("click", () => {
         i++;
         images[i].style.display = "block"
     }
-})
+}
+
 

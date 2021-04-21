@@ -89,7 +89,7 @@ app.post("/search",catchAsync(async (req,res)=>{
             }
         }
     }
-
+   console.log(result.length);
     
     res.render("search",{result,home:1});
     
@@ -124,7 +124,7 @@ app.get("/compare",catchAsync(async(req,res)=>{
 
 app.post("/suggestions",(req,res)=>{
    const result=req.body;
-   console.log(result);
+   res.redirect("/");
 })
 
 
