@@ -53,11 +53,11 @@
             <div style="display: flex;">
               <div style="width: 50%;">
                 <label for="min">Min.</label>
-                <input type="number" id="min" min="4000" max="35000" step="500" name="min" style="width: 70%;">
+                <input type="number" id="min" min="4000" max="35000" step="500" name="min" style="width: 70%;" value="500"  class="minpricenum">
               </div>
               <div style="width: 50%;">
                 <label for="max">Max.</label>
-                <input type="number" id="max" min="4000" max="40000" step="1000" name="max" style="width: 70%;">
+                <input type="number" id="max" min="4000" max="40000" step="1000" name="max" style="width: 70%;" class="maxpricenum">
               </div>
             </div>
           
@@ -269,6 +269,34 @@
 
       })
     }
+
+
+    let rangeinputmin=document.querySelector(".minprice");
+    let rangeinputmax=document.querySelector(".maxprice");
+    
+    let rangenummin=document.querySelector(".minpricenum");
+    rangenummin.value=500;
+    let rangenummax=document.querySelector(".maxpricenum");
+    rangenummax.value=50000;
+    rangeinputmin.addEventListener("input",()=>{
+      // console.log("hiiiiii");
+      rangenummin.value=rangeinputmin.value;
+    })
+
+    rangeinputmax.addEventListener("input",()=>{
+      rangenummax.value=rangeinputmax.value;
+    })
+
+   rangenummin.addEventListener("input",()=>{
+     rangeinputmin.value=rangenummin.value;
+   })
+   rangenummax.addEventListener("input",()=>{
+     rangeinputmax.value=rangenummax.value;
+   })
+
+
+
+    
 
 
 
