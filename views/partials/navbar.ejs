@@ -6,34 +6,36 @@
 
 
 <header class="navbar-main">
-  <nav class="container-fluid navbar navbar-expand-md navbar-dark">
-    <a class="navbar-brand d-flex" href="/">
+  <nav class="container-fluid navbar navbar-expand-lg navbar-dark" style="height: 45px;">
+    <a class="navbar-brand" href="/" style="height:40px; margin-right: 15%;">
       <img src="logo.png" alt="" style="width: 30px; height: 30px;" id="logo">
-      <h1 style="color:black; font-family: sans-serif;font-size: 25px" id="companyname">TrackinZone</h1>
-    </a>
-    <button class="btn btn-info navbar-toggler bt-sm search" type="button" data-bs-toggle="offcanvas"
-      data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
-      style="padding: 0px 7px 0px 7px; margin-left: 25%;">
-      &#8212;
-      <br>
-      &#8212;
-
-    </button>
-    <div class="collapse navbar-collapse" id="Toggler">
-      <ul class="navbar-nav sitenav">
-        <li class="nav-item"><a class="nav-link" href="/" style="color: black;">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
-      </ul>
-
-    </div>
+      <h1 style="color:black; font-family: sans-serif;font-size: 25px;margin: 0;" id="companyname">TrackinZone</h1>
+    </a> 
     <form class="search" id="initialbox" action="/search" method="post">
-      <div class="search-navbar">
+      <div class="search-navbar" style="display: flex;justify-content: space-between;">
         <input class="me-2 search-input" type="search" results="5" placeholder="Search" aria-label="Search"
           name="search" style="padding:0;">
         <button class="btn btn-outline-light search-btn" type="submit"><i class="fas fa-search"></i> </button>
       </div>
     </form>
+    <button class="btn btn-info navbar-toggler bt-sm" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"
+      style="padding: 0px 7px 0px 7px; width: 5%;">
+      &#8212;
+      <br>
+      &#8212;
+
+    </button>
+   
+    <div class="collapse navbar-collapse" id="Toggler">
+      <ul class="navbar-nav sitenav">
+        <li class="anchorlis"><a class="anchorlinks" href="/">Home</a></li>
+        <li class="anchorlis"><a class="anchorlinks" href="/about">About Us</a></li>
+        <li class="anchorlis"><a class="anchorlinks" href="">Contact</a></li>
+      </ul>
+
+    </div>
+    
 
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
@@ -67,7 +69,7 @@
   <ul class="coustom-nav-link" style="display: flex; justify-content: space-around;">
 
     <li class="dropdown">
-      <div class="dropbtn">Link</div>
+      <div class="dropbtn">Compare Latest</div>
       <div class="dropdown-content">
         <div class="arrow"></div>
         <a href="#" class="firs">Link 1</a>
@@ -76,7 +78,7 @@
       </div>
     </li>
     <li class="dropdown">
-      <div class=" dropbtn"> <span>Link</span> </div>
+      <div class=" dropbtn"> <span>Best phones</span> </div>
       <div class="dropdown-content">
         <div class="arrow"></div>
         <a href="#" class="firs">Link 1</a>
@@ -85,7 +87,7 @@
       </div>
     </li>
     <li class="dropdown">
-      <div class="dropbtn">Link</div>
+      <div class="dropbtn">Daily news</div>
       <div class="dropdown-content">
         <div class="arrow"></div>
         <a href="#" class="firs">Link 1</a>
@@ -94,7 +96,7 @@
       </div>
     </li>
     <li class="dropdown">
-      <div class="dropbtn">Link</div>
+      <div class="dropbtn">Best Deals</div>
       <div class="dropdown-content">
         <div class="arrow"></div>
         <a href="#" class="firs">Link 1</a>
@@ -112,7 +114,7 @@
     <img src="logo.png" alt="" style="width: 30px; height: 30px;" id="logo">
 
   </a>
-  <form class="d-flex" action="/search" method="post">
+  <form class="d-flex ressearch" action="/search" method="post" style="height: 100%; margin-top: 7px;">
     <div class="search-navbar">
       <input class="me-2 search-input" type="search" results="5" placeholder="Search" aria-label="Search" name="search">
       <button class="btn btn-outline-light search-btn" type="submit"><i class="fas fa-search"></i> </button>
