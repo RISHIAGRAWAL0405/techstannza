@@ -55,7 +55,7 @@
 .compare {
   background-color: #ffd60a;
   color: #10002b;
-  max-height: 50px;
+  /* max-height: 50px; */
 }
 .compare:hover {
   background-color: #ffff3f;
