@@ -71,11 +71,11 @@
         <div class="carousel">
 
           <%for(let mobile of mobiles){%>
-            <a href="">
+           <a href="/<%=mobile._id%>">
               <div class="slides">
                 <img src="<%=mobile.image%>" alt="" class="slide-image" style="width: 100%;">
               </div>
-
+            </a>
               <%}%>
                 <a class="prev">&#10094;</a>
                 <a class="next">&#10095;</a>
