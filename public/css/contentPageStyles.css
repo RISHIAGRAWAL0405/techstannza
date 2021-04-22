@@ -78,6 +78,15 @@
   justify-content: center;
 }
 
+#pricetagres {
+  font-size: 15px;
+  /* margin-left: 50%; */
+  /* margin-top: 8px; */
+  font-weight: 500;
+  padding: 5px;
+  background-color: lightgreen;
+  border-radius: 10px;
+}
 @media screen and (max-width: 900px) {
   .whole {
     flex-wrap: wrap-reverse;
@@ -89,12 +98,20 @@
 @media screen and (max-width: 750px) {
   .mobileName {
     display: block;
-    background-color: lightblue;
     margin: 0;
+    font-weight: 600;
+  }
+  .resthings {
+    display: flex;
+    background-color: lightblue;
+    justify-content: space-between;
     border-radius: 10px;
     margin-bottom: 5px;
   }
   .innerName {
+    display: none;
+  }
+  .pricetag {
     display: none;
   }
 }

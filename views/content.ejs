@@ -31,7 +31,11 @@
 
 </div>
 <div class="rightouter">
-    <h1 class="mobileName"><%=mobile.name%></h1>
+    
+        <div class="resthings">
+          <h1 class="mobileName"><%=mobile.name%></h1>
+          <span id="pricetagres">Launched At &#8377;<%=mobile.price%></span>   
+        </div>
    <div class="outerContent">
        <div class="inner">
            <div style="display: flex; justify-content: space-between;">
@@ -47,9 +51,9 @@
               </p>
             </div>
 
-            <div class="down">
+            <div class="down" style="max-height: 50px;">
                 <a href="" type="button" class="btn compare">Compare</a>
-                <span>Launch Price:&#8377;<%=mobile.price%></span>
+                <span class="pricetag">Launch Price:&#8377;<%=mobile.price%></span>
             </div>
        </div>
        <img src="<%=mobile.image%>" alt="" width="50%" style="border-radius: 10px;" class="image">
