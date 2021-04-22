@@ -16,7 +16,7 @@ const ExpressError=require("./utils/Expresserror");
 const catchAsync=require("./utils/catchAsync");
 const Story=require("./models/stories");
 const { inflate } = require("zlib");
-const dbUrl=process.env.DB_URL || "mongodb://localhost:27017/mobile_site";
+const dbUrl=process.env.DB_URL;
 
 // mongodb://localhost:27017/mobile_site
 mongoose.connect(dbUrl, {

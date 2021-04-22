@@ -5,13 +5,18 @@
 .outer {
   position: relative;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   /* border: 1px solid brown; */
   height: 85%;
   width: 100%;
   margin: auto;
   margin-top: 30px;
   /* border-radius: 10px; */
+  flex-wrap: wrap;
+}
+
+.outer > div {
+  display: none;
 }
 img {
   width: 200px;
@@ -46,6 +51,10 @@ img {
 }
 .nextImg {
   right: 0;
+}
+
+.showDivisions {
+  display: flex;
 }
 
 @media screen and (max-width: 1000px) {

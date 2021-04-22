@@ -246,6 +246,7 @@ section.range-slider input[type="range"]::-moz-focus-outer {
   /* background-color: black; */
   transition: all 1s;
 }
+
 .slide-image {
   height: 500px;
 }
@@ -340,6 +341,9 @@ section.range-slider input[type="range"]::-moz-focus-outer {
   }
   .biggestOuter {
     flex-wrap: wrap;
+  }
+  .carousel {
+    margin-bottom: 50px;
   }
 }
 

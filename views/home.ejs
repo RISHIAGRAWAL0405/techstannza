@@ -3,6 +3,7 @@
   <link rel="stylesheet" href="/css/carausel.css">
   <link rel="stylesheet" href="/css/carouselSlider.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
 
 
 
@@ -53,7 +54,7 @@
             <div style="display: flex;">
               <div style="width: 50%;">
                 <label for="min">Min.</label>
-                <input type="number" id="min" min="4000" max="35000" step="500" name="min" style="width: 70%;" value="500"  class="minpricenum">
+                <input type="number" id="min" min="4000" max="35000" step="500" name="min" style="width: 70%;" class="minpricenum">
               </div>
               <div style="width: 50%;">
                 <label for="max">Max.</label>
@@ -86,49 +87,65 @@
       <section class="outerSection">
         <h2 class="text-center">Meet The Newly Launched</h2>
         <div class="outer">
+          
+          <div class="firstSlide">
+              <%for(let i=0;i<3;i++){%>
+                <div class="card" style="max-width: 33%;">
+                  <img class="card-img-top slides1" src="<%=mobiles[i].image%>" alt="Card image cap" style="border-radius: 20px;">
+                  <div class="card-body">
+                    <h5 class="card-title"><%=mobiles[i].name%></h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                      content.</p>
+              
+                  </div>
+                  <div class="btLinks">
+                    <a href="/<%=mobiles[i]._id%>" class="moblink first">view</a>
+                    <a href="/compare" class="second">compare</a>
+                  </div>
+              
+                </div>
 
-          <div class="card" style="max-width: 33%;">
-            <img class="card-img-top slides1" src="" alt="Card image cap" style="border-radius: 20px;">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
 
-            </div>
-            <div class="btLinks">
-              <a href="#" class="moblink first">view</a>
-              <a href="/compare" class="second">compare</a>
-            </div>
+                <%}%>
+          </div>
+
+          <div class="secondSlide">
+            <%for(let i=3;i<6;i++){%>
+              <div class="card" style="max-width: 33%;">
+                <img class="card-img-top slides1" src="<%=mobiles[i].image%>" alt="Card image cap" style="border-radius: 20px;">
+                <div class="card-body">
+                  <h5 class="card-title"><%=mobiles[i].name%></h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                    content.</p>
+            
+                </div>
+                <div class="btLinks">
+                  <a href="/<%=mobiles[i]._id%>" class="moblink first">view</a>
+                  <a href="/compare" class="second">compare</a>
+                </div>
+            
+              </div>
+
+
+              <%}%>
+           
 
           </div>
-          <div class="card" style="max-width: 33%">
-            <img class="card-img-top slides1" src="..." alt="Card image cap" style="border-radius: 20px;">
-            <div class="card-body" style=>
-              <h5 class="card-title"></h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+          
+                
+        
+        
+          
 
-            </div>
-            <div class="btLinks">
-              <a href="#" class="moblink first">view</a>
-              <a href="/compare" class="second">compare</a>
-            </div>
-          </div>
-          <div class="card" style="max-width: 33%;">
-            <img class="card-img-top slides1" src="..." alt="Card image cap" style="border-radius: 20px;">
-            <div class="card-body" style="padding-bottom:0;">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-
-            </div>
-            <div class="btLinks">
-              <a href="#" class="moblink first">view</a>
-              <a href="/compare" class="second">compare</a>
-            </div>
-          </div>
+          
+         
+            
+          
           <a class="prevImg">&#10094;</a>
           <a class="nextImg">&#10095;</a>
+          
+
+
         </div>
 
 
@@ -158,125 +175,21 @@
   </section>
 
 
+  
+
+
 
   <script src="/javascript/carausel.js"></script>
+
+  <script src="/javascript/carauselS.js"></script>
   <script>
 
 
 
-    let images2 = [];
-    let card_title = [];
-    let mobileLink = [];
+    
 
 
-    let getmobiles = async () => {
-      let res = await axios.get("https://desolate-badlands-28322.herokuapp.com/axiosMobiles");
-      let allMobiles = res.data;
-      //  console.log(allMobiles);
-
-      for (mobiles of allMobiles) {
-        images2.push(mobiles.image);
-      }
-      // console.log(allMobiles);
-      for (mobiles of allMobiles) {
-        card_title.push(mobiles.name);
-
-
-      }
-
-
-      for (let mobile of allMobiles) {
-        mobileLink.push(mobile._id);
-      }
-      // console.log(card_title);
-      func();
-    }
-    getmobiles();
-
-
-
-    function func() {
-      let images1 = document.querySelectorAll(".slides1");
-      let links = document.querySelectorAll(".moblink");
-      console.log(links);
-      let cardTitle = document.querySelectorAll(".card-title");
-
-      let p = 0;
-
-
-      let imagesPerSlide;
-      if(window.innerWidth<=600){
-         imagesPerSlide=2;
-
-      }
-      else{
-        imagesPerSlide=3;
-      }
-
-
-      let k;
-      for (k = 0; k < imagesPerSlide; k++) {
-        images1[k].src = images2[k];
-        cardTitle[k].innerText = card_title[k];
-        links[k].href = `/${mobileLink[k]}`;
-        console.log(mobileLink[k]);
-      }
-
-      // console.log(images2);
-      // console.log(images1)
-      p = k - 1;
-      const outer = document.querySelector(".outer");
-
-      let prevImg1 = document.querySelector(".prevImg");
-      let nextImg1 = document.querySelector(".nextImg");
-
-
-      prevImg1.addEventListener("click", () => {
-
-
-
-
-      })
-
-      nextImg1.addEventListener("click", () => {
-
-
-        if (p >= (images2.length - 1)) {
-          // i=0;
-          let j;
-          for (j = 0; j < (images1.length - 1); j++) {
-            images1[j].src = images1[j + 1].src;
-            cardTitle[j].innerText = cardTitle[j + 1].innerText;
-            links[j].href = links[j + 1].href;
-          }
-
-          images1[j].src = images2[0];
-          cardTitle[j].innerText = card_title[0];
-          links[j].href = `/${mobileLink[0]}`;
-          p++;
-          if (p >= (images2.length - 1)) {
-            p = 0;
-          }
-        }
-        else {
-
-          let j;
-          for (j = 0; j < (images1.length - 1); j++) {
-            images1[j].src = images1[j + 1].src;
-            cardTitle[j].innerText = cardTitle[j + 1].innerText;
-            links[j].href = links[j + 1].href;
-          }
-
-          images1[j].src = images2[p + 1];
-          cardTitle[j].innerText = card_title[p + 1];
-          links[j].href = `/${mobileLink[p + 1]}`;
-          p++;
-        }
-
-
-      })
-    }
-
+    
 
     let rangeinputmin=document.querySelector(".minprice");
     let rangeinputmax=document.querySelector(".maxprice");
@@ -296,9 +209,6 @@
 
    rangenummin.addEventListener("input",()=>{
      rangeinputmin.value=rangenummin.value;
-   })
-   rangenummax.addEventListener("input",()=>{
-     rangeinputmax.value=rangenummax.value;
    })
 
 
