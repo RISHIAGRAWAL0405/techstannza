@@ -52,9 +52,11 @@ img {
 .nextImg {
   right: 0;
 }
-
-.showDivisions {
-  display: flex;
+.card {
+  width: 33%;
+}
+.firstSlide {
+  justify-content: center;
 }
 
 @media screen and (max-width: 1000px) {
@@ -69,5 +71,11 @@ img {
 @media screen and (max-width: 900px) {
   .outer {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    width: 50%;
   }
 }

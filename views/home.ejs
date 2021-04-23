@@ -90,7 +90,7 @@
           
           <div class="firstSlide" style="width: 100%;">
               <%for(let i=0;i<3;i++){%>
-                <div class="card" style="max-width: 33%;">
+                <div class="card">
                   <img class="card-img-top slides1" src="<%=mobiles[i].image%>" alt="Card image cap" style="border-radius: 20px;">
                   <div class="card-body">
                     <h5 class="card-title"><%=mobiles[i].name%></h5>
@@ -109,9 +109,11 @@
                 <%}%>
           </div>
 
+         
+
           <div class="secondSlide" style="width: 100%;">
             <%for(let i=3;i<6;i++){%>
-              <div class="card" style="max-width: 33%;">
+              <div class="card">
                 <img class="card-img-top slides1" src="<%=mobiles[i].image%>" alt="Card image cap" style="border-radius: 20px;">
                 <div class="card-body">
                   <h5 class="card-title"><%=mobiles[i].name%></h5>
@@ -174,7 +176,26 @@
     </div>
   </section>
 
-
+  <div  class="middleSlideres d-none">
+    <%for(let i=2;i<4;i++){%>
+      <div class="card">
+        <img class="card-img-top slides1" src="<%=mobiles[i].image%>" alt="Card image cap" style="border-radius: 20px;">
+        <div class="card-body">
+          <h5 class="card-title"><%=mobiles[i].name%></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+    
+        </div>
+        <div class="btLinks">
+          <a href="/<%=mobiles[i]._id%>" class="moblink first">view</a>
+          <a href="/compare" class="second">compare</a>
+        </div>
+    
+      </div>
+      
+      
+      <%}%>
+    </div>
   
 
 
