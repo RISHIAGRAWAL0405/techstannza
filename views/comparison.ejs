@@ -1,35 +1,266 @@
 <%layout("/layouts/boilerplate")%>
-
-
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-<div class="container">
-   <input type="text">
-
-  
-
-</div>
-
-
-<script>
-
-//   const axios=require("axios");
+   <link rel="stylesheet" href="/css/comparisonPage.css">
    
-   let image=document.querySelector(".selection");
-   let value;
-   
-   let getmobiles=async ()=>{
-     let res=await axios.get("http://localhost:3000/axiosMobiles")
 
-     res.data[0].image;
-     image.src=res.data[0].image;
+   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-   };
-   getmobiles();
-    
+   <section class="mainSection">
+      <div class="firstMobile comparison">
+        
+         <div class="upperSection">
+            <input type="text" class="mobileInput" placeholder="search here to add" placeholder="Search here to add">
+            <div class="searchResult">
+            </div>
+            <button class="btn btn-primary btn-sm customButton">
+               remove
+            </button>
+         </div>
+         
+         
+         <div class="phoneImage">
+            <img src="<%=mobileFound.image%>" alt="" width="100%" height="100%" class="originalImage">
+         </div>
+         <div class="indiDetails">
+            <table class="tab">
+               <thead class="proTitle">
+                  <tr>
+                     <th>display</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td>Size:</td>
+                     <td>resolution</td>
+                     <td>type</td>
+                  </tr>
+               </tbody>
 
-    
-  
-   
-   
-</script>
+
+            </table>
+            <table class="tab">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Performance</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td>processor</td>
+                     <td>Ram Type</td>
+                     <td>Storage Type</td>
+                  </tr>
+               </tbody>
+
+
+            </table><table class="tab">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Battery</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td>Capacity</td>
+                     <td>Lasts Up to:</td>
+                     <td>battery type</td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+            <table class="tab frontcamera">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Front camera</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td>pixels:</td>
+                     <td>type:</td>
+                     <td>description:</td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+
+         </div>
+
+      </div>
+      <div class="secondMobile comparison" style="background-color: #f5f3f4;">
+      
+         <div class="upperSection">
+            <input type="text" class="mobileInput" placeholder="search here to add">
+            <div class="searchResult">
+            </div>
+            <button class="btn btn-primary btn-sm customButton">
+               remove
+            </button>
+         </div>
+         
+         <div class="phoneImage">
+            <img src="" alt="" width="100%" height="100%" class="originalImage">
+         </div>
+         <div class="indiDetails">
+            <table class="tab display">
+               <thead class="proTitle">
+                  <tr>
+                     <th>display</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+            <table class="tab performance">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Performance</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+            <table class="tab battery">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Battery</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+            <table class="tab frontcamera">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Front camera</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+
+
+         </div>
+      </div>
+      <div class="thirdMobile comparison" style="background-color: #ffffff;">
+         <div class="upperSection">
+            <input type="text" class="mobileInput" placeholder="search here to add">
+            <div class="searchResult">
+            </div>
+            <button class="btn btn-primary btn-sm customButton">
+               remove
+            </button>
+         </div>
+         
+         <div class="phoneImage">
+            <img src="" alt="" width="100%" height="100%" class="originalImage">
+         </div>
+         <div class="indiDetails">
+            <table class="tab">
+               <thead class="proTitle">
+                  <tr>
+                     <th>display</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+            <table class="tab">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Performance</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table><table class="tab">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Battery</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+            <table class="tab frontcamera">
+               <thead class="proTitle">
+                  <tr>
+                     <th>Front camera</th>
+                  </tr>
+               </thead>
+               <tbody class="tbody">
+                  <tr class="indipro">
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+               </tbody>
+
+
+            </table>
+
+         </div>
+      
+      </div>
+
+   </section>
+
+   <div class="fake" style="height: 50px;display: flex; text-decoration: none; color: black;">
+      <img src="" alt="" width="40%" height="100%">
+      <div class="buttonSection">
+         <span class="nameMobile"></span>
+         <button style="width: 50%;" class="addButton">add</button>
+      </div>
+   </div>
+
+   <script src="/javascript/comparison.js"></script>

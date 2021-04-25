@@ -46,12 +46,15 @@ app.set('views', path.join(__dirname, 'views'));
 
 // app.use(express.bodyParser());
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname,"public")));
+
+
+
 app.get("/",async (req,res)=>{
     const mobiles=await Mobile.find({});
 
    const stories=await Story.find({});    
-   // console.log(mobiles);
+  
     res.render("home",{
         mobiles:mobiles,
         home:1,
@@ -74,7 +77,7 @@ app.post("/search",catchAsync(async (req,res)=>{
     let different_strings=search.split(" ");
     
     for(let mobile of mobiles){
-        console.log(mobile.name);
+        
         if(search==mobile.name || search==mobile.brand || ((mobile.name).split(" ")).includes(search)){
             result.push(mobile);
         }
@@ -89,7 +92,7 @@ app.post("/search",catchAsync(async (req,res)=>{
             }
         }
     }
-   console.log(result.length);
+   
     
     res.render("search",{result,home:1});
     
@@ -112,13 +115,22 @@ app.post("/rangeMobiles",async (req,res)=>{
     })
     res.render("range",{result,min,max,home:1});
 })
-
+app.get("/Axios",async (req,res)=>{
+    let {q}=req.query;
+    
+    let mobiles=await Mobile.find();
+    let queryRest1=q.split(" ");
+    
+})
 
 app.get("/compare",catchAsync(async(req,res)=>{
     const mobiles=await Mobile.find();
-    const brands=mobiles.map(m=>m.brand);
-    const names=mobiles.map(m=>m.name);
-    res.render("comparison",{brands,names,mobiles});
+    const {mobile}=req.query;
+
+    const mobileFound=await Mobile.findById(mobile);
+
+    
+    res.render("comparison",{mobiles,mobileFound});
 }));
 
 
@@ -136,8 +148,7 @@ app.post("/axiosMobiles",async (req,res)=>{
 });
 app.get("/axiosMobiles",async (req,res)=>{
     const mobiles=await Mobile.find();
-    // console.log(mobiles);
-    // console.log(req.body);
+    
     res.json(mobiles);
 
 });
@@ -146,7 +157,7 @@ app.get("/axiosMobiles",async (req,res)=>{
 app.get("/axiosMobiles/:min/:max",async (req,res)=>{
     const mobiles=await Mobile.find();
     const result=mobiles.filter((m)=>m.price>=req.params.min && m.price<=req.params.max);
-    // console.log(req.params.min);
+    
     
     res.json(result);
 

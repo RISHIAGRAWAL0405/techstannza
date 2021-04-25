@@ -1,82 +1,65 @@
 <% layout("layouts/boilerplate")%>
-  <link rel="stylesheet" href="/css/contentPageStyles.css">
+<link rel="stylesheet" href="/css/contentPageStyles.css">
 
 
-  <section class="whole">
-    <div class="leftSide">
-      <div class="message">
-        <p>
+<section class="whole">
+<div class="leftSide">
+  <div class="message">
+      <p>
           Similar Just Like This
-        </p>
-      </div>
-      <%for(let each of similar){%>
-        <a href="/<%=each._id%>" style="text-decoration: none; color: black;">
-          <div class="card mb-3 eachSimilar" style="max-width: 540px; margin-top: 2px;">
-            <div class="row">
-              <div class="col-md-5" style="margin: 0;">
-                <img src="<%=each.image%>" alt="..." width="100%" height="100%">
-              </div>
-              <div class="col-md-7" style="margin: 0; padding: 0;">
-                <div class="card-body">
-                  <h6 class="card-title">
-                    <%=each.name%>
-                  </h6>
-                  <h7>&#8377;<%=each.price%>
-                  </h7>
+      </p>
+  </div>
+    <%for(let each of similar){%>
+    <a href="/<%=each._id%>" style="text-decoration: none; color: black;">
+        <div class="card mb-3 eachSimilar" style="max-width: 540px; margin-top: 2px;">
+        <div class="row">
+          <div class="col-md-5" style="margin: 0;">
+            <img src="<%=each.image%>" alt="..." width="100%" height="100%">
+          </div>
+          <div class="col-md-7" style="margin: 0; padding: 0;">
+            <div class="card-body">
+              <h6 class="card-title"><%=each.name%></h6>
+              <h7>&#8377;<%=each.price%></h7>
 
-
-                </div>
-              </div>
             </div>
           </div>
-        </a>
-        <%}%>
-
-    </div>
-    <div class="rightouter">
-
-      <div class="resthings">
-        <h1 class="mobileName">
-          <%=mobile.name%>
-        </h1>
-        <span id="pricetagres">Launched At &#8377;<%=mobile.price%></span>
-      </div>
-      <div class="outerContent">
-        <div class="inner">
-          <div style="display: flex; justify-content: space-between;">
-            <ul type="none">
-              <li class="sap"><i class="fas fa-camera"></i>
-                <%=mobile.frontCamera.pixels[0].pixel%> mp
-              </li>
-              <li class="sap"><i class="fas fa-table"></i>Launched<%=mobile.launchDate%>
-              </li>
-              <li class="sap"><i class="fas fa-microchip"></i>
-                <%=mobile.ram%>
-              </li>
-              <li class="sap"><i class="fas fa-network-wired"></i>
-                <%=mobile.network%>
-              </li>
-            </ul>
-
-            <p class="innerName">
-              <%=mobile.name%>
-            </p>
-          </div>
-
-          <div class="down" style="max-height: 50px;">
-            <a href="/compare/?mobile=<%=mobile._id%>" type="button" class="btn compare">Compare</a>
-            <span class="pricetag">Launch Price:&#8377;<%=mobile.price%></span>
-          </div>
         </div>
-        <img src="<%=mobile.image%>" alt="" width="50%" style="border-radius: 10px;" class="image">
-
       </div>
-      <br>
-      <div>
-        <p>
-          <strong>Detailed Description</strong>
-        </p>
+    </a>
+    <% } %>
+  </div>
 
+<div class="" style="height: 100%;width:50%;border-radius: 10px;  margin-left: 5px; box-shadow: 0px 0px 5px black;">
+   <div class="outerContent">
+       <div class="inner">
+           <div style="display: flex; justify-content: space-between;">
+              <ul type="none" >
+                  <li class="sap"><i class="fas fa-camera"></i><%=mobile.mainCamera.pixels[0].pixel%> mp</li>
+                  <li class="sap"><i class="fas fa-table"></i>Launched on <%=mobile.launchDate%></li>
+                  <li class="sap"><i class="fas fa-microchip"></i><%=mobile.ram%></li>
+                  <!-- <li class="sap"><i class="fas fa-network-wired"></i><%=mobile.network%></li> -->
+              </ul>
+
+              <p style="font-size: x-large; padding: 10px; align-self: center;">
+                  <%=mobile.name%>
+              </p>
+            </div>
+
+            <div class="down">
+                <a href="" type="button" class="btn compare">Compare</a>
+                <span>Price:&#8377;<%=mobile.price%></span>
+            </div>
+       </div>
+       <img src="<%=mobile.image%>" alt="" width="50%" style="border-radius: 10px;" class="image">
+
+   </div>
+<br>
+    <div>
+        <h4><strong>Detailed Description</strong></h4>
+
+        <br>
+
+        <h5>Common Specification</h5>
         <table class="table table-striped">
           <tr>
             <td class='left'>Name</td>
@@ -228,9 +211,10 @@
             <td class='right'><%= mobile.CountryOfOrigin %></td>
           </tr>
         </table
-      </div>
 
     </div>
 
+</div>
 
-  </section>
+
+</section>
