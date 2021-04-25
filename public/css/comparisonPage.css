@@ -133,3 +133,12 @@ td {
     padding: 0px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  .thirdMobile {
+    display: none;
+  }
+  .comparison {
+    width: 45%;
+  }
+}
