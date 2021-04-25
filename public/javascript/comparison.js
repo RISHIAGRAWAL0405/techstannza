@@ -5,7 +5,7 @@ let mobiles=[];
 
 
 let getmobiles=async()=>{
-    let res=await axios.get("http://localhost:3000/axiosMobiles");
+    let res=await axios.get("https://desolate-badlands-28322.herokuapp.com/axiosMobiles");
     let data=res.data;
     for(mobile of data){
         mobiles.push(mobile);
