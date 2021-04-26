@@ -154,6 +154,7 @@ buttons.forEach(button=>{
    button.addEventListener("click",()=>{
     let className=button.parentElement.parentElement.classList[0];
       removeDown(className);
+      removeNamesInUpperStrip(className);
     })
 })
 
@@ -184,5 +185,19 @@ function addNamesInUpperStrip(classname,mob){
     let spaniore=document.querySelector(selector);
     spaniore.innerText=mob.name;  
 
+}
+function removeNamesInUpperStrip(classname){
+    let selector;
+    console.log(classname);
+    if(classname=="firstMobile")
+       selector=".firstMobUpper";
+     if(classname=="secondMobile")
+       selector=".secondMobUpper";
+     if(classname=="thirdMobile")
+       selector=".thirdMobUpper";
+    
+ 
+     let spaniore=document.querySelector(selector);
+     spaniore.innerText="Add Mobile"; 
 }
 
