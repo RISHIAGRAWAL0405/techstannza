@@ -113,7 +113,7 @@ td {
   position: absolute;
   background-color: white;
   width: 18%;
-  max-height: 450px;
+  max-height: 300px;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-top: 30px;
@@ -121,7 +121,7 @@ td {
   z-index: 2;
 }
 .dynamicClass:hover {
-  background-color: thistle;
+  background-color: royalblue;
   /* transform: translateX(5px); */
 }
 .customButton {
@@ -137,15 +137,13 @@ td {
   padding: 0;
   background-color: #06d6a0;
 }
-/* ::-webkit-scrollbar {
-  width: 10px;
+::-webkit-scrollbar {
+  width: 5px;
 }
-
 
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 
 ::-webkit-scrollbar-thumb {
   background: #888;
@@ -153,7 +151,7 @@ td {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-} */
+}
 @keyframes slidein {
   from {
     /* transform: rotate3d(20, 10, 10, 180deg); */
@@ -181,5 +179,16 @@ td {
 @media screen and (max-width: 1260px) {
   .searchResult {
     min-width: 200px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .searchResult {
+    min-width: 180px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .searchResult {
+    min-width: 150px;
+    overflow-x: scroll;
   }
 }
