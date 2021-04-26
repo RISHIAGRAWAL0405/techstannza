@@ -11,11 +11,12 @@
   /* justify-items: center; */
   align-items: center;
   height: 1000px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* margin-right: 10px; */
   padding: 5px;
   box-shadow: 0px 0px 2px black;
 }
+
 .upperSection {
   width: 100%;
   display: flex;
@@ -23,9 +24,10 @@
 .mobileInput {
   width: 100%;
   align-self: center;
-  border-radius: 10px;
+  border-radius: 5px;
   outline: none;
-  /* border: none; */
+  border: 1px solid gray;
+  margin-right: 5px;
 }
 .proTitle {
   display: flex;
@@ -56,11 +58,13 @@ td {
   border: 0.5px solid grey;
   animation: slidein 2s;
   transition: all 1s;
+  border-radius: 10px;
 }
 .originalImage {
   width: 50%;
   height: 100%;
   text-indent: -10000px;
+  border-radius: 10px;
 }
 .indiDetails {
   margin-top: 20px;
@@ -85,6 +89,7 @@ td {
 .buttonSection {
   display: flex;
   flex-direction: column;
+  min-width: 60%;
 }
 .indipro {
   /* margin-left: 10px; */
@@ -95,21 +100,25 @@ td {
 }
 
 .secondMobile .indiDetails {
+  z-index: auto;
   opacity: 0.2;
 }
 .thirdMobile .indiDetails {
+  z-index: auto;
   opacity: 0.2;
 }
 .searchResult {
   display: none;
   /* border: 1px solid black; */
   position: absolute;
-  background-color: lightgrey;
+  background-color: white;
   width: 18%;
   max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
   margin-top: 30px;
+  /* min-width: 300px; */
+  z-index: 2;
 }
 .dynamicClass:hover {
   background-color: thistle;
@@ -117,8 +126,34 @@ td {
 }
 .customButton {
   margin-left: 2px;
+  width: 10%;
+  padding: 0;
+  margin: 0;
 }
 
+.addButton {
+  width: 20%;
+  height: 20px;
+  padding: 0;
+  background-color: #06d6a0;
+}
+/* ::-webkit-scrollbar {
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+} */
 @keyframes slidein {
   from {
     /* transform: rotate3d(20, 10, 10, 180deg); */
@@ -140,5 +175,11 @@ td {
   }
   .comparison {
     width: 45%;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  .searchResult {
+    min-width: 200px;
   }
 }
