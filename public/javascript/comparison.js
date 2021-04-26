@@ -40,7 +40,8 @@ function fillUp(input){
     }
     let mobimage=input.parentNode.parentNode.childNodes[3].childNodes[1];
     let className=input.parentElement.parentElement.classList[0];
-    let addButtons=document.querySelectorAll(`.${className} .addButton`);
+    let addButtons=input.nextElementSibling.childNodes;
+    // document.querySelectorAll(`.${className} .addButton`);
     // console.log(addButtons);
     addButtons.forEach(button => {
         button.addEventListener("click",()=>{
@@ -73,11 +74,11 @@ function getrelated(keys){
 
 
 function getMobile(btn){
-    let mobname=btn.previousElementSibling.innerText;
+    let mobname=btn.childNodes[3].childNodes[1].innerText;
     // let thismob;
     for(mobile of mobiles){
         if(mobile.name===mobname){
-            console.log(mobile)
+            // console.log(mobile)
             return mobile;
           
         }
@@ -173,7 +174,7 @@ function removeDown(className){
 
 function addNamesInUpperStrip(classname,mob){
    let selector;
-   console.log(classname);
+//    console.log(classname);
    if(classname=="firstMobile")
       selector=".firstMobUpper";
     if(classname=="secondMobile")
@@ -188,7 +189,7 @@ function addNamesInUpperStrip(classname,mob){
 }
 function removeNamesInUpperStrip(classname){
     let selector;
-    console.log(classname);
+    // console.log(classname);s
     if(classname=="firstMobile")
        selector=".firstMobUpper";
      if(classname=="secondMobile")
