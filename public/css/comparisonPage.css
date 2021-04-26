@@ -15,6 +15,9 @@
   padding: 5px;
   font-weight: 600;
 }
+.UpperName {
+  width: 100%;
+}
 .seperator {
   background-color: royalblue;
   width: 5px;
@@ -204,6 +207,9 @@ td {
   .first {
     width: 50%;
   }
+  .second {
+    width: 50%;
+  }
 }
 
 @media screen and (max-width: 1260px) {
@@ -220,5 +226,10 @@ td {
   .searchResult {
     min-width: 150px;
     overflow-x: scroll;
+  }
+}
+@media screen and (max-width: 300px) {
+  .UpperName {
+    font-size: smaller;
   }
 }

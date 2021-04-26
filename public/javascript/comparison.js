@@ -5,7 +5,7 @@ let mobiles=[];
 
 
 let getmobiles=async()=>{
-    let res=await axios.get("https://desolate-badlands-28322.herokuapp.com/axiosMobiles");
+    let res=await axios.get("http://desolate-badlands-28322.herokuapp.com/axiosMobiles");
     let data=res.data;
     for(mobile of data){
         mobiles.push(mobile);
@@ -172,7 +172,7 @@ function removeDown(className){
 
 function addNamesInUpperStrip(classname,mob){
    let selector;
-   
+   console.log(classname);
    if(classname=="firstMobile")
       selector=".firstMobUpper";
     if(classname=="secondMobile")
