@@ -1,3 +1,24 @@
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.upper-strip {
+  width: 75%;
+  background-color: #f48c06;
+  display: flex;
+  height: 30px;
+}
+.mobile-name {
+  width: 33%;
+  padding: 5px;
+  font-weight: 600;
+}
+.seperator {
+  background-color: royalblue;
+  width: 5px;
+}
 .mainSection {
   display: flex;
   justify-content: center;
@@ -171,8 +192,17 @@ td {
   .thirdMobile {
     display: none;
   }
+  .third {
+    display: none;
+  }
   .comparison {
     width: 45%;
+  }
+  .upper-strip {
+    width: 90%;
+  }
+  .first {
+    width: 50%;
   }
 }
 

@@ -48,6 +48,7 @@ function fillUp(input){
             mobimage.src=mob.image;
             fillDown(className,mob);
             // console.log(mobimage);
+            addNamesInUpperStrip(className,mob);
         })
     });
 }
@@ -168,3 +169,20 @@ function removeDown(className){
    frontcamera[0].innerText="";
    frontcamera[2].innerText="";
 }
+
+function addNamesInUpperStrip(classname,mob){
+   let selector;
+   
+   if(classname=="firstMobile")
+      selector=".firstMobUpper";
+    if(classname=="secondMobile")
+      selector=".secondMobUpper";
+    if(classname=="thirdMobile")
+      selector=".thirdMobUpper";
+   
+
+    let spaniore=document.querySelector(selector);
+    spaniore.innerText=mob.name;  
+
+}
+
