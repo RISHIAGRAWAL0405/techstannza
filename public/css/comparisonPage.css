@@ -235,6 +235,10 @@ td {
   .fake {
     height: 50px;
   }
+  .secondMobile tr {
+    font-size: small;
+    font-weight: 500;
+  }
 }
 @media screen and (max-width: 440px) {
   .searchResult {
