@@ -3,9 +3,10 @@ let fake=document.querySelector(".fake");
 let inputs=document.querySelectorAll(".mobileInput");
 let mobiles=[];
 
-
+let linkAxios1="http://localhost:3000/axiosMobiles";
+let linkAxios2="https://desolate-badlands-28322.herokuapp.com/axiosMobiles";
 let getmobiles=async()=>{
-    let res=await axios.get("https://desolate-badlands-28322.herokuapp.com/axiosMobiles");
+    let res=await axios.get(linkAxios2);
     let data=res.data;
     for(mobile of data){
         mobiles.push(mobile);
@@ -24,7 +25,7 @@ function fillUp(input){
     let divi=input.nextElementSibling;
     divi.style.display="flex";
     divi.style.flexDirection="column";
-    let keys=diffkeys(input.value);
+    let keys=diffkeys((input.value).toLowerCase());
     // console.log(keys)
     
     let response=getrelated(keys);

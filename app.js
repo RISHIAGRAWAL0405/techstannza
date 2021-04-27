@@ -74,6 +74,7 @@ app.post("/search",catchAsync(async (req,res)=>{
     const mobiles=await Mobile.find();
     let result=[];
     let {search}=req.body;
+    search=search.toLowerCase();
     let different_strings=search.split(" ");
     
     for(let mobile of mobiles){
@@ -94,7 +95,7 @@ app.post("/search",catchAsync(async (req,res)=>{
     }
    
     
-    res.render("search",{result,home:1});
+    res.render("search",{result,home:1,allMobiles:mobiles});
     
    
 }))
