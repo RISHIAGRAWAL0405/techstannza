@@ -191,8 +191,9 @@ app.get("/axiosMobiles/:min/:max",async (req,res)=>{
 
     
 })
-app.get("/news",(req,res)=>{
-    res.render("news");
+app.get("/news",async (req,res)=>{
+    let allnews=await News.find({});
+    res.render("news",{allnews});
 })
 
 app.get("/:id",catchAsync(async (req,res)=>{

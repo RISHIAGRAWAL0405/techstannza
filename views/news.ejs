@@ -1,1 +1,67 @@
 <%layout("/layouts/boilerplate")%>
+<link rel="stylesheet" href="/css/newsStyles.css">
+
+<section class="mentos">
+    <div class="welmessage">
+
+        <div class="inner">
+            <div class="first">
+                <div style="background: linear-gradient(90deg,darkblue,white);" class="red"></div>
+            </div>
+            <div class="second">
+                <div style="background: linear-gradient(180deg,white,darkblue);" class="red1"></div>
+            </div>
+            <div class="third">
+                <div style="background: linear-gradient(90deg,white,darkblue);" class="red2"></div>
+            </div>
+            <div class="fourth">
+                <div style="background: linear-gradient(180deg,darkblue,white);" class="red3"></div>
+            </div>
+            <div style="position:relative;bottom:400px;color: whitesmoke;font-size: xx-large;text-align: center;">
+                
+                Trakin zone Style News
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="container">
+   <div>
+       <h2>Browse By Brands</h2>
+       <div>
+           <span>Redmi</span>
+           <div>
+               <%for(let news of allnews){%>
+
+                    
+
+
+                <%}%>
+           </div>
+        </div>
+     <div>
+         <span>One Plus</span>
+     </div>  
+     <div>
+         <span>Realme</span>
+     </div>
+     <div>
+         <span>Motorola</span>
+     </div>
+
+     <div>
+         <span>Apple</span>
+         
+     </div>
+
+      <div>
+          <span>Samsung</span>
+      </div>
+   
+   
+   
+    </div>
+
+   
+</section>

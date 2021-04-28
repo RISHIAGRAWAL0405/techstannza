@@ -1,0 +1,114 @@
+.mentos {
+  transform: translateY(-64px);
+}
+.welmessage {
+  width: 100%;
+  height: 500px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 35%;
+  height: 50%;
+  right: 50%;
+  animation: slidein 2s;
+}
+
+.first {
+  width: 100%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+  /* opacity: 0.5; */
+  height: 3px;
+  display: block;
+  position: relative;
+}
+.red {
+  width: 100%;
+  height: 3px;
+  animation: changefirst 2s infinite;
+}
+.red1 {
+  height: 100%;
+  width: 3px;
+  animation: changesecond 1s infinite;
+}
+.red2 {
+  width: 100%;
+  height: 3px;
+  animation: changethird 2s infinite;
+}
+.red3 {
+  width: 3px;
+  height: 100%;
+  animation: changefourth 1s infinite;
+}
+.second {
+  height: 100%;
+  position: relative;
+  width: 3px;
+  display: block;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+}
+.third {
+  width: 100%;
+  /* background-color: mediumblue; */
+  height: 3px;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 1);
+}
+.fourth {
+  position: relative;
+  width: 3px;
+  height: 102%;
+  overflow: hidden;
+  transform: translateY(-5px);
+  left: 100%;
+  bottom: 100%;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+@keyframes changefirst {
+  from {
+    margin-left: 200%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes changesecond {
+  from {
+    margin-top: -200px;
+  }
+  to {
+    margin-top: 0%;
+  }
+}
+@keyframes changethird {
+  from {
+    margin-left: -200%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes changefourth {
+  from {
+    margin-top: 200px;
+  }
+  to {
+    margin-top: 0%;
+  }
+}
+@keyframes slidein {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
