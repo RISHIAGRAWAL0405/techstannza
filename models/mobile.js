@@ -21,6 +21,8 @@ const mongoose=require("mongoose");
 
 
 const mobileSchema=new mongoose.Schema({
+    
+    
     name:{
         type:String,
         required:true
@@ -88,7 +90,8 @@ const mobileSchema=new mongoose.Schema({
     ourReview:{
         type:String,
         // required:true
-    }
+    },
+    topDeal: Boolean
 
 
 

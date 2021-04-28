@@ -14,8 +14,11 @@ const mongoose=require("mongoose");
 const Mobile=require("./models/mobile");
 const ExpressError=require("./utils/Expresserror");
 const catchAsync=require("./utils/catchAsync");
-const Story=require("./models/stories");
-const { inflate } = require("zlib");
+const News=require("./models/news");
+const session=require("express-session");
+const flash=require("connect-flash");
+const Suggestion=require("./models/suggestion");
+
 const dbUrl=process.env.DB_URL;
 
 // mongodb://localhost:27017/mobile_site
@@ -35,17 +38,31 @@ db.once("open", () => {
 });
 
 app.use(bodyParser.json());
+const sessionConfig={
+    secret:"thisisnotagoodsecret",
+    resave:false,
+    saveUninitialized:true,
+    cookie:{
+        expires:Date.now()+1000*60*60*24*7,
+        maxAge:   1000*60*60*24*7,
+        HttpOnly:true
 
+    }
+}
 
 
 app.engine("ejs",ejsMate);
 app.set("view engine","ejs");
 app.use(express.urlencoded({ extended: true }));
-
+app.use(session(sessionConfig));
+app.use(flash());
 app.set('views', path.join(__dirname, 'views'));
 
-// app.use(express.bodyParser());
 
+app.use((req,res,next)=>{
+    res.locals.success=req.flash("success");
+    next();
+})
 app.use(express.static(path.join(__dirname,"public")));
 
 
@@ -53,8 +70,9 @@ app.use(express.static(path.join(__dirname,"public")));
 app.get("/",async (req,res)=>{
     const mobiles=await Mobile.find({});
 
-   const stories=await Story.find({});    
-  
+   const stories=await News.find({});    
+   req.flash("success","We Got your suggestion,promise we wil Improve");
+
     res.render("home",{
         mobiles:mobiles,
         home:1,
@@ -135,10 +153,13 @@ app.get("/compare",catchAsync(async(req,res)=>{
 }));
 
 
-app.post("/suggestions",(req,res)=>{
-   const result=req.body;
-   res.redirect("/");
-})
+app.post("/suggestions",catchAsync(async (req,res)=>{
+   let {Name,email_id,suggestion,path}=req.body;
+   let newSuggestion=new Suggestion({name:Name,email:email_id,suggestion:suggestion});
+   await newSuggestion.save();
+   req.flash("success","We Got your suggestion,promise we wil Improve");
+   res.redirect(`${path}`);
+}));
 
 
 
@@ -154,6 +175,12 @@ app.get("/axiosMobiles",async (req,res)=>{
 
 });
 
+app.get("/deals", async function(req, res){
+   let foundPhones=await Mobile.find({topDeal:true});
+   res.render("deals",{foundPhones});
+
+  });
+
 
 app.get("/axiosMobiles/:min/:max",async (req,res)=>{
     const mobiles=await Mobile.find();
@@ -164,7 +191,9 @@ app.get("/axiosMobiles/:min/:max",async (req,res)=>{
 
     
 })
-
+app.get("/news",(req,res)=>{
+    res.render("news");
+})
 
 app.get("/:id",catchAsync(async (req,res)=>{
     let {id}=req.params;

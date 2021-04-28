@@ -10,7 +10,23 @@
 .coustom-nav-link {
   background-color: #022140;
 }
-
+.dropdown-content1 {
+  visibility: hidden;
+  display: none;
+  position: relative;
+  left: 100%;
+  background-color: lightgrey;
+  width: 100%;
+}
+.dropdown1:hover .dropdown-content1 {
+  visibility: visible;
+  position: absolute;
+  display: block;
+}
+.dropdown-content1:nth-of-type(2) {
+  /* bottom: 1%; */
+  transform: translateY(-20px);
+}
 .dropbtn {
   font-size: 16px;
   border: none;

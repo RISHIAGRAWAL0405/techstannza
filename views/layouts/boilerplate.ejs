@@ -20,7 +20,7 @@
   
        <%- include('../partials/navbar')%>
     <main class="mt-5">
-   
+        <%-include("../partials/flash")%>
     
 
         <%- body %>
@@ -37,5 +37,8 @@
 
 
 <script>
+
+    let inputLocation=document.querySelector(".nice");
+    inputLocation.value=window.location.pathname;
   
 </script>
