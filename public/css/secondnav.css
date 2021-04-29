@@ -9,6 +9,7 @@
 
 .coustom-nav-link {
   background-color: black;
+  border-bottom: 1px solid white;
 }
 .dropdown-content1 {
   visibility: hidden;

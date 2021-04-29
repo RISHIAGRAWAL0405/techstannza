@@ -1,5 +1,5 @@
 .innerFeature {
-  background-color: #ffb703;
+  background-color: #f0efeb;
   height: 60%;
   display: flex;
   justify-content: space-evenly;
@@ -12,17 +12,17 @@
 .anchorFeature {
   text-decoration: none;
   color: black;
-  border: 1px solid lightgray;
+  border: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 5px;
 }
 .anchorFeature:hover {
-  color: lime;
-  background-color: darkblue;
+  color: black;
+  background-color: #ddbea9;
   transform: perspective(800px) translateZ(100px);
-  transition: all 0.5s ease-in;
+  transition: all 0.1s ease-in;
 }
 .goaround {
   width: 98%;
