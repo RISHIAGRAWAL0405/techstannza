@@ -60,9 +60,6 @@ img {
 }
 
 @media screen and (max-width: 1000px) {
-  .card-text {
-    display: none;
-  }
   .outer {
     width: 90%;
   }

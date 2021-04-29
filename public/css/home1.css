@@ -38,6 +38,39 @@
   border-radius: 20px;
   border: 1px solid lightgray;
 }
+
+.newsletter {
+  width: 100%;
+  /* padding: 10px; */
+  /* background-color: lightblue; */
+  border-radius: 20px;
+  background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-03.jpg");
+}
+.newsletter-message {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+.newsletter-innermessage {
+  margin: 0;
+  padding: 20px;
+  font-size: large;
+  display: block;
+  font-weight: 900;
+}
+.newsletter-inputs {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  /* background-color: lime; */
+  margin-top: 0%;
+  justify-content: center;
+}
+.custom-form-control {
+  width: 50%;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 @media screen and (max-width: 890px) {
   .innerFeature {
     padding: 20px 0px 20px 0px;
@@ -60,5 +93,9 @@
   }
   .innerFeature {
     font-size: smaller;
+  }
+  .newsletter {
+    width: 95%;
+    margin: 10px;
   }
 }
