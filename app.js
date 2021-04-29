@@ -18,6 +18,7 @@ const News=require("./models/news");
 const session=require("express-session");
 const flash=require("connect-flash");
 const Suggestion=require("./models/suggestion");
+let Subscriber=require("./models/newsletter");
 
 const dbUrl=process.env.DB_URL;
 
@@ -160,7 +161,13 @@ app.post("/suggestions",catchAsync(async (req,res)=>{
    req.flash("success","We Got your suggestion,promise we wil Improve");
    res.redirect(`${path}`);
 }));
-
+app.post("/subscribe",async (req,res)=>{
+    let {email_id}=req.body;
+    let newSubscriber=new Subscriber({email:email_id});
+    await newSubscriber.save();  
+    req.flash("success","Hola!! subscribed to the TrakinZone weekly newsletter ");
+    res.redirect("/");  
+})
 
 
 app.post("/axiosMobiles",async (req,res)=>{

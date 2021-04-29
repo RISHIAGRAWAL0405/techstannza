@@ -2,6 +2,7 @@
 
   <link rel="stylesheet" href="/css/carausel.css">
   <link rel="stylesheet" href="/css/carouselSlider.css">
+  <link rel="stylesheet" href="/css/home1.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   
 
@@ -10,26 +11,29 @@
   <section class="biggestOuter">
 
 
-    <div style="height: 100%; width:18%;" class="stories">
-
-      <h1 style="margin: 0px 0px 20px 0px; text-align: center;">Recent Stories</h1>
-      <%for(let story of stories){%>
-        <div class="card" style="width: 100%;height: 400px; margin-bottom: 20px;">
-          <img src="<%=story.image%>" class="" alt="..." height="200px" style="width: 100%; height: 50%;border-top-left-radius: 20px;border-top-right-radius: 20px;">
-          <div class="card-body">
-            <p class="card-text">
-              <%=story.message%>
-            </p>
-          </div>
-        </div>
-
-        <%}%>
-
-    </div>
+    
     <div class="mainArea">
 
 
       <div class="Area">
+       
+
+        <div class="carousel" style="transition: 1s all ease-in;">
+
+          <%for(let mobile of mobiles){%>
+           <a href="/<%=mobile._id%>">
+              <div class="slides" style="transition: all 1s ease-in-out;">
+                <img src="<%=mobile.image%>" alt="" class="slide-image" style="width: 100%;">
+              </div>
+            </a>
+              <%}%>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+
+        </div>
+
+      </div>
+      <section class="goaround">
         <div class="budget">
 
           <div class="message">
@@ -67,23 +71,58 @@
 
         </div>
 
-
-        <div class="carousel">
-
-          <%for(let mobile of mobiles){%>
-           <a href="/<%=mobile._id%>">
-              <div class="slides">
-                <img src="<%=mobile.image%>" alt="" class="slide-image" style="width: 100%;">
+        <div  class="goaroundRight">
+          <div
+            style="background-color:#f1faee;height: 40%;display: flex;justify-content: center;align-items: center;padding: 20px;flex-wrap: wrap;border-top-right-radius: 20px;border-top-left-radius: 20px;">
+            <p style="font-weight: 700;font-size: x-large;">
+              Don't wanna choose around price,Choose around main feature
+            </p>
+          </div>
+          <div class="innerFeature">
+            <a href="" style="width: 30%;" class="anchorFeature">
+              <div style="width: 100%;text-align: center;">
+                <i class="fas fa-camera"></i>
+                <p>Camera centric</p>
               </div>
             </a>
-              <%}%>
-                <a class="prev">&#10094;</a>
-                <a class="next">&#10095;</a>
+            <a href="" style="width: 30%;" class="anchorFeature">
+              <div style="width: 100%;text-align: center;">
+                <i class="fas fa-tachometer-alt"></i>
+                <p>performance centric</p>
+              </div>
+            </a>
+            <a href="" style="width: 30%;" class="anchorFeature">
+              <div style="width: 100%;text-align: center;">
+                <i class="fas fa-tv"></i>
+                <p>display centric</p>
+              </div>
+            </a>
+            <a href="" style="width: 30%;" class="anchorFeature">
+              <div style="width: 100%;text-align: center;">
+                <i class="fas fa-pencil-alt"></i>
+                <p>awesome design</p>
+              </div>
+            </a>
+            <a href="" style="width: 30%;" class="anchorFeature">
+              <div style="width: 100%;text-align: center;">
+                <i class="fas fa-headset"></i>
+                <p>Gaming phones</p>
+              </div>
+            </a>
+            <a href="" style="width: 30%;" class="anchorFeature">
+              <div style="width: 100%;text-align: center;">
+                <i class="fas fa-globe"></i>
+                <p>The All rounder</p>
+              </div>
+            </a>
+        
+          </div>
+        </div>
+            
 
         </div>
 
-      </div>
-
+      </section>
       <section class="outerSection">
         <h2 class="text-center">Meet The Newly Launched</h2>
         <div class="outer">
@@ -158,28 +197,20 @@
     </div>
 
     <div style="height: 100%;" id="leftresponsive">
-      <h1 class="starting-message text-center">Recent Stories</h1>
+      <h1 class="starting-message text-center w-100">Recent Stories</h1>
       <%for(let story of stories){%>
         <div class="card news">
-          <img src="<%=story.image%>" class="card-img-top" alt="...">
+          <img src="<%=story.image%>" class="" alt="..." height="50%" width="100%" style="width: 100%;height: 50%;">
           <div class="card-body">
             <p class="card-text">
-              <%=story.message%>
+              <%=story.heading%>
             </p>
           </div>
         </div>
 
         <%}%>
     </div>
-    <div style="width: 15%; height: 1000px;">
-      <div style="height: 30%;width: 100%;  border: 1px solid black;">
-        <div style="width: 100%;height: 50%;background-color: chartreuse;display: flex;justify-content: center;align-items: center;">
-            <p>
-              If Price is not a constraint
-            </p>
-        </div>
-      </div>
-    </div>
+    
   </section>
 
   <div  class="middleSlideres d-none">
@@ -203,6 +234,19 @@
       <%}%>
     </div>
   
+
+    <section class="container" style="width: 100%;padding: 10px;background-color: lightblue;border-radius: 20px;">
+      <div style="width: 100%;text-align: center;margin: 0;"> 
+        <p style="margin: 0;padding: 20px;font-size: large;">Subscribe To Our Weekly Newsletter <br> this will just give you a weekly dose of some important news and some deals</p>
+      </div>        
+      <form action="/subscribe" class="d-flex" style="width: 100%;padding-left: 50px;padding-right: 50px;" method="post">
+        <label for="email" style="margin-top: 10px;">Email-ID</label>           
+        <input type="email"  id="email" name="email_id" style="width: 50%;margin-left: 20px;margin-right: 20px" class="form-control">
+        <button class="btn btn-primary btn-sm">subscribe</button>
+
+
+      </form>
+    </section>
 
 
 

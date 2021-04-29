@@ -1,19 +1,29 @@
 .mentos {
   transform: translateY(-64px);
+  background-color: brown;
 }
 .welmessage {
   width: 100%;
   height: 500px;
   background-color: black;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mess {
+  width: 20%;
+  height: 50%;
+  background-color: #dfe7fd;
+  padding: 20px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .inner {
   width: 35%;
   height: 50%;
   right: 50%;
+  /* display: flex; */
   animation: slidein 2s;
 }
 
@@ -78,6 +88,13 @@
   font-size: xx-large;
   text-align: center;
 }
+.logoImage {
+  width: 40px;
+  height: 40px;
+}
+.card:hover {
+  transform: perspective(800px) translateZ(10px);
+}
 
 @keyframes changefirst {
   from {
@@ -105,10 +122,10 @@
 }
 @keyframes changefourth {
   from {
-    margin-top: 200px;
+    transform: translateY(100%);
   }
   to {
-    margin-top: 0%;
+    transform: translateY(0%);
   }
 }
 @keyframes slidein {
@@ -126,7 +143,25 @@
   }
 }
 @media screen and (max-width: 800px) {
+}
+@media screen and (max-width: 700px) {
+  .welmessage {
+    flex-direction: column;
+  }
   .innerMessage {
-    font-size: 15px;
+    font-size: 20px;
+  }
+  .logoImage {
+    width: 20px;
+    height: 20px;
+  }
+  .inner {
+    width: 60%;
+    height: 40%;
+  }
+  .mess {
+    margin-top: 10px;
+    width: 70%;
+    height: 25%;
   }
 }

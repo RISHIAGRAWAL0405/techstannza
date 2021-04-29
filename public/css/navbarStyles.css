@@ -79,7 +79,7 @@ h1 {
 }
 .anchorlinks:hover {
   color: darkblue;
-  text-shadow: 2px 0px 20px darkgreen;
+  text-shadow: 2px 2px 20px aliceblue;
 }
 
 .search-input {
