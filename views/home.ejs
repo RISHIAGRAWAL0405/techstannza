@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="/css/carouselSlider.css">
   <link rel="stylesheet" href="/css/home1.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 
 
@@ -18,7 +18,10 @@
       <div class="Area">
        
 
-        <div class="carousel" style="transition: 1s all ease-in;">
+        <div class="carousel" style="transition: 1s all ease-in;" data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500">
 
           <%for(let mobile of mobiles){%>
            <a href="/<%=mobile._id%>">
@@ -34,7 +37,7 @@
 
       </div>
       <section class="goaround">
-        <div class="budget">
+        <div class="budget" data-aos="zoom-out-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
 
           <div class="message">
             <p class="phoneFind">Lets's Find a Phone In your Budget </p>
@@ -71,7 +74,7 @@
 
         </div>
 
-        <div  class="goaroundRight">
+        <div  class="goaroundRight" data-aos="zoom-out-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
           <div
             style="background-color:#f1faee;height: 40%;display: flex;justify-content: center;align-items: center;padding: 20px;flex-wrap: wrap;border-top-right-radius: 20px;border-top-left-radius: 20px;">
             <p style="font-weight: 700;font-size: x-large;">
@@ -123,7 +126,7 @@
         </div>
 
       </section>
-      <section class="outerSection">
+      <section data-aos="fade-up"   class="outerSection" style="transform: translateX(20%);">
         <h2 class="text-center">Meet The Newly Launched</h2>
         <div class="outer">
           
@@ -253,6 +256,8 @@
   <script src="/javascript/carausel.js"></script>
 
   <script src="/javascript/carauselS.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <script>
 
 
@@ -282,7 +287,7 @@
      rangeinputmin.value=rangenummin.value;
    })
 
-
+   AOS.init();
 
     
 
