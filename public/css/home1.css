@@ -83,8 +83,8 @@
 
 @media screen and (max-width: 640px) {
   .budget {
-    width: 80%;
-    margin-left: 0;
+    width: 100%;
+    margin: 4px;
   }
   .goaround {
     flex-wrap: wrap;
@@ -92,8 +92,8 @@
     margin-right: 4px;
   }
   .goaroundRight {
-    width: 80%;
-    margin-top: 20px;
+    width: 100%;
+    margin: 20px 4px 4px 4px;
   }
   .innerFeature {
     font-size: smaller;
