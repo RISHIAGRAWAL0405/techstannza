@@ -1,6 +1,7 @@
 <%layout("layouts/boilerplate")%>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="/css/rangeStyles.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <h3 style="text-align: center;">"Mobiles In Your Budget"</h1>
 
@@ -8,167 +9,185 @@
 
 
       <div class="filtervalues">
+        <div class="customFormInputs">
+          <p style="margin: 0;text-align: center;">Price Range</p>
+          <section class="range-slider" style="width: 100%; height: 20%;">
+            <span class="rangeValues"></span>
+            <input value="<%=min%>" min="500" max="50000" step="500" type="range" class="minprice">
+            <input value="<%=max%>" min="500" max="50000" step="500" type="range" class="maxprice">
+          </section>
+          <div class="formInputs">
+        
+            <div style="display: flex;justify-content: space-between;">
+              <label for="min" style="width: 50%;">Min</label>
+              <label for="max" style="width: 50%;">Max</label>
+        
+            </div>
+            <div>
+              <input type="number" value="<%=min%>" id="min" min="4000" max="35000" step="500" name="min" class="minpricenum">
+        
+              <input type="number" id="max" value="<%=max%>" min="4000" max="40000" step="1000" name="max" class="maxpricenum">
+            </div>
+          </div>
+        
+        
+        
+        </div>
         <div class="ram">
           <span class="title">
             RAM
           </span>
           <ul>
-          <li><label for="3">3 GB and above</label>
-          <input type="checkbox" id="3"></li>
-          <li><label for="4">4 GB and above</label>
-          <input type="checkbox" id="4" name="4andabove"></li>
-      
-          <li><label for="6">6 GB and above</label>
-          <input type="checkbox" id="6"></li>
-          <li><label for="8">8 GB and above</label>
-          <input type="checkbox" id="8"></li>
-      </ul>
-      
+            <li><label for="3">3 GB and above</label>
+              <input type="checkbox" id="3" class="ram">
+            </li>
+            <li><label for="4">4 GB and above</label>
+              <input type="checkbox" id="4" class="ram" name="4andabove">
+            </li>
+
+            <li><label for="6">6 GB and above</label>
+              <input type="checkbox" id="6" class="ram">
+            </li>
+            <li><label for="8">8 GB and above</label>
+              <input type="checkbox" id="8" class="ram">
+            </li>
+          </ul>
+
         </div>
-      
+
         <div class="brand">
           <span class="title">
             Brand
           </span>
           <ul>
-          <li><label for="redmi">Redmi</label>
-          <input type="checkbox" id="redmi"></li>
-          <li><label for="Realme">Realme</label>
-          <input type="checkbox" id="Realme"></li>
-      
-          <li><label for="One Plus">One Plus</label>
-          <input type="checkbox" id="One Plus"></li>
-          <li><label for="Apple">Apple</label>
-          <input type="checkbox" id="Apple"></li>
-      </ul>
-      
-        </div> 
-         <div>
+            <li><label for="redmi">Redmi</label>
+              <input type="checkbox" id="redmi" class="brand">
+            </li>
+            <li><label for="Realme">Realme</label>
+              <input type="checkbox" id="realme" class="brand">
+            </li>
+
+            <li><label for="One Plus">One Plus</label>
+              <input type="checkbox" id="one plus" class="brand">
+            </li>
+            <li><label for="Apple">Apple</label>
+              <input type="checkbox" id="apple" class="brand">
+            </li>
+          </ul>
+
+        </div>
+        <div>
           <span class="title">
-             Display
+            Display
           </span>
           <ul>
-            <li>  <div>
-            <span class="title">
-              refresh rate
-            </span>
-            <ul>
-            <li><label for="redmi">120Hz</label>
-          <input type="checkbox" id="redmi"></li>
-          <li><label for="90Hz">90Hz</label>
-          <input type="checkbox" id="90Hz"></li>
-      </ul>
-          
-          </div></li>
-          <li><div>
-            <span>
-              Size
-            </span>
-            <ul>
-            <li><label for="redmi">Redmi</label>
-            <input type="checkbox" id="redmi"></li>
-            
-            <li><label for="Realme">Realme</label>
-            <input type="checkbox" id="Realme"></li>
-        
-            <li><label for="One Plus">One Plus</label>
-            <input type="checkbox" id="One Plus"></li>
-            <li><label for="Apple">Apple</label>
-            <input type="checkbox" id="Apple"></li>
+            <li>
+              <div>
+                <span class="title">
+                  refresh rate
+                </span>
+                <ul>
+                  <li><label for="redmi">120Hz</label>
+                    <input type="checkbox" id="redmi">
+                  </li>
+                  <li><label for="90Hz">90Hz</label>
+                    <input type="checkbox" id="90Hz">
+                  </li>
+                </ul>
+
+              </div>
+            </li>
+            <li>
+              <div>
+                <span>
+                  Size
+                </span>
+                <ul>
+                  <li><label for="redmi">Redmi</label>
+                    <input type="checkbox" id="redmi">
+                  </li>
+
+                  <li><label for="Realme">Realme</label>
+                    <input type="checkbox" id="Realme">
+                  </li>
+
+                  <li><label for="One Plus">One Plus</label>
+                    <input type="checkbox" id="One Plus">
+                  </li>
+                  <li><label for="Apple">Apple</label>
+                    <input type="checkbox" id="Apple">
+                  </li>
+
+                </ul>
+              </div>
+            </li>
 
           </ul>
-          </div></li>
-      
-        </ul>
         </div>
 
 
       </div>
       <div class="filteredresult">
-      
-        <div class="particular">
-          <img
-            src="https://cdn.pocket-lint.com/r/s/1200x/assets/images/152419-review-hands-on-redmi-note-9-image1-rr6mm2jbpp.jpg"
-            alt="" width="30%" height="100%" style="border-radius: 20px;">
-          <div class="detail">
-      
-            <span style="width: 100%; height: 10%  ;">
-              Mobile Name
-            </span>
-            <span style="height: 10%; width: 100%;">
-              Main features
-            </span>
-            <ul class="topfeatures" type="none">
-      
-              <li class="individualfea">display</li>
-              <li class="individualfea">battery</li>
-              <li class="individualfea">performance</li>
-              <li class="individualfea">camera</li>
-            </ul>
-      
-            <div class="viewsection">
-              <a href="" class="gotomobilephone">VIEW</a>
-              <span class="mobilePricebutton">
-                &#8377; Mobile Price
-              </span>
-            </div>
-      
-          </div>
-    
-         </div>
+            <%for(let mobile of result){%>
+              <div class="card mb-3" style="width: 100%;border-radius: 20px;" data-aos="fade-in">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="<%=mobile.image%>" alt="..." width="100%" height="100%" style="border-radius: 20px;">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                     
+                      <h5 class="card-title"><%=mobile.name%></h5>
+                      <h7>&#8377;<%=mobile.price%></h7>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <div class="row">
+                        <i class="fas fa-camera col-3">camera</i>
+                        <i class="fas fa-tachometer-alt col-3"></i>
+                        <i class="fas fa-tv col-3"></i>
+                        <i class="fas fa-pencil-alt col-3"></i>
+                      </div>
+                      <div class="row">
+                          <a href="/<%=mobile._id%>" class="col-2 btn btn-primary m-3">View</a>
+                          <a href="/compare/?mobile=<%=mobile._id%>" class="col-2 btn btn-warning m-3">compare</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+   
+
+           <%}%>
+
       </div>
-
-     
-
-    
-
-
-
-
-
     </section>
 
 
-    <script>
-           let inputs=[];
+    <div class="card mb-3 d-none fake" style="width: 100%;border-radius: 20px;" data-aos="fade-in">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="" alt="..." width="100%" height="100%" style="border-radius: 20px;">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <h7 style="font-weight: 600;">&#8377;</h7>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class="row">
+              <i class="fas fa-camera col-3">camera</i>
+              <i class="fas fa-tachometer-alt col-3"></i>
+              <i class="fas fa-tv col-3"></i>
+              <i class="fas fa-pencil-alt col-3"></i>
+            </div>
+            <div class="row">
+                <a href="" class="col-2 btn btn-primary m-3">View</a>
+                <a href="" class="col-2 btn btn-warning m-3">compare</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 
-           let allinputs=document.querySelectorAll(".filtervalues input");
-
-           for(input of allinputs){
-             input.addEventListener("input",()=>{
-                 sendData();
-                //  inputs.push(input.checked);
-             })
-
-             
-
-
-           }
-           console.log(inputs);
-
-           let sendData=async()=>{
-            inputs.splice(0,inputs.length);
-            let rams=document.querySelectorAll(".ram input");
-            let raminputs=[];
-            for(ram of rams){
-              raminputs.push(ram.id);
-            }
-           
-
-            for(input of allinputs){
-            
-                 inputs.push(input);
-             }
-            let res=await axios.post("http://localhost:3000/axiosMobiles",{
-                array:`${inputs}`
-             }).then((res)=>{
-               console.log(res.data);
-               console.log(document.querySelector(".filtervalues input").checked);
-             })
-           }
-
-
-
-    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/javascript/range.js"></script>

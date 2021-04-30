@@ -170,11 +170,42 @@ app.post("/subscribe",async (req,res)=>{
 })
 
 
-app.post("/axiosMobiles",async (req,res)=>{
-    const mobiles=await Mobile.find();
+app.post("/axiosMobiles",catchAsync(async (req,res)=>{
+    // const mobiles=await Mobile.find();
+    // console.log(req.body);
+    let result=[];
+    let {brand,min,max}=req.body;
+    let brands=[];
+    console.log(brand);
+    console.log(min,max);
+    for(let property in brand){
+         if(brand[property]==true){
+              brands.push(property);
+         }
+    }
+    
+    let mobiles=await Mobile.find({});
+    for(mobile of mobiles){
+        if(mobile.price>=min && mobile.price<=max){
+        
+                if(brands.includes(mobile.brand)){
+                    result.push(mobile);
+                }
+                if(brands.length==0){
+                    result.push(mobile);
+                }
+            
+            
+        }
+        
+    }
+    console.log(mobiles);
+    res.json(result);
+
+   
     
 
-});
+}));
 app.get("/axiosMobiles",async (req,res)=>{
     const mobiles=await Mobile.find();
     

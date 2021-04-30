@@ -1,16 +1,12 @@
 const mongoose=require("mongoose");
-// const dbUrl=process.env.DB_URL;
 
-
-
-// const url =;
 
 // const connectionParams={
 //     useNewUrlParser: true,
 //     useCreateIndex: true,
 //     useUnifiedTopology: true 
 // }
-// mongoose.connect(url,connectionParams)
+// mongoose.connect("mongodb+srv://Atishay:WMTU4NnUcnka5rm6@cluster0.upzac.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",connectionParams)
 //     .then( () => {
 //         console.log('Connected to database ')
 //     })
@@ -40,11 +36,11 @@ const mobileSchema=new mongoose.Schema({
             {
                 pixel:{
                     type:Number,
-                    required:true
+                    
                 },
                 description:{
                     type:String,
-                    required:true
+                    
                 }
        
      
@@ -59,12 +55,11 @@ const mobileSchema=new mongoose.Schema({
             pixels:[
                 {
                     pixel:{
-                        type:Number,
-                        required:true
+                        type:Number
+                        
                     },
                     description:{
-                        type:String,
-                        required:true
+                        type:String
                     }
            
          
@@ -73,7 +68,7 @@ const mobileSchema=new mongoose.Schema({
     },
     brand:{
         type:String,
-        // required:true
+        required:true
     },
     image:{
         type:String,
@@ -81,17 +76,68 @@ const mobileSchema=new mongoose.Schema({
     },
     launchDate:{
         type:Date,
-        // required:true
+        required:true
     },
-    description:{
+    sound:{
+        type:String
+    },
+    simType:{
+        type:String
+    },
+    Display:{
+        size:String,
+        resolution:String,
+        GPU:String,
         type:String,
-        // required:true
+        other:String
     },
-    ourReview:{
+    processor:{
+        operatingSystem:String,     //Android 10
+        type:String,               //mediatek dimensity 800U
+        Core:String,               //octa core
+        clockSpeed:String,         //2.4GHz
+
+    },
+    memory:{
+        internalStorage:String,     
+        ram:String,
+        expandableStorage:String,
+        
+    },
+    network:{
         type:String,
-        // required:true
+        bluetoothVersion:String,
+        nfc:String,
+        infrared:String,
+        audioJack:String,
+
+
     },
-    topDeal: Boolean
+    BatteryCapacity:String,
+    Dimensions:{
+        width:Number,
+        height:Number,
+        weight:Number
+    },
+    warrantyPeriod:Number,
+    userInterface:String,
+    Box:String,
+    colorVariants:[
+        {
+            type:String
+        }
+    ],
+    bodyType:String,
+    review:String,
+    ourOpinion:String
+    
+    
+
+
+
+
+
+    
 
 
 
