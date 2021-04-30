@@ -357,6 +357,9 @@ section.range-slider input[type="range"]::-moz-focus-outer {
   .Area {
     flex-wrap: wrap-reverse;
   }
+  .custom-text {
+    display: none;
+  }
 
   .mainArea {
     width: 100%;
