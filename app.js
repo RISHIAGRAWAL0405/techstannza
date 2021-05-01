@@ -11,7 +11,7 @@ const app=express();
 const ejsMate=require("ejs-mate");
 const path=require("path")
 const mongoose=require("mongoose");
-const Mobile=require("./models/mobile");
+const Mobile=require("./models/mobileaman");
 const ExpressError=require("./utils/Expresserror");
 const catchAsync=require("./utils/catchAsync");
 const News=require("./models/news");
@@ -81,13 +81,14 @@ app.get("/",async (req,res)=>{
     });
 })
 
-app.get("/phone",(req,res)=>{
-    res.send("HII");
 
-})
 app.get("/about",(req,res)=>{
     res.render("about",{home:1});
 })
+
+app.get("/phone", function(req, res){
+    res.render('phone');
+  });
 
 app.post("/search",catchAsync(async (req,res)=>{
     const mobiles=await Mobile.find();
@@ -152,6 +153,77 @@ app.get("/compare",catchAsync(async(req,res)=>{
     
     res.render("comparison",{mobiles,mobileFound});
 }));
+
+app.post("/phone", function(req, res){
+    // const details = req.body;
+    // console.log(details);
+  
+    var Phone = new Mobile({
+      name: req.body.name,
+      price: req.body.Price,
+      mainCamera: {
+        noOfCameras: req.body.noOfCamerasMain,
+        pixels:[JSON.parse(req.body.pixelsMain)]
+      },
+      frontCamera: {
+        noOfCameras: req.body.noOfCamerasFron,
+        pixels:[JSON.parse(req.body.pixelsFront)]
+      },
+      Display: {
+        size: req.body.DisplaySize ,
+        resolution: req.body.DisplayResolution ,
+        GPU: req.body.DisplayGPU ,
+        category: req.body.DisplayType
+      },
+      processor: {
+        operatingSystem: req.body.operatingSystem ,
+        category: req.body.ProcessorCategory ,
+        Core: req.body.Core,
+        clockSpeed: req.body.clockSpeed
+      },
+      memory: {
+        internalStorage: req.body.internalStorage ,
+        ram: req.body.ram ,
+        expandableStorage: req.body.expandableStorage
+      },
+      network: {
+        category: req.body.networkCategory ,
+        bluetoothVersion: req.body.bluetoothVersion ,
+        nfc: req.body.nfc,
+        infrared: req.body.infrared,
+        audioJack: req.body.audioJack
+      },
+      Dimensions: {
+        width: req.body.width,
+        height: req.body.height,
+        weight: req.body.weight,
+      },
+      BatteryCapacity: req.body.BatteryCapacity ,
+      warrantyPeriod: req.body.warrantyPeriod ,
+      userInterface: req.body.userInterface ,
+      Box: req.body.box,
+      colorVariants: [JSON.parse(req.body.colorVariants)] ,
+      bodyType: req.body.bodyType,
+      review: req.body.review,
+      ourOpinion: req.body.ourOpinion,
+      brand: req.body.brand ,
+      image: req.body.image ,
+      launchDate: req.body.launchDate,
+      sound: req.body.sound,
+      simType: req.body.simType
+    });
+  
+    console.log(Phone);
+  
+    
+  
+    Phone.save(function(err){
+      if(err){
+        console.log(err);
+      }
+    });
+    res.redirect('/phone');
+  });
 
 
 app.post("/suggestions",catchAsync(async (req,res)=>{
@@ -255,11 +327,11 @@ app.all("*",(req,res,next)=>{
 })
 
 
-app.use((err,req,res,next)=>{
-    const {statusCode=500}=err;
-    if(!err.message) err.message="Oh No ): Something went Wrong";
-    res.status(statusCode).render("error",{err});
-})
+// app.use((err,req,res,next)=>{
+//     const {statusCode=500}=err;
+//     if(!err.message) err.message="Oh No ): Something went Wrong";
+//     res.status(statusCode).render("error",{err});
+// })
 
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{

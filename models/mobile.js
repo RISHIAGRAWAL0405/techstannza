@@ -88,12 +88,12 @@ const mobileSchema=new mongoose.Schema({
         size:String,
         resolution:String,
         GPU:String,
-        type:String,
+        category:String,
         other:String
     },
     processor:{
         operatingSystem:String,     //Android 10
-        type:String,               //mediatek dimensity 800U
+        category:String,               //mediatek dimensity 800U
         Core:String,               //octa core
         clockSpeed:String,         //2.4GHz
 
@@ -105,7 +105,7 @@ const mobileSchema=new mongoose.Schema({
         
     },
     network:{
-        type:String,
+        category:String,
         bluetoothVersion:String,
         nfc:String,
         infrared:String,
