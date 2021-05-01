@@ -39,6 +39,7 @@ db.once("open", () => {
 });
 
 app.use(bodyParser.json());
+// app.use(express.raw());
 const sessionConfig={
     secret:"thisisnotagoodsecret",
     resave:false,
@@ -154,20 +155,41 @@ app.get("/compare",catchAsync(async(req,res)=>{
     res.render("comparison",{mobiles,mobileFound});
 }));
 
-app.post("/phone", function(req, res){
-    // const details = req.body;
-    // console.log(details);
+app.post("/phone", function(req, res) {
+
+    const pixMain = [];
+    const pixelsMain = req.body.pixelsMain;
+    const pixelsMainarray = pixelsMain.split(",");
+    for(var i in pixelsMainarray) {
+      pixMain.push(JSON.parse(i));
+    }
+  
+    const pixFront = [];
+    const pixelsFront = req.body.pixelsFront;
+    const pixelsFrontarray = pixelsMain.split(",");
+    for(var j in pixelsFrontarray) {
+      pixFront.push(JSON.parse(j));
+    }
+
+    const colorVariant=[];
+    const colorVariants=req.body.colorVariants;
+    const colorVariantsArray=colorVariants.split(",");
+    for(let i in colorVariantsArray){
+        colorVariant.push(JSON.parse(i));
+    } 
+  
+  
   
     var Phone = new Mobile({
       name: req.body.name,
       price: req.body.Price,
       mainCamera: {
         noOfCameras: req.body.noOfCamerasMain,
-        pixels:[JSON.parse(req.body.pixelsMain)]
+        pixels:[pixMain]
       },
       frontCamera: {
         noOfCameras: req.body.noOfCamerasFron,
-        pixels:[JSON.parse(req.body.pixelsFront)]
+        pixels:[pixFront]
       },
       Display: {
         size: req.body.DisplaySize ,
@@ -202,7 +224,7 @@ app.post("/phone", function(req, res){
       warrantyPeriod: req.body.warrantyPeriod ,
       userInterface: req.body.userInterface ,
       Box: req.body.box,
-      colorVariants: [JSON.parse(req.body.colorVariants)] ,
+      colorVariants: [colorVariant] ,
       bodyType: req.body.bodyType,
       review: req.body.review,
       ourOpinion: req.body.ourOpinion,
@@ -224,6 +246,12 @@ app.post("/phone", function(req, res){
     });
     res.redirect('/phone');
   });
+app.get("/younhi",(req,res)=>{
+    res.render("form");
+})
+app.post("/younhi",(req,res)=>{
+    console.log((req.body.pixels[0]));
+})
 
 
 app.post("/suggestions",catchAsync(async (req,res)=>{
