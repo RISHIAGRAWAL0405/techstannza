@@ -29,6 +29,7 @@ function fillUp(input){
     // console.log(keys)
     
     let response=getrelated(keys);
+    response=removeInitial(response);
     deleteChild(divi);
     // console.log(response);
     for(mobile of response){
@@ -72,6 +73,26 @@ function getrelated(keys){
    return response;
 }  
 
+
+function removeInitial(response){
+   let fMobile=document.querySelector(".firstMobUpper").innerText;
+   let sMobile=document.querySelector(".secondMobUpper").innerText;
+   let tMobile=document.querySelector(".thirdMobUpper").innerText;
+  for(mobile of response){
+      if(mobile.name==fMobile || mobile.name==sMobile || mobile.name==tMobile){
+          response=arrayRemove(response,mobile);
+      }
+  }
+  
+  return response;
+
+}
+function arrayRemove(arr, value) { 
+    
+    return arr.filter(function(ele){ 
+        return ele != value; 
+    });
+}
 
 
 function getMobile(btn){
