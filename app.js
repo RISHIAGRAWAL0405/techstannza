@@ -100,14 +100,14 @@ app.post("/search",catchAsync(async (req,res)=>{
     
     for(let mobile of mobiles){
         
-        if(search==mobile.name || search==mobile.brand || ((mobile.name).split(" ")).includes(search)){
+        if(search==mobile.name.toLowerCase() || search==mobile.brand.toLowerCase || ((mobile.name.toLowerCase()).split(" ")).includes(search)){
             result.push(mobile);
         }
     }
 
     for(let mobile of mobiles){
         for(let strings of different_strings){
-            if(strings==mobile.name || strings==mobile.brand){
+            if(strings==mobile.name.toLowerCase() || strings==mobile.brand.toLowerCase()){
                 if(!result.includes(mobile)){
                 result.push(mobile);
                 }
@@ -239,11 +239,7 @@ app.post("/phone", function(req, res) {
   
     
   
-    Phone.save(function(err){
-      if(err){
-        console.log(err);
-      }
-    });
+    Phone.save();
     res.redirect('/phone');
   });
 app.get("/younhi",(req,res)=>{

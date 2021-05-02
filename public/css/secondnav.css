@@ -1,14 +1,15 @@
 .arrow {
   width: 10px;
   height: 10px;
-  background-color: #f1f1f1;
+  background-color: black;
   transform: rotate(45deg);
   margin-left: 47%;
   padding: 10px;
+  z-index: -2;
 }
 
 .coustom-nav-link {
-  background-color: black;
+  background-color: white;
   border-bottom: 1px double yellow;
 }
 .dropdown-content1 {
@@ -16,7 +17,7 @@
   display: none;
   position: relative;
   left: 100%;
-  background-color: lightgrey;
+  background-color: black;
   width: 100%;
 }
 .dropdown1:hover .dropdown-content1 {
@@ -31,15 +32,19 @@
 .dropbtn {
   font-size: 16px;
   border: none;
-  color: whitesmoke;
+  color: black;
   padding: 10px;
   margin: 0;
   /* width: 160px; */
   width: 100%;
-  box-shadow: 0px 0px 50px white;
+  font-weight: 500;
+  /* box-shadow: 0px 0px 50px white; */
 }
 .dropbtn:nth-child(4) {
   border: none;
+}
+.dropbtn a {
+  color: black;
 }
 .dropdown {
   position: relative;
@@ -52,9 +57,9 @@
 }
 .dropdown-content {
   /* display: none; */
-
+  z-index: auto;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: black;
   /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -86,6 +91,14 @@
   color: white;
   cursor: pointer;
 }
+
+.dropbtn a:hover {
+  /* border: 1px solid black; */
+  /* background-color: black; */
+  /* color: white; */
+  /* border-radius: 15px; */
+}
+
 .firs {
   margin-top: 5px;
 }
