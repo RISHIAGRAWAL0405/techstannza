@@ -321,9 +321,6 @@ section.range-slider input[type="range"]::-moz-focus-outer {
     height: 40%;
   }
 
-  .slide-image {
-    /* height: 50vh; */
-  }
   .news {
     width: 48%;
     /* margin-left: 10px; */
@@ -387,5 +384,8 @@ section.range-slider input[type="range"]::-moz-focus-outer {
 @media screen and (max-width: 600px) {
   .mainArea {
     transform: translateY(-48px);
+  }
+  .card {
+    margin: 0;
   }
 }
