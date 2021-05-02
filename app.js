@@ -284,7 +284,7 @@ app.post("/axiosMobiles",catchAsync(async (req,res)=>{
     for(mobile of mobiles){
         if(mobile.price>=min && mobile.price<=max){
         
-                if(brands.includes(mobile.brand)){
+                if(brands.includes(mobile.brand.toLowerCase())){
                     result.push(mobile);
                 }
                 if(brands.length==0){
