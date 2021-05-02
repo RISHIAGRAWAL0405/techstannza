@@ -36,7 +36,7 @@
   flex-direction: column;
   /* margin-left: 5%; */
   width: 100%;
-  transform: translateY(12px);
+  transform: translateY(-54px);
   /* height: 100vh; */
 }
 .customFormInputs {
@@ -258,7 +258,7 @@ section.range-slider input[type="range"]::-moz-focus-outer {
 .carousel {
   width: 100%;
   position: relative;
-  height: 90vh;
+  height: 100vh;
 }
 .slides {
   display: none;
