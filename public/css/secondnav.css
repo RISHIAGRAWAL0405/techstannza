@@ -1,7 +1,7 @@
 .arrow {
   width: 10px;
   height: 10px;
-  background-color: black;
+  background-color: gray;
   transform: rotate(45deg);
   margin-left: 47%;
   padding: 10px;
@@ -9,16 +9,17 @@
 }
 
 .coustom-nav-link {
-  background-color: white;
-  border-bottom: 1px double yellow;
+  background-color: black;
+  /* border-bottom: 1px double yellow; */
 }
 .dropdown-content1 {
   visibility: hidden;
   display: none;
   position: relative;
   left: 100%;
-  background-color: black;
+  background-color: gray;
   width: 100%;
+  border-radius: 10px;
 }
 .dropdown1:hover .dropdown-content1 {
   visibility: visible;
@@ -32,7 +33,7 @@
 .dropbtn {
   font-size: 16px;
   border: none;
-  color: black;
+  color: white;
   padding: 10px;
   margin: 0;
   /* width: 160px; */
@@ -44,7 +45,7 @@
   border: none;
 }
 .dropbtn a {
-  color: black;
+  color: white;
 }
 .dropdown {
   position: relative;
@@ -59,7 +60,7 @@
   /* display: none; */
   z-index: auto;
   position: absolute;
-  background-color: black;
+  background-color: gray;
   /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
