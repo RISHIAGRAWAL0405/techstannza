@@ -70,7 +70,7 @@ h1 {
   display: none;
 }
 .search {
-  min-width: 0%;
+  min-width: 30%;
   margin-left: 33%;
   margin-right: 30px;
   width: 30%;
@@ -118,6 +118,7 @@ h1 {
   width: 100%;
   top: 10px;
 }
+
 .search-input::-webkit-search-cancel-button {
   /* Remove default */
   -webkit-appearance: none;
