@@ -44,7 +44,7 @@ let manipulate=(input)=>{
 };
 
 let sendData=async ()=>{
-    let res=await axios.post("http://desolate-badlands-28322.herokuapp.com/axiosMobiles",{
+    let res=await axios.post("https://desolate-badlands-28322.herokuapp.com/axiosMobiles",{
         brand:brandSection,
         min:rangenummin.value,
         max:rangenummax.value
