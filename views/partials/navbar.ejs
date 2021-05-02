@@ -43,8 +43,16 @@
      
       <div id="mySidenav" class="sidenav" style="z-index: 3;">
         <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+        <form class="search" id="initialbox1" action="/search" method="post" style="width: 90%;margin: 0;">
+          <div class="search-navbar" style="display: flex;justify-content: space-between;width: 100%;">
+            <input class="me-2 search-input" type="search" results="5" placeholder="Search" aria-label="Search"
+              name="search" style="padding:0;width: 80%;">
+            <button class="btn btn-outline-light search-btn" type="submit"><i class="fas fa-search"></i> </button>
+          </div>
+        </form>
         <a href="/">Home</a>
         <a href="/about">About</a>
+        
         
       </div>
       
