@@ -41,8 +41,7 @@ h1 {
   z-index: 2;
   background-color: white;
   flex-direction: row;
-  /* padding: 10px; */
-  /* height: 150px; */
+  padding: 10px;
 }
 
 .custom-dynamic-navbar {
