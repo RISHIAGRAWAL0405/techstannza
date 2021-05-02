@@ -9,7 +9,7 @@
 }
 
 .coustom-nav-link {
-  background-color: black;
+  background-color: #cfd2cd;
   /* border-bottom: 1px double yellow; */
 }
 .dropdown-content1 {
@@ -33,7 +33,7 @@
 .dropbtn {
   font-size: 16px;
   border: none;
-  color: white;
+  color: black;
   padding: 10px;
   margin: 0;
   /* width: 160px; */
@@ -45,7 +45,7 @@
   border: none;
 }
 .dropbtn a {
-  color: white;
+  color: black;
 }
 .dropdown {
   position: relative;
