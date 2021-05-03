@@ -272,8 +272,7 @@ app.post("/axiosMobiles",catchAsync(async (req,res)=>{
     let result=[];
     let {brand,min,max}=req.body;
     let brands=[];
-    console.log(brand);
-    console.log(min,max);
+    
     for(let property in brand){
          if(brand[property]==true){
               brands.push(property);
@@ -295,7 +294,7 @@ app.post("/axiosMobiles",catchAsync(async (req,res)=>{
         }
         
     }
-    console.log(mobiles);
+    
     res.json(result);
 
    

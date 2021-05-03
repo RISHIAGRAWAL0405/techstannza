@@ -2,6 +2,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <link rel="stylesheet" href="/css/rangeStyles.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/range1.css">
 
   <h3 style="text-align: center;">"Mobiles In Your Budget"</h1>
 
@@ -17,149 +18,364 @@
             <input value="<%=max%>" min="500" max="50000" step="500" type="range" class="maxprice">
           </section>
           <div class="formInputs">
-        
+
             <div style="display: flex;justify-content: space-between;">
               <label for="min" style="width: 50%;">Min</label>
               <label for="max" style="width: 50%;">Max</label>
-        
+
             </div>
             <div>
-              <input type="number" value="<%=min%>" id="min" min="4000" max="35000" step="500" name="min" class="minpricenum">
-        
-              <input type="number" id="max" value="<%=max%>" min="4000" max="40000" step="1000" name="max" class="maxpricenum">
+              <input type="number" value="<%=min%>" id="min" min="4000" max="35000" step="500" name="min"
+                class="minpricenum">
+
+              <input type="number" id="max" value="<%=max%>" min="4000" max="40000" step="1000" name="max"
+                class="maxpricenum">
             </div>
           </div>
-        
-        
-        
+
+
+
         </div>
-        <div class="ram">
+        <div class="push">
           <span class="title">
-            RAM
+            TZ Overall Rating
+
+            <span>&#62;</span>
           </span>
-          <ul>
-            <li><label for="3">3 GB and above</label>
-              <input type="checkbox" id="3" class="ram">
-            </li>
-            <li><label for="4">4 GB and above</label>
-              <input type="checkbox" id="4" class="ram" name="4andabove">
-            </li>
+          <div class="TZ">
 
-            <li><label for="6">6 GB and above</label>
-              <input type="checkbox" id="6" class="ram">
-            </li>
-            <li><label for="8">8 GB and above</label>
-              <input type="checkbox" id="8" class="ram">
-            </li>
-          </ul>
+            <ul>
+              <li><label for="9t">9+</label>
+                <input type="checkbox" id="9t" class="TZ">
+              </li>
+              <li><label for="8t">8+</label>
+                <input type="checkbox" id="8t" class="TZ">
+              </li>
 
+              <li><label for="7t">7+</label>
+                <input type="checkbox" id="7t" class="TZ">
+              </li>
+              <li><label for="6t">6+</label>
+                <input type="checkbox" id="6t" class="TZ">
+              </li>
+            </ul>
+
+          </div>
         </div>
+        <div class="push"> 
+            <span class="title">
+              RAM
+              <span>&#62;</span>
+            </span>
+          <div class="ram">
+           
+            <ul>
+              <li><label for="3">3 GB and above</label>
+                <input type="checkbox" id="3" class="ram">
+              </li>
+              <li><label for="4">4 GB and above</label>
+                <input type="checkbox" id="4" class="ram">
+              </li>
 
-        <div class="brand">
+              <li><label for="6">6 GB and above</label>
+                <input type="checkbox" id="6" class="ram">
+              </li>
+              <li><label for="8">8 GB and above</label>
+                <input type="checkbox" id="8" class="ram">
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="push">
           <span class="title">
             Brand
+            <span>&#62;</span>
           </span>
-          <ul>
-            <li><label for="redmi">Redmi</label>
-              <input type="checkbox" id="redmi" class="brand">
-            </li>
-            <li><label for="Realme">Realme</label>
-              <input type="checkbox" id="realme" class="brand">
-            </li>
+          <div class="brand">
+            
+            <ul>
+              <li><label for="redmi">Redmi</label>
+                <input type="checkbox" id="redmi" class="brand">
+              </li>
+              <li><label for="Realme">Realme</label>
+                <input type="checkbox" id="realme" class="brand">
+              </li>
 
-            <li><label for="One Plus">One Plus</label>
-              <input type="checkbox" id="one plus" class="brand">
-            </li>
-            <li><label for="Apple">Apple</label>
-              <input type="checkbox" id="apple" class="brand">
-            </li>
-          </ul>
+              <li><label for="One Plus">One Plus</label>
+                <input type="checkbox" id="one plus" class="brand">
+              </li>
+              <li><label for="Apple">Apple</label>
+                <input type="checkbox" id="apple" class="brand">
+              </li>
+              <li><label for="samsung">samsung</label>
+                <input type="checkbox" id="samsung" class="brand">
+              </li>
+              <li><label for="vivo">vivo</label>
+                <input type="checkbox" id="vivo" class="brand">
+              </li>
+              <li><label for="oppo">oppo</label>
+                <input type="checkbox" id="oppo" class="brand">
+              </li>
+              <li><label for="motorola">motorola</label>
+                <input type="checkbox" id="motorola" class="brand">
+              </li>
+              <li><label for="huawei">huawei</label>
+                <input type="checkbox" id="huawei" class="brand">
+              </li>
+              <li><label for="Asus">Asus</label>
+                <input type="checkbox" id="Asus" class="brand">
+              </li>
+            </ul>
+
+          </div>
 
         </div>
-        <div class="screenSize">
+        <div class="push">
           <span class="title">
-            Display Size
-          </span>
-          <ul>
-            <li><label for="1">Above 6 inches</label>
-              <input type="checkbox" id="11" class="operatingSystem">
-            </li>
-            <li><label for="1">5.7-5.9 inch</label>
-              <input type="checkbox" id="11" class="operatingSystem">
-            </li>
-            <li><label for="10">5.5 - 5.6 inch
-            </label>
-              <input type="checkbox" id="10" class="operatingSystem">
-            </li>
+              Display Size
+              <span>&#62;</span>
+            </span>
+          <div class="screenSize">
+            
+            <ul>
+              <li><label for="7.5">Above 7 inches</label>
+                <input type="checkbox" id="7.5" class="screensize">
+              </li>
+              <li><label for="7">6.75-7.0 inches</label>
+                <input type="checkbox" id="7" class="screensize">
+              </li>
+              <li><label for="6.75">6.5-6.75 inches
+                </label>
+                <input type="checkbox" id="6.75" class="screensize">
+              </li>
 
-            <li><label for="9">5.2 - 5.4 inch
-            </label>
-              <input type="checkbox" id="9" class="operatingSystem">
-            </li>
-            <li><label for="i14">5 - 5.1 inch
-            </label>
-              <input type="checkbox" id="apple" class="operatingSystem">
-            </li> 
-            <li><label for="i14">4.5 - 4.9 inch
+              <li><label for="6.5">6.25-6.5 inches
+                </label>
+                <input type="checkbox" id="6.5" class="screensize">
+              </li>
+              <li><label for="6.25">6.0 -6.25 inches
+                </label>
+                <input type="checkbox" id="6.25" class="screensize">
+              </li>
+              <li><label for="6">5.75 -6.0 inches
 
-            </label>
-              <input type="checkbox" id="apple" class="operatingSystem">
-            </li> 
-            <li><label for="i14">4 - 4.4 inch
+                </label>
+                <input type="checkbox" id="6" class="screensize">
+              </li>
+              <li><label for="5.75">5.5 -5.75 inches
 
-            </label>
-              <input type="checkbox" id="apple" class="operatingSystem">
-            </li> 
-            <li><label for="i14">3 - 3.4 inch
-
-
-            </label>
-              <input type="checkbox" id="apple" class="operatingSystem">
-            </li> <li><label for="i14">Less than 3 inch
+                </label>
+                <input type="checkbox" id="5.75" class="screensize">
+              </li>
+              <li><label for="5.5">below 5.5 inches
 
 
-            </label>
-              <input type="checkbox" id="apple" class="operatingSystem">
-            </li>
-          </ul>
+                </label>
+                <input type="checkbox" id="5.5" class="screensize">
+              </li>
 
-         
+            </ul>
 
+
+
+          </div>
         </div>
-        
+        <div class="push">
+          <span class="title">
+              Screen refresh rate
+              <span>&#62;</span>
+            </span>
+          <div class="rrate">
+            
+            <ul>
+              <li><label for="120">120Hz</label>
+                <input type="checkbox" id="120" class="rrate">
+              </li>
+              <li><label for="90">90Hz</label>
+                <input type="checkbox" id="90" class="rrate">
+              </li>
+
+              <li><label for="60">60Hz</label>
+                <input type="checkbox" id="60" class="rrate">
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+        <div class="push"> 
+          <span class="title">
+              selfie camera
+              <span>&#62;</span>
+            </span>
+          <div class="scamera">
+           
+            <ul type="none">
+              <li><label for="25a">25 MP and Above</label>
+                <input type="checkbox" id="25a" class="scamera">
+              </li>
+              <li><label for="20a">20MP and Above </label>
+                <input type="checkbox" id="20a" class="scamera">
+              </li>
+              <li><label for="15a">15MP and Above </label>
+                <input type="checkbox" id="15a" class="scamera">
+              </li>
+
+              <li><label for="10a">10 MP and Above</label>
+                <input type="checkbox" id="10a" class="scamera">
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+        <div class="push"> 
+          <span class="title">
+              Main camera
+              <span>&#62;</span>
+            </span>
+          <div class="mcamera">
+           
+            <ul>
+              <li><label for="30">30 MP and Above</label>
+                <input type="checkbox" id="30" class="mcamera">
+              </li>
+              <li><label for="25">25 MP and Above</label>
+                <input type="checkbox" id="25" class="mcamera">
+              </li>
+
+              <li><label for="20">20 MP and Above</label>
+                <input type="checkbox" id="20" class="mcamera">
+              </li>
+              <li><label for="15">15 MP and Above</label>
+                <input type="checkbox" id="15" class="mcamera">
+              </li>
+              <li><label for="10">10 MP and Above</label>
+                <input type="checkbox" id="10" class="mcamera">
+              </li>
+              <li><label for="5">5 MP and Above</label>
+                <input type="checkbox" id="5" class="mcamera">
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="push">
+          <span class="title">
+              features
+              <span>&#62;</span>
+            </span>
+          <div class="features">
+            
+            <ul>
+              <li><label for="audio">Audio Jack</label>
+                <input type="checkbox" id="audio" class="features">
+              </li>
+              <li><label for="IR">IR blaster</label>
+                <input type="checkbox" id="IR" class="features">
+              </li>
+
+              <li><label for="nfc">NFC</label>
+                <input type="checkbox" id="nfc" class="features">
+              </li>
+              <li><label for="fm">FM radio</label>
+                <input type="checkbox" id="fm" class="features">
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+        <div class="push"> 
+          <span class="title">
+              processor brand
+              <span>&#62;</span>
+            </span>
+          <div class="processorb">
+           
+            <ul>
+              <li><label for="snapdragon">Snapdragon</label>
+                <input type="checkbox" id="snapdragon" class="processorb">
+              </li>
+              <li><label for="Mediatek">Mediatek</label>
+                <input type="checkbox" id="Mediatek" class="processorb">
+              </li>
+
+              <li><label for="exynos">Exynos</label>
+                <input type="checkbox" id="exynos" class="processorb">
+              </li>
+              <li><label for="Apple">Apple</label>
+                <input type="checkbox" id="Apple" class="processorb">
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+        <div class="push">
+          <span class="title">
+              Network Type
+              <span>&#62;</span>
+            </span>
+          <div class="networkT">
+            
+            <ul>
+              <li><label for="5G">5G</label>
+                <input type="checkbox" id="5G" class="networkT">
+              </li>
+              <li><label for="4G">4G</label>
+                <input type="checkbox" id="4G" class="networkT">
+              </li>
+
+              <li><label for="3G">3G</label>
+                <input type="checkbox" id="3G" class="networkT">
+              </li>
+
+            </ul>
+
+          </div>
+        </div>
+
+
 
 
       </div>
       <div class="filteredresult">
-            <%for(let mobile of result){%>
-              <div class="card mb-3" style="width: 100%;border-radius: 20px;max-height: 250px;height: 300px;" data-aos="fade-in">
-                <div class="row g-0" style="height: 100%;">
-                  <div class="col-md-4" style="height:100%;">
-                    <img src="<%=mobile.image%>" alt="..." width="100%" height="100%" style="border-radius: 20px;">
+        <%for(let mobile of result){%>
+          <div class="card mb-3" style="width: 100%;border-radius: 20px;max-height: 250px;height: 300px;"
+            data-aos="fade-in">
+            <div class="row g-0" style="height: 100%;">
+              <div class="col-md-4" style="height:100%;">
+                <img src="<%=mobile.image%>" alt="..." width="100%" height="100%" style="border-radius: 20px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+
+                  <h5 class="card-title">
+                    <%=mobile.name%>
+                  </h5>
+                  <h7>&#8377;<%=mobile.price%>
+                  </h7>
+                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.</p>
+                  <div class="row">
+                    <i class="fas fa-camera col-3">camera</i>
+                    <i class="fas fa-tachometer-alt col-3"></i>
+                    <i class="fas fa-tv col-3"></i>
+                    <i class="fas fa-pencil-alt col-3"></i>
                   </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                     
-                      <h5 class="card-title"><%=mobile.name%></h5>
-                      <h7>&#8377;<%=mobile.price%></h7>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                      <div class="row">
-                        <i class="fas fa-camera col-3">camera</i>
-                        <i class="fas fa-tachometer-alt col-3"></i>
-                        <i class="fas fa-tv col-3"></i>
-                        <i class="fas fa-pencil-alt col-3"></i>
-                      </div>
-                      <div class="row">
-                          <a href="/<%=mobile._id%>" class="col-2 btn btn-primary m-3">View</a>
-                          <a href="/compare/?mobile=<%=mobile._id%>" class="col-2 btn btn-warning m-3">compare</a>
-                      </div>
-                    </div>
+                  <div class="row">
+                    <a href="/<%=mobile._id%>" class="col-2 btn btn-primary m-3">View</a>
+                    <a href="/compare/?mobile=<%=mobile._id%>" class="col-2 btn btn-warning m-3">compare</a>
                   </div>
                 </div>
               </div>
-   
+            </div>
+          </div>
 
-           <%}%>
+
+          <%}%>
 
       </div>
     </section>
@@ -174,7 +390,8 @@
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <h7 style="font-weight: 600;">&#8377;</h7>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
             <div class="row">
               <i class="fas fa-camera col-3">camera</i>
               <i class="fas fa-tachometer-alt col-3"></i>
@@ -182,8 +399,8 @@
               <i class="fas fa-pencil-alt col-3"></i>
             </div>
             <div class="row">
-                <a href="" class="col-2 btn btn-primary m-3">View</a>
-                <a href="" class="col-2 btn btn-warning m-3">compare</a>
+              <a href="" class="col-2 btn btn-primary m-3">View</a>
+              <a href="" class="col-2 btn btn-warning m-3">compare</a>
             </div>
           </div>
         </div>
@@ -194,3 +411,32 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/javascript/range.js"></script>
+
+    <script>
+
+      let allSpans = document.querySelectorAll(".push>span");
+      allSpans.forEach((e) => {
+        e.parentElement.childNodes[3].style.display = "none";
+        console.log(e);
+        e.addEventListener("click", () => {
+
+          let toggle = e.parentElement.childNodes[3];
+
+          if (toggle.style.display == "block") {
+            toggle.style.display = "none";
+            e.childNodes[1].style.transform="rotate(0deg)";
+          }
+          else {
+            toggle.style.display = "block";
+            e.childNodes[1].style.transform="rotate(90deg)";
+          }
+
+
+
+
+
+        })
+      })
+
+
+    </script>
