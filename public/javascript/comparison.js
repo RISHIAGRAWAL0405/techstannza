@@ -6,7 +6,7 @@ let mobiles=[];
 let linkAxios1="http://localhost:3000/axiosMobiles";
 let linkAxios2="https://desolate-badlands-28322.herokuapp.com/axiosMobiles";
 let getmobiles=async()=>{
-    let res=await axios.get(linkAxios1);
+    let res=await axios.get(linkAxios2);
     let data=res.data;
     console.log(data);
     for(mobile of data){
