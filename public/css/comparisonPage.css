@@ -150,7 +150,7 @@ td {
   overflow-x: hidden;
   margin-top: 30px;
   /* min-width: 300px; */
-  z-index: 2;
+  z-index: 1;
 }
 .dynamicClass:hover {
   background-color: lightgreen;

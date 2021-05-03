@@ -6,8 +6,9 @@ let mobiles=[];
 let linkAxios1="http://localhost:3000/axiosMobiles";
 let linkAxios2="https://desolate-badlands-28322.herokuapp.com/axiosMobiles";
 let getmobiles=async()=>{
-    let res=await axios.get(linkAxios2);
+    let res=await axios.get(linkAxios1);
     let data=res.data;
+    console.log(data);
     for(mobile of data){
         mobiles.push(mobile);
     }
@@ -62,7 +63,7 @@ function getrelated(keys){
     for(mobile of mobiles){
         for(key of keys){
             // console.log(mobile.name);
-            if(mobile.name==key || mobile.name.split(" ").includes(key)){
+            if(mobile.name.toLowerCase()==key || mobile.name.toLowerCase().split(" ").includes(key)){
               if(!response.includes(mobile))
                 response.push(mobile);
             }
