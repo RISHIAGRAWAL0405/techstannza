@@ -84,7 +84,8 @@ const mobileSchema=new mongoose.Schema({
         resolution:String,
         GPU:String,
         category:String,
-        other:String
+        other:String,
+        refreshRate:Number
     },
     processor:{
         operatingSystem:String,     //Android 10

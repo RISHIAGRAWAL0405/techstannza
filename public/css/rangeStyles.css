@@ -13,8 +13,7 @@
   background-color: whitesmoke;
   margin: 0;
   border-radius: 20px;
-  /* padding: 5px; */
-  /* color: white; */
+  height: 100%;
 }
 .filteredresult {
   display: flex;
@@ -209,4 +208,17 @@ section.range-slider input[type="range"]:last-of-type::-moz-range-track {
 
 section.range-slider input[type="range"]::-moz-focus-outer {
   border: 0;
+}
+
+.animate {
+  animation: pace 1s;
+}
+
+@keyframes pace {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

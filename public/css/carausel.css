@@ -258,7 +258,7 @@ section.range-slider input[type="range"]::-moz-focus-outer {
 .carousel {
   width: 100%;
   position: relative;
-  height: 100vh;
+  height: 50h;
 }
 .slides {
   display: none;
@@ -267,7 +267,7 @@ section.range-slider input[type="range"]::-moz-focus-outer {
 }
 
 .slide-image {
-  height: 90vh;
+  height: 60vh;
   opacity: 1;
 }
 .phoneFind {

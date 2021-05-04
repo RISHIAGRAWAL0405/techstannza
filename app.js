@@ -19,6 +19,7 @@ const session=require("express-session");
 const flash=require("connect-flash");
 const Suggestion=require("./models/suggestion");
 let Subscriber=require("./models/newsletter");
+let filter=require("./utils/filter");
 
 const dbUrl=process.env.DB_URL;
 
@@ -195,7 +196,8 @@ app.post("/phone", function(req, res) {
         size: req.body.DisplaySize ,
         resolution: req.body.DisplayResolution ,
         GPU: req.body.DisplayGPU ,
-        category: req.body.DisplayType
+        category: req.body.DisplayType,
+        refreshRate:req.body.refreshrate
       },
       processor: {
         operatingSystem: req.body.operatingSystem ,
@@ -233,6 +235,7 @@ app.post("/phone", function(req, res) {
       launchDate: req.body.launchDate,
       sound: req.body.sound,
       simType: req.body.simType
+      
     });
   
     console.log(Phone);
@@ -267,40 +270,15 @@ app.post("/subscribe",async (req,res)=>{
 
 
 app.post("/axiosMobiles",catchAsync(async (req,res)=>{
-    // const mobiles=await Mobile.find();
-    // console.log(req.body);
     let result=[];
-    let {brand,min,max}=req.body;
-    let brands=[];
-    
-    for(let property in brand){
-         if(brand[property]==true){
-              brands.push(property);
-         }
-    }
-    
+    let {brand,ram,displaySize,features,min,max,mcamera}=req.body;
+    console.log(displaySize);
     let mobiles=await Mobile.find({});
-    for(mobile of mobiles){
-        if(mobile.price>=min && mobile.price<=max){
-        
-                if(brands.includes(mobile.brand.toLowerCase())){
-                    result.push(mobile);
-                }
-                if(brands.length==0){
-                    result.push(mobile);
-                }
-            
-            
-        }
-        
-    }
-    
+    result=filter(brand,mcamera,displaySize,features,ram,min,max,mobiles);
     res.json(result);
-
-   
-    
-
 }));
+
+
 app.get("/axiosMobiles",async (req,res)=>{
     const mobiles=await Mobile.find();
     
