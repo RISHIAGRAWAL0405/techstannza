@@ -29,7 +29,7 @@ let ramSection={"3":false,"4":false,"6":false,"8":false,"12":false};
 let mcamera={"30":false,"25":false,"20":false,"15":false,"10":false,"5":false};
 let displaySize={"7.5":false,"7":false,"6.75":false,"6.5":false,"6.25":false,"6":false,"5.75":false,"5.5":false};
 let features={"nfc":false,"IR":false,"audio":false,"fm":false};
-
+let networkT={"5G":false,"4G":false,"3G":false};
 
 
 let cameData=[];
@@ -63,22 +63,27 @@ let manipulate=(input)=>{
     if(input.classList[0]=="screensize"){
         displaySize[input.id]=input.checked; 
     }
-    if(input.classList=="features"){
+    if(input.classList[0]=="features"){
          features[input.id]=input.checked;
+    }
+    if(input.classList[0]=="networkT"){
+          networkT[input.id]=input.checked;
     }
     // console.log(mcamera);
     // console.log(brandSection);
     // console.log(ramSection);
     // console.log(features);
+    console.log(networkT);
 };
 let mobiles;
 let sendData=async ()=>{
-    let res=await axios.post("https://desolate-badlands-28322.herokuapp.com/axiosMobiles",{
+    let res=await axios.post("http://localhost:3000/axiosMobiles",{
         brand:brandSection,
         ram:ramSection,
         mcamera:mcamera,
         features:features,
         displaySize:displaySize,
+        networkT:networkT,
         min:rangenummin.value,
         max:rangenummax.value
     });

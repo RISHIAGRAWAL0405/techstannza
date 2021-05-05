@@ -271,10 +271,10 @@ app.post("/subscribe",async (req,res)=>{
 
 app.post("/axiosMobiles",catchAsync(async (req,res)=>{
     let result=[];
-    let {brand,ram,displaySize,features,min,max,mcamera}=req.body;
+    let {brand,ram,displaySize,networkT,features,min,max,mcamera}=req.body;
     console.log(displaySize);
     let mobiles=await Mobile.find({});
-    result=filter(brand,mcamera,displaySize,features,ram,min,max,mobiles);
+    result=filter(brand,mcamera,displaySize,features,networkT,ram,min,max,mobiles);
     res.json(result);
 }));
 
@@ -302,6 +302,14 @@ app.get("/axiosMobiles/:min/:max",async (req,res)=>{
 
     
 })
+
+app.get("/specific",async (req,res)=>{
+    let {feature}=req.query;
+    console.log(feature);
+    let mobiles=await Mobile.find({$or:[{_id:"608d81546e2e164b44e6080f"},{name:"Vivo Nex 3S 5G"},{name:"Vivo x50 pro"}]});
+     console.log(mobiles);
+    res.render("specific",{feature,mobiles});
+})
 app.get("/news",async (req,res)=>{
     let allnews=await News.find({});
     res.render("news",{allnews});
@@ -328,11 +336,11 @@ app.all("*",(req,res,next)=>{
 })
 
 
-// app.use((err,req,res,next)=>{
-//     const {statusCode=500}=err;
-//     if(!err.message) err.message="Oh No ): Something went Wrong";
-//     res.status(statusCode).render("error",{err});
-// })
+app.use((err,req,res,next)=>{
+    const {statusCode=500}=err;
+    if(!err.message) err.message="Oh No ): Something went Wrong";
+    res.status(statusCode).render("error",{err});
+})
 
 const port=process.env.PORT || 3000;
 app.listen(port,()=>{

@@ -1,0 +1,121 @@
+<%layout("/layouts/boilerplate")%>
+<link rel="stylesheet" href="/css/feature.css">
+
+
+
+
+
+<section  class="main">
+    
+     
+     <section class="inner1">
+
+     </section>
+     
+      
+
+
+
+
+
+
+
+
+
+
+<div class="message">
+    <p style="width: 75%;height: 75%;">
+        Here is Our selection of the best <%=feature%> phone.
+    </p>
+</div>
+<section class="inner1">
+
+</section>
+</section>
+
+<section class="actualC">
+    <%for(let mobile of mobiles){%>
+    <div class="card">
+        <img src="<%=mobile.image%>" alt="" width="100%" height="100%">
+        <div class="ratings">
+            <span class="mainF">9</span>
+            <span class="mainF">10</span>
+            <span class="mainF">8</span>
+            <span class="mainF">8.5</span>
+            <span class="mainF">10</span>
+        </div>
+        <div class="links">
+            <a class="first">view</a>
+            <a class="second">compare</a>
+        </div>
+    </div>
+    <%}%>
+</section>
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js" integrity="sha512-CmlPTWm5+a1Gt2YSNk2rGZVvbH3Zge6imS7M4/vrhC8d+A1RcehmLxWMqUdv8aEu7pwfTo74EtnrR+8Cf8KdCA==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+
+<script>
+    
+
+
+
+
+
+let tl=anime.timeline({
+   easing:"easeOutExpo",
+   duration:4000
+});
+
+tl.add({
+    targets:".inner1",
+    // opacity:0,
+    backgroundColor:"rgb(197,195,255)",
+    // translateX:200,
+    width:"40%",
+    width:"30%",
+    width:"20%",
+    width:"10%",
+    width:"0%"
+    // rotate:"90deg",
+    
+   
+
+
+});
+let num=0;
+anime({
+    targets:".message",
+    width:"0%",
+    opacity:0.1,
+    width:"10%",
+    opacity:0.2,
+    width:"20%",
+    opacity:0.3,
+    width:"30%",
+
+    opacity:0.4,
+    width:"40%",
+
+    opacity:0.5,
+    // width:"50%",
+    opacity:0.6,
+    opacity:0.7,
+    opacity:0.8,
+    opacity:0.9,
+    opacity:1,
+    
+    duration:10000
+    
+
+})
+
+
+
+
+
+</script>

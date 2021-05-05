@@ -21,7 +21,7 @@
         <div class="carousel" style="transition: 1s all ease-in;" >
 
           <%for(let mobile of mobiles){%>
-           <a href="/<%=mobile._id%>">
+           <a href="/<%=mobile._id%>" style="height: 100%;">
               <div class="slides" style="transition: all 1s ease-in-out;">
                 <img src="<%=mobile.image%>" alt="" class="slide-image" style="width: 100%;">
               </div>
@@ -78,7 +78,7 @@
             </p>
           </div>
           <div class="innerFeature">
-            <a href="" style="width: 30%;" class="anchorFeature">
+            <a href="/specific?feature=camera" style="width: 30%;" class="anchorFeature">
               <div style="width: 100%;text-align: center;">
                 <i class="fas fa-camera"></i>
                 <p>Camera centric</p>
