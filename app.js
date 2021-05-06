@@ -306,7 +306,7 @@ app.get("/axiosMobiles/:min/:max",async (req,res)=>{
 app.get("/specific",async (req,res)=>{
     let {feature}=req.query;
     console.log(feature);
-    let mobiles=await Mobile.find({$or:[{_id:"608d81546e2e164b44e6080f"},{name:"Vivo Nex 3S 5G"},{name:"Vivo x50 pro"}]});
+    let mobiles=await Mobile.find({});
      console.log(mobiles);
     res.render("specific",{feature,mobiles});
 })

@@ -1,157 +1,174 @@
 <%layout("/layouts/boilerplate")%>
-<link rel="stylesheet" href="/css/feature.css">
+    <link rel="stylesheet" href="/css/feature.css">
 
 
 
 
 
-<section  class="main">
-    
-     
-     <section class="inner1">
-
-     </section>
-     
-      
+    <section class="main">
 
 
+        <section class="inner1">
 
-
-
-
-
-
-
-
-<div class="message">
-    <div class="mainmessage">
-        Here is Our selection of the best <%=feature%> phone.
-    </div>
-    <div class="secondSlide">
-        How it"s selected
-        <ul type="none">
-        <li>It should Have min three types of cams</li>
-        <li>should have dedicated ultra wide lens</li>
-        <li>should ultra steady video recording feature</li>
-        <li>upto 1080px super slomo video recording</li>
-        </ul>
-    </div>
-
-    
-
-
-
-</div>
-
-<section class="inner1">
-
-</section>
-</section>
-
-<section class="actualC">
-    <%for(let mobile of mobiles){%>
-    <div class="card">
-        <img src="<%=mobile.image%>" alt="" width="100%" height="100%">
-        <div class="ratings">
-            <span class="mainF">9</span>
-            <span class="mainF">10</span>
-            <span class="mainF">8</span>
-            <span class="mainF">8.5</span>
-            <span class="mainF">10</span>
+        </section>
+        <div style="height: 20%;width: 50%;transform: translateY(80%);transform: translateX(-200%); font-size: xx-large;" id="company">
+            <span class="name">T</span>
+            <span class="name">R</span>
+            <span class="name">A</span>
+            <span class="name">C</span>
+            <span class="name">K</span>
+            <span class="name">I</span>
+            <span class="name">N &nbsp;</span>
+            <span class="name">Z</span>
+            <span class="name">O</span>
+            <span class="name">N</span>
+            <span class="name">E</span>
         </div>
+
+
+
+
+
+
+
+
+
+
+        <div class="message">
+            <div class="mainmessage">
+                Here is Our selection of the best <%=feature%> phone.
+            </div>
+            <div class="secondSlide">
+                How it"s selected
+                <ol>
+                    <li>It should Have min three types of cams</li>
+                    <li>should have dedicated ultra wide lens</li>
+                    <li>should ultra steady video recording feature</li>
+                    <li>upto 1080px super slomo video recording</li>
+                </ol>
+            </div>
+
+
+
+
+
+        </div>
+
+        <section class="inner2">
+
+        </section>
+    </section>
+
+    <section class="actualC">
+        <%for(let mobile of mobiles){%>
+            <div class="card">
+                <img src="<%=mobile.image%>" alt="" width="100%" height="100%">
+                <div style="padding: 10px;">
+                    lotem uit jd yuyr dhbbe udjhd idhdj dinjdn
+                </div>
+                <div class="ratings">
+                    <span class="mainF">9</span>
+                    <span class="mainF">10</span>
+                    <span class="mainF">8</span>
+                    <span class="mainF">8+</span>
+                    
+                </div>
+                <a href="" class="view">View &#8883;</a>
+
+            </div>
+            <%}%>
+    </section>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js"
+        integrity="sha512-CmlPTWm5+a1Gt2YSNk2rGZVvbH3Zge6imS7M4/vrhC8d+A1RcehmLxWMqUdv8aEu7pwfTo74EtnrR+8Cf8KdCA=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+        integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+        crossorigin="anonymous"></script>
+
+    <script>
+
+
+
+
+
+
+        let tl = anime.timeline({
+            easing: "linear",
+            duration: 1000
+        });
+        let tl1=anime.timeline({
+            easing:"linear",
+            duration:1
+        })
+        tl.add({
+            targets: ".inner1",
+            backgroundColor: "rgb(197,195,255)",
+            translateX:"-100%",
+            
+        });
+        anime({
+            targets:".inner2",
+            backgroundColor:"rgb(197,195,255)",
+            translateX:"100%",
+            easing:"linear",
+            duration:1000
+        });
+        tl1.add({
+            targets:".inner1",
+            height:0,
+           width:0,
+           display:"none",
+            delay:1000
+        });
+        anime({
+            targets:".inner2",
+            height:0,
+           width:0,
+           delay:1000
+            
+        });
         
-    </div>
-    <%}%>
-</section>
+        let num = 0;
+        anime({
+            targets: ".message",
+            opacity: 1,
+            translateY:0,
+            translateX:"-50%",
+            marginTop:0,
+            easing:"easeOutExpo",
+            duration: 2000,
+            delay:1200
+        });
+        anime({
+            targets:"#company",
+            translateX:"50%",
+            translateY:"80%",
+            duration:1000,
+            easing:"linear",
+            delay:1200
+        });
+        let hoverMe = anime({
+            targets: ".secondSlide",
+            marginTop: 0,
+            duration: 200,
+            easing:"linear",
+            autoplay: false
+
+
+        });
 
 
 
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/granim/2.0.0/granim.min.js" integrity="sha512-CmlPTWm5+a1Gt2YSNk2rGZVvbH3Zge6imS7M4/vrhC8d+A1RcehmLxWMqUdv8aEu7pwfTo74EtnrR+8Cf8KdCA==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
-
-<script>
-    
-
-
-
-
-
-let tl=anime.timeline({
-   easing:"easeOutExpo",
-   duration:5000
-});
-
-tl.add({
-    targets:".inner1",
-    // opacity:0,
-    backgroundColor:"rgb(197,195,255)",
-    // translateX:200,
-    width:"40%",
-    width:"30%",
-    width:"20%",
-    width:"10%",
-    width:"0%"
-    // rotate:"90deg",
-    
-   
-
-
-});
-let num=0;
-anime({
-    targets:".message",
-    // width:"0%",
-    opacity:0.1,
-    // width:"10%",
-    opacity:0.2,
-    // width:"20%",
-    opacity:0.3,
-    // width:"30%",
-
-    opacity:0.4,
-    // width:"40%",
-
-    opacity:0.5,
-    // width:"50%",
-    opacity:0.6,
-    opacity:0.7,
-    opacity:0.8,
-    opacity:0.9,
-    opacity:1,
-    // width:"40%",
-    // easing:"fadeIn",
-    duration:10000
-    
-
-})
-
-tl.add({
-    targets:".secondSlide",
-    // translateX:"100%"
-    
-
-})
-let hoverMe=anime({
-    targets:".secondSlide li",
-    translateX:"-40%",
-    duration:1000,
-    loop:false,
-    easing:"linear",
-    delay:stagger(100),
-    autoplay:false
-    
-    
-});
-
-
-
-
-let message=document.querySelector(".message");
-message.addEventListener("mouseover",()=>{
-    hoverMe.play();
-})
+        let message = document.querySelector(".message");
+        message.addEventListener("mouseenter", () => {
+            hoverMe.play();
+        })
 
 
 
@@ -167,4 +184,4 @@ message.addEventListener("mouseover",()=>{
 
 
 
-</script>
+    </script>
