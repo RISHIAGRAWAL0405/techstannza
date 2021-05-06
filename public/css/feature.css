@@ -179,4 +179,7 @@ body {
   .card {
     width: 100%;
   }
+  .mainN {
+    font-size: smaller;
+  }
 }
