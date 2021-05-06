@@ -72,17 +72,11 @@ body {
   justify-content: space-around;
   /* margin-top: 30px; */
   flex-wrap: wrap;
-  background: linear-gradient(
-    90deg,
-    lightgray,
-    lightskyblue,
-    whitesmoke,
-    rgb(245, 245, 220)
-  );
+  background: lightgray;
 }
 
 .card {
-  width: 28%;
+  width: 25%;
   height: 700px;
   display: flex;
   flex-direction: column;
@@ -90,10 +84,7 @@ body {
   margin: 20px;
   justify-content: space-between;
   background-color: white;
-  /* border: 1px solid black; */
   box-shadow: 0px 0px 10px lightgray;
-  margin-right: 10%;
-  margin-left: 10%;
 }
 .card:hover {
   transform: perspective(800px) translateZ(15px) translateX(-10px);
