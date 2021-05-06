@@ -176,4 +176,7 @@ body {
   .secondSlide {
     font-size: small;
   }
+  .card {
+    width: 100%;
+  }
 }
