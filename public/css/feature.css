@@ -156,7 +156,7 @@ body {
   text-align: center;
   border-radius: 8px;
   padding: 5px;
-  margin-top: 30px;
+  margin-top: 2%;
 }
 .view:hover {
   background-color: #0096c7;
@@ -231,6 +231,12 @@ body {
   .mainN {
     font-size: smaller;
   }
-  .actual {
+  .ratings {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .card {
+    height: 750px;
   }
 }
