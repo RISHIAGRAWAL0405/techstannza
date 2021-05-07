@@ -6,8 +6,6 @@
   background-color: black;
   display: flex;
   justify-content: center;
-
-  overflow: hidden;
 }
 body {
   overflow-x: hidden;
@@ -66,15 +64,26 @@ body {
 }
 
 .actualC {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  /* margin-top: 30px; */
+  flex-wrap: wrap;
+  background: hsl(216, 28%, 93%);
+  /* margin-top: 10px; */
+}
+.actual {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-around;
   /* margin-top: 30px; */
   flex-wrap: wrap;
-  background: lightgray;
+  background: hsl(216, 28%, 93%);
+  /* margin-top: 10px; */
+  /* margin-left: 10%; */
 }
-
 .card {
   width: 25%;
   height: 700px;
@@ -82,18 +91,18 @@ body {
   flex-direction: column;
   border-radius: 20px;
   margin: 20px;
-  justify-content: space-between;
-  background-color: white;
-  box-shadow: 0px 0px 10px lightgray;
+  /* justify-content: space-between; */
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 5px lightgray;
 }
 .card:hover {
   transform: perspective(800px) translateZ(15px) translateX(-10px);
-  box-shadow: 0px 0px 20px lightgray;
+  box-shadow: 0px 0px 10px lightgray;
   transition: 0.3s;
   cursor: pointer;
 }
 .card img {
-  height: 50%;
+  height: 35%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -103,16 +112,19 @@ body {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  margin-bottom: 20px;
+  margin-top: auto;
 }
 .ratingN {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  font-size: large;
+  /* font-size: large; */
+
+  font-weight: 500;
+  margin-bottom: 20px;
 }
-.mainN {
-  margin-left: 20px;
-}
+
 .secondSlide {
   width: 100%;
   /* position: relative; */
@@ -144,6 +156,7 @@ body {
   text-align: center;
   border-radius: 8px;
   padding: 5px;
+  margin-top: 30px;
 }
 .view:hover {
   background-color: #0096c7;
@@ -165,7 +178,43 @@ body {
   padding: 0;
 }
 
-@media screen and (max-width: 500px) {
+.outerclass {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.oneclass {
+  padding: 5px;
+  width: 32%;
+  text-align: center;
+}
+
+.list {
+  font-size: small;
+  padding: 0;
+  margin-top: 10px;
+  border-right: 0.5px solid lightgray;
+  width: 100%;
+  height: 70%;
+}
+
+.element {
+  padding: 5px;
+}
+@media screen and (max-width: 1180px) {
+  .mainN {
+    font-size: small;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .message {
     height: 65%;
     width: 65%;
@@ -177,9 +226,11 @@ body {
     font-size: small;
   }
   .card {
-    width: 100%;
+    width: 90%;
   }
   .mainN {
     font-size: smaller;
+  }
+  .actual {
   }
 }

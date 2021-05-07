@@ -1,11 +1,11 @@
 .arrow {
   width: 10px;
   height: 10px;
-  background-color: gray;
+  background-color: white;
   transform: rotate(45deg);
   margin-left: 47%;
   padding: 10px;
-  z-index: -2;
+  /* z-index: -2; */
 }
 
 .coustom-nav-link {
@@ -17,7 +17,7 @@
   display: none;
   position: relative;
   left: 100%;
-  background-color: gray;
+  background-color: white;
   width: 100%;
   border-radius: 10px;
 }
@@ -60,7 +60,7 @@
   /* display: none; */
   z-index: auto;
   position: absolute;
-  background-color: gray;
+  background-color: white;
   /* min-width: 160px; */
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -89,7 +89,7 @@
   visibility: visible;
 }
 .dropdown:hover .dropbtn {
-  color: white;
+  color: rgba(0, 0, 0, 0.7);
   cursor: pointer;
 }
 
