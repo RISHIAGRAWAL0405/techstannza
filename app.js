@@ -315,6 +315,13 @@ app.get("/news",async (req,res)=>{
     res.render("news",{allnews});
 })
 
+app.get("/bestPhones",async (req,res)=>{
+    let mobiles=await Mobile.find({});
+    mobiles.length=10;
+    
+    res.render("best",{mobiles});
+})
+
 app.get("/:id",catchAsync(async (req,res)=>{
     let {id}=req.params;
     let similar=[];
