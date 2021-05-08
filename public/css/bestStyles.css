@@ -77,7 +77,7 @@ p {
   display: block;
   font-size: 60px;
   transform: translateY(-20%);
-  font-weight: 600;
+  font-weight: 800;
 }
 .top-features ul {
   padding: 0;
@@ -195,6 +195,9 @@ p i {
     width: 100%;
     margin-left: 5%;
   }
+  .number p {
+    font-size: 50px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -213,11 +216,41 @@ p i {
   .message {
     font-size: 20px;
   }
+  .number p {
+    font-size: 40px;
+  }
 }
 @media screen and (max-width: 500px) {
   .outer2 {
     width: 100%;
     margin-left: 5%;
     transform: translate(5%, -3%);
+  }
+  .number p {
+    font-size: 30px;
+    transform: translate(-40%, -13%);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .outer2 {
+    transform: translate(4%, -3%);
+    margin-left: 0;
+  }
+  .view {
+    font-size: smaller;
+  }
+  .compare {
+    font-size: smaller;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .compare {
+    font-size: x-small;
+  }
+  .view {
+    font-size: x-small;
+    padding: 2px;
   }
 }
