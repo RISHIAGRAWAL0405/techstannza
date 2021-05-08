@@ -318,8 +318,11 @@ app.get("/news",async (req,res)=>{
 app.get("/bestPhones",async (req,res)=>{
     let mobiles=await Mobile.find({});
     mobiles.length=10;
+    let {under}=req.query;
+
+
     
-    res.render("best",{mobiles});
+    res.render("best",{mobiles,under});
 })
 
 app.get("/:id",catchAsync(async (req,res)=>{
