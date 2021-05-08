@@ -97,7 +97,7 @@ p {
   display: block;
 }
 .content {
-  width: 80%;
+  width: 100%;
   display: flex;
   border: 0.5px solid lightgrey;
   /* background-color: lightskyblue; */
@@ -193,7 +193,6 @@ p i {
   }
   .outer2 {
     width: 100%;
-    margin-left: 5%;
   }
   .number p {
     font-size: 50px;
@@ -211,7 +210,6 @@ p i {
     width: 90%;
     justify-content: center;
     transform: translateY(-3%);
-    margin-left: 10%;
   }
   .message {
     font-size: 20px;
@@ -222,9 +220,8 @@ p i {
 }
 @media screen and (max-width: 500px) {
   .outer2 {
-    width: 100%;
+    width: 85%;
     margin-left: 5%;
-    transform: translate(5%, -3%);
   }
   .number p {
     font-size: 30px;
@@ -234,8 +231,8 @@ p i {
 
 @media screen and (max-width: 400px) {
   .outer2 {
-    transform: translate(4%, -3%);
     margin-left: 0;
+    width: 95%;
   }
   .view {
     font-size: smaller;
