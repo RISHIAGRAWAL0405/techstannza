@@ -211,11 +211,17 @@ p i {
     justify-content: center;
     transform: translateY(-3%);
   }
-  .message {
+  .message p {
     font-size: 20px;
   }
   .number p {
     font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 675px) {
+  .message p {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -224,8 +230,11 @@ p i {
     margin-left: 5%;
   }
   .number p {
-    font-size: 30px;
+    font-size: 35px;
     transform: translate(-40%, -13%);
+  }
+  .message p {
+    font-size: 12px;
   }
 }
 
@@ -240,6 +249,11 @@ p i {
   .compare {
     font-size: smaller;
   }
+  .message p {
+    font-size: 20px;
+    width: 50%;
+    transform: translateY(0);
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -249,5 +263,8 @@ p i {
   .view {
     font-size: x-small;
     padding: 2px;
+  }
+  .message p {
+    font-size: 15px;
   }
 }
