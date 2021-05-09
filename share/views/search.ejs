@@ -1,0 +1,62 @@
+<%layout("layouts/boilerplate")%>
+
+
+
+  <%if(result.length==0){%>
+     <h4 class="text-center" style="margin-bottom: 300px;"> OOOPS!!! nothing found against your search result</h1>
+
+     <section class="container d-flex" style="display: flex;flex-direction: row;width: 100%;justify-content: space-between;flex-wrap: wrap;">
+ 
+           <h3 style="display: block; width: 100%;text-align: center;color: darkblue;">Take a Look At the Recently launched</h3>
+           
+           <%for(mobile of allMobiles){%>
+           <div class="card mb-3 mt-3" style="width: 25%;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="<%=mobile.image%>" alt="..." width="100%" height="100%" style="min-height: 100px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title"><%=mobile.name%></h5>
+                 
+                 
+                  <a href="/<%=mobile._id%>" class="card-text btn btn-primary" style="margin: 0; padding: 3px;">view</a>
+                </div>
+                
+              </div>
+            </div>
+        </div>
+        <%}%>
+     </section>
+
+<%}%>
+    <%if(result.length!=0){%>
+      <h3 style="text-align: center;">"results based on your search"</h1>
+
+    <%}%>
+
+
+<section class="container"> 
+
+<%for(let mobile of result){%>
+
+  <div class="card mb-3 mt-3" style="width: 75%;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="<%=mobile.image%>" alt="..." width="100%" height="100%">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%=mobile.name%></h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          
+          <a href="/<%=mobile._id%>" class="card-text" style="margin: 0; padding: 0;">view</a>
+        </div>
+        
+      </div>
+    </div>
+</div>
+
+
+  <%}%>
+</section>

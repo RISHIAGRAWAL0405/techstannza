@@ -1,0 +1,221 @@
+<%layout("/layouts/boilerplate")%>
+    <link rel="stylesheet" href="/css/feature.css">
+
+
+
+    <section class="main">
+
+
+        <section class="inner1">
+
+        </section>
+        <div    id="company">
+           <span class="name">TRAKIN ZONE</span>
+        </div>
+        
+
+
+
+
+
+        <div class="message">
+            <div class="mainmessage">
+                Here is Our selection of the best <%=feature%> phone.
+            </div>
+            <div class="secondSlide">
+                How it"s selected
+                <ol>
+                    <li>It should Have min three types of cams</li>
+                    <li>should have dedicated ultra wide lens</li>
+                    <li>should ultra steady video recording feature</li>
+                    <li>upto 1080px super slomo video recording</li>
+                </ol>
+            </div>
+
+
+
+
+
+        </div>
+
+        <section class="inner2">
+
+        </section>
+    </section>
+
+    <section class="actualC">
+        <div class="actual">
+            <%for(let mobile of mobiles){%>
+                <div class="card">
+                    <img src="<%=mobile.image%>" alt="" width="100%" height="100%">
+                    <div style="flex-wrap:wrap ;padding: 10px;font-size: larger;font-weight: bolder;display: flex;">
+                        <span>
+                            <%=mobile.name%>
+                        </span>
+                        <span
+                            style="display:block;width:100%;align-self:end;  font-weight: 500;margin-bottom: 10px;font-weight: 800;">
+
+                            &#8377;<span style="color:#06d6a0;">
+                                <%=mobile.price%>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="outerclass">
+                        <div class="oneclass">
+                            <i class="fas fa-camera"></i>
+
+                            <ul type="none" style="font-size: small;padding: 0;margin-top: 10px;" class="list">
+                                <li class="element">25MP </li>
+                                <li class="element">Ultra stability</li>
+                                <li class="element">1080 super slomo</li>
+                            </ul>
+                        </div>
+                        <div class="oneclass">
+                            <i class="fas fa-tv" style="text-align: center;margin-right: 5px;"></i>
+                            <ul type="none" class="list">
+                                <li class="element">Samoled</li>
+                                <li class="element">120 Hz refresh rate</li>
+                                <li class="element">gorilla glass 5.1</li>
+                            </ul>
+                        </div>
+                        <div class="oneclass">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <ul type="none" class="list" style="border-right: none;">
+                                <li class="element">SD 886</li>
+                                <li class="element">5nm pro</li>
+                                <li class="element">2.1 GHz</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="ratings">
+                        <div
+                            style="padding:10px;background-color: lightgreen;text-align:center;color: black;width: 100%;font-weight: 800;margin-bottom: 10px;">
+                            Ratings
+                        </div>
+                        <span class="mainF">9</span>
+                        <span class="mainF">10</span>
+                        <span class="mainF">8</span>
+                        <span class="mainF">8</span>
+                        <div class="ratingN">
+                            <span class="mainN">Display</span>
+                            <span class="mainN"> Camera</span>
+                            <span class="mainN"> Performance</span>
+                            <span class="mainN"> Battery</span>
+                        </div>
+
+
+                    </div>
+
+                    <a href="/<%=mobile._id%>" class="view">View &#8883;</a>
+
+                </div>
+                <%}%>
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+        integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+        crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+
+    <script>
+
+
+
+
+
+
+        let tl = anime.timeline({
+            easing: "linear",
+            duration: 1000
+        });
+        let tl1 = anime.timeline({
+            easing: "linear",
+            duration: 1
+        })
+        tl.add({
+            targets: ".inner1",
+            backgroundColor: "rgb(197,195,255)",
+            translateX: "-100%",
+
+        });
+        anime({
+            targets: ".inner2",
+            backgroundColor: "rgb(197,195,255)",
+            translateX: "100%",
+            easing: "linear",
+            duration: 1000
+        });
+        tl1.add({
+            targets: ".inner1",
+            height: 0,
+            width: 0,
+            display: "none",
+            delay: 1000
+        });
+        anime({
+            targets: ".inner2",
+            height: 0,
+            width: 0,
+            delay: 1000
+
+        });
+        
+        let num = 0;
+        anime({
+            targets: ".message",
+            opacity: 1,
+            translateY: 0,
+            translateX: "-50%",
+            marginTop: 0,
+            easing: "easeOutExpo",
+            duration: 2000,
+            delay: 1200
+        });
+        anime({
+            targets: "#company",
+            translateX: "50%",
+            translateY: "80%",
+            duration: 1000,
+            easing: "linear",
+            delay: 1200
+        });
+        let hoverMe = anime({
+            targets: ".secondSlide",
+            marginTop: 0,
+            duration: 200,
+            easing: "linear",
+            autoplay: false
+
+
+        });
+
+
+
+
+        let message = document.querySelector(".message");
+        message.addEventListener("mouseenter", () => {
+            hoverMe.play();
+        })
+
+
+   
+
+
+
+
+
+
+
+
+
+
+    </script>

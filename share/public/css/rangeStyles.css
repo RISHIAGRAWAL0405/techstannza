@@ -1,0 +1,227 @@
+.wholesection {
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+  /* background: linear-gradient(-45deg, black, white, lightblue); */
+  /* margin: 0; */
+  padding: 0;
+  position: relative;
+}
+
+.filtervalues {
+  width: 20%;
+  background-color: whitesmoke;
+  margin: 0;
+  /* border-radius: 20px; */
+  height: 100%;
+  position: relative;
+  margin-left: 10px;
+}
+.filteredresult {
+  display: flex;
+  width: 60%;
+  margin-left: 2%;
+  flex-direction: column;
+}
+.title {
+  display: block;
+}
+
+.particular {
+  width: 100%;
+  max-height: 200px;
+  display: flex;
+  border: 2px solid lightgray;
+  border-radius: 20px;
+}
+.detail {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px;
+}
+.topfeatures {
+  display: flex;
+  width: 50%;
+  /* flex-direction: col  umn; */
+}
+.mobilePricebutton {
+  align-self: flex-end;
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 10px;
+  /* padding-left: 20px */
+  text-align: center;
+  background-color: darkred;
+  color: lightgray;
+  width: 25%;
+  margin-right: 20px;
+  /* height: 70%; */
+  text-align: center;
+  /* padding-bot/tom: 20px; */
+  font-size: smaller;
+}
+.individualfea {
+  margin-right: 10px;
+}
+.viewsection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gotomobilephone {
+  text-decoration: none;
+
+  border: 1px solid grey;
+  border-radius: 10px;
+  /* padding: 3px; */
+  /* padding-top: 6px; */
+  text-align: center;
+  width: 14%;
+  background-color: blue;
+  color: aliceblue;
+  font-size: small;
+  height: 50%;
+  margin-top: 5px;
+}
+.gotomobilephone:hover {
+  background-color: lightblue;
+}
+.customFormInputs {
+  height: 150px;
+  /* background-color: lightseagreen; */
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 5px;
+}
+.formInputs {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.maxpricenum {
+  width: 45%;
+  /* background-color: #ffcbf2; */
+  outline: none;
+  /* border: none; */
+  /* border: 2px groove blue; */
+  border-radius: 5px;
+  border-width: 1px;
+}
+.minpricenum {
+  width: 45%;
+  outline: none;
+  border-radius: 5px;
+  border-width: 1px;
+}
+section.range-slider {
+  position: relative;
+  width: 300px;
+  /* height: 300px; */
+  float: left;
+  text-align: center;
+}
+
+section.range-slider input[type="range"] {
+  pointer-events: none;
+  position: absolute;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  border: none;
+  border-radius: 14px;
+  background: white;
+  box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+  -webkit-box-shadow: inset 0 1px 0 0 #cdc6c6, inset 0 -1px 0 0 #d9d4d4;
+  overflow: hidden;
+  left: 0;
+  /* top: 50px; */
+  width: 100%;
+  outline: none;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+section.range-slider input[type="range"]::-webkit-slider-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 1;
+  outline: 0;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 14px;
+  /* android <= 2.2 */
+  /* older mobile safari and android > 2.2 */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(black, #dad8da),
+    to(#413f41)
+  );
+  background-image: linear-gradient(to bottom, black 0, #f0efeb 100%);
+  /* W3C */
+}
+
+section.range-slider input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 14px;
+  background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
+  /* W3C */
+}
+
+section.range-slider input[type="range"]::-ms-thumb {
+  pointer-events: all;
+  position: relative;
+  z-index: 10;
+  -ms-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 14px;
+  border: 0;
+  background-image: linear-gradient(to bottom, #dad8da 0, #413f41 100%);
+  /* W3C */
+}
+
+section.range-slider input[type="range"]::-moz-range-track {
+  position: relative;
+  z-index: -1;
+  background-color: black;
+  border: 0;
+}
+
+section.range-slider input[type="range"]:last-of-type::-moz-range-track {
+  -moz-appearance: none;
+  background: none transparent;
+  border: 0;
+}
+
+section.range-slider input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+
+.animate {
+  animation: pace 1s;
+}
+
+@keyframes pace {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

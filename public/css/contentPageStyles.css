@@ -1,121 +1,59 @@
-.innerName {
-  font-size: x-large;
-  padding: 10px;
-  align-self: center;
+.outer {
+  margin-top: 100px;
 }
 
-.down {
-  border-top: 1px solid lightgrey;
-  /* border-bottom: 0.5px solid black; */
-
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-.message {
-  width: 100%;
-  background-color: #adb5bd;
-  height: 5%;
+.inner {
+  width: 100vw;
+  height: 500px;
+  background: linear-gradient(45deg, white);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-
-  border-radius: 10px;
 }
-.mobileName {
-  display: none;
-}
-.rightouter {
+.image-div {
+  width: 30%;
   height: 100%;
-  width: 50%;
-  border-radius: 10px;
-  margin-left: 5px;
-  box-shadow: 0px 0px 5px black;
-}
-.eachSimilar:hover {
-  border: 1px solid black;
-  transition: 0.5s;
-}
-.leftSide {
-  width: 23%;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px lightgray;
-}
-.inner {
-  background: linear-gradient(90deg, #3c677d, whitesmoke, #a9d6e5);
-  width: 50%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-radius: 10px;
-  color: black;
-  font-weight: bolder;
+  align-items: center;
 }
-.compare {
-  background-color: #ffd60a;
-  color: #10002b;
-  max-height: 50px;
+.mobile-image {
+  width: 100%;
+  height: 80%;
 }
-.compare:hover {
-  background-color: #ffff3f;
-  transition: 0.5s;
-}
-.outerContent {
+.content-div {
+  width: 60%;
+  height: 100%;
   display: flex;
-  height: 30%;
+  align-items: center;
 }
-.image {
-  /* border-left: 3px solid grey; */
-  margin-left: 5px;
-}
-.sap {
-  padding: 3px;
-  font-weight: lighter;
-}
-.whole {
-  display: flex;
-  justify-content: center;
+.inner-content {
+  width: 100%;
+  height: 80%;
+  background-color: rgba(211, 211, 211, 0.2);
+  padding: 10px;
+  padding-left: 40px;
 }
 
-#pricetagres {
-  font-size: 15px;
-  /* margin-left: 50%; */
-  /* margin-top: 8px; */
-  font-weight: 500;
-  padding: 5px;
-  background-color: lightgreen;
-  border-radius: 10px;
-  display: none;
+.mobile-name {
+  display: flex;
+  justify-content: space-between;
 }
-@media screen and (max-width: 900px) {
-  .whole {
-    flex-wrap: wrap-reverse;
-  }
-  .rightouter {
-    width: 100%;
-  }
+.name {
+  font-size: xx-large;
+  font-weight: 800;
 }
-@media screen and (max-width: 750px) {
-  .mobileName {
-    display: block;
-    margin: 0;
-    font-weight: 600;
-  }
-  .resthings {
-    display: flex;
-    background-color: lightblue;
-    justify-content: space-between;
-    border-radius: 10px;
-    margin-bottom: 5px;
-  }
-  .innerName {
-    display: none;
-  }
-  .pricetag {
-    display: none;
-  }
-  #pricetagres {
-    display: block;
-  }
+.price {
+  color: #06d6a0;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.content {
+}
+.table {
+  display: flex;
+}
+.each-feature {
+  padding: 0;
+  width: 33%;
 }
