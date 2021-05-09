@@ -67,6 +67,10 @@ router.get("/compare",catchAsync(async(req,res)=>{
     res.render("comparison",{mobiles,mobileFound});
 }));
 
+router.get("/axiosMobiles",async (req,res)=>{
+    let mobiles=await Mobile.find();
+    res.json(mobiles);
+});
 router.get("/:id",catchAsync(async (req,res)=>{
     let {id}=req.params;
     let similar=[];
@@ -79,8 +83,8 @@ router.get("/:id",catchAsync(async (req,res)=>{
            similar.push(each);
         }
     }
-    // res.render("content",{mobile,similar})
-    res.send(" HEYY!!!  SORRY  Work in Progress")
+    res.render("content",{mobile,similar})
+    // res.send(" HEYY!!!  SORRY  Work in Progress")
 }));
 
 
