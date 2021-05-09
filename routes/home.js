@@ -83,8 +83,8 @@ router.get("/:id",catchAsync(async (req,res)=>{
            similar.push(each);
         }
     }
-    res.render("content",{mobile,similar})
-    // res.send(" HEYY!!!  SORRY  Work in Progress")
+    // res.render("content",{mobile,similar})
+    res.send(" HEYY!!!  SORRY  Work in Progress")
 }));
 
 
