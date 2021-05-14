@@ -370,6 +370,7 @@ li i {
   flex-wrap: wrap;
   /* height: 80%; */
   justify-content: space-evenly;
+  min-height: 1000px;
 }
 
 tr {
@@ -450,7 +451,11 @@ td {
 .custom-card:hover {
   transform: perspective(800px) translateZ(20px);
 }
-
+@media screen and (max-width: 1200px) {
+  .more {
+    min-height: 1300px;
+  }
+}
 @media screen and (max-width: 1100px) {
   .each-table {
     width: 50%;
@@ -571,10 +576,19 @@ td {
   .each-table {
     width: 100%;
   }
+  .more {
+    min-height: 1500px;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .each-feature {
+    font-size: smaller;
+  }
+  .note {
+    font-size: small;
+  }
+  .interesting {
     font-size: smaller;
   }
 }
@@ -595,5 +609,8 @@ td {
   }
   .image-div {
     height: 80%;
+  }
+  .more {
+    min-height: 1600px;
   }
 }

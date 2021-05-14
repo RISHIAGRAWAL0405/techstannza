@@ -103,6 +103,8 @@ AOS.init();
 document.onload=draw();
   
 
+
+
 function draw(){
     let canvas=document.querySelector("#points");
     let wWidth=()=>window.innerWidth;
@@ -110,8 +112,43 @@ function draw(){
 
    let ctx=canvas.getContext("2d");
    canvas.width=window.innerWidth*0.6;
+   window.onload=()=>{
+    canvas.width=window.innerWidth*0.6;
+    if(window.innerWidth<1000){
+        canvas.width=0.9*window.innerWidth;
+    }
+    let x=1;
+    let constant=3*(Math.PI/2)-x*(Math.PI/5);
+    ctx.beginPath();
+    ctx.arc(cWidth()/2,80,30,0,Math.PI*2);
+    ctx.moveTo(3/2*cWidth()+30,80);
+    ctx.arc(3/2*cWidth(),80,30,0,Math.PI*2);
+    ctx.moveTo(5/2*cWidth()+30,80);
+    ctx.arc(5/2*cWidth(),80,30,0,Math.PI*2); 
+    ctx.moveTo(7/2*cWidth()+30,80);
+    ctx.arc(7/2*cWidth(),80,30,0,Math.PI*2);
+    ctx.strokeStyle="lightgrey";
+    ctx.lineWidth=5;
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(cWidth()/2,50);
+    ctx.arc(cWidth()/2,80,30,Math.PI*3/2,constant,true);
+    ctx.moveTo(3/2*cWidth(),50);
+    ctx.arc(3/2*cWidth(),80,30,Math.PI*3/2,constant,true);
+    ctx.moveTo(5/2*cWidth(),50);
+    ctx.arc(5/2*cWidth(),80,30,Math.PI*3/2,constant,true);
+    ctx.moveTo(7/2*cWidth(),50);
+    ctx.arc(7/2*cWidth(),80,30,Math.PI*3/2,constant,true);
+    ctx.strokeStyle='green';
+    ctx.lineWidth=5;
+    ctx.stroke();
+
+   }
    window.onresize=()=>{
      canvas.width=window.innerWidth*0.6;
+     if(window.innerWidth<1000){
+         canvas.width=0.9*window.innerWidth;
+     }
      let x=1;
      let constant=3*(Math.PI/2)-x*(Math.PI/5);
      ctx.beginPath();
