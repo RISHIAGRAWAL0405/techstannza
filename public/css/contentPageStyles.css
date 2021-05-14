@@ -590,11 +590,13 @@ td {
   }
   .interesting {
     font-size: smaller;
+    padding: 10px;
   }
 }
 @media screen and (max-width: 400px) {
   .image-section {
     flex-wrap: wrap;
+    flex-direction: column-reverse;
   }
   .images-inner {
     width: 100%;
@@ -609,8 +611,15 @@ td {
   }
   .image-div {
     height: 80%;
+    /* width: 100%; */
+    align-self: center;
+    width: 90%;
   }
   .more {
     min-height: 1600px;
+  }
+  .share-button {
+    /* font-size: smaller; */
+    padding: 5px;
   }
 }
