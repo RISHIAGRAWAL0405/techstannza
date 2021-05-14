@@ -451,6 +451,11 @@ td {
   transform: perspective(800px) translateZ(20px);
 }
 
+@media screen and (max-width: 1100px) {
+  .each-table {
+    width: 50%;
+  }
+}
 @media screen and (max-width: 1000px) {
   .inner {
     flex-wrap: wrap;
@@ -512,6 +517,7 @@ td {
   }
   .image-review {
     height: 20%;
+    width: 100%;
   }
   .review-content {
     height: 80%;
@@ -520,7 +526,7 @@ td {
   }
 
   .other .review-content {
-    height: 50%;
+    height: 80%;
   }
   .each-feature {
     width: 50%;
@@ -544,6 +550,9 @@ td {
   .image-section {
     height: 40%;
   }
+  .each-table {
+    font-size: smaller;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -559,10 +568,32 @@ td {
   .name {
     font-size: x-large;
   }
+  .each-table {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 500px) {
   .each-feature {
     font-size: smaller;
+  }
+}
+@media screen and (max-width: 400px) {
+  .image-section {
+    flex-wrap: wrap;
+  }
+  .images-inner {
+    width: 100%;
+  }
+  .images-inner {
+    flex-direction: row;
+    height: 20%;
+  }
+  .images-inner img {
+    height: 100%;
+    width: 20%;
+  }
+  .image-div {
+    height: 80%;
   }
 }
