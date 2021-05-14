@@ -239,9 +239,12 @@ a {
 .review-inner {
   width: 80%;
 }
-.review .review h2 {
+.review-inner h2 {
   width: 100%;
   text-align: center;
+  font-family: "KoHo", sans-serif;
+  letter-spacing: 0.5px;
+  word-spacing: 5px;
 }
 .each-review {
   width: 100%;
@@ -251,7 +254,7 @@ a {
   background: url("https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80");
   margin-top: 40px;
   display: flex;
-  box-shadow: 0px 0px 20px lightgray;
+  box-shadow: 10px 20px 20px darkgrey;
   background-color: lightskyblue;
   justify-content: center;
   font-weight: 700;
@@ -402,7 +405,7 @@ td {
 }
 .detail-message {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-bottom: 50px;
 }
 
@@ -530,4 +533,10 @@ td {
   .images-inner {
     width: 20%;
   }
+  .name {
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 500px) {
 }

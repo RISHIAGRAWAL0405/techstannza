@@ -1,7 +1,8 @@
 <% layout("layouts/boilerplate")%>
   <link rel="stylesheet" href="/css/contentPageStyles.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@1,600&display=swap" rel="stylesheet">
   <section class="outer">
 
 
@@ -52,31 +53,31 @@
               <div class="table">
                 <ul type="none" class="each-feature sunflower">
                   <li class="first"><i class="fa fa-tv" style="color:darkorange"></i> </li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
+                  <li><%=mobile.Display.category%></li>
+                  <li><%=mobile.Display.size%> inches</li>
+                  <li><%=mobile.Display.resolution%></li>
+                  
                 </ul>
                 <ul type="none" class="each-feature sunflower">
                   <li class="first"><i class="fas fa-camera" style="color: darkblue;"></i></li>
-                  <li>lorem</li>
-                  <li>lorem</li>
+                  <li>  <%=mobile.mainCamera.noOfCameras%>  <em> sensors(main)</em></li>
+                  <li><%= mobile.frontCamera.noOfCameras%> <em> sensors(front)</em>  </li>
                   <li>lorem</li>
                   <li>lorem</li>
                 </ul>
                 <ul type="none" class="each-feature sunflower">
                   <li class="first"><i class="fas fa-battery-three-quarters" style="color: darkslategrey;"></i> </li>
+                  <li><%=mobile.BatteryCapacity%> mAh</li>
+                  <!-- <li>lorem</li>
                   <li>lorem</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
+                  <li>lorem</li> -->
                 </ul>
                 <ul class="each-feature sunflower" type="none">
                   <li class="first"><i class="fas fa-microchip" style="color: darkviolet;"></i></li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
-                  <li>lorem</li>
+                  <li><%=mobile.processor.category%></li>
+                  <li><%=mobile.processor.Core%> core</li>
+                  <li><%=mobile.Display.GPU%></li>
+                  <li>Android <%=mobile.processor.operatingSystem%></li>
                 </ul>
               </div>
 
