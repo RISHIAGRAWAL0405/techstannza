@@ -486,7 +486,7 @@ td {
 }
 @media screen and (max-width: 800px) {
   .outer {
-    margin-top: 80px;
+    margin-top: 90px;
   }
   .image-div {
     width: 70%;
