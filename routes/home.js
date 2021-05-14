@@ -60,10 +60,7 @@ router.post("/search",catchAsync(async (req,res)=>{
 router.get("/compare",catchAsync(async(req,res)=>{
     const mobiles=await Mobile.find();
     const {mobile}=req.query;
-
     const mobileFound=await Mobile.findById(mobile);
-
-    
     res.render("comparison",{mobiles,mobileFound});
 }));
 
@@ -83,8 +80,8 @@ router.get("/:id",catchAsync(async (req,res)=>{
            similar.push(each);
         }
     }
-    // res.render("content",{mobile,similar})
-    res.send(" HEYY!!!  SORRY  Work in Progress")
+    res.render("content",{mobile,similar})
+    // res.send(" HEYY!!!  SORRY  Work in Progress")
 }));
 
 

@@ -72,7 +72,7 @@ function getrelated(keys){
     }
     
    return response;
-}  
+};
 
 
 function removeInitial(response){
