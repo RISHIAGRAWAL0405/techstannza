@@ -145,6 +145,7 @@ a {
   width: 38%;
   display: flex;
   height: 100%;
+  justify-content: center;
 }
 .images-inner {
   display: flex;
@@ -447,11 +448,6 @@ td {
   transform: perspective(800px) translateZ(20px);
 }
 
-@media screen and (max-width: 800px) {
-  .outer {
-    margin-top: 80px;
-  }
-}
 @media screen and (max-width: 1000px) {
   .inner {
     flex-wrap: wrap;
@@ -464,8 +460,74 @@ td {
   .image-section {
     width: 100%;
     height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
   }
   .images-inner {
-    width: 10%;
+    width: 15%;
+    /* margin-right: auto; */
+  }
+  .image-div {
+    width: 60%;
+  }
+  .share-button {
+    top: 0;
+  }
+  .review-content {
+    padding: 0;
+  }
+  .each-review {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .outer {
+    margin-top: 80px;
+  }
+  .image-div {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .note {
+    padding: 5px;
+    font-size: smaller;
+  }
+  .interesting {
+    font-size: smaller;
+    margin-bottom: 30px;
+  }
+  .interesting li {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .each-review {
+    flex-wrap: wrap;
+  }
+  .image-review {
+    height: 20%;
+  }
+  .review-content {
+    height: 80%;
+    width: 100%;
+    padding: 5px;
+  }
+
+  .other .review-content {
+    height: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .review-content {
+    justify-content: center;
+  }
+  .review-inner {
+    width: 93%;
+  }
+  .images-inner {
+    width: 20%;
   }
 }
