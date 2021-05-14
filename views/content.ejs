@@ -561,21 +561,21 @@
       <h2>Similar Like This</h2>
       <div class="similar-div">
         <%for(let each of similar){%>
-          <a href="/<%=each._id%>">
+          
             <div class="custom-card">
               <img src="<%=each.image%>" alt="mobile">
               <div class="custom-card-body">
-                <span>
+                <span class="similar-name">
                   <%=each.name%>
                 </span>
-                <a href="/<%=each._id%>">view</a>
-                <a href="/compae">compare</a>
+                <a href="/<%=each._id%>" class="anchors">view</a>
+                <a href="/compae" class="anchors">compare</a>
 
               </div>
 
             </div>
 
-          </a>
+          
 
           <%}%>
       </div>

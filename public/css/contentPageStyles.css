@@ -411,14 +411,14 @@ td {
 }
 
 .similar-section {
-  width: 80%;
+  width: 100vw;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   /* border: 1px solid lightgrey; */
   padding: 20px;
   flex-wrap: wrap;
   /* height: 500px; */
-  margin: 50px;
+  /* margin: 50px; */
 }
 .similar-section h2 {
   align-self: center;
@@ -433,21 +433,51 @@ td {
   height: 100%;
   justify-content: space-evenly;
 }
-.similar-div a {
-  width: 32%;
-  height: 100%;
-}
+
 .custom-card {
   color: black;
-  width: 100%;
+  width: 30%;
   height: 100%;
   border: 1px solid lightgrey;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
 }
 .custom-card img {
-  height: 350px;
-  width: 100%;
+  height: 250px;
+  width: 70%;
+  align-self: center;
+}
+.custom-card-body {
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.anchors {
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  background-color: #4361ee;
+  color: black;
+  font-weight: bold;
+  padding: 5px;
+}
+.anchors:nth-of-type(1) {
+  border-bottom-left-radius: 20px;
+  border-right: 1px solid black;
+}
+.anchors:nth-of-type(2) {
+  border-bottom-right-radius: 20px;
+}
+.anchors:hover {
+  background-color: #3f37c9;
+  color: white;
+}
+.similar-name {
+  font-size: x-large;
+  width: 100%;
+  padding: 10px;
+}
 .custom-card:hover {
   transform: perspective(800px) translateZ(20px);
 }
@@ -492,6 +522,13 @@ td {
   }
   .each-review {
     padding: 0;
+  }
+  .similar-div {
+    flex-wrap: wrap;
+  }
+  .custom-card {
+    width: 40%;
+    margin-top: 20px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -578,6 +615,9 @@ td {
   }
   .more {
     min-height: 1500px;
+  }
+  .custom-card {
+    width: 70%;
   }
 }
 
