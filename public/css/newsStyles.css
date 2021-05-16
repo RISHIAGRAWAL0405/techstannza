@@ -21,6 +21,20 @@ body {
   flex-direction: column;
   margin-left: 50px;
 }
+.brand-name {
+  z-index: 3;
+}
+.trending {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+}
+.trending .news-card {
+  width: 30%;
+  height: 400px;
+  background-color: lightyellow;
+  z-index: 3;
+}
 .animate {
   display: block;
   width: 100%;
@@ -194,6 +208,22 @@ body {
   margin: 10px;
 }
 
+@media screen and (max-width: 1000px) {
+  .news-card {
+    width: 40%;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  .image-div {
+    width: 100%;
+  }
+  .message {
+    position: absolute;
+    z-index: 2;
+    top: 20%;
+    height: 20%;
+  }
+}
 @media screen and (max-width: 600px) {
   .news-card {
     width: 80%;
@@ -205,5 +235,9 @@ body {
     justify-content: center;
 
     flex-direction: column;
+  }
+
+  .comments {
+    width: 90%;
   }
 }
