@@ -33,7 +33,7 @@
 
         <div class="inner-content">
           <div class="share-button">
-            <span><i class="fas fa-share" style="margin-left: 5px;"></i></span>
+            <span>share<i class="fas fa-share" style="margin-left: 5px;"></i></span>
             <textarea id="share" style="display: none;" cols="30" rows="10"></textarea>
           </div>
           <div class="mobile-name">
@@ -54,14 +54,14 @@
                 <ul type="none" class="each-feature sunflower">
                   <li class="first"><i class="fa fa-tv" style="color:darkorange"></i> </li>
                   <li><%=mobile.Display.category%></li>
-                  <li><%=mobile.Display.size%> inches</li>
+                  <li><%=mobile.Display.size%>inches</li>
                   <li><%=mobile.Display.resolution%></li>
-                  
+                  <li><%=mobile.Display.GPU%></li>
                 </ul>
                 <ul type="none" class="each-feature sunflower">
                   <li class="first"><i class="fas fa-camera" style="color: darkblue;"></i></li>
-                  <li>  <%=mobile.mainCamera.noOfCameras%>  <em> sensors(main)</em></li>
-                  <li><%= mobile.frontCamera.noOfCameras%> <em> sensors(front)</em>  </li>
+                  <li><%=mobile.mainCamera.noOfCameras%> sensors(main)</li>
+                  <li><%= mobile.frontCamera.noOfCameras%> sensors(front) </li>
                   <li>lorem</li>
                   <li>lorem</li>
                 </ul>
@@ -526,8 +526,18 @@
                   <%= mobile.bodyType %>
                 </td>
               </tr>
-              
-              
+              <tr>
+                <td class='left'>Review</td>
+                <td class='right'>
+                  <%= mobile.review %>
+                </td>
+              </tr>
+              <tr>
+                <td class='left'>Our Suggestion</td>
+                <td class='right'>
+                  <%= mobile.ourOpinion %>
+                </td>
+              </tr>
               <tr>
                 <td class='left'>Sound</td>
                 <td class='right'>
@@ -561,7 +571,7 @@
       <h2>Similar Like This</h2>
       <div class="similar-div">
         <%for(let each of similar){%>
-          
+         
             <div class="custom-card">
               <img src="<%=each.image%>" alt="mobile">
               <div class="custom-card-body">

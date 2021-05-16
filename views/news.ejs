@@ -1,156 +1,82 @@
 <%layout("/layouts/boilerplate")%>
+
+
 <link rel="stylesheet" href="/css/newsStyles.css">
 
-<section class="mentos" style="background-color: coral;">
-    <div class="welmessage">
-        <div class="mess">
-            <p style="color: black;font-weight: 700;" class="messInside">
-                Have A look at the world of tech on the GO!!
-            </p>
 
-        </div>
-        <div class="inner">
-            <div class="first">
-                <div style="background: linear-gradient(90deg,darkblue,white);" class="red"></div>
-            </div>
-            <div class="second">
-                <div style="background: linear-gradient(180deg,white,darkblue);" class="red1"></div>
-            </div>
-            <div class="third">
-                <div style="background: linear-gradient(90deg,white,darkblue);" class="red2"></div>
-            </div>
-            <div class="fourth">
-                <div style="background: linear-gradient(180deg,darkblue,white);" class="red3"></div>
-            </div>
-            
-            <div class="innerMessage">
-               
-                Daily News @ late evening
-            </div>
-        </div>
-        <div  class="mess">
-            <p style="color: black;font-weight: 700;" class="messInside">
 
-                In The Present Time Everyone Needs To Be Handy Around Technology
-            </p>
-        </div>
+<section class="back">
+    <div class="message">
+         
+             <span class="animate"> Welcome To The Trakin Zone News</span>
+             <span class="animate">Daily @ 7PM</span> 
+         
+    </div> 
+    
+    <div class="image-div"> 
+        <img src="https://images.unsplash.com/photo-1576502200272-341a4b8d5ebb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="">
     </div>
     
+ 
 </section>
 
 
-<section class="container" style="background-color: coral;">
-   <div>
-       <h2>Browse By Brands</h2>
-       <div>
-           <span>Redmi</span>
-           <div>
-               <%for(let news of allnews){%>
-                   <%if(news.brand=='redmi'){%>
-                    <div class="card" style="width: 18rem;">
-                        <img src="<%=news.image%>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <p class="card-text"><%=news.heading%></p>
-                        </div>
-                    </div>
-                 <%}%>
+<section class="news-section">
 
-
-                <%}%>
-           </div>
+    <%for(let news of allnews){%>
+    <div class="news-card">
+        <div class="brand-name">
+            <span><%=news.brand%></span>
+    
         </div>
-     <div>
-         <span>One Plus</span>
-         <div>
-            <%for(let news of allnews){%>
-                <%if(news.brand=='one plus'){%>
-                 <div class="card" style="width: 18rem;">
-                     <img src="<%=news.image%>" class="card-img-top" alt="...">
-                     <div class="card-body">
-                       <p class="card-text"><%=news.heading%></p>
-                     </div>
-                 </div>
-              <%}%>
-
-
-             <%}%>
+        <div class="share-icon">
+            
         </div>
-     </div>  
-     <div>
-         <span>Realme</span>
-         <div>
-            <%for(let news of allnews){%>
-                <%if(news.brand=='realme'){%>
-                 <div class="card" style="width: 18rem;">
-                     <img src="<%=news.image%>" class="card-img-top" alt="...">
-                     <div class="card-body">
-                       <p class="card-text"><%=news.heading%></p>
-                     </div>
-                 </div>
-              <%}%>
-
-
-             <%}%>
+    
+        <div class="news-image">
+            <img src="<%=news.image%>" alt="">
         </div>
-     </div>
-     <div>
-         <span>Motorola</span>
-         <div>
-            <%for(let news of allnews){%>
-                <%if(news.brand=='motorola'){%>
-                 <div class="card" style="width: 18rem;">
-                     <img src="<%=news.image%>" class="card-img-top" alt="...">
-                     <div class="card-body">
-                       <p class="card-text"><%=news.heading%></p>
-                     </div>
-                 </div>
-              <%}%>
-
-
-             <%}%>
+        <div class="news-heading">
+            <p><%=news.heading%></p>
         </div>
-     </div>
-
-     <div>
-         <span>Apple</span>
-         <div>
-            <%for(let news of allnews){%>
-                <%if(news.brand=='apple'){%>
-                 <div class="card" style="width: 18rem;">
-                     <img src="<%=news.image%>" class="card-img-top" alt="...">
-                     <div class="card-body">
-                       <p class="card-text"><%=news.heading%></p>
-                     </div>
-                 </div>
-              <%}%>
-
-
-             <%}%>
+        <div class="read-more">
+            <a href="/news">Read More</a>
         </div>
-         
-     </div>
-
-      <div>
-          <span>Samsung</span>
-          <div>
-            <%for(let news of allnews){%>
-                <%if(news.brand=='samsung'){%>
-                 <div class="card" style="width: 18rem;">
-                     <img src="<%=news.image%>" class="card-img-top" alt="...">
-                     <div class="card-body">
-                       <p class="card-text"><%=news.heading%></p>
-                     </div>
-                 </div>
-              <%}%>
-
-
-             <%}%>
+    
+        <div class="icons">
+            <button class="buttons"><span><i class="far fa-thumbs-up"></i>121</span></button>
+            <button class="buttons"> <span><i class="far fa-thumbs-down"></i>56</span></button>
+            <button class="buttons"><span><i class="fas fa-comment"></i>26</span></button>
+            <a href=""><i class="fas fa-share"></i></a>
         </div>
-      </div>
-   
-   
-   
+
+        <div class="comments-div">
+                
+            <div class="comments">
+             <span class="close-btn">&times;</span>
+                
+                <div>
+                    <span class="comment-title">Comments</span>
+                   <div class="one-comment">
+                       <span>
+                           Atishay Jain
+                       </span>
+                   </div>
+                    
+                </div>
+
+            </div>
+
+         </div>
     </div>
+    
+    <%}%>    
 
-   
-</section>
+
+
+
+ </section>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+ <script src="/javascript/news.js"></script>

@@ -1,167 +1,194 @@
-.mentos {
-  transform: translateY(-64px);
-  background-color: brown;
+body {
+  overflow-x: hidden;
 }
-.welmessage {
+.back {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+.message {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.animate {
+  display: block;
   width: 100%;
+  /* height: 10%; */
+}
+.animate:nth-of-type(2) {
+  font-weight: 300;
+}
+.image-div {
+  width: 50%;
+  height: 100%;
+}
+.image-div img {
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+  /* opacity: 0.9; */
+  /* margin-left: 50%; */
+}
+.news-section {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.news-card {
+  width: 23%;
   height: 500px;
-  background-color: black;
+  border-radius: 0px 20px 20px 20px;
+
+  box-shadow: 0px 0px 10px lightgray;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  margin-top: 50px;
+  margin-right: 40px;
+}
+
+.brand-name {
+  position: absolute;
+  transform: translateY(-90%);
+  background-color: #4cc9f0;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: -1;
+  border-radius: -10px;
+  font-weight: 500;
+  color: black;
+}
+.share-icon {
+  position: absolute;
+  color: black;
+  background-color: yellow;
+  width: 2%;
+  transform: translate(1000%, -110%);
+}
+.share-icon a {
+  color: black;
+}
+.news-image {
+  width: 100%;
+  height: 40%;
+}
+.news-image img {
+  width: 100%;
+  height: 100%;
+  /* border-top-left-radius: 20px; */
+  border-top-right-radius: 20px;
+}
+.news-heading {
+  padding: 10px;
+  padding-top: 20px;
+  /* font-family: "Roboto", sans-serif; */
+  letter-spacing: 0.5px;
+  word-spacing: 1px;
+  font-weight: 400;
+}
+.read-more {
+  align-self: flex-end;
+}
+.read-more a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+  border: 2px solid lightgrey;
+  padding: 5px;
+  margin-top: 20px;
+  margin: 5px;
+  /* text-transform: uppercase; */
+  font-size: small;
+  border-radius: 5px;
+  font-family: cursive;
+  /* font-weight: 100; */
+  box-sizing: border-box;
+}
+.read-more a:hover {
+  background-color: #4361ee;
+  transition: 0.5s;
+  color: white;
+  border: 2px solid #4361ee;
+}
+.icons {
+  width: 100%;
+  height: 7%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-left: auto;
+  margin-top: auto;
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
-.mess {
-  width: 20%;
-  height: 50%;
-  background-color: #dfe7fd;
-  padding: 20px;
+.buttons span {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.inner {
-  width: 35%;
+.icons i {
+  font-size: 20px;
+  color: black;
+  /* margin-right: 20px; */
+}
+.icons i:hover {
+  color: darkblue;
+  cursor: pointer;
+}
+.buttons {
+  background-color: white;
+  border: none;
+}
+.comments-div {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  /* top: 0; */
+  /* top: 50%; */
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+.comments {
+  width: 40vw;
   height: 50%;
-  right: 50%;
-  /* display: flex; */
-  animation: slidein 2s;
+  border: 1px solid lightgray;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
-
-.first {
-  width: 100%;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 1);
-  /* opacity: 0.5; */
-  height: 3px;
-  display: block;
-  position: relative;
-}
-.red {
-  width: 100%;
-  height: 3px;
-  animation: changefirst 2s infinite;
-}
-.red1 {
-  height: 100%;
-  width: 3px;
-  animation: changesecond 1s infinite;
-}
-.red2 {
-  width: 100%;
-  height: 3px;
-  animation: changethird 2s infinite;
-}
-.red3 {
-  width: 3px;
-  height: 100%;
-  animation: changefourth 1s infinite;
-}
-.second {
-  height: 100%;
-  position: relative;
-  width: 3px;
-  display: block;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 1);
-}
-.third {
-  width: 100%;
-  /* background-color: mediumblue; */
-  height: 3px;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 1);
-}
-.fourth {
-  position: relative;
-  width: 3px;
-  height: 102%;
-  overflow: hidden;
-  transform: translateY(-5px);
-  left: 100%;
-  bottom: 100%;
-  background-color: rgba(255, 255, 255, 1);
-}
-.innerMessage {
-  position: relative;
-  bottom: 400px;
-  color: whitesmoke;
+.close-btn {
+  display: inline-block;
   font-size: xx-large;
-  text-align: center;
+  width: fit-content;
+  margin-right: 10px;
+  margin-left: auto;
+  color: darkgray;
+  text-align: end;
+  cursor: pointer;
+  font-weight: bold;
 }
-.logoImage {
-  width: 40px;
-  height: 40px;
+.close-btn:hover {
+  color: black;
 }
-.card:hover {
-  transform: perspective(800px) translateZ(10px);
-}
-
-@keyframes changefirst {
-  from {
-    margin-left: 200%;
-  }
-  to {
-    margin-left: 0%;
-  }
-}
-@keyframes changesecond {
-  from {
-    margin-top: -200px;
-  }
-  to {
-    margin-top: 0%;
-  }
-}
-@keyframes changethird {
-  from {
-    margin-left: -200%;
-  }
-  to {
-    margin-left: 0%;
-  }
-}
-@keyframes changefourth {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-@keyframes slidein {
-  from {
-    transform: translateX(100%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .innerMessage {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 800px) {
-}
-@media screen and (max-width: 700px) {
-  .welmessage {
-    flex-direction: column;
-  }
-  .innerMessage {
-    font-size: 20px;
-  }
-  .logoImage {
-    width: 20px;
-    height: 20px;
-  }
-  .inner {
-    width: 60%;
-    height: 40%;
-  }
-  .mess {
-    margin-top: 10px;
-    width: 70%;
-    height: 25%;
-  }
+.comment-title {
+  font-weight: 900;
+  font-size: xx-large;
+  display: inline-block;
+  margin: 10px;
 }
