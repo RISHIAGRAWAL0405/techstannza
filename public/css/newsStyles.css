@@ -5,6 +5,7 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  margin-bottom: 50px;
 }
 .message {
   width: 50%;
@@ -195,6 +196,14 @@ body {
 
 @media screen and (max-width: 600px) {
   .news-card {
-    width: 100%;
+    width: 80%;
+    margin: 0;
+    align-self: center;
+    margin-bottom: 40px;
+  }
+  .news-section {
+    justify-content: center;
+
+    flex-direction: column;
   }
 }
