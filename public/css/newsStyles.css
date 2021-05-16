@@ -192,3 +192,9 @@ body {
   display: inline-block;
   margin: 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .news-card {
+    width: 100%;
+  }
+}
