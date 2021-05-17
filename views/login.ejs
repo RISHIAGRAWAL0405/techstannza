@@ -1,0 +1,38 @@
+<%layout("/layouts/boilerplate")%>
+
+
+<style>
+    section{
+        margin-top: 130px;
+    }
+</style>
+
+<section class="container">
+
+
+    <h1>Log In</h1>
+
+    <form action="/login" method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="username">username</label>
+            <input class="form-control" type="text" id="username" name="username" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">password</label>
+            <input class="form-control" type="password" id="password" name="password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+        </div>
+        <button class="btn btn-success">Log In</button>
+     
+    
+    
+    
+    </form>
+
+
+</section>

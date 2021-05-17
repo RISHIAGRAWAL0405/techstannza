@@ -12,6 +12,10 @@ const bodyParser=require("body-parser");
 const path=require("path");
 const session=require("express-session");
 const flash=require("connect-flash");
+const passport=require("passport");
+const passportLocalStrategy=require("passport-local");
+const User=require("./models/user");
+
 
 
 const ExpressError=require("./utils/Expresserror");
@@ -69,8 +73,18 @@ app.use((req,res,next)=>{
     res.locals.success=req.flash("success");
     next();
 });
-app.use(express.static(path.join(__dirname,"public")));       //this is the serving of the public assets
+app.use(express.static(path.join(__dirname,"public")));  //this is the serving of the public assets
+
+
+
+   app.use(passport.initialize());
+   app.use(passport.session());
+   passport.use(new passportLocalStrategy(User.authenticate()));
+   passport.serializeUser(User.serializeUser());
+   passport.deserializeUser(User.deserializeUser());
     
+
+
  
                           //this are the routes handlers
 
@@ -80,6 +94,7 @@ app.use("/bestPhones",bestPhonesRoutes);
 app.use("/range",rangeRoutes);
 app.use("/news",newsRoutes);
 app.use("/specific",specificRoutes);
+
 app.use("/",homeRoutes);
 
 
