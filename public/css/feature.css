@@ -87,8 +87,9 @@ body {
 }
 .card {
   width: 25%;
-  height: 700px;
+  height: 100%;
   display: flex;
+  max-height: 850px;
   flex-direction: column;
   border-radius: 20px;
   margin: 20px;
@@ -103,7 +104,7 @@ body {
   cursor: pointer;
 }
 .card img {
-  height: 35%;
+  height: 300px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }

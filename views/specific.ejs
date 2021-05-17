@@ -65,25 +65,25 @@
                             <i class="fas fa-camera"></i>
 
                             <ul type="none" style="font-size: small;padding: 0;margin-top: 10px;" class="list">
-                                <li class="element">25MP </li>
-                                <li class="element">Ultra stability</li>
-                                <li class="element">1080 super slomo</li>
+                                <li class="element"><%=mobile.mainCamera.pixels[0].pixel%>MP main</li>
+                                <li class="element"><%=mobile.frontCamera.pixels[0].pixel%>MP front </li>
+                                <li class="element"><%=mobile.mainCamera.pixels[0].description%></li>
                             </ul>
                         </div>
                         <div class="oneclass">
                             <i class="fas fa-tv" style="text-align: center;margin-right: 5px;"></i>
                             <ul type="none" class="list">
-                                <li class="element">Samoled</li>
-                                <li class="element">120 Hz refresh rate</li>
-                                <li class="element">gorilla glass 5.1</li>
+                                <li class="element"><%=mobile.Display.size%> inches</li>
+                                <li class="element"><%=mobile.Display.category%></li>
+                                <li class="element"><%=mobile.Display.other%></li>
                             </ul>
                         </div>
                         <div class="oneclass">
                             <i class="fas fa-tachometer-alt"></i>
                             <ul type="none" class="list" style="border-right: none;">
-                                <li class="element">SD 886</li>
-                                <li class="element">5nm pro</li>
-                                <li class="element">2.1 GHz</li>
+                                <li class="element"><%=mobile.processor.category%></li>
+                                <li class="element">Android <%=mobile.processor.operatingSystem%></li>
+                                <li class="element"><%=mobile.processor.clockSpeed%></li>
                             </ul>
                         </div>
 
