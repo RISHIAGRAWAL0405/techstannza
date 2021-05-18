@@ -39,6 +39,7 @@ body {
   height: 80%;
   align-self: center;
   border: none;
+  font-size: x-large;
 }
 .c-modal-content {
   background-color: black;
@@ -325,15 +326,6 @@ body {
   .second-nav {
     display: none;
   }
-
-  .search2 {
-    display: flex;
-    justify-content: space-between;
-    /* margin-right: 10px; */
-  }
-  .ressearch {
-    margin-right: 10px;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -342,6 +334,12 @@ body {
   }
   .search-form {
     display: none;
+  }
+  .search-div {
+    display: none;
+  }
+  .other-than-logo {
+    justify-content: flex-end;
   }
 }
 
