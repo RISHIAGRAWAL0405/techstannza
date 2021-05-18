@@ -77,7 +77,7 @@ let manipulate=(input)=>{
 };
 let mobiles;
 let sendData=async ()=>{
-    let res=await axios.post("https://desolate-badlands-28322.herokuapp.com/range/filter",{
+    let res=await axios.post("http://localhost:3000/range/filter",{
         brand:brandSection,
         ram:ramSection,
         mcamera:mcamera,

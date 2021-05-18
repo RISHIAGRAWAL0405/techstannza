@@ -7,6 +7,7 @@ const filter=require("../utils/filter");
 
 router.post("/",async (req,res)=>{
     const mobiles=await Mobile.find();
+    console.log(mobiles);
     const result=[];
     for(mobile of mobiles){
         if(mobile.price >=req.body.min && mobile.price <=req.body.max){
@@ -23,6 +24,7 @@ router.post("/",async (req,res)=>{
 router.post("/filter",catchAsync(async (req,res)=>{
     let result=[];
     let {brand,ram,displaySize,networkT,features,min,max,mcamera}=req.body;
+    console.log(brand);
     console.log(displaySize);
     let mobiles=await Mobile.find({});
     result=filter(brand,mcamera,displaySize,features,networkT,ram,min,max,mobiles);
