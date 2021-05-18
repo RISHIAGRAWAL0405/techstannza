@@ -44,6 +44,25 @@ body {
 .c-modal-content {
   background-color: black;
 }
+.recovery-register {
+  width: 100%;
+  height: fit-content;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: 500;
+}
+.r-b-inLogin {
+  background-color: transparent;
+  border: none;
+  color: #1673fd;
+  width: 100%;
+  font-weight: 500;
+}
+.r-b-inLogin:hover {
+  color: blue;
+}
 #modal-search {
   border: none;
   border-bottom: 1px solid white;
@@ -255,7 +274,6 @@ body {
   border: 2px solid lightgray;
   height: 80%;
   align-self: center;
-  margin-left: 20px;
 }
 .custom-btn:hover {
   background-color: blanchedalmond;
