@@ -16,7 +16,7 @@ router.get("/",async (req,res)=>{
 
    const stories=await News.find({});    
    req.flash("success","We Got your suggestion,promise we wil Improve");
-
+    console.log(res.locals.currentUser);
     res.render("home",{
         mobiles:mobiles,
         home:1,
@@ -91,16 +91,10 @@ router.post("/register",async (req,res,next)=>{
    }
 });
 
-
-router.get("/login",(req,res)=>{
-    res.render("login");
-});
-router.post("/login",passport.authenticate("local",{failureFlash:true,failureRedirect:"/login"}),(req,res)=>{
+router.post("/login",passport.authenticate("local",{failureFlash:true,failureRedirect:"/fail"}),(req,res)=>{
   req.flash("success","welcome back!");
-//   const redirectUrl=req.session.returnTo || "/campgrounds"; 
-//   delete req.session.returnTo;
-
-  res.redirect("/");
+  const user_data={"id":req.user._id,"name":req.user.username};
+  res.json(user_data);
 
 });
 
@@ -110,6 +104,10 @@ router.get("/logout",(req,res)=>{
     res.redirect("/");
 })
 
+
+router.get("/fail",(req,res)=>{
+   res.json("incorrect username or password");
+})
 
 
 

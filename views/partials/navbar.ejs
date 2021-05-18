@@ -4,132 +4,232 @@
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;1,400&family=Anton&display=swap"
   rel="stylesheet">
 
+<div class="modal fade c-modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
+      </div>
+      <div class="modal-body custom">
 
-  <header class="navbar-main">
-    <nav class="custom-dynamic-navbar">
-      <a class="" href="/" style="height:40px ; margin-right: 15%;width: 50px;">
-        <img src="/logo.png" alt="" style="width: 100%; height: 100%;" id="logo">
-        <!-- <h1 style="color:black; font-family: sans-serif;font-size: 25px;margin:0;font-style: segoe;background-color: lightgrey;padding: 5px;" id="companyname">
-          TrackinZone</h1> -->
-      </a>
-        <div style="display: flex;">
-      <form class="search" id="initialbox" action="/search" method="post" style="width: 100%;">
-        <div class="search-navbar" style="display: flex;justify-content: space-between;width: 100%;">
-          <input class="me-2 search-input" type="search" results="5" placeholder="Search" aria-label="Search"
-            name="search" style="padding:0;width: 80%;">
-          <button class="btn btn-outline-light search-btn" type="submit"><i class="fas fa-search"></i> </button>
+        <div class="alert alert-danger alert-dismissible fade show text-center w-100" role="alert" style="margin: 0;">
+          <strong class="error-message"></strong>
+          <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-      </form>
-      <div
-        >
-        <ul class="navbar-nav sitenav">
-          <li class="anchorlis text-end" style="width: 15%;"><a class="anchorlinks" href="/">Home</a></li>
-          <li class="anchorlis text-center" style="width: 100px;"><a class="anchorlinks" href="/about">About Us</a></li>
-          <li class="anchorlis"><a class="anchorlinks" href="" style="width: 15%;">Contact</a></li>
-        </ul>
 
-      </div>
-      <button class="custom-btn" type="button"
-      onclick="openNav()">
-     <i class="fas fa-bars"></i>
+        <div class="login-local">
+          <form action="/login" method="POST" class="login-form">
+            <div class="mb-3">
 
-
-
-   </button>
-
-
-      </div>
-     
-      <div id="mySidenav" class="sidenav" style="z-index: 3;">
-        <a href="" class="closebtn" onclick="closeNav()">&times;</a>
-        <form class="search" id="initialbox1" action="/search" method="post" style="width: 90%;margin: 10px;">
-          <div class="search-navbar" style="display: flex;justify-content: space-between;width: 100%;">
-            <input class="me-2 search-input" type="search" results="5" placeholder="Search" aria-label="Search"
-              name="search" style="padding:0;width: 80%;">
-            <button class="btn btn-outline-light search-btn" type="submit"><i class="fas fa-search"></i> </button>
-          </div>
-        </form>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        
-        
-      </div>
-      
-      <!-- Use any element to open the sidenav -->
-     
-
-      
-
-
-      
-    </nav>
-
-  </header>
-
-
-  <section class="second-nav" style="width: 100%;margin-top: 45px;">
-    <ul class="coustom-nav-link" style="display: flex; justify-content: space-around;">
-
-      <li class="dropdown">
-        <div class="dropbtn">Compare Latest</div>
-        <div class="dropdown-content">
-          <div class="arrow"></div>
-          <a href="#" class="dropdown1">
-            <div class="dropbtn1">Link1</div>
-
-            <div class="dropdown-content1 d-none">
-              <a href="">Nlink1</a>
-              <a href="">Nlink2</a>
-              <a href="">Nlink3</a>
+              <input class="form-control" type="text" id="username" name="username" placeholder="Email" required>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
             </div>
-          </a>
-          <a href="#" class="dropdown1">
-            <div class="dropbtn1">Link2</div>
+            <div class="mb-3">
+              <input class="form-control" type="password" id="password" name="password" required placeholder="password">
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+            </div>
+            <button class="btn btn-success">Log In</button>
 
 
-          </a>
-          <a href="#" style="margin-bottom: 10px;" class="dropdown1">
-            <div class="dropbtn1">Link2</div>
-          </a>
+
+
+          </form>
+
         </div>
-      </li>
-      <li class="dropdown">
-        <div class=" dropbtn"> <span>Best phones</span> </div>
-        <div class="dropdown-content">
-          <div class="arrow"></div>
-          <a href="/bestphones?under=7000" class="firs">Best Phones under 7000</a>
-          <a href="/bestPhones?under=10000">Best Phones Under 10000</a>
-          <a href="/bestPhones?under=15000">Best Phones under 15000</a>
-          <a href="/bestPhones?under=20000">Best Phones under 20000</a>
-          <a href="/bestPhones?under=25000" style="margin-bottom: 10px;">Best Phones under 25000</a>
+        <div class="login-diff">
+
+          <div class="google">
+            <a href="">
+              <div class="google-icon">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"
+                  alt="">
+
+              </div>
+              <span>Sign In With Google</span>
+            </a>
+          </div>
+
+
+          <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with"
+            data-layout="default" data-auto-logout-link="false" data-use-continue-as="false"></div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<div class="modal fade c-search-modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content c-modal-content">
+      <div class="modal-header" style="border: none;">
+        <button type="button" class="btn" style="color: white;margin-left: auto;font-size: x-large;" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+         <form action="/search" method="POST">
+           <input type="text" name="search" placeholder="Search brand,mobile,etc." id="modal-search">
+         </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="c-navbar">
+  <a href="/" class="logo-div">
+
+
+    <img src="/logo.png" alt="">
+
+  </a>
+
+  <div class="other-than-logo">
+
+    
+
+    <div class="search-div">
+      <form action="/search" class="search-form" method="post">
+        <input type="text" id="search-input" name="search" placeholder="search brand,phone,etc.">
+        <button class="search-button"><i class="fas fa-search"></i></button>
+      </form>
+    </div>
+
+
+    
+    <div id="mySidenav" class="sidenav" style="z-index: 3;">
+      <a href="" class="closebtn" onclick="closeNav()">&times;</a>
+      
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+
+
+    </div>
+    <div class="navigation-links">
+      <a class="c-link" href="/" >Home</a>
+      <a class="c-link" href="/about">About Us</a>
+      <a class="c-link" href="/contact">Contact</a>
+
+    </div>
+    <button type="button" class="c-s-toggler" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+      <i class="fas fa-search"></i>
+    </button>
+
+    <% if(!currentUser){ %>
+
+      <button type="button" class="btn btn-primary custom-login-toggler" data-bs-toggle="modal"
+        data-bs-target="#exampleModal" onclick="positionToggler();">Log In</button>
+
+      <% }else{ %>
+
+
+        <div class="user-div">
+          <i class="far fa-user"></i>
+          <div class="user-profile">
+            <ul type="none">
+              <li class="user-name">Hey!! <%=currentUser.username%></li>
+              <li class="user-links">Watchlist</li>
+              <li class="user-links"><a href="/logout">Log Out</a></li>
+            </ul>
+          </div>
 
 
         </div>
-      </li>
-      <li class="dropdown">
-        <div class="dropbtn"> <a href="/news">Daily news</a> </div>
-        <div class="dropdown-content">
-          <div class="arrow"></div>
-          <a href="#" class="firs">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#" style="margin-bottom: 10px;">Link 3</a>
-        </div>
-      </li>
-      <li class="dropdown">
-        <div class="dropbtn">Best Deals</div>
-        <div class="dropdown-content">
-          <div class="arrow"></div>
-          <a href="#" class="firs">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#" style="margin-bottom: 10px;">Link 3</a>
-        </div>
-      </li>
-    </ul>
-  </section>
+        <% } %>
+       
+        <button class="custom-btn" type="button" onclick="openNav()"><i class="fas fa-bars"></i></button>
 
 
   
+  
+  
+  
+      </div>
+
+
+
+
+</nav>
+
+
+
+
+<section class="second-nav">
+  <ul class="coustom-nav-link" style="display: flex; justify-content: space-around;">
+
+    <li class="dropdown">
+      <div class="dropbtn">Compare Latest</div>
+      <div class="dropdown-content">
+        <div class="arrow"></div>
+        <a href="#" class="dropdown1">
+          <div class="dropbtn1">Link1</div>
+
+          <div class="dropdown-content1 d-none">
+            <a href="">Nlink1</a>
+            <a href="">Nlink2</a>
+            <a href="">Nlink3</a>
+          </div>
+        </a>
+        <a href="#" class="dropdown1">
+          <div class="dropbtn1">Link2</div>
+
+
+        </a>
+        <a href="#" style="margin-bottom: 10px;" class="dropdown1">
+          <div class="dropbtn1">Link2</div>
+        </a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <div class=" dropbtn"> <span>Best phones</span> </div>
+      <div class="dropdown-content">
+        <div class="arrow"></div>
+        <a href="/bestphones?under=7000" class="firs">Best Phones under 7000</a>
+        <a href="/bestPhones?under=10000">Best Phones Under 10000</a>
+        <a href="/bestPhones?under=15000">Best Phones under 15000</a>
+        <a href="/bestPhones?under=20000">Best Phones under 20000</a>
+        <a href="/bestPhones?under=25000" style="margin-bottom: 10px;">Best Phones under 25000</a>
+
+
+      </div>
+    </li>
+    <li class="dropdown">
+      <div class="dropbtn"> <a href="/news">Daily news</a> </div>
+      <div class="dropdown-content">
+        <div class="arrow"></div>
+        <a href="#" class="firs">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#" style="margin-bottom: 10px;">Link 3</a>
+      </div>
+    </li>
+    <li class="dropdown">
+      <div class="dropbtn">Best Deals</div>
+      <div class="dropdown-content">
+        <div class="arrow"></div>
+        <a href="#" class="firs">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#" style="margin-bottom: 10px;">Link 3</a>
+      </div>
+    </li>
+  </ul>
+</section>
+
+
+
 
 
 
@@ -146,6 +246,9 @@
   }
 
 
+  
+
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="/javascript/navbar.js"></script>

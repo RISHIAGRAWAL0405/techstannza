@@ -69,10 +69,7 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session(sessionConfig));
 app.use(flash());
-app.use((req,res,next)=>{
-    res.locals.success=req.flash("success");
-    next();
-});
+
 app.use(express.static(path.join(__dirname,"public")));  //this is the serving of the public assets
 
 
@@ -83,6 +80,13 @@ app.use(express.static(path.join(__dirname,"public")));  //this is the serving o
    passport.serializeUser(User.serializeUser());
    passport.deserializeUser(User.deserializeUser());
     
+
+   app.use((req,res,next)=>{
+    res.locals.currentUser=req.user;
+    res.locals.success=req.flash("success");
+    res.locals.error=req.flash("error");
+    next();
+});  
 
 
  
