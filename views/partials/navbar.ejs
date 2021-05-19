@@ -24,11 +24,11 @@
           <form action="/login" method="POST" class="login-form">
             <div class="mb-3">
 
-              <input class="form-control" type="text" id="username" name="username" placeholder="username" required>
+              <input class="form-control" type="text" id="username" name="username" placeholder="username" required autocomplete="on">
 
             </div>
             <div class="mb-3">
-              <input class="form-control" type="password" id="password" name="password" required placeholder="password">
+              <input class="form-control" type="password" id="password" name="password" required placeholder="password" autocomplete="on">
 
             </div>
             <button class="btn btn-success">Log In</button>
@@ -46,7 +46,7 @@
         <div class="login-diff">
 
           <div class="google">
-            <a href="">
+            <a href="/google">
               <div class="google-icon">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"
@@ -84,17 +84,17 @@
           <form action="/register" method="post">
             <div class="mb-3">
               
-              <input class="form-control" type="text" id="username1" name="username" required placeholder="username">
+              <input class="form-control" type="text" id="username1" name="username" required placeholder="username" autocomplete="on">
           
             </div>
             <div class="mb-3">
               
-              <input class="form-control" type="email" id="email1" name="email" required placeholder="email">
+              <input class="form-control" type="email" id="email1" name="email" required placeholder="email" autocomplete="on">
           
             </div>
             <div class="mb-3">
               
-              <input class="form-control" type="password" id="password1" name="password" required placeholder="password">
+              <input class="form-control" type="password" id="password1" name="password" required placeholder="password" autocomplete="on">
           
             </div>
             
@@ -173,7 +173,7 @@
       </div>
       <div class="modal-body">
         <form action="/search" method="POST">
-          <input type="text" name="search" placeholder="Search brand,mobile,etc." id="modal-search">
+          <input type="text" name="search" placeholder="Search brand,mobile,etc." id="modal-search" autocomplete="on">
         </form>
       </div>
 
@@ -198,7 +198,7 @@
 
     <div class="search-div">
       <form action="/search" class="search-form" method="post">
-        <input type="text" id="search-input" name="search" placeholder="search brand,phone,etc.">
+        <input type="text" id="search-input" name="search" placeholder="search brand,phone,etc." autocomplete="on">
         <button class="search-button"><i class="fas fa-search"></i></button>
       </form>
     </div>

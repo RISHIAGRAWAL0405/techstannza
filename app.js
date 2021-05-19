@@ -15,6 +15,7 @@ const flash=require("connect-flash");
 const passport=require("passport");
 const passportLocalStrategy=require("passport-local");
 const User=require("./models/user");
+const passportGoogleStrategy=require("./passportGoogle");
 
 
 

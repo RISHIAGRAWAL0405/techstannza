@@ -54,7 +54,7 @@ function openNav() {
 
   document.querySelector(".alert-danger").style.display="none";
   let sendLoginRequest=async (username,password)=>{
-      let result=await axios.post("https://desolate-badlands-28322.herokuapp.com/login",{
+      let result=await axios.post("http://localhost:3000/login",{
          username:username,
          password:password 
       });     

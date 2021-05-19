@@ -98,10 +98,20 @@ router.post("/login",passport.authenticate("local",{failureFlash:true,failureRed
 
 });
 
+
+router.get("/google",passport.authenticate("google",{
+    scope:["profile","email"]
+}))
+
 router.get("/logout",(req,res)=>{
     req.logout();
     req.flash("success","GOOD Bye!! see you soon");
     res.redirect("/");
+});
+
+//callback route for google strategy
+router.get("/google/redirect",passport.authenticate("google"),(req,res)=>{
+   res.redirect("/");
 })
 
 

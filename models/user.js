@@ -5,7 +5,10 @@ const userSchema=new mongoose.Schema({
     email:{
         type:String,
         required:[true,"email field can not be empty"]
-    }
+    },
+    googleId:String,
+    facebookId:String,
+    tiwtterId:String
 
 
 });
