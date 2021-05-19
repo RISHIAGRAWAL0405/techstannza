@@ -18,7 +18,7 @@ passport.deserializeUser((id,done)=>{
 
 passport.use(
     new GoogleStrategy({    //options for google stretegy
-        callbackURL:"/google/redirect",
+        callbackURL:"https://desolate-badlands-28322.herokuapp.com/google/redirect",
         clientID:"461162423697-9vat0q60ogesbk0qk695g6jqqedor3fa.apps.googleusercontent.com",
         clientSecret:"_4bcnMGBvTxv0Ei7kdXBsp3v"
 
