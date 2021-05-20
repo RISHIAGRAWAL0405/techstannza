@@ -123,7 +123,8 @@ upVoteButtons.forEach((e)=>{
          let data=result.data;
          console.log(data);
          if(data=="you must be signed in first"){
-             document.querySelector(".alert-danger").innerText=data;
+            let loginButton=document.querySelector(".custom-login-toggler");
+            loginButton.click();
          }
          else{
              if(data.action=="insert"){
@@ -155,7 +156,8 @@ downVoteButtons.forEach((e)=>{
          let data=result.data;
          console.log(data);
          if(data=="you must be signed in first"){
-             document.querySelector(".alert-danger").innerText=data;
+            let loginButton=document.querySelector(".custom-login-toggler");
+            loginButton.click();
          }
          else{
              if(data.action=="insert"){
