@@ -33,13 +33,13 @@ window.onscroll = function() {
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("main").style.marginLeft = "250px";
+    // document.getElementById("main").style.marginLeft = "250px";
   }
   
   /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
   function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("main").style.marginLeft = "0";
+    // document.getElementById("main").style.marginLeft = "0";
   }
 
 
@@ -54,12 +54,11 @@ function openNav() {
 
   document.querySelector(".alert-danger").style.display="none";
   let sendLoginRequest=async (username,password)=>{
-      let result=await axios.post("https://desolate-badlands-28322.herokuapp.com/login",{
+      let result=await axios.post("http://localhost:3000/login",{
          username:username,
          password:password 
       });     
       let data=result.data;
-      console.log(data);
       if(data=="incorrect username or password"){
         document.querySelector(".alert-danger").style.display="block";
         document.querySelector(".error-message").innerText="incorrect username or password";

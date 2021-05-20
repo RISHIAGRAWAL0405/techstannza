@@ -304,6 +304,9 @@ body {
   color: #f1f1f1;
 }
 
+.closebtn {
+  cursor: pointer;
+}
 .sidenav .closebtn {
   position: absolute;
   top: 0;

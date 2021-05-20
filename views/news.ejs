@@ -2,6 +2,9 @@
 
 
 <link rel="stylesheet" href="/css/newsStyles.css">
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
 
 
 
@@ -95,9 +98,23 @@
         </div>
     
         <div class="icons">
-            <button class="buttons"><span><i class="far fa-thumbs-up"></i>121</span></button>
-            <button class="buttons"> <span><i class="far fa-thumbs-down"></i>56</span></button>
-            <button class="buttons"><span><i class="fas fa-comment"></i>26</span></button>
+            <button class="buttons upvote" data-news=<%=news.id%> data-upvoted=<%if(currentUser){%>
+                <%= (news.upVotes.includes(currentUser.id)) %>
+                <% }else{ %>
+                    <%=false%>
+                    
+                    <% } %> 
+                    
+            >
+            
+            <i class="fas fa-thumbs-up"></i><span></i><%=news.upVotes.length%></span></button>
+            <button class="buttons downvote" data-news="<%=news.id%>" data-downvoted=<%if(currentUser){%>
+                <%= (news.downVotes.includes(currentUser.id)) %>
+                <% }else{ %>
+                    <%=false%>
+                    
+                    <% } %>><i class="far fa-thumbs-down"></i> <span><%=news.downVotes.length%></span></button>
+           
             <a href=""><i class="fas fa-share"></i></a>
         </div>
 

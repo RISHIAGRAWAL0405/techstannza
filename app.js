@@ -19,6 +19,7 @@ const passportGoogleStrategy=require("./passportGoogle");
 
 
 
+
 const ExpressError=require("./utils/Expresserror");
 const phoneRoutes=require("./routes/phones");
 const homeRoutes=require("./routes/home");
@@ -27,7 +28,7 @@ const bestPhonesRoutes=require("./routes/bestPhones");
 const newsRoutes=require("./routes/news");
 const rangeRoutes=require("./routes/range");
 const specificRoutes=require("./routes/specific");
-
+const voteRoutes=require("./routes/voteRoutes");
 
                              //   this is the database connection part
 const dbUrl=process.env.DB_URL;
@@ -99,6 +100,7 @@ app.use("/bestPhones",bestPhonesRoutes);
 app.use("/range",rangeRoutes);
 app.use("/news",newsRoutes);
 app.use("/specific",specificRoutes);
+app.use("/vote",voteRoutes);
 
 app.use("/",homeRoutes);
 

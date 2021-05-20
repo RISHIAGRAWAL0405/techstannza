@@ -8,7 +8,7 @@ const userSchema=new mongoose.Schema({
     },
     googleId:String,
     facebookId:String,
-    tiwtterId:String
+    tiwtterIds:String
 
 
 });

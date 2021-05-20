@@ -45,7 +45,28 @@ let newsSchema=new mongoose.Schema({
     mainNews:{
         type:String,
         required:true
-    }
+    },
+    comments:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"User"
+        }
+
+    ],
+    upVotes:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"User"
+        }
+    ],
+    downVotes:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"User"
+        }
+    ]
+
+
 
 
 });

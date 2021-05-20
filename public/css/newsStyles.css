@@ -49,7 +49,7 @@ body {
 }
 .image-div img {
   width: 100%;
-  height: 300px !important;
+  height: 100vh;
   transform: translateX(100%);
   opacity: 0;
   /* opacity: 0.9; */
@@ -152,6 +152,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* width: 50%; */
+  display: inline;
 }
 .icons i {
   font-size: 20px;
@@ -165,6 +167,7 @@ body {
 .buttons {
   background-color: white;
   border: none;
+  /* width: 100px; */
 }
 .comments-div {
   display: none;
