@@ -205,7 +205,7 @@
   </a>
 
   <div class="other-than-logo">
-     <% if(currentUser.username==="admin"){ %> 
+     <% if(currentUser && currentUser.username==="admin"){ %> 
     <a href="/phone">Add a Phone</a>
     <% } %> 
 
