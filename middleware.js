@@ -18,7 +18,8 @@ module.exports.isAdmin=(req,res,next)=>{
     if(req.user.username==="admin"){
       return  next();
     }
-    res.send("you must be an admin");
+    req.flash("error","you must be an admin for that");
+    
     res.redirect("/");
 
 
