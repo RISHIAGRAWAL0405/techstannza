@@ -3,18 +3,18 @@ const router=express.Router();
 const catchAsync = require('../utils/catchAsync');
 const ExpressError = require('../utils/Expresserror');
 const Mobile=require("../models/mobileaman");
-const {isLoggedIn}=require("../middleware");
+const {isLoggedIn,isAdmin}=require("../middleware");
 
 
 
 
 
-router.get("/",isLoggedIn,async(req,res)=>{
+router.get("/",isLoggedIn,isAdmin,async(req,res)=>{
    res.render("phone");
 })
 
 
-router.post("/",isLoggedIn,async(req,res)=>{
+router.post("/",isLoggedIn,isAdmin,async(req,res)=>{
    
 
         const pixMain = [];

@@ -11,3 +11,15 @@ module.exports.isLoggedIn=(req,res,next)=>{
    
 
 };
+
+
+module.exports.isAdmin=(req,res,next)=>{
+
+    if(req.user.username==="admin"){
+      return  next();
+    }
+    res.send("you must be an admin");
+    res.redirect("/");
+
+
+}
