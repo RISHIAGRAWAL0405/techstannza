@@ -13,10 +13,7 @@ const User=require("../models/user");
 
 router.get("/",async (req,res)=>{
     const mobiles=await Mobile.find({});
-
-   const stories=await News.find({});    
-   req.flash("success","We Got your suggestion,promise we wil Improve");
-    console.log(res.locals.currentUser);
+    const stories=await News.find({});    
     res.render("home",{
         mobiles:mobiles,
         home:1,
@@ -70,54 +67,7 @@ router.get("/axiosMobiles",async (req,res)=>{
     let mobiles=await Mobile.find();
     res.json(mobiles);
 });
-router.get("/register",(req,res)=>{
-    res.render("register");
-});
-router.post("/register",async (req,res,next)=>{
-   try{
-      let {username,password,email}=req.body;
-      let user=new User({username:username,email:email});
-      let newUser=await User.register(user,password);
-      req.login(newUser,err=>{
-          if(err) return next(err);
-          req.flash("success","welcome to Trakin Zone");
-          res.redirect("/");
-      });
-      
-   }
-   catch(e){
-       req.flash("error",e.message);
-       res.redirect("/register");   
-   }
-});
 
-router.post("/login",passport.authenticate("local",{failureFlash:true,failureRedirect:"/fail"}),(req,res)=>{
-  req.flash("success","welcome back!");
-  const user_data={"id":req.user._id,"name":req.user.username};
-  res.json(user_data);
-
-});
-
-
-router.get("/google",passport.authenticate("google",{
-    scope:["profile","email"]
-}))
-
-router.get("/logout",(req,res)=>{
-    req.logout();
-    req.flash("success","GOOD Bye!! see you soon");
-    res.redirect("/");
-});
-
-//callback route for google strategy
-router.get("/google/redirect",passport.authenticate("google"),(req,res)=>{
-   res.redirect("/");
-})
-
-
-router.get("/fail",(req,res)=>{
-   res.json("incorrect username or password");
-})
 
 
 

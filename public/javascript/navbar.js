@@ -46,30 +46,60 @@ function openNav() {
   
 
   let loginForm=document.querySelector(".login-form");
+  
   loginForm.addEventListener("submit",(e)=>{
     sendLoginRequest(loginForm.username.value,loginForm.password.value);
     e.preventDefault();
 
   });
 
-  document.querySelector(".alert-danger").style.display="none";
+  document.querySelector(".login-error").style.display="none";
   let sendLoginRequest=async (username,password)=>{
-      let result=await axios.post("https://desolate-badlands-28322.herokuapp.com/login",{
+      let result=await axios.post("https://desolate-badlands-28322.herokuapp.com/auth/login",{
          username:username,
          password:password 
       });     
       let data=result.data;
       if(data=="incorrect username or password"){
-        document.querySelector(".alert-danger").style.display="block";
-        document.querySelector(".error-message").innerText="incorrect username or password";
+        document.querySelector(".login-error").style.display="flex";
+        document.querySelector(".login-message").innerText="incorrect username or password";
       }
       else{
         window.location.reload();
       }
       
      
-  } 
- 
+  };
+  
+  
+  let registerForm=document.querySelector(".register-form");
+
+  registerForm.addEventListener("submit",(e)=>{
+       sendRegisterRequest(registerForm.username.value,registerForm.password.value,registerForm.email.value);
+       e.preventDefault();
+  })
+   
+  
+
+  document.querySelector(".register-error").style.display="none";
+  let sendRegisterRequest=async (username,password,email)=>{
+      let result=await axios.post("https://desolate-badlands-28322.herokuapp.com/auth/register",{
+        username,
+        password,
+        email
+      });
+      if(result.data=="A user with the given username is already registered"){
+        document.querySelector(".register-error").style.display="flex";
+        document.querySelector(".register-message").innerText=result.data;
+
+
+      }
+      else{
+        window.location.reload();
+
+      }
+
+  }
 
 
 

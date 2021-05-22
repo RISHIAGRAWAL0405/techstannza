@@ -28,7 +28,10 @@ router.get("/upvote",isLoggedIn,async(req,res)=>{
   await foundNews.save();
   let data={"upvotes":foundNews.upVotes.length,"downvotes":foundNews.downVotes.length,"action":"insert"}
   return res.json(data);
-})   
+});   
+
+
+
 router.get("/downvote",isLoggedIn,async(req,res)=>{
   let {news}=req.query;
   let foundNews=await News.findById(news);

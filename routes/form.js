@@ -4,14 +4,15 @@ const catchAsync = require('../utils/catchAsync');
 const ExpressError = require('../utils/Expresserror');
 const Suggestion=require("../models/suggestion");
 const Subscriber=require("../models/newsletter");
+const {isLoggedIn}=require("../middleware");
 
 
 router.post("/suggestions",catchAsync(async (req,res)=>{
-    let {Name,email_id,suggestion,path}=req.body;
+    let {Name,email_id,suggestion}=req.body;
     let newSuggestion=new Suggestion({name:Name,email:email_id,suggestion:suggestion});
     await newSuggestion.save();
     req.flash("success","We Got your suggestion,promise we wil Improve");
-    res.redirect(`${path}`);
+    res.redirect(req.session.returnTo);
 }));
  
 router.post("/subscribe",async (req,res)=>{

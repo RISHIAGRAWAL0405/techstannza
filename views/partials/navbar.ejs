@@ -4,6 +4,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;1,400&family=Anton&display=swap"
   rel="stylesheet">
 
+
+ <style>
+      
+
+
+
+
+ </style>
 <div class="modal fade c-modal" id="exampleModalToggle" tabindex="-1" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
@@ -15,9 +23,9 @@
       </div>
       <div class="modal-body custom">
 
-        <div class="alert alert-danger alert-dismissible fade show text-center w-100" role="alert" style="margin: 0;">
-          <strong class="error-message"></strong>
-          <button type="button" class="btn-close p-1" data-bs-dismiss="alert" aria-label="Close"></button>
+        <div class="alert alert-danger alert-dismissible fade show text-center w-100 login-error" role="alert" style="margin: 0;padding: 10px;">
+          <strong class="error-message login-message"></strong>
+          <button type="button" class="p-1" data-bs-dismiss="alert" aria-label="Close" style="margin-left: auto;background-color: transparent;border: none;height: fit-content;"><i class="fas fa-times" style="font-size: larger;"></i></button>
         </div>
 
         <div class="login-local">
@@ -46,7 +54,7 @@
         <div class="login-diff">
 
           <div class="google">
-            <a href="/google">
+            <a href="/auth/google">
               <div class="google-icon">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"
@@ -80,8 +88,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body custom">
+        <div class="alert alert-danger alert-dismissible fade show text-center w-100 register-error"  role="alert" style="margin: 0;">
+          <strong class="error-message register-message"></strong>
+          <button type="button" class="p-1" data-bs-dismiss="alert" aria-label="Close" style="margin-left: auto;background-color: transparent;border: none;height: fit-content"><i class="fas fa-times" style="font-size: larger;"></i></button>
+        </div>
         <div class="login-local">
-          <form action="/register" method="post">
+          <form action="/auth/register" method="POST" class="register-form">
             <div class="mb-3">
               
               <input class="form-control" type="text" id="username1" name="username" required placeholder="username" autocomplete="on">
@@ -98,7 +110,7 @@
           
             </div>
             
-            <button class="btn btn-success">Register</button>
+            <button class="btn btn-success register-button">Register</button>
           </form>
 
           
@@ -238,7 +250,7 @@
               <li class="user-name">Hey!! <%=currentUser.username%>
               </li>
               <li class="user-links">Watchlist</li>
-              <li class="user-links"><a href="/logout">Log Out</a></li>
+              <li class="user-links"><a href="/auth/logout">Log Out</a></li>
             </ul>
           </div>
 

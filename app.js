@@ -29,6 +29,8 @@ const newsRoutes=require("./routes/news");
 const rangeRoutes=require("./routes/range");
 const specificRoutes=require("./routes/specific");
 const voteRoutes=require("./routes/voteRoutes");
+const commentRoutes=require("./routes/CommentRoutes");
+let authRoutes=require("./routes/userRoutes");
 
                              //   this is the database connection part
 const dbUrl=process.env.DB_URL;
@@ -94,15 +96,30 @@ app.use(express.static(path.join(__dirname,"public")));  //this is the serving o
  
                           //this are the routes handlers
 
-app.use("/phone",phoneRoutes);
-app.use("/form",formRoutes);
-app.use("/bestPhones",bestPhonesRoutes);
-app.use("/range",rangeRoutes);
-app.use("/news",newsRoutes);
-app.use("/specific",specificRoutes);
-app.use("/vote",voteRoutes);
 
-app.use("/",homeRoutes);
+let middleReq=((req,res,next)=>{
+    console.log(req.originalUrl);
+    req.session.returnTo=req.originalUrl;
+    next();
+});                          
+
+
+
+app.get("/css/main.css.map",(req,res)=>{
+    console.log(" bha bsdki am in css main route");
+    res.redirect("/");
+})
+app.use("/phone",middleReq,phoneRoutes);
+app.use("/form",formRoutes);
+app.use("/bestPhones",middleReq,bestPhonesRoutes);
+app.use("/range",middleReq,rangeRoutes);
+app.use("/news",middleReq,newsRoutes);
+app.use("/specific",middleReq,specificRoutes);
+app.use("/vote",voteRoutes);
+app.use("/news/:id/comment",middleReq,commentRoutes);
+app.use("/auth",authRoutes);
+
+app.use("/",middleReq,homeRoutes);
 
 
                           

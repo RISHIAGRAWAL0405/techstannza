@@ -41,16 +41,17 @@
     
         <div class="news-image">
             <img src="<%=news.image%>" alt="">
+            <div class="date-added"><%=news.dated%></div>
         </div>
         <div class="news-heading">
             <p><%=news.heading%></p>
         </div>
         <div class="read-more">
-            <a href="/news">Read More</a>
+            <a href="/news/<%=news._id%>">Read More</a>
         </div>
     
         <div class="icons">
-            <button class="buttons upvote" data-news=<%=news.id%> data-upvoted=<%if(currentUser){%>
+            <button class="buttons upvote" data-news=<%=news._id%> data-upvoted=<%if(currentUser){%>
                 <%= (news.upVotes.includes(currentUser.id)) %>
                 <% }else{ %>
                     <%=false%>
@@ -59,13 +60,13 @@
                     
             >
             
-            <i class="fas fa-thumbs-up"></i><span></i><%=news.upVotes.length%></span></button>
-            <button class="buttons downvote" data-news="<%=news.id%>" data-downvoted=<%if(currentUser){%>
+            <i class="fas fa-bolt"></i><span></i><%=news.upVotes.length%></span></button>
+            <button class="buttons downvote" data-news="<%=news._id%>" data-downvoted=<%if(currentUser){%>
                 <%= (news.downVotes.includes(currentUser.id)) %>
                 <% }else{ %>
                     <%=false%>
                     
-                    <% } %>><i class="far fa-thumbs-down"></i> <span><%=news.downVotes.length%></span></button>
+                    <% } %>><i class="far fa-angry"></i> <span><%=news.downVotes.length%></span></button>
            
             <a href=""><i class="fas fa-share"></i></a>
         </div>

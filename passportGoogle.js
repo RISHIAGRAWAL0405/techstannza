@@ -18,13 +18,14 @@ passport.deserializeUser((id,done)=>{
 
 passport.use(
     new GoogleStrategy({    //options for google stretegy      //this is when we first time use passport.authenticate("google")
-        callbackURL:"https://desolate-badlands-28322.herokuapp.com/google/redirect",  //callback url for google
+        callbackURL:"https://desolate-badlands-28322.herokuapp.com/auth/google/redirect",  //callback url for google
         clientID:"461162423697-9vat0q60ogesbk0qk695g6jqqedor3fa.apps.googleusercontent.com",
-        clientSecret:"_4bcnMGBvTxv0Ei7kdXBsp3v"
+        clientSecret:"_4bcnMGBvTxv0Ei7kdXBsp3v",
+        passReqToCallback: true
 
 
-    },(accessToken,refreshToken,profile,done)=>{
-
+    },(req,accessToken,refreshToken,profile,done)=>{
+       
         // that's the callback function which run after the user is authenticated from google and google redirects to us  /////////////it hits because of the second passport.authenticate("google")
        User.findOne({googleId:profile.id}).then((currentUser)=>{
            if(currentUser){

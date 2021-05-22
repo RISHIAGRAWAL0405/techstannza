@@ -1,4 +1,5 @@
 let mongoose=require("mongoose");
+const Schema=mongoose.Schema;
 // const dbUrl=process.env.DB_URL;
 
 
@@ -48,20 +49,20 @@ let newsSchema=new mongoose.Schema({
     },
     comments:[
         {
-            type:mongoose.Schema.Types.ObjectId,
-            ref:"User"
+            type:Schema.Types.ObjectId,
+            ref:"Comment"
         }
 
     ],
     upVotes:[
         {
-            type:mongoose.Schema.Types.ObjectId,
+            type:Schema.Types.ObjectId,
             ref:"User"
         }
     ],
     downVotes:[
         {
-            type:mongoose.Schema.Types.ObjectId,
+            type:Schema.Types.ObjectId,
             ref:"User"
         }
     ]
