@@ -16,10 +16,9 @@ const passport=require("passport");
 const passportLocalStrategy=require("passport-local");
 const User=require("./models/user");
 const passportGoogleStrategy=require("./passportGoogle");
-// const axios=require("axios").default;
-// const rp=require("request-promise");
-// const cheerio=require("cheerio");
-// const htmlparser2=require("htmlparser2");
+const axios=require("axios").default;
+
+
 
 
 
@@ -103,7 +102,6 @@ app.use(express.static(path.join(__dirname,"public")));  //this is the serving o
 
 
 let middleReq=((req,res,next)=>{
-    console.log(req.originalUrl);
     req.session.returnTo=req.originalUrl;
     next();
 });                          
@@ -111,7 +109,6 @@ let middleReq=((req,res,next)=>{
 
 
 app.get("/css/main.css.map",(req,res)=>{
-    console.log(" bha bsdki am in css main route");
     res.redirect("/");
 })
 app.use("/phone",middleReq,phoneRoutes);
@@ -127,52 +124,11 @@ app.use("/auth",authRoutes);
 app.use("/",middleReq,homeRoutes);
 
 
-// const url='https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States';
-// rp(url)
-//   .then(function(html){
-//     //success!
-//     console.log(html);
-//   })
-//   .catch(function(err){
-//     //handle error
-//   });
 
 
 
 
 
-//  const getAxiosWorking=async ()=>{
-//     try{
-//    let result=await axios.get("https://www.amazon.in/Redmi-Note-Pro-Interstellar-Snapdragon/dp/B077PWBC78/ref=sr_1_1?dchild=1&keywords=redmi+note+9+pro&qid=1621852882&sr=8-1");
-//     //   console.log(cheerio.load(".priceblock_vat_excl_price" ).html);
-//     console.log($("priceblock_vat_excl_price",result));
-//     }
-//     catch(e){
-//         console.log(e);
-//     }
-//  } 
-
-
-
-// const url="https://www.amazon.in/Redmi-Note-Pro-Interstellar-Snapdragon/dp/B077PWBC78/ref=sr_1_1?dchild=1&keywords=redmi+note+9+pro&qid=1621852882&sr=8-1";
-//  rp(url)
-//  .then(function(html){
-//    //success!
-
-//    const dom=htmlparser2.parseDocument(html);
-//    const $=cheerio.load(dom);
-
-//   console.log($(".priceblock_vat_excl_price").text());
-  
-//  })
-//  .catch(function(err){
-//    console.log(err);
-//  });
-
-
-
-
-//  getAxiosWorking();
 app.all("*",(req,res,next)=>{
        next(new ExpressError("Page Not Found",404));
 });

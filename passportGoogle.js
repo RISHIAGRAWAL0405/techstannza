@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV!=="production"){
+    require("dotenv").config();
+}
+
 const passport=require("passport");
 const GoogleStrategy=require("passport-google-oauth").OAuth2Strategy;
 const User=require("./models/user");
@@ -18,9 +22,9 @@ passport.deserializeUser((id,done)=>{
 
 passport.use(
     new GoogleStrategy({    //options for google stretegy      //this is when we first time use passport.authenticate("google")
-        callbackURL:"https://desolate-badlands-28322.herokuapp.com/auth/google/redirect",  //callback url for google
-        clientID:"461162423697-9vat0q60ogesbk0qk695g6jqqedor3fa.apps.googleusercontent.com",
-        clientSecret:"_4bcnMGBvTxv0Ei7kdXBsp3v",
+        callbackURL:"http://l   ocalhost:3000/auth/google/redirect",  //callback url for google
+        clientID:`${process.env.clientID}`,
+        clientSecret:`${process.env.clientSecret}`,
         passReqToCallback: true
 
 

@@ -1,17 +1,14 @@
-.outerSection {
+/* .outerSection {
   margin-top: 30px;
 }
 
 .outer {
   position: relative;
   display: flex;
-  /* justify-content: space-between; */
-  /* border: 1px solid brown; */
   height: 85%;
   width: 100%;
   margin: auto;
   margin-top: 30px;
-  /* border-radius: 10px; */
   flex-wrap: wrap;
 }
 
@@ -21,8 +18,7 @@
 img {
   width: 200px;
   height: 200px;
-  /* display: block; */
-  /* margin-top: 3px; */
+ 
   margin-bottom: 0;
 
   vertical-align: center;
@@ -33,7 +29,6 @@ img {
   position: absolute;
   cursor: pointer;
   top: 50%;
-  /* width: auto; */
   margin-top: -22px;
   padding: 8px;
   color: white;
@@ -75,4 +70,4 @@ img {
   .card {
     width: 50%;
   }
-}
+} */

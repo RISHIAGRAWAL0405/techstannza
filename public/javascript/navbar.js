@@ -4,25 +4,22 @@ var prevScrollpos1 = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".c-navbar").style.top = "0";
+    document.querySelector(".nav").style.top = "0";
+    
   } else {
 
     setTimeout(()=>{
-      document.querySelector(".c-navbar").style.top = "-60px";
+      document.querySelector(".nav").style.top = "-60px";
     },100);
     
   }
   prevScrollpos = currentScrollPos;
-  var currentScrollPos1 = window.pageYOffset;
-  if (prevScrollpos1 > currentScrollPos1) {
-    document.querySelector(".second-nav").style.top = "50px";
-  } else {
-    setTimeout(()=>{
-       document.querySelector(".second-nav").style.top = "-100px";
-    },100);
-   
+  if(window.scrollY>15){
+    document.querySelector(".nav").style.backgroundColor="white";
   }
-  prevScrollpos1 = currentScrollPos1;
+  else{
+    document.querySelector(".nav").style.backgroundColor="transparent";
+  }
   
 
 
@@ -55,7 +52,7 @@ function openNav() {
 
   document.querySelector(".login-error").style.display="none";
   let sendLoginRequest=async (username,password)=>{
-      let result=await axios.post("https://desolate-badlands-28322.herokuapp.com/auth/login",{
+      let result=await axios.post("http://localhost:3000/auth/login",{
          username:username,
          password:password 
       });     
