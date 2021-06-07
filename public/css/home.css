@@ -408,7 +408,7 @@ input[type="range"]::-webkit-slider-thumb {
 .recent-section {
   width: 100%;
   height: fit-content;
-
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-evenly;
   margin-top: 70px;
