@@ -119,3 +119,25 @@ ratings.forEach(async (e) => {
     }
   });
 });
+
+// window.onresize = () => {
+//   if (window.innerWidth < 800) {
+//   } else {
+//     if (window.innerWidth < 600) {
+//       document
+//         .querySelector("#background-linear-responsive")
+//         .setAttribute("viewbox", "0 0 424 800");
+//     }
+//   }
+// };
+
+// window.onload = () => {
+//   if (window.innerWidth < 800) {
+//   } else {
+//     if (window.innerWidth < 600) {
+//       document
+//         .querySelector("#background-linear-responsive")
+//         .setAttribute("viewbox", "0 0 424 800");
+//     }
+//   }
+// };

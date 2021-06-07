@@ -521,8 +521,8 @@ body {
   .search-div {
     display: none;
   }
-  .other-than-logo {
-    justify-content: flex-end;
+  .other {
+    margin-right: 25px;
   }
 }
 

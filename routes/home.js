@@ -10,12 +10,11 @@ const User = require("../models/user");
 router.get("/", async (req, res) => {
   const mobiles = await Mobile.find({});
   const stories = await News.find({});
-  // res.render("home",{
-  //     mobiles:mobiles,
-  //     home:1,
-  //     stories
-  // });
-  res.send("kkkk");
+  res.render("home", {
+    mobiles: mobiles,
+    home: 1,
+    stories,
+  });
 });
 
 router.get("/about", (req, res) => {
