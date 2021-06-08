@@ -117,27 +117,43 @@ ratings.forEach(async (e) => {
         i++;
       }
     }
+
+    if (
+      document.querySelector(".subscribe").getBoundingClientRect().top <= 600
+    ) {
+      document.querySelector(".dynamic-mail").classList.add("mail-anim");
+    }
   });
 });
 
-// window.onresize = () => {
-//   if (window.innerWidth < 800) {
-//   } else {
-//     if (window.innerWidth < 600) {
-//       document
-//         .querySelector("#background-linear-responsive")
-//         .setAttribute("viewbox", "0 0 424 800");
-//     }
-//   }
-// };
+gsap.from(".subscribe-message", {
+  scrollTrigger: ".subscribe",
+  x: 1000,
+  duration: 2,
+});
 
-// window.onload = () => {
-//   if (window.innerWidth < 800) {
-//   } else {
-//     if (window.innerWidth < 600) {
-//       document
-//         .querySelector("#background-linear-responsive")
-//         .setAttribute("viewbox", "0 0 424 800");
-//     }
-//   }
-// };
+gsap.from("#feature-illu", {
+  scrollTrigger: "#feature-illu",
+  opacity: 0,
+  scale: 1.3,
+  duration: 2,
+});
+gsap.from("#saving_money", {
+  scrollTrigger: {
+    trigger: ".phone-finder",
+  },
+  scale: 1.3,
+  opacity: 0,
+  duration: 1,
+});
+
+document.querySelectorAll("h1").forEach((e) => {
+  gsap.from(e, {
+    scrollTrigger: {
+      trigger: e,
+    },
+    scale: 1.3,
+    backgroundColor: "lightskyblue",
+    duration: 1,
+  });
+});

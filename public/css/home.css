@@ -19,6 +19,12 @@ section h1 {
   background-size: 1000px;
   animation: example 2s infinite alternate-reverse;
 }
+#background-linear-second-responsive {
+  display: none;
+  position: absolute;
+  width: auto;
+  height: auto;
+}
 @keyframes example {
   from {
     background-position: left;
@@ -247,7 +253,7 @@ section h1 {
 .price-illu {
   width: 90%;
   height: 100%;
-  padding: 50px;
+  padding: 15px;
 }
 
 #saving_money {
@@ -265,12 +271,8 @@ section h1 {
 }
 .feature-para {
   width: 48%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: xx-large;
-  font-weight: 600;
-  padding: 20px;
+  height: 100%;
+  margin-left: 50px;
 }
 .feature-div {
   width: 48%;
@@ -298,6 +300,7 @@ section h1 {
   flex-wrap: wrap;
   justify-content: center;
   transition: 0.5s;
+  text-align: center;
 }
 .centric i {
   width: 100%;
@@ -688,7 +691,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .buy-links {
   display: none;
-  width: 400px;
+  width: 100%;
   height: fit-content;
   position: absolute;
   box-shadow: 0px 0px 10px lightgray;
@@ -849,7 +852,74 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: #5a86ff;
   transition: 0.5s;
 }
+.subscribe {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  background-color: #e9ebff;
+  padding: 50px;
+}
+.subscribe-illu {
+  width: 50%;
+  height: 400px;
+  padding: 20px;
+}
+.subscribe-illu svg {
+  height: 100%;
+  width: auto;
+}
+.subscribe-form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.subscribe-form form {
+  display: flex;
+  flex-direction: column;
+}
+.subscribe-form form input {
+  border: none;
+  outline: none;
+  user-select: none;
+  color: black;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-bottom: 20px;
+}
+.subscribe-form form button {
+  border: none;
+  outline: none;
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-weight: 500;
+}
+.subscribe-form form button:hover {
+  background-color: #5a86ff;
+  transition: 0.5s;
+}
+.subscribe-form .subscribe-message p {
+  font-size: x-large;
+  padding: 20px;
+  text-align: center;
+  font-weight: 400;
+}
 
+.mail-anim {
+  animation: animMail 1s ease-in-out alternate;
+}
+@keyframes animMail {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
 @keyframes changeopacity {
   from {
     opacity: 0.8;
@@ -860,6 +930,15 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 @media screen and (max-width: 600px) {
+  #background-linear-responsive {
+    display: block;
+  }
+  #background-linear {
+    display: none;
+  }
+  #background-linear-second-responsive {
+    display: none;
+  }
   .second-para {
     padding: 10px;
   }
@@ -871,6 +950,7 @@ input[type="range"]::-webkit-slider-thumb {
   .slider-div {
     width: 95%;
     margin: 0;
+    margin-top: 20px;
   }
   .actual-i-div {
     margin-top: 20px;
@@ -898,6 +978,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .price-para {
     z-index: 2;
+    margin-top: 50px;
   }
   #saving_money {
     height: 100%;
@@ -925,10 +1006,12 @@ input[type="range"]::-webkit-slider-thumb {
   #feature-illu {
     width: 90%;
     height: 100%;
+    margin-top: 100px;
   }
   .feature-para {
     height: 50%;
     width: 100%;
+    margin-left: 50px;
   }
   .recent-section {
     width: 100%;
@@ -979,16 +1062,16 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 @media screen and (max-width: 800px) {
-  #background-linear-responsive {
-    display: block;
-  }
   #background-linear {
     display: none;
   }
+  #background-linear-second-responsive {
+    display: block;
+  }
   .i-card {
-    width: 46%;
+    width: 49%;
 
-    margin-right: 10px;
+    /* margin-right: 10px; */
     margin-top: 10px;
   }
   .landing-illu {
@@ -1003,5 +1086,22 @@ input[type="range"]::-webkit-slider-thumb {
   .swiper-container {
     width: 95%;
     margin-left: 10px;
+  }
+  .centric {
+    width: 40%;
+    min-height: 100px;
+    text-align: center;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  #mobile-blob {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .comparisons-text {
+    padding: 0;
   }
 }
