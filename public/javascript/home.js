@@ -76,6 +76,9 @@ actualForm.min.value = inputLeft.value;
 actualForm.max.value = inputRight.value;
 
 const swiper = new Swiper(".swiper-container", {
+  slidesPerView: 1.3,
+  spaceBetween: 15,
+  centeredSlides: true,
   direction: "horizontal",
   loop: true,
   autoplay: {
@@ -129,6 +132,7 @@ ratings.forEach(async (e) => {
 gsap.from(".subscribe-message", {
   scrollTrigger: ".subscribe",
   x: 1000,
+  opacity: 0,
   duration: 2,
 });
 
@@ -147,13 +151,16 @@ gsap.from("#saving_money", {
   duration: 1,
 });
 
-document.querySelectorAll("h1").forEach((e) => {
-  gsap.from(e, {
-    scrollTrigger: {
-      trigger: e,
-    },
-    scale: 1.3,
-    backgroundColor: "lightskyblue",
-    duration: 1,
-  });
+gsap.from(".each", {
+  scrollTrigger: ".each",
+  scale: 1.1,
+  opacity: 0,
+  duration: 1,
+});
+
+gsap.from(".news-card", {
+  scrollTrigger: ".news-card",
+  scale: 1.1,
+  opacity: 0,
+  duration: 1,
 });
