@@ -446,9 +446,8 @@ input[type="range"]::-webkit-slider-thumb {
 #recent-heading {
   width: 100%;
   text-align: center;
-  /* background-color: lightskyblue; */
   padding: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -483,7 +482,7 @@ input[type="range"]::-webkit-slider-thumb {
 .top-comparisons {
   width: 100%;
   height: fit-content;
-  margin-top: 50px;
+  margin-top: 70px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -495,21 +494,27 @@ input[type="range"]::-webkit-slider-thumb {
   /* background-color: #87cefa; */
   padding: 10px;
   font-size: 200%;
-  margin-bottom: 120px;
+  margin-bottom: 30px;
 }
 .each {
-  min-height: 70vh;
+  min-height: 60vh;
 
   width: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 
   position: relative;
+  box-shadow: 2px 2px 5px lightgray;
 }
 .image-comparison-div {
   width: 100%;
   height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .image-comparison-div img {
   width: 100%;
@@ -542,7 +547,7 @@ input[type="range"]::-webkit-slider-thumb {
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  color: #3a86ff;
+  color: #023e8a;
   height: 30px;
 
   margin: 30px 0px;
@@ -582,8 +587,8 @@ input[type="range"]::-webkit-slider-thumb {
   user-select: none;
   border: none;
   width: 100%;
-  background-color: transparent;
-  border: 2px solid lightgray;
+
+  /* border: 2px solid lightgray; */
   padding: 5px;
   border-radius: 5px;
   transition: 0.5s;
@@ -591,7 +596,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .button-comp button:hover {
   background-color: #5a86ff;
-  border: 2px solid #5a86ff;
+  /* border:  */
   transition: 0.5s;
 }
 
@@ -726,7 +731,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 .buy-hover {
   width: 33%;
-  padding: 5px;
+  padding: 10px;
   background-color: white;
   text-align: center;
   cursor: pointer;
@@ -736,7 +741,6 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  padding: 5px;
 }
 .buy-links {
   display: none;
@@ -751,14 +755,25 @@ input[type="range"]::-webkit-slider-thumb {
   align-items: center;
   left: 0;
   border-radius: 10px;
-  visibility: hidden;
+  opacity: 0;
+  transform: scale(1);
 }
 .buy-hover:hover .buy-links {
+  animation: goOpace 1s;
   display: flex;
   opacity: 1;
-  visibility: visible;
-  transition: visibility 1s;
 }
+@keyframes goOpace {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .amazon-buy {
   width: 20%;
   display: flex;
@@ -798,28 +813,34 @@ input[type="range"]::-webkit-slider-thumb {
   width: 100%;
   height: fit-content;
   display: flex;
+  margin-top: 50px;
+  padding: 20px 50px 50px 50px;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background-color: #e1e5f2;
 }
 .recent-reviews h1 {
   width: 100%;
   padding: 10px;
   /* background-color: lightskyblue; */
-  margin: 50px 0px;
+  /* margin: 50px 0px; */
+
   text-align: center;
 }
 .review {
   width: 27%;
   height: fit-content;
-  min-height: 500px;
-
+  /* min-height: 500px; */
+  height: max-content;
+  border-radius: 20px;
   flex-direction: column;
   /* border: 1px solid lightgray; */
-  box-shadow: 0px 0px 10px lightgray;
+  background-color: white;
+  /* box-shadow: 0px 0px 10px lightgray; */
 }
 .review-image {
   width: 100%;
-  height: 250px;
+  height: 200px;
   margin-top: 5px;
 }
 .review-text {
@@ -856,6 +877,7 @@ input[type="range"]::-webkit-slider-thumb {
 .review-image img {
   width: 100%;
   height: 100%;
+  border-radius: 20px;
 }
 .ratings {
   width: 100%;
@@ -1091,10 +1113,9 @@ input[type="range"]::-webkit-slider-thumb {
     align-items: center;
   }
   .each {
-    width: 90%;
+    width: 45%;
     height: fit-content;
-    margin: 60px 0px 0px 0px;
-    border: 1px solid lightgrey;
+    margin: 60px 10px 0px 0px;
   }
 }
 @media screen and (max-width: 1100px) {

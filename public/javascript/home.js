@@ -152,9 +152,13 @@ gsap.from("#saving_money", {
 });
 
 gsap.from(".each", {
-  scrollTrigger: ".each",
-  scale: 1.1,
+  scrollTrigger: {
+    trigger: ".each",
+    start: "-40px 600px",
+  },
+
   opacity: 0,
+  transform: "translateY(100px)",
   duration: 1,
 });
 
@@ -163,17 +167,4 @@ gsap.from(".news-card", {
   scale: 1.1,
   opacity: 0,
   duration: 1,
-});
-
-document.querySelectorAll(".buy-hover").forEach(function (e) {
-  e.addEventListener("mouseover", function () {
-    console.log(this.childNodes[3]);
-
-    gsap.to(this.childNodes[3], {
-      display: "flex",
-      opacity: 0,
-      duration: 1,
-    });
-    this.childNodes[3].style.opacity = 1;
-  });
 });
