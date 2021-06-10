@@ -436,9 +436,10 @@ body {
   border: none;
   height: 100%;
   align-self: center;
+  padding: 5px;
 }
 .custom-btn:hover {
-  background-color: #5a86ff;
+  background-color: lightgray;
 }
 .sidenav {
   height: 100%;

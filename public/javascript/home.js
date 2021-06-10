@@ -75,9 +75,20 @@ let actualForm = document.querySelector(".range-form");
 actualForm.min.value = inputLeft.value;
 actualForm.max.value = inputRight.value;
 
+function getSpaceBetween() {
+  window.onload = () => {
+    let wWidth = window.innerWidth;
+    if (wWidth < 600) {
+      return 10;
+    } else {
+      return 15;
+    }
+  };
+}
+
 const swiper = new Swiper(".swiper-container", {
-  slidesPerView: 1.3,
-  spaceBetween: 15,
+  slidesPerView: 1.2,
+  spaceBetween: 5,
   centeredSlides: true,
   direction: "horizontal",
   loop: true,
@@ -87,6 +98,12 @@ const swiper = new Swiper(".swiper-container", {
 
   pagination: {
     el: ".swiper-pagination",
+  },
+  breakpoints: {
+    600: {
+      slidesPerView: 1.3,
+      spaceBetween: 15,
+    },
   },
 
   navigation: {
