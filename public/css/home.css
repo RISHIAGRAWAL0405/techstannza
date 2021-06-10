@@ -1129,7 +1129,6 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .i-card:nth-of-type(2n) {
     margin: 10px;
-    margin-right: 15px;
   }
   .landing-illu {
     flex-wrap: wrap;
