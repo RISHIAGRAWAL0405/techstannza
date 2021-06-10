@@ -434,11 +434,11 @@ body {
   background-color: transparent;
   outline: none;
   border: none;
-  height: 80%;
+  height: 100%;
   align-self: center;
 }
 .custom-btn:hover {
-  background-color: blanchedalmond;
+  background-color: #5a86ff;
 }
 .sidenav {
   height: 100%;
@@ -522,7 +522,7 @@ body {
     display: none;
   }
   .other {
-    margin-right: 10px;
+    margin-right: 25px;
   }
 }
 
@@ -531,13 +531,20 @@ body {
     display: none;
   }
   .custom-btn {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     /* justify-content: center; */
+    align-self: center;
     margin-left: 10px;
+    margin-top: 5px;
   }
   .custom-btn i {
+    /* margin-top: 7px; */
+    align-self: center;
     width: 100%;
+    font-size: x-large;
   }
 }
 
