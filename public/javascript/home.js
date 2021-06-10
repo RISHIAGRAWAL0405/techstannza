@@ -164,3 +164,16 @@ gsap.from(".news-card", {
   opacity: 0,
   duration: 1,
 });
+
+document.querySelectorAll(".buy-hover").forEach(function (e) {
+  e.addEventListener("mouseover", function () {
+    console.log(this.childNodes[3]);
+
+    gsap.to(this.childNodes[3], {
+      display: "flex",
+      opacity: 0,
+      duration: 1,
+    });
+    this.childNodes[3].style.opacity = 1;
+  });
+});
