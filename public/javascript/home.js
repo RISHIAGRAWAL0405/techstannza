@@ -37,9 +37,21 @@ inputLeft.addEventListener("input", () => {
   setLeftValue();
 
   actualForm.min.value = inputLeft.value;
+  if (parseInt(actualForm.min.value) > parseInt(actualForm.max.value)) {
+    actualForm.min.style.border = "1px solid red";
+  } else {
+    actualForm.min.style.border = "none";
+    actualForm.max.style.border = "none";
+  }
 });
 inputRight.addEventListener("input", () => {
   setRightValue();
+  if (parseInt(actualForm.min.value) > parseInt(actualForm.max.value)) {
+    actualForm.min.style.border = "1px solid red";
+  } else {
+    actualForm.min.style.border = "none";
+    actualForm.max.style.border = "none";
+  }
 
   actualForm.max.value = inputRight.value;
 });
@@ -75,16 +87,31 @@ let actualForm = document.querySelector(".range-form");
 actualForm.min.value = inputLeft.value;
 actualForm.max.value = inputRight.value;
 
-function getSpaceBetween() {
-  window.onload = () => {
-    let wWidth = window.innerWidth;
-    if (wWidth < 600) {
-      return 10;
-    } else {
-      return 15;
-    }
-  };
-}
+actualForm.min.addEventListener("input", (e) => {
+  inputLeft.value = actualForm.min.value;
+  setLeftValue();
+
+  if (parseInt(actualForm.min.value) > parseInt(actualForm.max.value)) {
+    actualForm.min.style.border = "1px solid red";
+  } else {
+    actualForm.min.style.border = "none";
+  }
+});
+actualForm.max.addEventListener("input", () => {
+  inputRight.value = actualForm.max.value;
+  setRightValue();
+  if (parseInt(actualForm.min.value) > parseInt(actualForm.max.value)) {
+    actualForm.max.style.border = "1px solid red";
+  } else {
+    actualForm.max.style.border = "none";
+  }
+});
+
+const validateMyForm = () => {
+  if (parseInt(actualForm.min.value) > parseInt(actualForm.max.value)) {
+    return false;
+  }
+};
 
 const swiper = new Swiper(".swiper-container", {
   slidesPerView: 1.2,

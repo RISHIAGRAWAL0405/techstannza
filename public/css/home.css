@@ -164,9 +164,11 @@ section h1 {
 .swiper-button-next:hover::after {
   background-color: #5a86ff;
   transition: 0.5s;
+  border: none;
 }
 .swiper-button-prev:hover::after {
   background-color: #5a86ff;
+  border: none;
   transition: 0.5s;
 }
 
@@ -416,6 +418,18 @@ input[type="range"]::-webkit-slider-thumb {
   background-color: red;
   -webkit-appearance: none;
 }
+
+input[type="range"]::-moz-range-thumb {
+  pointer-events: all;
+  width: 30px;
+  height: 30px;
+  border-radius: 0;
+  border: 0 none;
+  background-color: red;
+  -webkit-appearance: none;
+
+  /* W3C */
+}
 .actual-i {
   width: 40%;
   outline: none;
@@ -444,11 +458,11 @@ input[type="range"]::-webkit-slider-thumb {
 .news-card {
   width: 25%;
   height: 100%;
-  min-height: 500px;
+  /* min-height: 500px; */
   display: flex;
   flex-direction: column;
   background-color: white;
-  box-shadow: 0px 0px 20px lightgray;
+
   border-radius: 20px;
 }
 .image-div {
@@ -565,14 +579,14 @@ input[type="range"]::-webkit-slider-thumb {
   height: 40%;
   width: 100%;
   flex-wrap: wrap;
-  /* box-shadow: 0px 0px 5px lightgray; */
+  font-weight: lighter;
 }
 .comparison-name {
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  color: #023e8a;
+  color: black;
   height: 30px;
 
   margin: 30px 0px;
@@ -929,7 +943,6 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: 20px;
 }
 .review-buttons a {
-  border: 1px solid lightgrey;
   width: 45%;
 
   margin-bottom: 10px;
@@ -937,12 +950,12 @@ input[type="range"]::-webkit-slider-thumb {
   color: black;
   border-radius: 10px;
   text-align: center;
+  background-color: #e1e5f2;
 }
 .review-buttons a:nth-of-type(2) {
   margin-left: 10px;
 }
 .review-buttons a:hover {
-  border: 1px solid #5a86ff;
   background-color: #5a86ff;
   transition: 0.5s;
 }
@@ -1052,7 +1065,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 @media screen and (max-width: 600px) {
   #background-linear-responsive {
-    display: block;
+    display: none;
   }
   #background-linear {
     display: none;
@@ -1072,6 +1085,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 95%;
     margin: 0;
     margin-top: 20px;
+    height: 50%;
   }
   .actual-i-div {
     margin-top: 20px;
@@ -1179,7 +1193,7 @@ input[type="range"]::-webkit-slider-thumb {
     display: none;
   }
   #background-linear-second-responsive {
-    display: block;
+    display: none;
   }
   .i-card {
     width: 45%;
@@ -1205,7 +1219,7 @@ input[type="range"]::-webkit-slider-thumb {
   }
   .landing-page {
     height: 140vh;
-    justify-content: center;
+    justify-content: space-between;
   }
   .swiper-container {
     width: 95%;
