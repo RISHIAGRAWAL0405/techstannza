@@ -207,7 +207,6 @@ gsap.from(".each", {
 });
 
 let swiper1;
-let swiper2;
 let swiperElements = document.querySelectorAll(".news-card");
 window.onload = () => {
   console.log("hiii");
