@@ -1,9 +1,14 @@
+img {
+  border: none;
+}
+
 .main-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  margin-top: 175px;
+  margin-top: 120px;
+  position: relative;
 }
 .upper-strip {
   width: 75%;
@@ -25,7 +30,7 @@
 }
 .fake {
   height: 80px;
-  display: flex;
+  display: none;
   text-decoration: none;
   color: black;
   border-bottom: 1px solid grey;
@@ -39,20 +44,17 @@
 .comparison {
   width: 25%;
   display: flex;
-  /* justify-content: center; */
   flex-direction: column;
-  /* justify-items: center; */
   align-items: center;
-  height: 1000px;
-  /* border: 1px solid black; */
-  /* margin-right: 10px; */
-  padding: 5px;
-  box-shadow: 0px 0px 2px black;
+  height: fit-content;
+
+  box-shadow: 0px 0px 2px lightgray;
 }
 
 .upperSection {
   width: 100%;
   display: flex;
+  padding: 10px;
 }
 .mobileInput {
   width: 100%;
@@ -73,46 +75,44 @@
 .customTable {
   width: 50% !important;
 }
-thead {
-  border-right: 1px solid lightsalmon;
-}
 
 td {
-  border-bottom: 1px solid green;
-  /* padding: 5px; */
-  /* padding-bottom: px; */
+  border-bottom: 1px solid lightgray;
+
   height: 33%;
   padding-left: 5px;
 }
+
+td:last-of-type {
+  border: none;
+}
 .phoneImage {
-  height: 20%;
+  height: fit-content;
   width: 100%;
   margin-top: 20px;
-  border: 0.5px solid grey;
+  padding: 10px;
+
   animation: slidein 2s;
   transition: all 1s;
   border-radius: 10px;
 }
 .originalImage {
   width: 50%;
-  height: 100%;
+  height: 200px;
   text-indent: -10000px;
-  border-radius: 10px;
+  outline: none;
+  border: none;
 }
 .indiDetails {
   margin-top: 20px;
   height: 80%;
   width: 100%;
-  border: 1px solid lightcyan;
 }
 .tab {
-  /* display: flex; */
-  height: 100px;
-  border-bottom: 1px solid green;
+  height: fit-content;
   width: 100%;
 }
 .tbody {
-  /* display: flex; */
   width: 100%;
   justify-content: space-between;
 }
@@ -125,11 +125,19 @@ td {
   min-width: 60%;
 }
 .indipro {
-  /* margin-left: 10px; */
   display: flex;
   flex-direction: column;
-  height: 100px;
+  height: fit-content;
+  min-height: 100px;
   justify-content: space-between;
+}
+.indipro td {
+  height: max-content;
+  min-height: 30px;
+  box-sizing: content-box;
+
+  padding: 10px;
+  font-weight: 400;
 }
 
 .secondMobile .indiDetails {
@@ -153,6 +161,14 @@ td {
   /* min-width: 300px; */
   z-index: 1;
 }
+.dynamicClass {
+  height: 80px;
+  display: flex;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid grey;
+  cursor: pointer;
+}
 .dynamicClass:hover {
   background-color: lightgreen;
   /* transform: translateX(5px); */
@@ -169,35 +185,6 @@ td {
   height: 20px;
   padding: 0;
   background-color: #06d6a0;
-}
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-@keyframes slidein {
-  from {
-    /* transform: rotate3d(20, 10, 10, 180deg); */
-    transform: translate(-20px, -20px);
-    opacity: 0;
-    padding: 30px;
-  }
-  to {
-    /* transform: rotate(1, 1, 1, 45deg); */
-    opacity: 1;
-    transform: translate(0px, 0px);
-    padding: 0px;
-  }
 }
 
 @media screen and (max-width: 800px) {
@@ -220,7 +207,9 @@ td {
     width: 50%;
   }
 }
-
+tr {
+  border: none;
+}
 @media screen and (max-width: 1260px) {
   .searchResult {
     min-width: 200px;

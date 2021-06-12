@@ -525,6 +525,12 @@ body {
   .other {
     margin-right: 10px;
   }
+  .home-nav {
+    display: none;
+  }
+  .logo-div {
+    margin-left: auto;
+  }
 }
 
 @media screen and (max-width: 992px) {

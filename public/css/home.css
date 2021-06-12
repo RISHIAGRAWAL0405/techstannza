@@ -53,6 +53,7 @@ section h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  background-color: rgba(211, 211, 211, 0.5);
 }
 #background-linear-responsive {
   display: none;
@@ -129,10 +130,11 @@ section h1 {
   flex-wrap: wrap;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   transform: scale(1);
+  transition: 0.3s ease;
 }
 .i-card:hover {
   transform: translateY(-10px) scale3d(1.1, 1.1, 1);
-  transition: 0.7s ease;
+  transition: 0.3s ease;
 }
 #rupee-symbol {
   width: 40%;
@@ -1167,7 +1169,7 @@ input[type="range"]::-moz-range-thumb {
   }
   .news-card {
     width: 100%;
-    height: 300px;
+    /* height: 300px; */
     background-color: rgba(211, 211, 211, 0.5);
     margin: 20px 0px 0px 0px;
     border-radius: 10px;
@@ -1185,6 +1187,9 @@ input[type="range"]::-moz-range-thumb {
   }
   .swiper-slide {
     text-align: start;
+  }
+  .recent-section .swiper-slide img {
+    height: 200px;
   }
   .recent-reviews {
     width: 98vw;
