@@ -1137,6 +1137,10 @@ input[type="range"]::-moz-range-thumb {
     margin-left: 10px;
     height: 250px;
   }
+  .recent-section.swiper-container {
+    height: fit-content;
+  }
+
   .centric {
     width: 45%;
     height: 100px;
