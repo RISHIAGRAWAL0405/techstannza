@@ -218,9 +218,9 @@ window.onload = () => {
     swiperContainer.append(swiperWrapper);
     console.log(swiperContainer);
     swiper1 = new Swiper(swiperContainer, {
-      slidesPerView: 1.2,
-      spaceBetween: 5,
-      centeredSlides: true,
+      slidesPerView: 1.5,
+      spaceBetween: 10,
+
       direction: "horizontal",
       loop: true,
       autoplay: {
@@ -268,9 +268,9 @@ window.onresize = () => {
       swiperContainer.append(swiperWrapper);
       console.log(swiperContainer);
       swiper1 = new Swiper(swiperContainer, {
-        slidesPerView: 1.2,
-        spaceBetween: 5,
-        centeredSlides: true,
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+
         direction: "horizontal",
         loop: true,
         autoplay: {
