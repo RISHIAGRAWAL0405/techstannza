@@ -1300,22 +1300,29 @@ input[type="range"]::-moz-range-thumb {
   }
   .subscribe {
     flex-wrap: wrap;
+    padding: 0;
   }
   .subscribe-form {
     width: 100%;
     height: 50%;
-    margin-top: 50px;
+    margin-top: 20px;
+    padding: 20px;
   }
   .subscribe-illu {
-    width: 100%;
+    width: 50%;
     height: 200px;
-    opacity: 0.6;
+    opacity: 1;
+    transform: translateX(100%);
+    padding-right: 30px;
   }
   .subscribe-message {
     top: 10%;
   }
   .subscribe-form .subscribe-message p {
-    font-weight: 900;
+    font-weight: 500;
+    width: 50%;
+    font-size: larger;
+    text-align: start;
   }
 }
 @media screen and (max-width: 350px) {
