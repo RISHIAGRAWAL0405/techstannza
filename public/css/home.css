@@ -53,7 +53,6 @@ section h1 {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: rgba(211, 211, 211, 0.5);
 }
 #background-linear-responsive {
   display: none;
@@ -1057,6 +1056,28 @@ input[type="range"]::-moz-range-thumb {
     width: 30%;
   }
 }
+
+@media screen and (max-width: 1200px) {
+  .comparisons-text {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .subscribe-message {
+    position: absolute;
+    width: 90%;
+    height: fit-content;
+    top: 20px;
+
+    left: 5%;
+    text-align: center;
+  }
+  .subscribe {
+    position: relative;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .swiper-container {
     width: 90%;
@@ -1069,6 +1090,60 @@ input[type="range"]::-moz-range-thumb {
     margin: 50px 50px 0px 0px;
   }
 }
+
+@media screen and (max-width: 800px) {
+  #background-linear {
+    display: none;
+  }
+  #background-linear-second-responsive {
+    display: none;
+  }
+  .i-card {
+    width: 45%;
+    height: 50%;
+    min-height: 200px;
+    max-height: 250px;
+    margin-top: 10px;
+    box-shadow: none;
+  }
+  .first-para svg {
+    height: auto;
+    max-height: 100px;
+  }
+
+  .landing-illu {
+    flex-wrap: wrap;
+    width: 100vw;
+    min-height: 60vh;
+    height: fit-content;
+    margin-top: 50px;
+    justify-content: space-around;
+  }
+  #rupee-symbol {
+    height: 100%;
+    width: 25%;
+  }
+  #brand-symbols {
+    width: 25%;
+    height: 100%;
+  }
+  .landing-page {
+    min-height: 110vh;
+    height: fit-content;
+    justify-content: space-between;
+  }
+  .swiper-container {
+    width: 95%;
+    margin-left: 10px;
+  }
+  .centric {
+    width: 45%;
+    height: 100px;
+    text-align: center;
+    padding: 20px;
+    margin: 10px 0px;
+  }
+}
 @media screen and (max-width: 600px) {
   #background-linear-responsive {
     display: none;
@@ -1077,7 +1152,7 @@ input[type="range"]::-moz-range-thumb {
     display: none;
   }
   #background-linear-second-responsive {
-    display: none;
+    display: block;
   }
   .second-para {
     padding: 10px;
@@ -1217,82 +1292,8 @@ input[type="range"]::-moz-range-thumb {
     width: 100%;
   }
 }
-@media screen and (max-width: 800px) {
-  #background-linear {
-    display: none;
-  }
-  #background-linear-second-responsive {
-    display: none;
-  }
-  .i-card {
-    width: 45%;
-    height: 50%;
-    min-height: 200px;
-    max-height: 250px;
-    margin-top: 10px;
-    box-shadow: none;
-  }
-  .first-para svg {
-    height: auto;
-    max-height: 100px;
-  }
-
-  .landing-illu {
-    flex-wrap: wrap;
-    width: 100vw;
-    min-height: 60vh;
-    height: fit-content;
-    margin-top: 50px;
-    justify-content: space-around;
-  }
-  #rupee-symbol {
-    height: 100%;
-    width: 25%;
-  }
-  #brand-symbols {
-    width: 25%;
-    height: 100%;
-  }
-  .landing-page {
-    min-height: 110vh;
-    height: fit-content;
-    justify-content: space-between;
-  }
-  .swiper-container {
-    width: 95%;
-    margin-left: 10px;
-  }
-  .centric {
-    width: 45%;
-    height: 100px;
-    text-align: center;
-    padding: 20px;
-    margin: 10px 0px;
-  }
-}
 @media screen and (max-width: 350px) {
   #mobile-blob {
     display: none;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .comparisons-text {
-    padding: 0;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .subscribe-message {
-    position: absolute;
-    width: 90%;
-    height: fit-content;
-    top: 20px;
-
-    left: 5%;
-    text-align: center;
-  }
-  .subscribe {
-    position: relative;
   }
 }

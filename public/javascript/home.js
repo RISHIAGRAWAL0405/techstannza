@@ -207,6 +207,7 @@ gsap.from(".each", {
 });
 
 let swiper1;
+let swiper2;
 let swiperElements = document.querySelectorAll(".news-card");
 window.onload = () => {
   console.log("hiii");
@@ -254,6 +255,31 @@ window.onresize = () => {
     }
   } else {
     swiperContainer = document.querySelector(".recent-section");
+    document.querySelectorAll(".recent-section>.news-card").forEach((e) => {
+      swiperContainer.removeChild(e);
+    });
+
+    if (!swiperContainer.classList.contains("swiper-container")) {
+      let swiperWrapper = createSwiper(swiperElements);
+
+      document
+        .querySelector(".recent-section")
+        .classList.add("swiper-container");
+
+      swiperContainer.append(swiperWrapper);
+      console.log(swiperContainer);
+      swiper1 = new Swiper(swiperContainer, {
+        slidesPerView: 1.5,
+        spaceBetween: 10,
+
+        direction: "horizontal",
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+      });
+    }
+    swiperContainer = document.querySelector(".top-comparisons");
     document.querySelectorAll(".recent-section>.news-card").forEach((e) => {
       swiperContainer.removeChild(e);
     });
