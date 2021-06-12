@@ -206,9 +206,89 @@ gsap.from(".each", {
   duration: 1,
 });
 
-gsap.from(".news-card", {
-  scrollTrigger: ".news-card",
-  scale: 1.1,
-  opacity: 0,
-  duration: 1,
-});
+let swiper1;
+let swiperElements = document.querySelectorAll(".news-card");
+window.onload = () => {
+  console.log("hiii");
+  if (window.innerWidth <= 600) {
+    let swiperWrapper = createSwiper(swiperElements);
+    console.log(swiperWrapper);
+    document.querySelector(".recent-section").classList.add("swiper-container");
+    let swiperContainer = document.querySelector(".recent-section");
+    swiperContainer.append(swiperWrapper);
+    console.log(swiperContainer);
+    swiper1 = new Swiper(swiperContainer, {
+      slidesPerView: 1.2,
+      spaceBetween: 5,
+      centeredSlides: true,
+      direction: "horizontal",
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+    });
+    swiperElements.forEach((e) => {
+      swiperContainer.removeChild(e);
+    });
+  } else {
+    gsap.from(".news-card", {
+      scrollTrigger: ".news-card",
+      scale: 1.1,
+      opacity: 0,
+      duration: 1,
+    });
+  }
+};
+
+window.onresize = () => {
+  console.log(swiperElements);
+  if (window.innerWidth > 600) {
+    if (swiper1) {
+      swiper1.destroy(true, true);
+      let swiperContainer = document.querySelector(".recent-section");
+      swiperContainer.childNodes.forEach((element) => {
+        swiperContainer.removeChild(element);
+      });
+      swiperContainer.classList.remove("swiper-container");
+      swiperContainer.append(...swiperElements);
+    }
+  } else {
+    swiperContainer = document.querySelector(".recent-section");
+    document.querySelectorAll(".recent-section>.news-card").forEach((e) => {
+      swiperContainer.removeChild(e);
+    });
+
+    if (!swiperContainer.classList.contains("swiper-container")) {
+      let swiperWrapper = createSwiper(swiperElements);
+
+      document
+        .querySelector(".recent-section")
+        .classList.add("swiper-container");
+
+      swiperContainer.append(swiperWrapper);
+      console.log(swiperContainer);
+      swiper1 = new Swiper(swiperContainer, {
+        slidesPerView: 1.2,
+        spaceBetween: 5,
+        centeredSlides: true,
+        direction: "horizontal",
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+      });
+    }
+  }
+};
+
+let createSwiper = (es) => {
+  let swiperWrapper = document.createElement("div");
+  swiperWrapper.classList.add("swiper-wrapper");
+  for (let e of es) {
+    let newCard = e.cloneNode(true);
+    newCard.classList.add("swiper-slide");
+    swiperWrapper.append(newCard);
+  }
+
+  return swiperWrapper;
+};
