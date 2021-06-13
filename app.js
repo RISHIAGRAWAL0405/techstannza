@@ -17,6 +17,19 @@ const passportLocalStrategy = require("passport-local");
 const User = require("./models/user");
 const passportGoogleStrategy = require("./passportGoogle");
 const axios = require("axios").default;
+const webpush = require("web-push");
+
+const vapidKeys = {
+  private: "VYhHAzBRgrb0VpLhJhZhxmF5jSoWDL1nqtvq0NfeX1g",
+  public:
+    "BIFVnHK8JB5cl1HM56AbR1Vexx9K-7fS3wTShqGpAPX-1Lc8GKEH0ueFSRaarUpu2tCtMe8DmxC39nUEK1iqpME",
+};
+
+webpush.setVapidDetails(
+  "mailto:atishay.bhl@gmail.com",
+  vapidKeys.public,
+  vapidKeys.private
+);
 
 const ExpressError = require("./utils/Expresserror");
 const phoneRoutes = require("./routes/phones");

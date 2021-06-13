@@ -330,6 +330,7 @@ section h1 {
   color: black;
   width: 30%;
   height: fit-content;
+  min-height: 100px;
   min-width: 40px;
   padding: 20px;
   margin: 10px;

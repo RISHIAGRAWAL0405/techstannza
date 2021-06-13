@@ -209,7 +209,6 @@ gsap.from(".each", {
 let swiper1;
 let swiperElements = document.querySelectorAll(".news-card");
 window.onload = () => {
-  console.log("hiii");
   if (window.innerWidth <= 600) {
     let swiperWrapper = createSwiper(swiperElements);
     console.log(swiperWrapper);
@@ -292,3 +291,74 @@ let createSwiper = (es) => {
 
   return swiperWrapper;
 };
+async function registerServiceWorker() {
+  return await navigator.serviceWorker.register("/service-worker.js");
+}
+let data = registerServiceWorker();
+
+async function askPermisssion() {
+  try {
+    const permissionResult = await Notification.requestPermission();
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+askPermisssion();
+
+function subscribeUserToPush() {
+  return navigator.serviceWorker
+    .register("/service-worker.js")
+    .then(function (registration) {
+      const subscribeOptions = {
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(
+          "BIFVnHK8JB5cl1HM56AbR1Vexx9K-7fS3wTShqGpAPX-1Lc8GKEH0ueFSRaarUpu2tCtMe8DmxC39nUEK1iqpME"
+        ),
+      };
+
+      return registration.pushManager.subscribe(subscribeOptions);
+    })
+    .then(function (pushSubscription) {
+      return JSON.stringify(pushSubscription);
+    });
+}
+
+function urlBase64ToUint8Array(base64String) {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
+let subscription;
+
+async function subscribe() {
+  let pushSubscription = await subscribeUserToPush();
+  sendDataToServer(pushSubscription);
+}
+
+subscribe();
+
+let axiosConfig = {
+  headers: {
+    "content-type": "aplication/json",
+  },
+};
+
+async function sendDataToServer(UserData) {
+  let parsedData = JSON.parse(UserData);
+  console.log(parsedData);
+  let result = await axios.post("http://localhost:3000/form/saveSubscription", {
+    endpoint: `${parsedData.endpoint}`,
+    auth: `${parsedData.keys.auth}`,
+    p256dh: `${parsedData.keys.p256dh}`,
+  });
+
+  console.log(result.data);
+}
