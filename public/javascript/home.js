@@ -292,7 +292,8 @@ let createSwiper = (es) => {
   return swiperWrapper;
 };
 async function registerServiceWorker() {
-  return await navigator.serviceWorker.register("/service-worker.js");
+  await navigator.serviceWorker.register("/service-worker.js");
+  await navigator.serviceWorker.ready;
 }
 let data = registerServiceWorker();
 
@@ -354,14 +355,15 @@ let axiosConfig = {
 async function sendDataToServer(UserData) {
   let parsedData = JSON.parse(UserData);
   console.log(parsedData);
-  let result = await axios.post(
-    "https://desolate-badlands-28322.herokuapp.com/form/saveSubscription",
-    {
-      endpoint: `${parsedData.endpoint}`,
-      auth: `${parsedData.keys.auth}`,
-      p256dh: `${parsedData.keys.p256dh}`,
-    }
-  );
+  const link1 =
+    "https://desolate-badlands-28322.herokuapp.com/form/saveSubscription";
+  const link2 = "http://localhost:3000/form/saveSubscription";
+
+  let result = await axios.post(link2, {
+    endpoint: `${parsedData.endpoint}`,
+    auth: `${parsedData.keys.auth}`,
+    p256dh: `${parsedData.keys.p256dh}`,
+  });
 
   console.log(result.data);
 }
