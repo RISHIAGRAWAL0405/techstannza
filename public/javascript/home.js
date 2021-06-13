@@ -354,11 +354,14 @@ let axiosConfig = {
 async function sendDataToServer(UserData) {
   let parsedData = JSON.parse(UserData);
   console.log(parsedData);
-  let result = await axios.post("http://localhost:3000/form/saveSubscription", {
-    endpoint: `${parsedData.endpoint}`,
-    auth: `${parsedData.keys.auth}`,
-    p256dh: `${parsedData.keys.p256dh}`,
-  });
+  let result = await axios.post(
+    "https://desolate-badlands-28322.herokuapp.com/form/saveSubscription",
+    {
+      endpoint: `${parsedData.endpoint}`,
+      auth: `${parsedData.keys.auth}`,
+      p256dh: `${parsedData.keys.p256dh}`,
+    }
+  );
 
   console.log(result.data);
 }
