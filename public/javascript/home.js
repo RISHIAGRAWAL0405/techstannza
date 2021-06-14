@@ -211,11 +211,11 @@ let swiperElements = document.querySelectorAll(".news-card");
 window.onload = () => {
   if (window.innerWidth <= 600) {
     let swiperWrapper = createSwiper(swiperElements);
-    console.log(swiperWrapper);
+
     document.querySelector(".recent-section").classList.add("swiper-container");
     let swiperContainer = document.querySelector(".recent-section");
     swiperContainer.append(swiperWrapper);
-    console.log(swiperContainer);
+
     swiper1 = new Swiper(swiperContainer, {
       slidesPerView: 1.5,
       spaceBetween: 10,
@@ -240,7 +240,6 @@ window.onload = () => {
 };
 
 window.onresize = () => {
-  console.log(swiperElements);
   if (window.innerWidth > 600) {
     if (swiper1) {
       swiper1.destroy(true, true);
@@ -265,7 +264,7 @@ window.onresize = () => {
         .classList.add("swiper-container");
 
       swiperContainer.append(swiperWrapper);
-      console.log(swiperContainer);
+
       swiper1 = new Swiper(swiperContainer, {
         slidesPerView: 1.5,
         spaceBetween: 10,
@@ -292,25 +291,30 @@ let createSwiper = (es) => {
   return swiperWrapper;
 };
 async function registerServiceWorker() {
+  console.log("registering service worker");
   await navigator.serviceWorker.register("/service-worker.js");
   await navigator.serviceWorker.ready;
+  console.log("registration success");
+  askPermisssion();
 }
 let data = registerServiceWorker();
 
 async function askPermisssion() {
   try {
+    console.log("asking user to permit");
     const permissionResult = await Notification.requestPermission();
+    console.log("asked user to permit");
+    subscribe();
   } catch (e) {
     console.log(e);
   }
 }
 
-askPermisssion();
-
 function subscribeUserToPush() {
   return navigator.serviceWorker
     .register("/service-worker.js")
     .then(function (registration) {
+      console.log("i am in the subscribe user to push first thenable");
       const subscribeOptions = {
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array(
@@ -321,6 +325,10 @@ function subscribeUserToPush() {
       return registration.pushManager.subscribe(subscribeOptions);
     })
     .then(function (pushSubscription) {
+      console.log(
+        "returned the subscription",
+        "i am in the subscribe user to push second thenable"
+      );
       return JSON.stringify(pushSubscription);
     });
 }
@@ -337,24 +345,18 @@ function urlBase64ToUint8Array(base64String) {
   }
   return outputArray;
 }
-let subscription;
 
 async function subscribe() {
+  console.log("subscribing user to push.....");
   let pushSubscription = await subscribeUserToPush();
   sendDataToServer(pushSubscription);
+
+  console.log("sending the data to server....");
 }
-
-subscribe();
-
-let axiosConfig = {
-  headers: {
-    "content-type": "aplication/json",
-  },
-};
 
 async function sendDataToServer(UserData) {
   let parsedData = JSON.parse(UserData);
-  console.log(parsedData);
+
   const link1 =
     "https://desolate-badlands-28322.herokuapp.com/form/saveSubscription";
   const link2 = "http://localhost:3000/form/saveSubscription";
@@ -365,5 +367,5 @@ async function sendDataToServer(UserData) {
     p256dh: `${parsedData.keys.p256dh}`,
   });
 
-  console.log(result.data);
+  console.log("sent data to the sevrer");
 }

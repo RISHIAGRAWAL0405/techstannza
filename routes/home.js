@@ -72,6 +72,10 @@ router.get("/axiosMobiles", async (req, res) => {
   res.json(mobiles);
 });
 
+router.get("/price-tracker", (req, res) => {
+  res.render("tracker");
+});
+
 router.get(
   "/:id",
   catchAsync(async (req, res) => {
