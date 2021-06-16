@@ -1,3 +1,7 @@
+::-webkit-scrollbar-track {
+  background-color: inherit;
+}
+
 .wholesection {
   display: flex;
   height: 100%;
@@ -608,6 +612,7 @@ input[type="range"]::-moz-range-thumb {
   .features {
     width: 100%;
   }
+
   .each-text .titles {
     display: none;
   }
@@ -622,6 +627,31 @@ input[type="range"]::-moz-range-thumb {
   }
   .image-div > .button-div {
     display: none;
+  }
+  .buy-links {
+    transform: translateX(-50%);
+  }
+  .buy-hover span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .custom-compare {
+    font-size: small;
+  }
+  .buy-hover svg {
+    width: 20px;
+    height: 20px;
+  }
+  .buy-hover {
+    padding: 5px 2px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .ifeature {
+    justify-content: center;
   }
 }
 
