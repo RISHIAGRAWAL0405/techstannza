@@ -318,7 +318,7 @@ input[type="range"]::-moz-range-thumb {
   width: 100%;
   border: 1px solid lightgray;
   margin-top: 10px;
-  border-radius: 20px;
+  border-radius: 10px;
   height: fit-content;
 }
 .titles h3 {
@@ -525,7 +525,7 @@ input[type="range"]::-moz-range-thumb {
     display: none;
   }
   .filteredresult {
-    width: 80%;
+    width: 95%;
     align-self: center;
     margin: 0;
   }
@@ -534,6 +534,33 @@ input[type="range"]::-moz-range-thumb {
   }
   .filter-toggler {
     display: block;
+    margin-left: 2.5%;
+  }
+  .features {
+    flex-wrap: wrap;
+  }
+  .ifeature {
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.5);
+    padding: 10px 10px;
+    width: 45%;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .ifeature i {
+    width: 100%;
+  }
+  .custom-compare {
+    padding: 10px 2px;
+  }
+  .buy-hover {
+    padding: 10px 2px;
+  }
+  .image-div img {
+    height: 200px;
   }
 }
 
