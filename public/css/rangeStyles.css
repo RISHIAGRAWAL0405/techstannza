@@ -339,6 +339,12 @@ input[type="range"]::-moz-range-thumb {
   height: 250px;
   margin-bottom: 20px;
 }
+.image-div .titles {
+  display: none;
+}
+.image-div .titles .button-div {
+  display: none;
+}
 
 .each-text {
   display: flex;
@@ -347,6 +353,7 @@ input[type="range"]::-moz-range-thumb {
   padding: 20px;
   width: 70%;
 }
+
 .features {
   display: flex;
   padding-right: 20px;
@@ -561,6 +568,60 @@ input[type="range"]::-moz-range-thumb {
   }
   .image-div img {
     height: 200px;
+  }
+  .each-text {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .features {
+    padding: 0;
+    margin-right: 10px;
+  }
+  .titles {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .each-phone {
+    flex-wrap: wrap;
+  }
+  .image-div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+    height: 150px;
+    justify-content: space-between;
+  }
+  .image-div img {
+    width: 50%;
+    height: 150px;
+    margin-bottom: 0;
+    object-fit: scale-down;
+  }
+  .each-text {
+    width: 100%;
+    padding: 10px;
+  }
+  .features {
+    width: 100%;
+  }
+  .each-text .titles {
+    display: none;
+  }
+  .image-div .titles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+  }
+  .image-div .titles .button-div {
+    display: flex;
+  }
+  .image-div > .button-div {
+    display: none;
   }
 }
 
