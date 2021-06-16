@@ -68,6 +68,7 @@ section h1 {
   width: auto;
   height: auto;
   bottom: 0;
+
   position: absolute;
 }
 #background-linear path {
@@ -76,6 +77,10 @@ section h1 {
   position: absolute;
   bottom: 0;
 }
+.background-path {
+  filter: blur(100px);
+}
+
 .first-para {
   align-self: center;
   width: 100%;
@@ -96,6 +101,7 @@ section h1 {
 .i-card:nth-of-type(3) .first-para {
   padding-left: 10px;
   padding-right: 10px;
+  padding: 20px;
 }
 .second-para {
   font-weight: 500;
@@ -125,9 +131,9 @@ section h1 {
   align-items: center;
   /* border: 2px solid lightgray; */
   border-radius: 10px;
-  background-color: #f7f7f8;
+  background-color: white;
   flex-wrap: wrap;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 10px lightgrey;
   transform: scale(1);
   transition: 0.3s ease;
 }
@@ -149,7 +155,7 @@ section h1 {
 
 .swiper-container {
   width: 75%;
-  height: 300px;
+  height: 40vh;
   margin-top: 70px;
   /* box-shadow: 5px 5px 20px gray; */
   border-radius: 5px;
@@ -1094,7 +1100,7 @@ input[type="range"]::-moz-range-thumb {
 
 @media screen and (max-width: 800px) {
   #background-linear {
-    display: none;
+    display: block;
   }
   #background-linear-second-responsive {
     display: none;
@@ -1105,7 +1111,7 @@ input[type="range"]::-moz-range-thumb {
     min-height: 200px;
     max-height: 250px;
     margin-top: 10px;
-    box-shadow: none;
+    box-shadow: 0px 0px 10px darkgray;
   }
   .first-para svg {
     height: auto;
@@ -1155,7 +1161,7 @@ input[type="range"]::-moz-range-thumb {
     display: none;
   }
   #background-linear {
-    display: none;
+    display: block;
   }
   #background-linear-second-responsive {
     display: block;
