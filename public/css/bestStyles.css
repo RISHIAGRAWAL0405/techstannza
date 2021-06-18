@@ -1,8 +1,5 @@
-html {
-  overflow: hidden;
-}
 body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -283,7 +280,7 @@ p i {
 
 .buy-links {
   display: none;
-  width: 150%;
+  width: 250%;
   height: fit-content;
   position: absolute;
   box-shadow: 0px 0px 10px lightgray;
@@ -416,7 +413,11 @@ p i {
 }
 @media screen and (max-width: 600px) {
   .indi {
+    width: 100%;
     transform: translateX(3%);
+  }
+  .message-background {
+    display: none;
   }
   .number p {
     font-size: 80px;
@@ -433,7 +434,7 @@ p i {
     height: 500px;
     z-index: 0;
     opacity: 0.8;
-    transform: translate(10%, 20%);
+
     filter: blur(5px);
   }
   #stand {
