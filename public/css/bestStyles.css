@@ -1,6 +1,8 @@
+html {
+  overflow: hidden;
+}
 body {
-  overflow-x: hidden;
-  z-index: auto;
+  overflow: hidden;
 }
 a {
   text-decoration: none;
@@ -21,8 +23,7 @@ p {
   width: 100%;
   height: 400px;
   position: absolute;
-  border-bottom-right-radius: 40%;
-  border-bottom-left-radius: 40%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -413,7 +414,7 @@ p i {
     font-size: 8rem;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .indi {
     transform: translateX(3%);
   }
@@ -427,12 +428,13 @@ p i {
     font-weight: 500;
   }
   .message div:nth-of-type(2) {
-    width: 500px;
+    width: 100%;
     position: absolute;
     height: 500px;
     z-index: 0;
-    opacity: 0.6;
-    transform: translate(60%, 20%);
+    opacity: 0.8;
+    transform: translate(10%, 20%);
+    filter: blur(5px);
   }
   #stand {
     width: 300px;
