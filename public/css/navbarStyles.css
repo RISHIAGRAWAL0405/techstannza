@@ -241,7 +241,7 @@ body {
 
 #search::placeholder {
   color: black;
-  opacity: 1;
+  opacity: 0.6;
 }
 
 #search::-ms-input-placeholder {
