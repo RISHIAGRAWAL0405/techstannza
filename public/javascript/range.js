@@ -6,7 +6,7 @@ var inputRight = document.getElementById("input-right");
 var thumbLeft = document.querySelector(".slider > .thumb.left");
 var thumbRight = document.querySelector(".slider > .thumb.right");
 var range = document.querySelector(".slider > .range");
-
+window.scrollTo(0, 0.5);
 function setLeftValue() {
   var _this = inputLeft,
     min = parseInt(_this.min),

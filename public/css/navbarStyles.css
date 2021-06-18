@@ -195,7 +195,7 @@ body {
 .sign-in {
   border: none;
   background: transparent;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   padding: 0px 10px;
   transition: 0.4s;
@@ -203,7 +203,7 @@ body {
 }
 .sign-in:hover {
   background-color: #5a86ff;
-  border: 2px solid #5a86ff;
+  border: 1px solid #5a86ff;
   transition: 0.4s;
   color: black;
 }
@@ -215,7 +215,7 @@ body {
   min-width: 300px;
   margin-right: 30px;
   display: flex;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   padding: 0px 10px;
   /* background: white; */
@@ -541,7 +541,8 @@ body {
     display: none;
   }
   .logo-div {
-    margin-left: auto;
+    margin-left: 28%;
+    height: 35px;
   }
 }
 
