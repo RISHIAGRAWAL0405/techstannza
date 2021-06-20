@@ -198,7 +198,7 @@ gsap.from("#saving_money", {
 gsap.from(".each", {
   scrollTrigger: {
     trigger: ".each",
-    start: "-40px 600px",
+    // start: "-40px 600px",
   },
 
   opacity: 0,

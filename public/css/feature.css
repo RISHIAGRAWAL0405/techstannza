@@ -170,6 +170,7 @@ body {
 }
 
 .need:last-of-type img {
+  border-radius: 15px;
   animation: Zoom 2s ease-in-out alternate 6s;
   transform-origin: top left;
 }
@@ -399,6 +400,9 @@ body {
 @media screen and (max-width: 1100px) {
   .card {
     width: 45%;
+  }
+  .first p {
+    width: 70%;
   }
 }
 @media screen and (max-width: 800px) {

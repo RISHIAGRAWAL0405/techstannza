@@ -560,36 +560,55 @@ input[type="range"]::-moz-range-thumb {
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.top-comparisons h1 {
+.top-comparisons-heading {
   width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 
   /* background-color: #87cefa; */
   padding: 10px;
   font-size: 200%;
   margin-bottom: 30px;
 }
+.top-comparisons-heading span {
+  width: 200px;
+  margin-right: 7%;
+  display: inline-block;
+  align-self: center;
+  height: 4px;
+  background-color: blue;
+}
 .each {
-  min-height: 30vh;
-  width: 45%;
+  min-height: 40vh;
+  width: 40%;
   display: flex;
-
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
+  flex-wrap: wrap;
+  background-color: #dee2e6;
+  /* border-bottom-left-radius: 5px; */
+  /* border-bottom-right-radius: 5px; */
+  border-radius: 10px;
 
   position: relative;
   box-shadow: 2px 2px 5px lightgray;
 }
+.each:nth-of-type(3) {
+  margin-top: 50px;
+  z-index: -1;
+}
 .image-comparison-div {
-  width: 100%;
+  width: 35%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .image-comparison-div img {
   width: 100%;
   height: 100%;
+
+  border-top-left-radius: 10px;
 }
 .comp-name {
   position: absolute;
@@ -604,13 +623,13 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: 0px 0px 10px lightgray;
 }
 .comparisons-text {
-  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  height: 40%;
-  width: 100%;
-  /* flex-wrap: wrap; */
+  height: 100%;
+  width: 65%;
+  position: relative;
+
   font-weight: lighter;
 }
 .comparison-name {
@@ -621,38 +640,43 @@ input[type="range"]::-moz-range-thumb {
   color: black;
   height: 30px;
 
-  margin: 30px 0px;
+  /* margin: 30px 0px; */
+}
+
+.comparisons-button {
+  display: flex;
+  height: fit-content;
+  width: 100%;
+  justify-content: center;
 }
 .comparison-name span {
-  width: 45%;
+  width: 100%;
   height: 20px;
   /* overflow-y: scroll; */
   text-align: center;
 }
-
-.comparisons-text h5 {
-  width: 100%;
-  text-align: center;
-  color: black;
-  font-size: medium;
+.each-compare {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
 }
-.features {
+
+.features ul {
   list-style-type: none;
   padding: 0;
+  text-align: center;
   color: black;
   font-weight: 400;
-  width: 50%;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.button-comp {
-  width: 100%;
-  margin-top: auto;
-  z-index: 1;
-}
-.button-comp button {
+
+.image-comparison-div button {
   font-weight: bold;
   outline: none;
   user-select: none;
@@ -665,25 +689,23 @@ input[type="range"]::-moz-range-thumb {
   transition: 0.5s;
   z-index: 2;
 }
-.button-comp button:hover {
+.image-comparison-div button:hover {
   background-color: #5a86ff;
   /* border:  */
   transition: 0.5s;
 }
 
-.features:nth-of-type(1) {
-  /* border-right: 1px solid lightgray; */
-  text-align: start;
+.features ul li:nth-of-type(2n) {
+  /* background-color: lightgray; */
 }
-.features:nth-of-type(2) {
-  text-align: end;
-}
-.features li {
-  border-bottom: 0.1px solid lightgrey;
+
+.features ul li {
   padding: 5px 10px;
-}
-.features li:last-of-type {
-  border: none;
+  margin-bottom: 5px;
+  background-color: white;
+
+  box-shadow: 0px 0px 20px lightgray;
+  border-radius: 5px;
 }
 
 .best-deals {
@@ -803,7 +825,7 @@ input[type="range"]::-moz-range-thumb {
 .buy-hover {
   width: 33%;
   padding: 10px;
-  background-color: white;
+  background-color: transparent;
   text-align: center;
   cursor: pointer;
 }
@@ -815,7 +837,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .buy-links {
   display: none;
-  width: 100%;
+  width: 50%;
   height: fit-content;
   position: absolute;
   box-shadow: 0px 0px 10px lightgray;
@@ -824,7 +846,8 @@ input[type="range"]::-moz-range-thumb {
   padding: 10px;
   justify-content: space-evenly;
   align-items: center;
-  left: 0;
+  left: 50%;
+
   border-radius: 10px;
   opacity: 0;
   transform: scale(1);
