@@ -286,6 +286,8 @@ section h1 {
   width: 80%;
   height: 100%;
   /* transform: translateY(5%); */
+  /* transform: translateX(20%); */
+  margin-left: 10%;
 }
 .feature-message {
   font-size: 150%;
@@ -443,7 +445,7 @@ input[type="range"]::-moz-range-thumb {
   /* W3C */
 }
 .actual-i {
-  width: 40%;
+  width: 95%;
   outline: none;
   user-select: none;
   border: none;
@@ -456,6 +458,26 @@ input[type="range"]::-moz-range-thumb {
   justify-content: space-between;
   flex-wrap: wrap;
 }
+.actual-i-div div {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.actual-i-div div label {
+  font-weight: 500;
+}
+.actual-i-div div:nth-of-type(2) {
+  justify-content: space-between;
+}
+.actual-i-div div:nth-of-type(2) label {
+  margin-left: 5%;
+}
+.actual-i-div div:nth-of-type(2) input {
+  align-self: flex-end;
+}
+
 .actual-i-div button:hover {
   background-color: #5a86ff;
 }
@@ -866,19 +888,31 @@ input[type="range"]::-moz-range-thumb {
   width: 100%;
   height: fit-content;
   display: flex;
-  margin-top: 50px;
-  padding: 20px 50px 50px 50px;
+  margin-top: 0px;
+  padding: 50px 0px;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: #e1e5f2;
 }
-.recent-reviews h1 {
+
+.recent-reviews-heading {
   width: 100%;
-  padding: 10px;
+  height: fit-content;
   text-align: center;
+  margin: 50px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.recent-reviews-heading span {
+  width: 200px;
+  margin-right: 4%;
+  display: inline-block;
+  align-self: center;
+  height: 4px;
+  background-color: blue;
 }
 .review {
-  width: 27%;
+  width: 25%;
   height: fit-content;
   height: max-content;
   border-radius: 20px;
@@ -1239,6 +1273,7 @@ input[type="range"]::-moz-range-thumb {
     width: 90%;
     height: 100%;
     margin-top: 100px;
+    margin-left: 0;
   }
   .feature-para {
     height: 50%;

@@ -1462,7 +1462,9 @@
           <div class="slider-div">
 
             <div class="multi-range-slider">
+              
               <input type="range" id="input-left" min="0" max="50000" value="12500" step="500">
+       
               <input type="range" id="input-right" min="0" max="50000" value="37500" step="500">
 
               <div class="slider">
@@ -1474,8 +1476,15 @@
             </div>
           </div>
           <div class="actual-i-div">
-            <input type="text" name="min" placeholder="min" class="actual-i">
-            <input type="text" name="max" placeholder="max" class="actual-i">
+            <div>
+              <label for="actual-i-min">Min</label>
+              <input type="text" name="min" placeholder="min" id="actual-i-min" class="actual-i">
+            </div>
+            <div>
+              <label for="actual-i-max">Max</label>
+              <input type="text" name="max" placeholder="max" id="actual-i-max" class="actual-i">
+            </div>
+            
             <button style="display: block;">
               Search Mobiles
             </button>
@@ -1637,10 +1646,13 @@
 
 
 
-  </section>
+  </section> 
+  <h1 class="recent-reviews-heading">Recent Review
+    <span></span>
+  </h1>
   <section class="recent-reviews">
 
-    <h1>Recent Reviews</h1>
+   
     <div class="review">
 
       <div class="review-image">
