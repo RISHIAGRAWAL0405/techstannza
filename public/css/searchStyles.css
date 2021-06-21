@@ -1,0 +1,130 @@
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.result > a {
+  width: 60%;
+}
+.card-c {
+  display: flex;
+  width: 60%;
+  color: black;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px lightgray;
+  height: 50vh;
+  overflow: hidden;
+  transition: 0.5s ease-in;
+  cursor: pointer;
+}
+.card-c:hover .hover-div {
+  transform: translateX(0);
+  box-shadow: 0px 0px 20px lightgray;
+  transition: 0.3s ease-in;
+  opacity: 0.6;
+}
+
+.image-div {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.image {
+  position: relative;
+  padding: 20px 0px;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
+
+.image img {
+  width: 80%;
+  height: 250px;
+
+  border-top-left-radius: 10px;
+  /* padding-left: 40px; */
+}
+.hover-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid black; */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-size: xx-large;
+  top: 0;
+  opacity: 0.7;
+  background-color: black;
+  transform: translateX(-110%);
+}
+.button-div {
+  display: flex;
+  width: 100%;
+  height: 20%;
+  margin-top: auto;
+  height: fit-content;
+  padding: 10px;
+  justify-content: center;
+}
+.button-div a {
+  width: 45%;
+
+  margin: 5px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  background: blue;
+}
+.c-text {
+  width: 60%;
+  padding: 20px;
+  background-color: white;
+}
+
+.features {
+  width: 100%;
+  display: flex;
+  margin: 30px 0px;
+  justify-content: space-evenly;
+}
+.feature {
+  width: 30%;
+  text-align: start;
+}
+.feature ul {
+  padding: 0;
+  text-align: start;
+  list-style-type: none;
+}
+.feature ul li {
+  padding: 5px;
+}
+.feature ul li:nth-of-type(2n-1) {
+  background-color: lightgray;
+}
+
+.ratings {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: fit-content;
+}
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+.rating span {
+  position: absolute;
+  font-weight: 600;
+}

@@ -1,64 +1,133 @@
 <%layout("layouts/boilerplate")%>
+  <link rel="stylesheet" href="/css/searchStyles.css">
 
 
-  <section style="margin-top: 150px;">
   <%if(result.length==0){%>
-     <h4 class="text-center" style="margin-bottom: 300px;"> OOOPS!!! nothing found against your search result</h1>
+    <h4 class="center"> OOOPS!!! nothing found against your search result</h1>
 
-     <section class="container d-flex" style="display: flex;flex-direction: row;width: 100%;justify-content: space-between;flex-wrap: wrap;">
- 
-           <h3 style="display: block; width: 100%;text-align: center;color: darkblue;">Take a Look At the Recently launched</h3>
-           
-           <%for(mobile of allMobiles){%>
-           <div class="card mb-3 mt-3" style="width: 25%;">
+      <section class="recent">
+
+        <h3 style="display: block; width: 100%;text-align: center;color: darkblue;">Take a Look At the Recently launched
+        </h3>
+
+        <%for(mobile of allMobiles){%>
+          <div class="card mb-3 mt-3" style="width: 25%;">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="<%=mobile.image%>" alt="..." width="100%" height="100%" style="min-height: 100px;">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title"><%=mobile.name%></h5>
-                 
-                 
+                  <h5 class="card-title">
+                    <%=mobile.name%>
+                  </h5>
+
+
                   <a href="/<%=mobile._id%>" class="card-text btn btn-primary" style="margin: 0; padding: 3px;">view</a>
                 </div>
-                
+
               </div>
             </div>
-        </div>
-        <%}%>
-     </section>
+          </div>
+          <%}%>
+      </section>
 
-<%}%>
-    <%if(result.length!=0){%>
-      <h3 style="text-align: center;">"results based on your search"</h1>
+      <%}%>
+        <%if(result.length!=0){%>
+          <h3 style="text-align: center;margin-top: 100px;">Results Based On Your Search</h1>
 
-    <%}%>
-
-
-<section class="container"> 
-
-<%for(let mobile of result){%>
-
-  <div class="card mb-3 mt-3" style="width: 75%;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="<%=mobile.image%>" alt="..." width="100%" height="100%">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title"><%=mobile.name%></h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          
-          <a href="/<%=mobile._id%>" class="card-text" style="margin: 0; padding: 0;">view</a>
-        </div>
-        
-      </div>
-    </div>
-</div>
+            <%}%>
 
 
-  <%}%>
-</section>
+              <section class="result">
 
-</section>
+                <%for(let mobile of result){%>
+                  
+                    <div class="card-c">
+                      <span style="display: none;"><%=mobile._id%></span>
+
+                      <div class="image-div">
+                        <div class="image">
+                          <img src="<%=mobile.image%>" alt="...">
+                          <p class="hover-div">
+                            Click To View
+                          </p>
+
+                        </div>
+
+                        <div class="button-div">
+                          <a href="/compare/?mobile=<%=mobile._id%>">compare</a>
+                          <a href="#footer">buy</a>
+
+                        </div>
+
+                      </div>
+                      <div class="c-text">
+
+                        <h5 class="c-title">
+                          <%=mobile.name%>
+                        </h5>
+
+                        <div class="features">
+                          <div class="feature">
+                            <i class="fa fa-battery"></i>
+                            <ul>
+                              <li><%=mobile.BatteryCapacity%> Mah</li>
+                              
+                            </ul>
+
+                          </div>
+                          <div class="feature">
+                            <i class="fa fa-microchip">
+
+                            </i>
+                            <ul>
+                              <li><%=mobile.processor.category%></li>
+                              <li><%=mobile.processor.Core%> Core</li>
+                              <li><%=mobile.processor.clockSpeed%></li>
+                              <li><%=mobile.Display.GPU%></li>
+                            </ul>
+                          </div>
+                          <div class="feature">
+                            <i class="fa fa-camera">
+
+                            </i>
+                            <ul>
+                              <li><%=mobile.frontCamera.noOfCameras%> cams</li>
+                              <li><%mobile.mainCamera.noOfCameras%> cams</li>
+                              <li><%=mobile.frontCamera.pixels[0].pixel%> MP <span style="color: blue;">(front)</span> </li>
+                              <li><%=mobile.mainCamera.pixels[0].pixel%> <span style="color: blue;">(main)</span></li>
+                            </ul>
+
+                          </div>
+                        </div>
+                        <div class="ratings">
+                          <div class="rating">
+                            <span>7</span>
+                          </div>
+                          <div class="rating">
+                            <span>7</span>
+                          </div>
+                          <div class="rating">
+                            <span>7</span>
+                          </div>
+
+
+
+
+                        </div>
+
+
+
+                      </div>
+
+                    </div>
+                  
+
+
+                  <%}%>
+              </section>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/progressbar.js/1.1.0/progressbar.min.js"
+                integrity="sha512-EZhmSl/hiKyEHklogkakFnSYa5mWsLmTC4ZfvVzhqYNLPbXKAXsjUYRf2O9OlzQN33H0xBVfGSEIUeqt9astHQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+              <script src="/javascript/search.js"></script>
