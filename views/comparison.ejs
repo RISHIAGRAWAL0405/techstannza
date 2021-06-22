@@ -7,7 +7,8 @@
       <div class="upper-strip">
          <div class="mobile-name first">
             <span class="firstMobUpper UpperName">
-<strong></strong>  <%=mobileFound.name%>
+               <strong></strong>
+               <%=mobileFound.name%>
             </span>
             <span
                style="display:block; color:black;color: #f48c06;width: 20px;transform: translateY(-11px);">&#9660;</span>
@@ -32,7 +33,7 @@
       </div>
       <section class="mainSection">
 
-        
+
 
          <div class="firstMobile comparison">
 
@@ -47,7 +48,8 @@
 
 
             <div class="phoneImage">
-               <img src="<%=mobileFound.image%>" alt="" width="100%" height="100%" class="originalImage" style="border: none;">
+               <img src="<%=mobileFound.image%>" alt="" width="100%" height="100%" class="originalImage"
+                  style="border: none;">
             </div>
             <div class="indiDetails">
                <table class="tab display">
@@ -83,11 +85,14 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td><strong>type</strong>  <%=mobileFound.processor.category%>
+                        <td><strong>type</strong>
+                           <%=mobileFound.processor.category%>
                         </td>
-                        <td>  <strong>Core</strong> <%= mobileFound.processor.Core%>
+                        <td> <strong>Core</strong>
+                           <%= mobileFound.processor.Core%>
                         </td>
-                        <td> <strong>Clock Speed</strong> <%= mobileFound.processor.clockSpeed %>
+                        <td> <strong>Clock Speed</strong>
+                           <%= mobileFound.processor.clockSpeed %>
                         </td>
                      </tr>
                   </tbody>
@@ -102,7 +107,9 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td><strong>Capacity</strong> <%= mobileFound.BatteryCapacity %> mah </td>
+                        <td><strong>Capacity</strong>
+                           <%= mobileFound.BatteryCapacity %> mah
+                        </td>
                         <!-- <td>Lasts Up to:</td>
                         <td>battery type</td> -->
                      </tr>
@@ -118,11 +125,14 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td><strong>pixels: </strong> <%= mobileFound.frontCamera.pixels[0].pixel %>
+                        <td><strong>pixels: </strong>
+                           <%= mobileFound.frontCamera.pixels[0].pixel %>
                         </td>
-                        <td> <strong>type:</strong> <%= mobileFound.frontCamera.noOfCameras %>
+                        <td> <strong>type:</strong>
+                           <%= mobileFound.frontCamera.noOfCameras %>
                         </td>
-                        <td><strong>description</strong> <%= mobileFound.frontCamera.pixels[0].description %>
+                        <td><strong>description</strong>
+                           <%= mobileFound.frontCamera.pixels[0].description %>
                         </td>
                      </tr>
                   </tbody>
@@ -137,11 +147,14 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td> <strong>pixels:</strong> <%= mobileFound.mainCamera.pixels[0].pixel %>
+                        <td> <strong>pixels:</strong>
+                           <%= mobileFound.mainCamera.pixels[0].pixel %>
                         </td>
-                        <td> <strong>type:</strong> <%= mobileFound.mainCamera.noOfCameras %>
+                        <td> <strong>type:</strong>
+                           <%= mobileFound.mainCamera.noOfCameras %>
                         </td>
-                        <td><strong>description</strong> <%= mobileFound.mainCamera.pixels[0].description %>
+                        <td><strong>description</strong>
+                           <%= mobileFound.mainCamera.pixels[0].description %>
                         </td>
                      </tr>
                   </tbody>
@@ -156,11 +169,14 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td> <strong>internal storage:</strong> <%= mobileFound.memory.internalStorage %>
+                        <td> <strong>internal storage:</strong>
+                           <%= mobileFound.memory.internalStorage %>
                         </td>
-                        <td><strong>ram</strong> <%= mobileFound.memory.ram %>
+                        <td><strong>ram</strong>
+                           <%= mobileFound.memory.ram %>
                         </td>
-                        <td><strong>expandable </strong> <%= mobileFound.memory.expandableStorage %>
+                        <td><strong>expandable </strong>
+                           <%= mobileFound.memory.expandableStorage %>
                         </td>
                      </tr>
                   </tbody>
@@ -175,9 +191,15 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td> <strong>width</strong> <%= mobileFound.Dimensions.width %> inches </td>
-                        <td> <strong>height </strong> <%= mobileFound.Dimensions.height %> inches </td>
-                        <td>  <strong>weight</strong> <%= mobileFound.Dimensions.weight %> gm </td>
+                        <td> <strong>width</strong>
+                           <%= mobileFound.Dimensions.width %> inches
+                        </td>
+                        <td> <strong>height </strong>
+                           <%= mobileFound.Dimensions.height %> inches
+                        </td>
+                        <td> <strong>weight</strong>
+                           <%= mobileFound.Dimensions.weight %> gm
+                        </td>
                      </tr>
                   </tbody>
 
@@ -191,9 +213,14 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td><strong> type</strong> <%= mobileFound.network.category %>  </td>
-                        <td>  <strong>bluetooth</strong> <%= mobileFound.network.bluetoothVersion %>  </td>
-                        <td>  <strong>NFC</strong> <%= mobileFound.network.nfc %>
+                        <td><strong> type</strong>
+                           <%= mobileFound.network.category %>
+                        </td>
+                        <td> <strong>bluetooth</strong>
+                           <%= mobileFound.network.bluetoothVersion %>
+                        </td>
+                        <td> <strong>NFC</strong>
+                           <%= mobileFound.network.nfc %>
                         </td>
                      </tr>
                   </tbody>
@@ -208,11 +235,14 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td> <strong>UI</strong> <%= mobileFound.userInterface %>
+                        <td> <strong>UI</strong>
+                           <%= mobileFound.userInterface %>
                         </td>
-                        <td>  <strong>Operating System</strong> <%= mobileFound.processor.operatingSystem %>
+                        <td> <strong>Operating System</strong>
+                           <%= mobileFound.processor.operatingSystem %>
                         </td>
-                        <td>  <strong>GPU</strong> <%= mobileFound.Display.GPU %>
+                        <td> <strong>GPU</strong>
+                           <%= mobileFound.Display.GPU %>
                         </td>
                      </tr>
                   </tbody>
@@ -228,15 +258,20 @@
                   </thead>
                   <tbody class="tbody">
                      <tr class="indipro">
-                        <td> <strong>sound</strong> <%= mobileFound.sound %>
+                        <td> <strong>sound</strong>
+                           <%= mobileFound.sound %>
                         </td>
-                        <td>  <strong>sim</strong> <%= mobileFound.simType %>
+                        <td> <strong>sim</strong>
+                           <%= mobileFound.simType %>
                         </td>
-                        <td> <strong>infrared</strong> <%= mobileFound.network.infrared %>
+                        <td> <strong>infrared</strong>
+                           <%= mobileFound.network.infrared %>
                         </td>
-                        <td>  <strong>Audio Jack</strong> <%= mobileFound.network.audioJack %>
+                        <td> <strong>Audio Jack</strong>
+                           <%= mobileFound.network.audioJack %>
                         </td>
-                        <td> <strong>In Box </strong> <%= mobileFound.Box%>
+                        <td> <strong>In Box </strong>
+                           <%= mobileFound.Box%>
                         </td>
 
                      </tr>
@@ -305,7 +340,7 @@
                   <tbody class="tbody">
                      <tr class="indipro">
                         <td></td>
-                    
+
                      </tr>
                   </tbody>
 
@@ -342,7 +377,8 @@
                   </tbody>
 
 
-               </table><table class="tab memory">
+               </table>
+               <table class="tab memory">
                   <thead class="proTitle">
                      <tr>
                         <th>memory</th>
@@ -357,7 +393,8 @@
                   </tbody>
 
 
-               </table><table class="tab dimensions">
+               </table>
+               <table class="tab dimensions">
                   <thead class="proTitle">
                      <tr>
                         <th>dimensions</th>
@@ -372,7 +409,8 @@
                   </tbody>
 
 
-               </table><table class="tab network">
+               </table>
+               <table class="tab network">
                   <thead class="proTitle">
                      <tr>
                         <th>Network</th>
@@ -388,7 +426,7 @@
 
 
                </table>
-                <table class="tab userInterface">
+               <table class="tab userInterface">
                   <thead class="proTitle">
                      <tr>
                         <th>User Interface</th>
@@ -417,7 +455,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        
+
                      </tr>
                   </tbody>
 
@@ -484,7 +522,7 @@
                   <tbody class="tbody">
                      <tr class="indipro">
                         <td></td>
-                        
+
                      </tr>
                   </tbody>
 
@@ -521,7 +559,8 @@
                   </tbody>
 
 
-               </table><table class="tab memory">
+               </table>
+               <table class="tab memory">
                   <thead class="proTitle">
                      <tr>
                         <th>memory</th>
@@ -536,7 +575,8 @@
                   </tbody>
 
 
-               </table><table class="tab dimensions">
+               </table>
+               <table class="tab dimensions">
                   <thead class="proTitle">
                      <tr>
                         <th>dimensions</th>
@@ -551,7 +591,8 @@
                   </tbody>
 
 
-               </table><table class="tab network">
+               </table>
+               <table class="tab network">
                   <thead class="proTitle">
                      <tr>
                         <th>Network</th>
@@ -567,7 +608,7 @@
 
 
                </table>
-                <table class="tab userInterface">
+               <table class="tab userInterface">
                   <thead class="proTitle">
                      <tr>
                         <th>User Interface</th>

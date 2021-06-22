@@ -111,7 +111,7 @@ section h1 {
 
 .landing-illu {
   width: 75%;
-  height: 38vh;
+  height: 34vh;
   display: flex;
   justify-content: space-between;
   z-index: 1;
@@ -569,7 +569,7 @@ input[type="range"]::-moz-range-thumb {
   /* background-color: #87cefa; */
   padding: 10px;
   font-size: 200%;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 .top-comparisons-heading span {
   width: 200px;
@@ -590,13 +590,13 @@ input[type="range"]::-moz-range-thumb {
   border-radius: 10px;
 
   position: relative;
-  box-shadow: 2px 2px 5px lightgray;
+  /* box-shadow: 2px 2px 5px lightgray; */
 }
 .each:nth-of-type(3) {
   /* margin-right: auto; */
   margin-top: 50px;
   /* transform: translate(0, 50%); */
-  z-index: -1;
+  /* z-index: -1; */
 }
 .image-comparison-div {
   width: 35%;
@@ -697,17 +697,21 @@ input[type="range"]::-moz-range-thumb {
   transition: 0.5s;
 }
 
-.features ul li:nth-of-type(2n) {
-  /* background-color: lightgray; */
+.features ul li:nth-of-type(2n-1) {
+  /* background-color: black; */
+  color: white;
+  font-weight: 300;
 }
 
 .features ul li {
   padding: 5px 10px;
-  margin-bottom: 5px;
-  background-color: white;
-
-  box-shadow: 0px 0px 20px lightgray;
-  border-radius: 5px;
+  /* margin-bottom: 5px; */
+  color: white;
+  font-weight: 300;
+  background-color: #6c757d;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
+  /* box-shadow: 0px 0px 20px lightgray; */
+  /* border-radius: 5px; */
 }
 
 .best-deals {
@@ -880,7 +884,7 @@ input[type="range"]::-moz-range-thumb {
   justify-content: center;
   text-align: center;
 }
-.amazon-buy svg {
+.amazon-buy img {
   width: 100%;
   height: 50px;
 }
@@ -891,18 +895,20 @@ input[type="range"]::-moz-range-thumb {
   justify-content: center;
   text-align: center;
 }
-.flipkart-buy svg {
+.flipkart-buy img {
   width: 100%;
   height: 50px;
 }
 .price-compare {
   color: green;
   margin-top: 10px;
+  font-weight: 500;
 }
 .buy-compare {
   cursor: pointer;
   background-color: rgba(211, 211, 211, 0.5);
   color: black;
+  font-weight: 500;
 }
 .buy-compare:hover {
   color: black;

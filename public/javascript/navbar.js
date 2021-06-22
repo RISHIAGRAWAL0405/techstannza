@@ -82,3 +82,33 @@ let sendRegisterRequest = async (username, password, email) => {
     window.location.reload();
   }
 };
+
+let comparisonToggler = document.querySelector(".comparison-toggler");
+let comparisons = document.querySelector(".comparisons");
+
+let sideIcon = document.querySelector(".sidenav > div > span i");
+
+comparisonToggler.addEventListener("click", () => {
+  if (comparisons.style.display == "flex") {
+    comparisons.style.display = "none";
+    sideIcon.style.transform = "rotate(-90deg)";
+  } else {
+    sideIcon.style.transform = "rotate(0deg)";
+    comparisons.style.display = "flex";
+  }
+});
+
+let newsToggler = document.querySelector(".side-news");
+let news = document.querySelector(".main-side-news");
+
+let sideIconNews = document.querySelector(".side-news > span > i");
+
+newsToggler.addEventListener("click", () => {
+  if (news.style.display == "flex") {
+    news.style.display = "none";
+    sideIconNews.style.transform = "rotate(-90deg)";
+  } else {
+    sideIconNews.style.transform = "rotate(0deg)";
+    news.style.display = "flex";
+  }
+});

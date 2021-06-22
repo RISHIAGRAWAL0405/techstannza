@@ -369,3 +369,16 @@ async function sendDataToServer(UserData) {
 
   console.log("sent data to the sevrer");
 }
+
+let buyLinks = document.querySelectorAll(".buy-hover");
+let i = 0;
+buyLinks.forEach((e) => {
+  e.addEventListener("mouseover", () => {
+    document.querySelector(".each:last-of-type").style.zIndex = -1;
+    console.log("mouseover");
+  });
+  e.addEventListener("mouseout", () => {
+    document.querySelector(".each:last-of-type").style.zIndex = 1;
+    console.log("mouse out");
+  });
+});
