@@ -154,31 +154,47 @@ section h1 {
   transform: none;
 }
 .each-fourth-review {
+  min-height: 45px;
+  margin-top: 5px;
   height: 25%;
-  background-color: #495057;
-  opacity: 0.8;
-  color: white;
+  background-color: #e5e5e5;
+  opacity: 1;
+  color: black;
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0px 15px;
   align-items: center;
   border-radius: 10px;
+  transition: 0.3s ease;
+}
+.each-fourth-review:hover {
+  transform: scale3d(1.05, 1.05, 1);
+  transition: 0.3s ease;
 }
 .each-fourth-review p {
   margin: 0;
+  font-size: 500;
+  font-size: small;
+}
+.each-fourth-review img {
+  width: 15%;
+  height: 80%;
 }
 
 .each-fourth {
-  opacity: 0.8;
+  opacity: 0.9;
   color: white;
   display: flex;
+  margin-top: 5px;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   width: 100%;
   height: 20%;
   transition: 0.3s ease;
-  background-color: #495057;
+  background-color: black;
 }
 .fourth-title {
   width: 100%;
@@ -200,6 +216,7 @@ section h1 {
 }
 .each-fourth p {
   margin-bottom: 0;
+  color: white;
 }
 .each-fourth:last-child {
   color: lightblue;
@@ -1285,6 +1302,10 @@ input[type="range"]::-moz-range-thumb {
   .first-para svg {
     height: auto;
     max-height: 100px;
+  }
+  .last-icard {
+    box-shadow: none;
+    height: fit-content;
   }
 
   .landing-illu {
