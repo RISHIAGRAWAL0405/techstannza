@@ -555,9 +555,11 @@ input[type="range"]::-moz-range-thumb {
 .top-comparisons {
   width: 100%;
   height: fit-content;
-  margin-top: 70px;
+  margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
+  background-color: black;
+  padding: 50px 0px;
   justify-content: space-evenly;
 }
 .top-comparisons-heading {
@@ -584,7 +586,7 @@ input[type="range"]::-moz-range-thumb {
   width: 40%;
   display: flex;
   flex-wrap: wrap;
-  background-color: #dee2e6;
+  background-color: white;
   /* border-bottom-left-radius: 5px; */
   /* border-bottom-right-radius: 5px; */
   border-radius: 10px;
@@ -699,16 +701,16 @@ input[type="range"]::-moz-range-thumb {
 
 .features ul li:nth-of-type(2n-1) {
   /* background-color: black; */
-  color: white;
-  font-weight: 300;
+  color: black;
+  font-weight: 400;
 }
 
 .features ul li {
   padding: 5px 10px;
   /* margin-bottom: 5px; */
-  color: white;
-  font-weight: 300;
-  background-color: #6c757d;
+  color: black;
+  font-weight: 400;
+  background-color: #dee2e6;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.3); */
   /* box-shadow: 0px 0px 20px lightgray; */
   /* border-radius: 5px; */
