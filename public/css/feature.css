@@ -199,6 +199,7 @@ body {
   font-weight: 500;
   font-size: large;
   margin: 0;
+  text-align: center;
 }
 
 .mainF {
@@ -478,8 +479,9 @@ body {
 }
 
 @media screen and (max-width: 380px) {
-  .first p {
+  .first > p {
     margin-top: 20px;
+    font-size: large;
   }
 }
 @media screen and (max-width: 300px) {
