@@ -467,6 +467,15 @@ body {
   }
 }
 
+@media screen and (max-width: 500px) {
+  .card {
+    width: 80%;
+  }
+  #blob-background {
+    height: 350px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .card {
     width: 80%;
