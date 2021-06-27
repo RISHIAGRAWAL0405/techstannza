@@ -1,7 +1,7 @@
 // jshint esversion:8
 //
 
-const mongoose=require("mongoose");
+const mongoose = require("mongoose");
 //
 //
 // const connectionParams={
@@ -17,88 +17,193 @@ const mongoose=require("mongoose");
 //         console.error(`Error connecting to the database. \n${err}`);
 //     });
 
-
-
-const mobileSchema=new mongoose.Schema({
-
-    name:{
-        type:String,
-        //required:true
+const mobileSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    default: "-",
+    //required:true
+  },
+  price: {
+    type: Number,
+    //required:true
+  },
+  mainCamera: {
+    noOfCameras: {
+      type: Number,
+      //required:true
     },
-    price:{
-        type:Number,
-        //required:true
-    },
-    mainCamera:{
-        noOfCameras:{
-          type:Number,
-          //required:true
+    mpixels: [
+      {
+        pixel: Number,
+        description: {
+          type: String,
+          default: "-",
         },
-        pixels:Array
+      },
+    ],
+  },
+  frontCamera: {
+    noOfCameras: {
+      type: Number,
+      //required:true
     },
-    frontCamera:{
-        noOfCameras:{
-          type:Number,
-          //required:true
+    fpixels: [
+      {
+        pixel: Number,
+        description: {
+          type: String,
+          default: "-",
         },
-        pixels:Array,
+      },
+    ],
+  },
+  brand: {
+    type: String,
+    default: "-",
+    //required:true
+  },
+  image: {
+    type: String,
+    default: "-",
+    //required:true
+  },
+  launchDate: {
+    type: Date,
+    //required:true
+  },
+  sound: {
+    type: String,
+    default: "-",
+  },
+  simType: {
+    type: String,
+    default: "-",
+  },
+  display: {
+    size: {
+      type: String,
+      default: "-",
     },
-    brand:{
-        type:String,
-        //required:true
+    resolution: {
+      type: String,
+      default: "-",
     },
-    image:{
-        type:String,
-        //required:true
+    GPU: {
+      type: String,
+      default: "-",
     },
-    launchDate:{
-        type:Date,
-        //required:true
+    category: {
+      type: String,
+      default: "-",
     },
-    sound:{
-        type:String
+    other: {
+      type: String,
+      default: "-",
     },
-    simType:{
-        type:String
+  },
+  processor: {
+    operatingSystem: {
+      type: String,
+      default: "-",
+    }, //Android 10
+    category: {
+      type: String,
+      default: "-",
+    }, //mediatek dimensity 800U
+    core: {
+      type: String,
+      default: "-",
+    }, //octa core
+    clockSpeed: {
+      type: String,
+      default: "-",
+    }, //2.4GHz
+  },
+  network: {
+    category: {
+      type: String,
+      default: "-",
     },
-    Display:{
-        size:String,
-        resolution:String,
-        GPU:String,
-        category:String,
-        other:String
+    bluetoothVersion: {
+      type: String,
+      default: "-",
     },
-    processor:{
-        operatingSystem:String,     //Android 10
-        category:String,               //mediatek dimensity 800U
-        Core:String,               //octa core
-        clockSpeed:String,         //2.4GHz
+    nfc: {
+      type: String,
+      default: "-",
     },
-    memory:{
-        internalStorage:String,
-        ram:String,
-        expandableStorage:String,
+    infrared: {
+      type: String,
+      default: "-",
     },
-    network:{
-        category:String,
-        bluetoothVersion:String,
-        nfc:String,
-        infrared:String,
-        audioJack:String,
+    audioJack: {
+      type: String,
+      default: "-",
     },
-    BatteryCapacity:String,
-    Dimensions:{
-        width:Number,
-        height:Number,
-        weight:Number
+  },
+  batteryCapacity: {
+    type: String,
+    default: "-",
+  },
+  dimensions: {
+    width: Number,
+    height: Number,
+    weight: Number,
+  },
+  links: {
+    amazon: {
+      type: String,
+      default: "-",
     },
-    warrantyPeriod:Number,
-    userInterface:String,
-    box:String,
-    colorVariants:String,
-    bodyType:String,
-    review:String,
-    ourOpinion:String
+    flipkart: {
+      type: String,
+      default: "-",
+    },
+    images: Array,
+  },
+  warrantyPeriod: Number,
+  userInterface: {
+    type: String,
+    default: "-",
+  },
+  box: {
+    type: String,
+    default: "-",
+  },
+  variants: [
+    {
+      memory: {
+        internalStorage: {
+          type: String,
+          default: "-",
+        },
+        ram: {
+          type: String,
+          default: "-",
+        },
+        expandableStorage: {
+          type: String,
+          default: "-",
+        },
+      },
+      color: {
+        type: String,
+      },
+    },
+  ],
+  bodyType: {
+    type: String,
+    default: "-",
+  },
+  review: {
+    type: String,
+    default: "-",
+  },
+  ourOpinion: {
+    type: String,
+    default: "-",
+  },
 });
-const Mobile=mongoose.model("Mobile",mobileSchema);
-module.exports=Mobile;
+
+const Mobile = mongoose.model("Mobile", mobileSchema);
+module.exports = Mobile;

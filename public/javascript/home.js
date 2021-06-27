@@ -198,11 +198,12 @@ gsap.from("#saving_money", {
 gsap.from(".each", {
   scrollTrigger: {
     trigger: ".each",
-    // start: "-40px 600px",
+    start: "top 600px",
   },
 
   opacity: 0,
-  transform: "translateY(100px)",
+  transform: "scale(1.1)",
+
   duration: 1,
 });
 
@@ -370,15 +371,16 @@ async function sendDataToServer(UserData) {
   console.log("sent data to the sevrer");
 }
 
-let buyLinks = document.querySelectorAll(".buy-hover");
-let i = 0;
-buyLinks.forEach((e) => {
-  e.addEventListener("mouseover", () => {
-    document.querySelector(".each:last-of-type").style.zIndex = -1;
-    console.log("mouseover");
-  });
-  e.addEventListener("mouseout", () => {
-    document.querySelector(".each:last-of-type").style.zIndex = 1;
-    console.log("mouse out");
-  });
-});
+// let buyLinks = document.querySelectorAll(".buy-hover");
+// let i = 0;
+// buyLinks.forEach((e) => {
+//   e.addEventListener("mouseover", () => {
+//     document.querySelector(".each:last-of-type").style.zIndex = -1;
+
+//     console.log("mouseover");
+//   });
+//   e.addEventListener("mouseout", () => {
+//     document.querySelector(".each:last-of-type").style.zIndex = 1;
+//     console.log("mouse out");
+//   });
+// });
