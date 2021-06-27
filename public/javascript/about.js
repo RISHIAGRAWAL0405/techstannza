@@ -16,16 +16,10 @@ window.onscroll = function () {
     document.querySelector(".nav").style.borderBottom = "0.5px solid lightgrey";
     document.querySelector(".navigation ul").style.color = "black";
     document.querySelector(".home-nav a i").style.color = "black";
-    document.querySelector(".sign-in").style.color = "black";
-    document.querySelector(".sign-in").style.border = "1px solid black";
-    document.querySelector(".search-div").style.backgroundColor = "#D3D3D3";
   } else {
     document.querySelector(".nav").style.backgroundColor = "transparent";
     document.querySelector(".nav").style.borderBottom = "none";
     document.querySelector(".navigation ul").style.color = "white";
     document.querySelector(".home-nav a i").style.color = "white";
-    document.querySelector(".sign-in").style.color = "white";
-    document.querySelector(".sign-in").style.border = "1px solid white";
-    document.querySelector(".search-div").style.backgroundColor = "white";
   }
 };
