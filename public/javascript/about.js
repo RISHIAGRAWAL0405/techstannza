@@ -23,3 +23,29 @@ window.onscroll = function () {
     document.querySelector(".home-nav a i").style.color = "white";
   }
 };
+
+window.onload = () => {
+  if (window.innerWidth <= 600) {
+    document.querySelector(".our-team").classList.add("swiper-container");
+    document.querySelector(".swiper-container").style.height = "fit-content";
+    document.querySelector(".swiper-container").style.minHeight = "50vh";
+
+    document.querySelector(".inner-team").classList.add("swiper-wrapper");
+    document.querySelector(".inner-team").classList.remove("inner-team");
+
+    document.querySelectorAll(".each-member").forEach((e) => {
+      e.classList.add("swiper-slide");
+      e.style.margin = 0;
+    });
+
+    const swiper = new Swiper(".swiper-container", {
+      direction: "horizontal",
+      slidesPerView: 1.5,
+      //   centeredSlides: true,
+      spaceBetween: 30,
+      autoplay: {
+        delay: 3000,
+      },
+    });
+  }
+};
