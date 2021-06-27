@@ -40,7 +40,7 @@ window.onload = () => {
 
     const swiper = new Swiper(".swiper-container", {
       direction: "horizontal",
-      slidesPerView: 1.5,
+      slidesPerView: 1.8,
       //   centeredSlides: true,
       spaceBetween: 30,
       autoplay: {
