@@ -538,7 +538,64 @@ body {
   margin-right: auto;
   margin-left: 5px;
 }
+.recover {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+}
+.recover > div {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+.recover > div button {
+  width: 50%;
+  padding: 10px;
+}
+.recover-form {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  align-self: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.recover-form button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: lightgreen;
+  border-radius: 10px;
+  font-weight: 500;
+}
+.recover-form input {
+  border: 2px solid lightgray;
+  outline: none;
+  border-radius: 10px;
+  padding: 10px;
+}
 
+.recover-form div {
+  display: flex;
+  flex-direction: column;
+}
+.recover-form p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-weight: 700;
+  font-size: medium;
+}
+
+.recover-success {
+  width: 80%;
+}
+.alert-dismissible {
+  padding-right: 0;
+}
 .search-input::-webkit-search-cancel-button {
   /* Remove default */
   -webkit-appearance: none;

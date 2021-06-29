@@ -5,11 +5,11 @@ const ExpressError = require("../utils/Expresserror");
 const Mobile = require("../models/mobileaman");
 const { isLoggedIn, isAdmin } = require("../middleware");
 
-router.get("/", async (req, res) => {
+router.get("/", isLoggedIn, isAdmin, async (req, res) => {
   res.render("phone");
 });
 
-router.post("/", async (req, res) => {
+router.post("/", isLoggedIn, isAdmin, async (req, res) => {
   const pixMain = [];
   const pixelsMain = req.body.pixelsMain;
   const pixelsMainarray = pixelsMain.split("/");

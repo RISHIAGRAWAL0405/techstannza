@@ -18,12 +18,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
+        <div class="spinner-border text-primary ml-5 login-spinner" role="status">
+        </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-
+      
       </div>
       <div class="modal-body custom">
 
-        <div class="alert alert-danger alert-dismissible fade show text-center w-100 login-error" role="alert"
+        <div class="alert alert-danger alert-dismissible fade show text-center w-80 login-error m-auto" role="alert"
           style="margin: 0;padding: 10px;">
           <strong class="error-message login-message"></strong>
           <button type="button" class="p-1" data-bs-dismiss="alert" aria-label="Close"
@@ -52,8 +54,10 @@
           </form>
           <div class="recovery-register">
             <button class="r-b-inLogin" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
-              data-bs-dismiss="modal">Register</button>
-            <a href="/forgotPassword">Forgot Password?</a>
+              data-bs-dismiss="modal">Register</button> 
+              <button class="r-b-inLogin" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal"
+              data-bs-dismiss="modal">Forgot Password</button>
+            
           </div>
         </div>
         <div class="login-diff">
@@ -90,10 +94,12 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalToggleLabel2">Register</h5>
+        <div class="spinner-border text-primary ml-5 register-spinner" role="status">
+        </div>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body custom">
-        <div class="alert alert-danger alert-dismissible fade show text-center w-100 register-error" role="alert"
+        <div class="alert alert-danger alert-dismissible fade show text-center w-80 register-error m-auto" role="alert"
           style="margin: 0;">
           <strong class="error-message register-message"></strong>
           <button type="button" class="p-1" data-bs-dismiss="alert" aria-label="Close"
@@ -156,6 +162,70 @@
 </div>
 
 
+<div class="modal fade c-modal" id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalToggleLabel2">forgot password</h5>
+        <div class="spinner-border text-primary ml-5 recover-spinner" role="status">
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body custom">
+        <div class="alert alert-danger alert-dismissible fade show text-center w-80 recover-error m-auto" role="alert"
+          style="margin: 0;">
+          <strong class="error-message recover-error-message"></strong>
+          <button type="button" class="p-1" data-bs-dismiss="alert" aria-label="Close"
+            style="margin-left: auto;background-color: transparent;border: none;height: fit-content"><i
+              class="fas fa-times" style="font-size: larger;"></i></button>
+        </div>
+        <div class="alert alert-success alert-dismissible fade show text-center w-80 recover-success m-auto" role="alert"
+          style="margin: 0;">
+          <strong class="error-message recover-success-message"></strong>
+          <button type="button" class="p-1" data-bs-dismiss="alert" aria-label="Close"
+            style="margin-left: auto;background-color: transparent;border: none;height: fit-content"><i
+              class="fas fa-times" style="font-size: larger;"></i></button>
+        </div>
+        <div class="recover">
+          <form action="/auth/reset-password" method="POST" class="recover-form">
+            <div>
+              <label for="email-recover">Email</label>
+            <input type="text" id="email-recover" name="email">
+            </div>
+             <p>
+               OR
+             </p>
+            <div> 
+              <label for="username-recover">username</label>
+            <input type="text" id="username-recover" name="username">
+
+            </div>
+           
+            <button>Reset Password</button>
+
+          </form>
+          <div>
+            <button class="" style="background-color: white;border: none;color: tomato;"
+            data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to Log In</button>
+            <button class="r-b-inLogin" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal"
+              data-bs-dismiss="modal">Register</button>
+          </div>
+
+        </div>       
+ 
+
+          
+      
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+
 
 
 
@@ -167,23 +237,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModalToggle2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+
 
 
 <div class="modal fade c-search-modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"

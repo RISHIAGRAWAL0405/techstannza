@@ -41,7 +41,7 @@ const rangeRoutes = require("./routes/range");
 const specificRoutes = require("./routes/specific");
 const voteRoutes = require("./routes/voteRoutes");
 const commentRoutes = require("./routes/CommentRoutes");
-let authRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/userRoutes");
 const { html } = require("cheerio/lib/static");
 
 //   this is the database connection part
