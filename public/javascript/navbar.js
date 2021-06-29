@@ -94,7 +94,7 @@ registerForm.addEventListener("submit", (e) => {
 doNone(".register-error");
 let sendRegisterRequest = async (username, password, email) => {
   let result = await axios.post(
-    `https://desolate-badlands-28322.herkouapp.com/auth/register`,
+    `https://desolate-badlands-28322.herokuapp.com/auth/register`,
     {
       username,
       password,
