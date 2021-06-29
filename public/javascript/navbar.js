@@ -58,10 +58,13 @@ loginForm.addEventListener("submit", (e) => {
 
 doNone(".login-error");
 let sendLoginRequest = async (username, password) => {
-  let result = await axios.post(`${link2}/auth/login`, {
-    username: username,
-    password: password,
-  });
+  let result = await axios.post(
+    `https://desolate-badlands-28322.herokuapp.com/auth/login`,
+    {
+      username: username,
+      password: password,
+    }
+  );
   doNone(".login-spinner");
   let data = result.data;
   if (data == "incorrect username or password") {
@@ -90,11 +93,14 @@ registerForm.addEventListener("submit", (e) => {
 
 doNone(".register-error");
 let sendRegisterRequest = async (username, password, email) => {
-  let result = await axios.post(`${link2}/auth/register`, {
-    username,
-    password,
-    email,
-  });
+  let result = await axios.post(
+    `https://desolate-badlands-28322.herkouapp.com/auth/register`,
+    {
+      username,
+      password,
+      email,
+    }
+  );
   document.querySelector(".register-spinner").style.display = "none";
 
   if (result.data == "A user with the given username is already registered") {
@@ -119,10 +125,13 @@ recoverForm.addEventListener("submit", (e) => {
 });
 
 let sendRecoverRequest = async (email, username) => {
-  let result = await axios.post(`${link2}/auth/reset-password`, {
-    email: email,
-    username: username,
-  });
+  let result = await axios.post(
+    `https://desolate-badlands-28322.herokuapp.com/auth/reset-password`,
+    {
+      email: email,
+      username: username,
+    }
+  );
   doNone(".recover-spinner");
   if (
     result.data ==
