@@ -58,7 +58,7 @@ loginForm.addEventListener("submit", (e) => {
 
 doNone(".login-error");
 let sendLoginRequest = async (username, password) => {
-  let result = await axios.post(`${link1}/auth/login`, {
+  let result = await axios.post(`${link2}/auth/login`, {
     username: username,
     password: password,
   });
@@ -90,7 +90,7 @@ registerForm.addEventListener("submit", (e) => {
 
 doNone(".register-error");
 let sendRegisterRequest = async (username, password, email) => {
-  let result = await axios.post(`${link1}/auth/register`, {
+  let result = await axios.post(`${link2}/auth/register`, {
     username,
     password,
     email,
@@ -119,7 +119,7 @@ recoverForm.addEventListener("submit", (e) => {
 });
 
 let sendRecoverRequest = async (email, username) => {
-  let result = await axios.post(`${link1}/auth/reset-password`, {
+  let result = await axios.post(`${link2}/auth/reset-password`, {
     email: email,
     username: username,
   });
