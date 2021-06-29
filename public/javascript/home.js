@@ -362,7 +362,7 @@ async function sendDataToServer(UserData) {
     "https://desolate-badlands-28322.herokuapp.com/form/saveSubscription";
   const link2 = "http://localhost:3000/form/saveSubscription";
 
-  let result = await axios.post(link2, {
+  let result = await axios.post(link1, {
     endpoint: `${parsedData.endpoint}`,
     auth: `${parsedData.keys.auth}`,
     p256dh: `${parsedData.keys.p256dh}`,
