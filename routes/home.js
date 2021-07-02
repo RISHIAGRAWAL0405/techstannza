@@ -6,11 +6,19 @@ const Mobile = require("../models/mobileaman");
 const News = require("../models/news");
 const passport = require("passport");
 const User = require("../models/user");
+const { sessionify } = require("../middleware");
 
 router.get("/", async (req, res) => {
   const mobiles = await Mobile.find({});
+  let recentlyViewed = [];
+  for (mobile of mobiles) {
+    if (req.session.viewed && req.session.viewed.includes(`/${mobile._id}`)) {
+      recentlyViewed.push(mobile);
+    }
+  }
   const stories = await News.find({});
   res.render("home", {
+    rViewed: recentlyViewed,
     mobiles: mobiles,
     home: 1,
     stories,
@@ -62,7 +70,13 @@ router.get(
   catchAsync(async (req, res) => {
     const mobiles = await Mobile.find();
     const { mobile } = req.query;
-    const mobileFound = await Mobile.findById(mobile);
+    let mobileFound;
+    if (mobile == "null") {
+      mobileFound = "null";
+    } else {
+      mobileFound = await Mobile.findById(mobile);
+    }
+
     res.render("comparison", { mobiles, mobileFound });
   })
 );
@@ -78,6 +92,7 @@ router.get("/price-tracker", (req, res) => {
 
 router.get(
   "/:id",
+  sessionify,
   catchAsync(async (req, res) => {
     let { id } = req.params;
     let similar = [];
@@ -92,6 +107,7 @@ router.get(
         similar.push(each);
       }
     }
+
     res.render("content", { mobile, similar });
     // res.send(" HEYY!!!  SORRY  Work in Progress")
   })

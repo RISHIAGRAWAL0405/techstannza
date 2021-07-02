@@ -184,4 +184,8 @@ router.post("/reset-password-new-credentials/:id/:token", async (req, res) => {
     }
   }
 });
+
+router.get("/ui", (req, res) => {
+  res.render("newCredentials");
+});
 module.exports = router;

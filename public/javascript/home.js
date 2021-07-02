@@ -138,6 +138,25 @@ const swiper = new Swiper(".swiper-container", {
     prevEl: ".swiper-button-prev",
   },
 });
+const rSwiper = new Swiper(".swiper-container1", {
+  slidesPerView: 4,
+  spaceBetween: 5,
+  centeredSlides: true,
+  direction: "horizontal",
+  loop: true,
+  autoplay: {
+    delay: 3000,
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next-r",
+    prevEl: ".swiper-button-prev-r",
+  },
+});
 
 let ratings = document.querySelectorAll(".rating");
 

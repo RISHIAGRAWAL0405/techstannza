@@ -1432,24 +1432,42 @@
 
 
 
+  <% if(viewed && viewed.length!=0){ %> 
+  <section class="recently-watched swiper-container1">
 
-  <section class="recently-watched">
-    <h1>
-      recenly view
-    </h1>
-    <div  class="inner-recent">
+    <div class="swiper-wrapper">
+      <% for(let each of rViewed){ %>
+             <div class="swiper-slide each-r">
+               <div class="r-image">
+                 <img src="<%=each.image%>" alt="">
+               </div>
+               <div class="r-name">
+                 <p>
+                   <%=each.name%>
+                 </p>
 
-     <div class="each-watched">
-          
-     </div>
+               </div>
+
+
+             </div>
+        
+
+        <% } %> 
+
+        <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev-r" style="color: black;"></div>
+      <div class="swiper-button-next-r" style="color: black;"></div>
 
 
     </div>
 
+    
 
 
   </section> 
 
+  <% } %> 
  
  
   <div id="recent-heading">

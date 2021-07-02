@@ -158,6 +158,7 @@ all.forEach((element) => {
   });
 });
 
+let j = 0;
 function fillDown(className, mob) {
   let whole = document.querySelector(`.${className} .indiDetails`);
   whole.style.opacity = 1;
@@ -171,34 +172,78 @@ function fillDown(className, mob) {
   let dimensions = document.querySelectorAll(`.${className} .dimensions td`);
   let ui = document.querySelectorAll(`.${className} .userInterface td`);
   let others = document.querySelectorAll(`.${className} .others td`);
-  frontcamera[0].innerText = mob.frontCamera.pixels[0].pixel + "MP";
-  frontcamera[2].innerText = mob.frontCamera.pixels[0].description;
-  display[0].innerText = mob.Display.size;
-  display[1].innerText = mob.Display.resolution;
-  display[2].innerText = mob.Display.category;
-  console.log(mob.refreshrate);
-  display[3].innerText = `${mob.refreshrate}` + "Hz";
-  performance[0].innerText = mob.processor.category;
-  performance[1].innerText = mob.processor.Core;
-  performance[2].innerText = mob.processor.clockSpeed;
-  battery[0].innerText = mob.BatteryCapacity + "Mah";
-  network[0].innerText = mob.network.category;
-  network[1].innerText = mob.network.bluetoothVersion;
-  network[2].innerText = mob.network.nfc;
-  memory[0].innerText = mob.memory.internalStorage;
-  memory[1].innerText = mob.memory.ram;
-  memory[2].innerText = mob.memory.expandableStorage;
-  ui[0].innerText = mob.userInterface;
-  ui[1].innerText = mob.processor.operatingSystem;
-  ui[2].innerText = mob.Display.GPU;
-  dimensions[0].innerText = mob.Dimensions.width;
-  dimensions[1].innerText = mob.Dimensions.height;
-  dimensions[2].innerText = mob.Dimensions.weight;
-  others[0].innerText = mob.sound;
-  others[1].innerText = mob.simType;
-  others[2].innerText = mob.network.infrared;
-  others[3].innerText = mob.network.audioJack;
-  others[4].innerText = mob.Box;
+  if (className == "firstMobile") {
+    frontcamera[0].innerHTML =
+      "<strong>pixel</strong> " + mob.frontCamera.pixels[0].pixel + "MP";
+    frontcamera[2].innerHTML =
+      "<strong>description</strong> " + mob.frontCamera.pixels[0].description;
+    display[0].innerHTML = "<strong>size</strong> " + mob.Display.size;
+    display[1].innerHTML =
+      "<strong>resolution</strong> " + mob.Display.resolution;
+    display[2].innerHTML = "<strong>category</strong> " + mob.Display.category;
+
+    display[3].innerHTML =
+      "<strong>refresh rate</strong> " + `${mob.refreshrate}` + "Hz";
+    performance[0].innerHTML =
+      "<strong>category</strong> " + mob.processor.category;
+    performance[1].innerHTML = "<strong>Core</strong> " + mob.processor.Core;
+    performance[2].innerHTML =
+      "<strong>clock speed</strong> " + mob.processor.clockSpeed;
+    battery[0].innerHTML =
+      "<strong>Battery Capacity</strong> " + mob.BatteryCapacity + "Mah";
+    network[0].innerHTML = "<strong>category</strong> " + mob.network.category;
+    network[1].innerHTML =
+      "<strong>Bluetooth Version</strong> " + mob.network.bluetoothVersion;
+    network[2].innerHTML = "<strong>Nfc</strong> " + mob.network.nfc;
+    memory[0].innerHTML =
+      "<strong>Internal storage</strong> " + mob.memory.internalStorage;
+    memory[1].innerHTML = "<strong>Ram</strong> " + mob.memory.ram;
+    memory[2].innerHTML =
+      "<strong>expandable storage</strong> " + mob.memory.expandableStorage;
+    ui[0].innerHTML = "<strong>UI</strong> " + mob.userInterface;
+    ui[1].innerHTML = "<strong>OS</strong> " + mob.processor.operatingSystem;
+    ui[2].innerHTML = "<strong>GPU</strong> " + mob.Display.GPU;
+    dimensions[0].innerHTML = "<strong>width</strong> " + mob.Dimensions.width;
+    dimensions[1].innerHTML =
+      "<strong>height</strong> " + mob.Dimensions.height;
+    dimensions[2].innerHTML =
+      "<strong>weight</strong> " + mob.Dimensions.weight;
+    others[0].innerHTML = "<strong>sound</strong> " + "sound " + mob.sound;
+    others[1].innerHTML = "<strong>sim Type</strong> " + mob.simType;
+    others[2].innerHTML = "<strong>Infrared</strong> " + mob.network.infrared;
+    others[3].innerHTML =
+      "<strong>Audio Jack</strong> " + mob.network.audioJack;
+    others[4].innerHTML = "<strong>In Box</strong> " + mob.Box;
+  } else {
+    frontcamera[0].innerHTML = mob.frontCamera.pixels[0].pixel + "MP";
+    frontcamera[2].innerHTML = mob.frontCamera.pixels[0].description;
+    display[0].innerHTML = mob.Display.size;
+    display[1].innerHTML = mob.Display.resolution;
+    display[2].innerHTML = mob.Display.category;
+
+    display[3].innerHTML = `${mob.refreshrate}` + "Hz";
+    performance[0].innerHTML = mob.processor.category;
+    performance[1].innerHTML = mob.processor.Core;
+    performance[2].innerHTML = mob.processor.clockSpeed;
+    battery[0].innerHTML = mob.BatteryCapacity + "Mah";
+    network[0].innerHTML = mob.network.category;
+    network[1].innerHTML = mob.network.bluetoothVersion;
+    network[2].innerHTML = mob.network.nfc;
+    memory[0].innerHTML = mob.memory.internalStorage;
+    memory[1].innerHTML = mob.memory.ram;
+    memory[2].innerHTML = mob.memory.expandableStorage;
+    ui[0].innerHTML = mob.userInterface;
+    ui[1].innerHTML = mob.processor.operatingSystem;
+    ui[2].innerHTML = mob.Display.GPU;
+    dimensions[0].innerHTML = mob.Dimensions.width;
+    dimensions[1].innerHTML = mob.Dimensions.height;
+    dimensions[2].innerHTML = mob.Dimensions.weight;
+    others[0].innerHTML = mob.sound;
+    others[1].innerHTML = mob.simType;
+    others[2].innerHTML = mob.network.infrared;
+    others[3].innerHTML = mob.network.audioJack;
+    others[4].innerHTML = mob.Box;
+  }
 }
 
 let buttons = document.querySelectorAll(".customButton");
@@ -243,3 +288,32 @@ function removeNamesInUpperStrip(classname) {
   let spaniore = document.querySelector(selector);
   spaniore.innerText = "Add Mobile";
 }
+
+let topcomparisonsButton = document.querySelectorAll(".set-text button");
+let classNames = ["first", "second", "third"];
+
+topcomparisonsButton.forEach((e) => {
+  e.addEventListener("click", () => {
+    let classToAdd = "-";
+    for (let name of classNames) {
+      let NameInUpperStrip = document.querySelector(`.${name} span`).innerText;
+      if (NameInUpperStrip == "Add Mobile") {
+        classToAdd = `${name}Mobile`;
+        break;
+      }
+    }
+
+    if (classToAdd === "-") {
+      throw new Error("Please remove one mobile from down");
+    } else {
+      let mob = e.parentElement.childNodes[1].innerText;
+      mob = mobiles.filter((e) => e.name == mob);
+
+      addNamesInUpperStrip(classToAdd, mob[0]);
+      document.querySelector(`.${classToAdd}`).childNodes[3].childNodes[1].src =
+        mob[0].image;
+
+      fillDown(classToAdd, mob[0]);
+    }
+  });
+});

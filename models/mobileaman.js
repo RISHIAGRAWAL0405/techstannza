@@ -20,7 +20,6 @@ const mongoose = require("mongoose");
 const mobileSchema = new mongoose.Schema({
   name: {
     type: String,
-    default: "-",
     //required:true
   },
   price: {
@@ -32,39 +31,21 @@ const mobileSchema = new mongoose.Schema({
       type: Number,
       //required:true
     },
-    mpixels: [
-      {
-        pixel: Number,
-        description: {
-          type: String,
-          default: "-",
-        },
-      },
-    ],
+    pixels: Array,
   },
   frontCamera: {
     noOfCameras: {
       type: Number,
       //required:true
     },
-    fpixels: [
-      {
-        pixel: Number,
-        description: {
-          type: String,
-          default: "-",
-        },
-      },
-    ],
+    pixels: Array,
   },
   brand: {
     type: String,
-    default: "-",
     //required:true
   },
   image: {
     type: String,
-    default: "-",
     //required:true
   },
   launchDate: {
@@ -73,137 +54,48 @@ const mobileSchema = new mongoose.Schema({
   },
   sound: {
     type: String,
-    default: "-",
   },
   simType: {
     type: String,
-    default: "-",
   },
-  display: {
-    size: {
-      type: String,
-      default: "-",
-    },
-    resolution: {
-      type: String,
-      default: "-",
-    },
-    GPU: {
-      type: String,
-      default: "-",
-    },
-    category: {
-      type: String,
-      default: "-",
-    },
-    other: {
-      type: String,
-      default: "-",
-    },
+  Display: {
+    size: String,
+    resolution: String,
+    GPU: String,
+    category: String,
+    other: String,
   },
   processor: {
-    operatingSystem: {
-      type: String,
-      default: "-",
-    }, //Android 10
-    category: {
-      type: String,
-      default: "-",
-    }, //mediatek dimensity 800U
-    core: {
-      type: String,
-      default: "-",
-    }, //octa core
-    clockSpeed: {
-      type: String,
-      default: "-",
-    }, //2.4GHz
+    operatingSystem: String, //Android 10
+    category: String, //mediatek dimensity 800U
+    Core: String, //octa core
+    clockSpeed: String, //2.4GHz
+  },
+  memory: {
+    internalStorage: String,
+    ram: String,
+    expandableStorage: String,
   },
   network: {
-    category: {
-      type: String,
-      default: "-",
-    },
-    bluetoothVersion: {
-      type: String,
-      default: "-",
-    },
-    nfc: {
-      type: String,
-      default: "-",
-    },
-    infrared: {
-      type: String,
-      default: "-",
-    },
-    audioJack: {
-      type: String,
-      default: "-",
-    },
+    category: String,
+    bluetoothVersion: String,
+    nfc: String,
+    infrared: String,
+    audioJack: String,
   },
-  batteryCapacity: {
-    type: String,
-    default: "-",
-  },
-  dimensions: {
+  BatteryCapacity: String,
+  Dimensions: {
     width: Number,
     height: Number,
     weight: Number,
   },
-  links: {
-    amazon: {
-      type: String,
-      default: "-",
-    },
-    flipkart: {
-      type: String,
-      default: "-",
-    },
-    images: Array,
-  },
   warrantyPeriod: Number,
-  userInterface: {
-    type: String,
-    default: "-",
-  },
-  box: {
-    type: String,
-    default: "-",
-  },
-  variants: [
-    {
-      memory: {
-        internalStorage: {
-          type: String,
-          default: "-",
-        },
-        ram: {
-          type: String,
-          default: "-",
-        },
-        expandableStorage: {
-          type: String,
-          default: "-",
-        },
-      },
-      color: {
-        type: String,
-      },
-    },
-  ],
-  bodyType: {
-    type: String,
-    default: "-",
-  },
-  review: {
-    type: String,
-    default: "-",
-  },
-  ourOpinion: {
-    type: String,
-    default: "-",
-  },
+  userInterface: String,
+  box: String,
+  colorVariants: String,
+  bodyType: String,
+  review: String,
+  ourOpinion: String,
 });
-
 const Mobile = mongoose.model("Mobile", mobileSchema);
 module.exports = Mobile;
