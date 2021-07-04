@@ -183,7 +183,7 @@
 
   <section class="landing-page">
 
-    <div class="swiper-container">
+    <div class="swiper-container swiper-container-landing">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img
             src="https://images.news18.com/ibnlive/uploads/2020/09/1601111898_realme-7-pro-1.jpg" alt=""></div>
@@ -195,7 +195,7 @@
 
       </div>
 
-      <div class="swiper-pagination"></div>
+      <div class="swiper-pagination swiper-pagination-landing"></div>
 
       <div class="swiper-button-prev" style="color: black;"></div>
       <div class="swiper-button-next" style="color: black;"></div>
@@ -1429,38 +1429,49 @@
 
 
   </section>
+  
+
+  
+  <% if(viewed && viewed.length!=0){ %>
+    <section class="recently">
+      <h1>Recently Viewed and Trending</h1>
+      
+      <div class="swiper-container swiper-container-recent">
 
 
-
-  <% if(viewed && viewed.length!=0){ %> 
-  <section class="recently-watched swiper-container1">
-
-    <div class="swiper-wrapper">
-      <% for(let each of rViewed){ %>
-             <div class="swiper-slide each-r">
-               <div class="r-image">
-                 <img src="<%=each.image%>" alt="">
-               </div>
-               <div class="r-name">
-                 <p>
-                   <%=each.name%>
-                 </p>
-
-               </div>
-
-
-             </div>
+        <div class="swiper-wrapper">
+          <% for(let each of rViewed){ %>
+            <div class="swiper-slide each-r">
+              <span style="display: none;"><%=each._id%></span>
+              <div class="r-image">
+                <img src="<%=each.image%>" alt="">
+              </div>
+              <div class="r-name">
+                <p>
+                  <%=each.name%>
+                </p>
+              <a href="/compare/?mobile=<%=each._id%>">compare <img src="compare_logo.svg"> </a>
+    
+              </div>
+    
+    
+            </div>
+    
+    
+            <% } %>
+    
+              
+    
+    
+        </div>
+  
         
+    
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
 
-        <% } %> 
-
-        <div class="swiper-pagination"></div>
-
-      <div class="swiper-button-prev-r" style="color: black;"></div>
-      <div class="swiper-button-next-r" style="color: black;"></div>
-
-
-    </div>
+      </div>
+      
 
     
 

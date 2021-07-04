@@ -113,7 +113,7 @@ const validateMyForm = () => {
   }
 };
 
-const swiper = new Swiper(".swiper-container", {
+const swiper = new Swiper(".swiper-container-landing", {
   slidesPerView: 1.2,
   spaceBetween: 5,
   centeredSlides: true,
@@ -124,7 +124,7 @@ const swiper = new Swiper(".swiper-container", {
   },
 
   pagination: {
-    el: ".swiper-pagination",
+    el: ".swiper-pagination-landing",
   },
   breakpoints: {
     600: {
@@ -138,23 +138,30 @@ const swiper = new Swiper(".swiper-container", {
     prevEl: ".swiper-button-prev",
   },
 });
-const rSwiper = new Swiper(".swiper-container1", {
-  slidesPerView: 4,
-  spaceBetween: 5,
-  centeredSlides: true,
+const rSwiper = new Swiper(".swiper-container-recent", {
+  slidesPerView: 2,
+  spaceBetween: 10,
   direction: "horizontal",
   loop: true,
   autoplay: {
     delay: 3000,
   },
 
-  pagination: {
-    el: ".swiper-pagination",
+  breakpoints: {
+    600: {
+      slidesPerView: 3,
+    },
+    1000: {
+      slidesPerView: 4,
+    },
+    1200: {
+      slidesPerView: 5,
+    },
   },
 
   navigation: {
-    nextEl: ".swiper-button-next-r",
-    prevEl: ".swiper-button-prev-r",
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
 });
 
@@ -217,11 +224,11 @@ gsap.from("#saving_money", {
 gsap.from(".each", {
   scrollTrigger: {
     trigger: ".each",
-    start: "top 600px",
+    start: "top bottom",
   },
 
   opacity: 0,
-  transform: "scale(1.1)",
+  transform: "scale(1.2)",
 
   duration: 1,
 });
@@ -310,96 +317,102 @@ let createSwiper = (es) => {
 
   return swiperWrapper;
 };
-async function registerServiceWorker() {
-  // console.log("registering service worker");
-  await navigator.serviceWorker.register("/service-worker.js");
-  await navigator.serviceWorker.ready;
-  // console.log("registration success");
-  askPermisssion();
-}
-let data = registerServiceWorker();
+// async function registerServiceWorker() {
+//   // console.log("registering service worker");
+//   await navigator.serviceWorker.register("/service-worker.js");
+//   await navigator.serviceWorker.ready;
+//   // console.log("registration success");
+//   askPermisssion();
+// }
+// let data = registerServiceWorker();
 
-async function askPermisssion() {
-  try {
-    // console.log("asking user to permit");
-    const permissionResult = await Notification.requestPermission();
-    // console.log("asked user to permit");
-    subscribe();
-  } catch (e) {
-    console.log(e);
-  }
-}
+// async function askPermisssion() {
+//   try {
+//     // console.log("asking user to permit");
+//     const permissionResult = await Notification.requestPermission();
+//     // console.log("asked user to permit");
+//     subscribe();
+//   } catch (e) {
+//     console.log(e);
+//   }
+// }
 
-function subscribeUserToPush() {
-  return navigator.serviceWorker
-    .register("/service-worker.js")
-    .then(function (registration) {
-      // console.log("i am in the subscribe user to push first thenable");
-      const subscribeOptions = {
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array(
-          "BIFVnHK8JB5cl1HM56AbR1Vexx9K-7fS3wTShqGpAPX-1Lc8GKEH0ueFSRaarUpu2tCtMe8DmxC39nUEK1iqpME"
-        ),
-      };
+// function subscribeUserToPush() {
+//   return navigator.serviceWorker
+//     .register("/service-worker.js")
+//     .then(function (registration) {
+//       // console.log("i am in the subscribe user to push first thenable");
+//       const subscribeOptions = {
+//         userVisibleOnly: true,
+//         applicationServerKey: urlBase64ToUint8Array(
+//           "BIFVnHK8JB5cl1HM56AbR1Vexx9K-7fS3wTShqGpAPX-1Lc8GKEH0ueFSRaarUpu2tCtMe8DmxC39nUEK1iqpME"
+//         ),
+//       };
 
-      return registration.pushManager.subscribe(subscribeOptions);
-    })
-    .then(function (pushSubscription) {
-      // console.log(
-      // "returned the subscription",
-      // "i am in the subscribe user to push second thenable"
-      // );
-      return JSON.stringify(pushSubscription);
-    });
-}
+//       return registration.pushManager.subscribe(subscribeOptions);
+//     })
+//     .then(function (pushSubscription) {
+//       // console.log(
+//       // "returned the subscription",
+//       // "i am in the subscribe user to push second thenable"
+//       // );
+//       return JSON.stringify(pushSubscription);
+//     });
+// }
 
-function urlBase64ToUint8Array(base64String) {
-  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
-  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+// function urlBase64ToUint8Array(base64String) {
+//   const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+//   const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
 
-  const rawData = window.atob(base64);
-  const outputArray = new Uint8Array(rawData.length);
+//   const rawData = window.atob(base64);
+//   const outputArray = new Uint8Array(rawData.length);
 
-  for (let i = 0; i < rawData.length; ++i) {
-    outputArray[i] = rawData.charCodeAt(i);
-  }
-  return outputArray;
-}
+//   for (let i = 0; i < rawData.length; ++i) {
+//     outputArray[i] = rawData.charCodeAt(i);
+//   }
+//   return outputArray;
+// }
 
-async function subscribe() {
-  // console.log("subscribing user to push.....");
-  let pushSubscription = await subscribeUserToPush();
-  sendDataToServer(pushSubscription);
+// async function subscribe() {
+//   // console.log("subscribing user to push.....");
+//   let pushSubscription = await subscribeUserToPush();
+//   sendDataToServer(pushSubscription);
 
-  // console.log("sending the data to server....");
-}
+//   // console.log("sending the data to server....");
+// }
 
-async function sendDataToServer(UserData) {
-  let parsedData = JSON.parse(UserData);
+// async function sendDataToServer(UserData) {
+//   let parsedData = JSON.parse(UserData);
 
-  const link1 =
-    "https://desolate-badlands-28322.herokuapp.com/form/saveSubscription";
-  const link2 = "http://localhost:3000/form/saveSubscription";
+//   const link1 =
+//     "https://desolate-badlands-28322.herokuapp.com/form/saveSubscription";
+//   const link2 = "http://localhost:3000/form/saveSubscription";
 
-  let result = await axios.post(link1, {
-    endpoint: `${parsedData.endpoint}`,
-    auth: `${parsedData.keys.auth}`,
-    p256dh: `${parsedData.keys.p256dh}`,
+//   let result = await axios.post(link1, {
+//     endpoint: `${parsedData.endpoint}`,
+//     auth: `${parsedData.keys.auth}`,
+//     p256dh: `${parsedData.keys.p256dh}`,
+//   });
+
+//   // console.log("sent data to the sevrer");
+// }
+
+// // let buyLinks = document.querySelectorAll(".buy-hover");
+// // let i = 0;
+// // buyLinks.forEach((e) => {
+// //   e.addEventListener("mouseover", () => {
+// //     document.querySelector(".each:last-of-type").style.zIndex = -1;
+
+// //     console.log("mouseover");
+// //   });
+// //   e.addEventListener("mouseout", () => {
+// //     document.querySelector(".each:last-of-type").style.zIndex = 1;
+// //     console.log("mouse out");
+// //   });
+// // });
+
+document.querySelectorAll(".each-r").forEach((e) => {
+  e.addEventListener("click", () => {
+    window.location.href = e.childNodes[1].innerText;
   });
-
-  // console.log("sent data to the sevrer");
-}
-
-// let buyLinks = document.querySelectorAll(".buy-hover");
-// let i = 0;
-// buyLinks.forEach((e) => {
-//   e.addEventListener("mouseover", () => {
-//     document.querySelector(".each:last-of-type").style.zIndex = -1;
-
-//     console.log("mouseover");
-//   });
-//   e.addEventListener("mouseout", () => {
-//     document.querySelector(".each:last-of-type").style.zIndex = 1;
-//     console.log("mouse out");
-//   });
-// });
+});

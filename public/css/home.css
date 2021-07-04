@@ -11,7 +11,6 @@ p {
 } */
 
 section h1 {
-  font-size: 200%;
   padding: 5px;
   /* margin-bottom: 50px; */
 }
@@ -251,12 +250,12 @@ section h1 {
   padding: 10px;
 }
 
-.swiper-button-next:hover::after {
+.swiper-container-landing .swiper-button-next:hover::after {
   background-color: #5a86ff;
   transition: 0.5s;
   border: none;
 }
-.swiper-button-prev:hover::after {
+.swiper-container-landing .swiper-button-prev:hover::after {
   background-color: #5a86ff;
   border: none;
   transition: 0.5s;
@@ -562,12 +561,13 @@ input[type="range"]::-moz-range-thumb {
   background-color: #5a86ff;
 }
 .recent-section {
-  width: 100%;
+  width: 85%;
   height: fit-content;
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 30px;
+  margin: auto;
 }
 .news-card {
   width: 25%;
@@ -599,7 +599,7 @@ input[type="range"]::-moz-range-thumb {
 #recent-heading {
   width: 100%;
   text-align: center;
-  padding: 10px;
+
   margin: 50px 0px 30px 0px;
   display: flex;
   justify-content: center;
@@ -609,12 +609,12 @@ input[type="range"]::-moz-range-thumb {
   width: 60%;
   font-weight: 600;
   text-align: start;
-  margin-left: 5%;
-  /* font-size: 200%; */
+  margin-left: 7.5%;
+  font-size: 200%;
 }
 #recent-heading a {
   margin-left: auto;
-  margin-right: 2%;
+  margin-right: 7.5%;
   color: black;
   background-color: white;
   box-shadow: 0px 0px 5px lightgray;
@@ -641,7 +641,7 @@ input[type="range"]::-moz-range-thumb {
   /* margin-top: 30px; */
   display: flex;
   flex-wrap: wrap;
-  background-color: black;
+  background-color: #212529;
   padding: 20px 0px;
 
   justify-content: space-evenly;
@@ -977,7 +977,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .buy-name {
-  padding: 0.3em;
+  padding: 0.5em 1em;
+
   width: fit-content;
   border-radius: 7px;
   /* width: fit-content; */
@@ -996,7 +997,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .compare-button {
-  background-color: #d3d3d3;
+  background-color: transparent;
   border-radius: 7px;
   display: flex;
   width: fit-content;
@@ -1006,6 +1007,10 @@ input[type="range"]::-moz-range-thumb {
   height: fit-content;
   align-items: center;
   padding: 0.3em;
+}
+.compare-button:hover {
+  cursor: pointer;
+  color: darkblue;
 }
 .compare-button span {
   font-weight: 500;
@@ -1293,21 +1298,69 @@ input[type="range"]::-moz-range-thumb {
   width: 100%;
   height: 400px;
 }
+.recently {
+  margin-top: 50px;
+}
+.recently > h1 {
+  width: fit-content;
+  margin-left: 7.5%;
+  font-weight: 600;
+  font-size: 200%;
+}
+.swiper-container-recent {
+  margin-top: 30px;
+  width: 85%;
+  padding: 10px;
+}
+.recently-watched {
+  width: 90%;
+  padding: 10px;
+}
 .each-r {
+  border: 1px solid lightgray;
+  box-shadow: 0px 0px 5px lightgrey;
   display: flex;
-  justify-content: center;
+  height: 100%;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  border-radius: 10px;
+}
+.each-r:hover {
+  transition: 0.5s;
+  transform: scale(1.02);
+  cursor: pointer;
 }
 .r-image {
-  width: 100%;
-  height: 50%;
+  width: 90%;
+  height: 70%;
+  padding: 20px;
 }
 .r-image img {
   width: 100%;
   height: 100%;
 }
-
+.r-name {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+.r-name p {
+  font-size: medium;
+  font-weight: 500;
+  margin-bottom: 0;
+  text-align: start;
+}
+.r-name a {
+  font-size: smaller;
+  align-self: flex-start;
+  display: inline-flex;
+}
+.r-name a img {
+  width: 15px;
+  height: 15px;
+  align-self: center;
+}
 @keyframes animMail {
   from {
     transform: translateY(-100%);
@@ -1592,10 +1645,10 @@ input[type="range"]::-moz-range-thumb {
   .each-deal {
     width: 100%;
   }
-  .swiper-button-next::after {
+  .swiper-container-landing .swiper-button-next::after {
     display: none;
   }
-  .swiper-button-prev::after {
+  .swiper-container-landing .swiper-button-prev::after {
     display: none;
   }
   .subscribe {

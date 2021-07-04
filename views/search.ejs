@@ -3,126 +3,226 @@
 
 
   <%if(result.length==0){%>
-    <h4 class="center"> OOOPS!!! nothing found against your search result</h1>
+    <div class="message">
+       <h2 class="center">  <span style="color:#6C63FF"> OOOPS!!! </span> Nothing Found Against Your Search Result</h2>
+       <img src="notfound.svg" alt="">
+    </div>
+   
+    
 
       <section class="recent">
 
-        <h3 style="display: block; width: 100%;text-align: center;color: darkblue;">Take a Look At the Recently launched
-        </h3>
+        <h5 style="display: block;margin-left:5%;width:80%;color: darkblue;">Take a Look At the Recently launched
+        </h5>
 
         <%for(mobile of allMobiles){%>
-          <div class="card mb-3 mt-3" style="width: 25%;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="<%=mobile.image%>" alt="..." width="100%" height="100%" style="min-height: 100px;">
+
+          <div class="card-c">
+            <span style="display: none;">
+              <%=mobile._id%>
+            </span>
+
+            <div class="image-div">
+              <div class="image">
+                <img src="<%=mobile.image%>" alt="...">
+                
+
+                
+
+
               </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">
+              <div class="variants">
+                <span style="width: fit-content;font-size: small;margin-left: 20%;height: 100%;margin-top: 2px;font-weight: 500;">color variants</span>
+                <div class="color">
+                  <span></span>
+                  <span>blue</span>
+                </div>
+                <div class="color">
+                  <span></span>
+                  <span>red</span>
+                </div>
+                <div class="color">
+                  <span></span>
+                  <span>white</span>
+                </div>
+              </div>
+
+
+
+            </div>
+            <div class="c-text">
+
+              <div class="name-rating">
+                <div class="name">
+                  <h5 class="c-title">
                     <%=mobile.name%>
+
                   </h5>
+                  <h6 class="c-date">
+                    
+                  </h6>
+                </div>
+                <div class="ratings">
 
+                  <div class="rating">
+                    <span>7</span>
+                  </div>
 
-                  <a href="/<%=mobile._id%>" class="card-text btn btn-primary" style="margin: 0; padding: 3px;">view</a>
                 </div>
 
+
               </div>
+              
+
+
+              <div class="c-price">
+
+
+
+
+                <div class="flipkart">
+                  <img src="flipkart_logo.svg" alt="">
+                  <span>&#8377;<%=mobile.price%></span>
+                  <a href="">
+                    Buy
+                  </a>
+
+                </div>
+                <div class="amazon">
+                  <img src="amazon_logo.svg" alt="">
+                  <span>&#8377;<%=mobile.price%></span>
+                  <a href="">Buy</a>
+
+                </div>
+
+
+              </div>
+              <div class="button-div">
+                <a href="/<%=mobile._id%>">View</a>
+
+                <a href="/compare/?mobile=<%=mobile._id%>">compare</a>
+
+              </div>
+
+
+
+
+
             </div>
+
           </div>
+         
           <%}%>
       </section>
 
       <%}%>
         <%if(result.length!=0){%>
-          <h3 style="text-align: center;margin-top: 100px;">Results Based On Your Search</h1>
-
+          <h3 style="margin-top: 100px;font-weight: 600;margin-left: 11%;">Results Based On Your Search</h1>
+            <h5 style="margin-left: 11%;font-weight: 400;color: black;font-size: medium;"> <span style="color: blue;"><%=result.length%></span>  Results from <span style="color: blue;font-weight: 500;">"<%=search%>" </span></h5>
             <%}%>
 
 
               <section class="result">
 
                 <%for(let mobile of result){%>
-                  
-                    <div class="card-c">
-                      <span style="display: none;"><%=mobile._id%></span>
 
-                      <div class="image-div">
-                        <div class="image">
-                          <img src="<%=mobile.image%>" alt="...">
-                          <p class="hover-div">
-                            Click To View
-                          </p>
+                  <div class="card-c">
+                    <span style="display: none;">
+                      <%=mobile._id%>
+                    </span>
 
-                        </div>
-
-                        <div class="button-div">
-                          <a href="/compare/?mobile=<%=mobile._id%>">compare</a>
-                          <a href="#footer">buy</a>
-
-                        </div>
-
-                      </div>
-                      <div class="c-text">
-
-                        <h5 class="c-title">
-                          <%=mobile.name%>
-                        </h5>
-
-                        <div class="features">
-                          <div class="feature">
-                            <i class="fa fa-battery"></i>
-                            <ul>
-                              <li><%=mobile.BatteryCapacity%> Mah</li>
-                              
-                            </ul>
-
-                          </div>
-                          <div class="feature">
-                            <i class="fa fa-microchip">
-
-                            </i>
-                            <ul>
-                              <li><%=mobile.processor.category%></li>
-                              <li><%=mobile.processor.Core%> Core</li>
-                              <li><%=mobile.processor.clockSpeed%></li>
-                              <li><%=mobile.Display.GPU%></li>
-                            </ul>
-                          </div>
-                          <div class="feature">
-                            <i class="fa fa-camera">
-
-                            </i>
-                            <ul>
-                              <li><%=mobile.frontCamera.noOfCameras%> cams</li>
-                              <li><%mobile.mainCamera.noOfCameras%> cams</li>
-                              <li><%=mobile.frontCamera.pixels[0].pixel%> MP <span style="color: blue;">(front)</span> </li>
-                              <li><%=mobile.mainCamera.pixels[0].pixel%> <span style="color: blue;">(main)</span></li>
-                            </ul>
-
-                          </div>
-                        </div>
-                        <div class="ratings">
-                          <div class="rating">
-                            <span>7</span>
-                          </div>
-                          <div class="rating">
-                            <span>7</span>
-                          </div>
-                          <div class="rating">
-                            <span>7</span>
-                          </div>
-
-
-
-
-                        </div>
-
+                    <div class="image-div">
+                      <div class="image">
+                        <img src="<%=mobile.image%>" alt="...">
+                        
+  
+                        
 
 
                       </div>
+                      <div class="variants">
+                        <span style="width: fit-content;font-size: small;margin: 0;height: 100%;margin-top: 2px;">color variants</span
+                          style="width: fit-content;font-size: small;margin: 0;height: 100%;margin-top: 2px;">
+                        <div class="color">
+                          <span></span>
+                          <span>blue</span>
+                        </div>
+                        <div class="color">
+                          <span></span>
+                          <span>red</span>
+                        </div>
+                        <div class="color">
+                          <span></span>
+                          <span>white</span>
+                        </div>
+                      </div>
+  
+
 
                     </div>
-                  
+                    <div class="c-text">
+
+                      <div class="name-rating">
+                        <div class="name">
+                          <h5 class="c-title">
+                            <%=mobile.name%>
+
+                          </h5>
+                          <h6 class="c-date">
+                            launched:<%=mobile.launchDate.getDay() %>/<%=mobile.launchDate.getMonth()%>/<%=
+                                  mobile.launchDate.getYear() %>
+                          </h6>
+                        </div>
+                        <div class="ratings">
+
+                          <div class="rating">
+                            <span>7</span>
+                          </div>
+
+                        </div>
+
+
+                      </div>
+                      
+
+
+                      <div class="c-price">
+
+
+
+
+                        <div class="flipkart">
+                          <img src="flipkart_logo.svg" alt="">
+                          <span>&#8377;<%=mobile.price%></span>
+                          <a href="">
+                            Buy
+                          </a>
+
+                        </div>
+                        <div class="amazon">
+                          <img src="amazon_logo.svg" alt="">
+                          <span>&#8377;<%=mobile.price%></span>
+                          <a href="">Buy</a>
+
+                        </div>
+
+
+                      </div>
+                      <div class="button-div">
+                        <a href="/<%=mobile._id%>">View</a>
+
+                        <a href="/compare/?mobile=<%=mobile._id%>">compare</a>
+
+                      </div>
+
+
+
+
+
+                    </div>
+
+                  </div>
+
 
 
                   <%}%>

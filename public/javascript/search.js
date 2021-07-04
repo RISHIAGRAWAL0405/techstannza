@@ -1,3 +1,15 @@
+document.querySelectorAll(".color").forEach((e) => {
+  let color = e.childNodes[3].getInnerHTML();
+  console.log(e.childNodes[3].innerText);
+  e.childNodes[1].setAttribute("style", `background-color:${color}`);
+  if (color == "white") {
+    e.childNodes[1].setAttribute(
+      "style",
+      "background-color:white;border: 1px solid black"
+    );
+  }
+});
+
 let ratings = document.querySelectorAll(".rating");
 
 ratings.forEach(async (e) => {
@@ -38,9 +50,3 @@ cards.forEach((e) => {
 window.onload = () => {
   window.scrollTo(0, 2);
 };
-
-let lastBuy = document.querySelector(".each:nth-of-type(3) .buy-hover");
-
-lastBuy.addEventListener("mouseover", () => {
-  lastBuy.childNodes[3].style.display = "flex";
-});

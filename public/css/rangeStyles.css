@@ -471,7 +471,7 @@ input[type="range"]::-moz-range-thumb {
   justify-content: center;
   text-align: center;
 }
-.amazon-buy svg {
+.amazon-buy img {
   width: 100%;
   height: 50px;
 }
@@ -482,7 +482,7 @@ input[type="range"]::-moz-range-thumb {
   justify-content: center;
   text-align: center;
 }
-.flipkart-buy svg {
+.flipkart-buy img {
   width: 100%;
   height: 50px;
 }

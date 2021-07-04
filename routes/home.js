@@ -61,7 +61,12 @@ router.post(
       }
     }
 
-    res.render("search", { result, home: 1, allMobiles: mobiles });
+    res.render("search", {
+      result,
+      home: 1,
+      allMobiles: mobiles,
+      search: search,
+    });
   })
 );
 
