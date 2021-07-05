@@ -1,5 +1,5 @@
 document.querySelectorAll(".color").forEach((e) => {
-  let color = e.childNodes[3].getInnerHTML();
+  let color = e.childNodes[3].innerHTML;
   console.log(e.childNodes[3].innerText);
   e.childNodes[1].setAttribute("style", `background-color:${color}`);
   if (color == "white") {
