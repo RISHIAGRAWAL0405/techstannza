@@ -12,7 +12,7 @@
 
       <section class="recent">
 
-        <h5 style="display: block;margin-left:5%;width:80%;color: darkblue;">Take a Look At the Recently launched
+        <h5>Take a Look At the Recently launched
         </h5>
 
         <%for(mobile of allMobiles){%>
@@ -117,8 +117,8 @@
 
       <%}%>
         <%if(result.length!=0){%>
-          <h3 style="margin-top: 100px;font-weight: 600;margin-left: 11%;">Results Based On Your Search</h1>
-            <h5 style="margin-left: 11%;font-weight: 400;color: black;font-size: medium;"> <span style="color: blue;"><%=result.length%></span>  Results from <span style="color: blue;font-weight: 500;">"<%=search%>" </span></h5>
+          <h3 class="result-message">Results Based On Your Search</h1>
+            <h5 class="no-message"> <span style="color: blue;"><%=result.length%></span>  Results from <span style="color: blue;font-weight: 500;">"<%=search%>" </span></h5>
             <%}%>
 
 

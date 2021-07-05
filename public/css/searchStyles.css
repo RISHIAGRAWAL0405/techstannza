@@ -11,6 +11,17 @@
   width: 100vw;
   height: 100%;
 }
+.result-message {
+  margin-top: 100px;
+  font-weight: 600;
+  margin-left: 11%;
+}
+.no-message {
+  margin-left: 11%;
+  font-weight: 400;
+  color: black;
+  font-size: medium;
+}
 .message img {
   width: 400px;
   height: 400px;
@@ -19,6 +30,12 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+.recent > h5 {
+  margin-left: 5%;
+  display: block;
+  width: 80%;
+  color: darkblue;
 }
 .result {
   display: flex;
@@ -258,39 +275,97 @@
 
 @media screen and (max-width: 1200px) {
   .card-c {
-    width: 25%;
+    width: 27%;
+  }
+  .result-message {
+    margin-left: 4.5%;
+  }
+  .no-message {
+    margin-left: 4.5%;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .card-c {
-    width: 29%;
+    width: 30%;
     margin-right: 20px;
+  }
+  .result-message {
+    margin-left: 2%;
+  }
+  .no-message {
+    margin-left: 2%;
   }
 }
 @media screen and (max-width: 900px) {
   .card-c {
-    width: 35%;
+    width: 40%;
+  }
+  .result-message {
+    margin-left: 8%;
+  }
+  .no-message {
+    margin-left: 8%;
   }
 }
 @media screen and (max-width: 700px) {
   .card-c {
-    width: 40%;
+    width: 45%;
+  }
+  .no-message {
+    margin-left: 2%;
+  }
+  .result-message {
+    margin-left: 2%;
+  }
+  .center {
+    font-size: x-large;
   }
 }
 @media screen and (max-width: 600px) {
   .card-c {
-    width: 45%;
+    width: 70%;
+    margin-right: 10%;
+  }
+  .result-message {
+    margin-left: 10%;
+  }
+  .no-message {
+    margin-left: 10%;
   }
 }
 @media screen and (max-width: 500px) {
   .card-c {
-    width: 70%;
+    width: 80%;
+    margin-right: 0;
+  }
+  .message img {
+    width: 300px;
+    height: 300px;
   }
 }
 @media screen and (max-width: 400px) {
   .card-c {
     width: 90%;
     margin-right: 0;
+  }
+  .result-message {
+    margin-left: 5%;
+  }
+  .no-message {
+    margin-left: 5%;
+  }
+  .message img {
+    width: 250px;
+    height: 250px;
+  }
+  .center {
+    font-size: large;
+  }
+  .recent > h5 {
+    width: 95%;
+    font-size: medium;
+    margin-left: 5%;
+    margin-bottom: auto;
   }
 }
