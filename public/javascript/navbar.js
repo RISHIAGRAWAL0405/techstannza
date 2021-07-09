@@ -1,5 +1,21 @@
 var prevScrollpos = window.pageYOffset;
-var prevScrollpos1 = window.pageYOffset;
+
+window.onscroll = function () {
+  var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.querySelector(".nav").style.top = "0";
+  } else {
+    document.querySelector(".nav").style.top = "-60px";
+  }
+  prevScrollpos = currentScrollPos;
+  if (window.scrollY > 15) {
+    document.querySelector(".nav").style.backgroundColor = "white";
+    document.querySelector(".nav").style.borderBottom = "0.5px solid lightgrey";
+  } else {
+    document.querySelector(".nav").style.backgroundColor = "transparent";
+    document.querySelector(".nav").style.borderBottom = "none";
+  }
+};
 
 let doFlex = (selector) => {
   document.querySelector(`${selector}`).style.display = "flex";
@@ -13,25 +29,6 @@ let doNone = (selector) => {
 };
 const link1 = "http://localhost:3000";
 const link2 = "https://desolate-badlands-28322.herkouapp.com";
-
-window.onscroll = function () {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector(".nav").style.top = "0";
-  } else {
-    setTimeout(() => {
-      document.querySelector(".nav").style.top = "-60px";
-    }, 100);
-  }
-  prevScrollpos = currentScrollPos;
-  if (window.scrollY > 15) {
-    document.querySelector(".nav").style.backgroundColor = "white";
-    document.querySelector(".nav").style.borderBottom = "0.5px solid lightgrey";
-  } else {
-    document.querySelector(".nav").style.backgroundColor = "transparent";
-    document.querySelector(".nav").style.borderBottom = "none";
-  }
-};
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";

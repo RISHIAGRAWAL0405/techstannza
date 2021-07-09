@@ -2,11 +2,13 @@ let rangeinputmax = document.querySelector(".maxprice");
 let filterSection = document.querySelector(".filtervalues");
 var inputLeft = document.getElementById("input-left");
 var inputRight = document.getElementById("input-right");
+var inputLeftModal = document.getElementById("input-left-offcanvas");
+var inputRightModal = document.getElementById("input-right-offcanvas");
 
 var thumbLeft = document.querySelector(".slider > .thumb.left");
 var thumbRight = document.querySelector(".slider > .thumb.right");
 var range = document.querySelector(".slider > .range");
-window.scrollTo(0, 0.5);
+
 function setLeftValue() {
   var _this = inputLeft,
     min = parseInt(_this.min),
@@ -57,6 +59,63 @@ inputRight.addEventListener("input", () => {
 
   actualForm.max.value = inputRight.value;
 });
+let actualFormModal = document.querySelector(".range-form-modal");
+
+function setLeftValue1() {
+  var _this = inputLeftModal,
+    min = parseInt(_this.min),
+    max = parseInt(_this.max);
+
+  _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+  var percent = ((_this.value - min) / (max - min)) * 100;
+
+  thumbLeft.style.left = percent + "%";
+  range.style.left = percent + "%";
+}
+setLeftValue1();
+
+function setRightValue1() {
+  var _this = inputRightModal,
+    min = parseInt(_this.min),
+    max = parseInt(_this.max);
+
+  _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+  var percent = ((_this.value - min) / (max - min)) * 100;
+
+  thumbRight.style.right = 100 - percent + "%";
+  range.style.right = 100 - percent + "%";
+}
+setRightValue1();
+actualFormModal.min.value = inputLeftModal.value;
+actualFormModal.max.value = inputRightModal.value;
+inputLeftModal.addEventListener("input", () => {
+  setLeftValue1();
+
+  actualFormModal.min.value = inputLeftModal.value;
+  if (
+    parseInt(actualFormModal.min.value) > parseInt(actualFormModal.max.value)
+  ) {
+    actualFormModal.min.style.border = "1px solid red";
+  } else {
+    actualFormModal.min.style.border = "none";
+    actualFormModal.max.style.border = "none";
+  }
+});
+inputRightModal.addEventListener("input", () => {
+  setRightValue1();
+  if (
+    parseInt(actualFormModal.min.value) > parseInt(actualFormModal.max.value)
+  ) {
+    actualFormModal.min.style.border = "1px solid red";
+  } else {
+    actualFormModal.min.style.border = "none";
+    actualFormModal.max.style.border = "none";
+  }
+
+  actualFormModal.max.value = inputRightModal.value;
+});
 
 inputLeft.addEventListener("mouseover", () => {
   thumbLeft.classList.add("hover");
@@ -81,6 +140,31 @@ inputRight.addEventListener("mousedown", () => {
   thumbRight.classList.add("active");
 });
 inputRight.addEventListener("mouseup", () => {
+  thumbRight.classList.remove("active");
+});
+inputLeftModal.addEventListener("mouseover", () => {
+  thumbLeft.classList.add("hover");
+});
+inputLeftModal.addEventListener("mouseout", () => {
+  thumbLeft.classList.remove("hover");
+});
+inputLeftModal.addEventListener("mousedown", () => {
+  thumbLeft.classList.add("active");
+});
+inputLeftModal.addEventListener("mouseup", () => {
+  thumbLeft.classList.remove("active");
+});
+
+inputRightModal.addEventListener("mouseover", () => {
+  thumbRight.classList.add("hover");
+});
+inputRightModal.addEventListener("mouseout", () => {
+  thumbRight.classList.remove("hover");
+});
+inputRightModal.addEventListener("mousedown", () => {
+  thumbRight.classList.add("active");
+});
+inputRightModal.addEventListener("mouseup", () => {
   thumbRight.classList.remove("active");
 });
 
@@ -118,29 +202,25 @@ const validateMyForm = () => {
 let ratings = document.querySelectorAll(".rating");
 
 ratings.forEach(async (e) => {
-  let i = 0;
-  window.addEventListener("scroll", () => {
-    if (e.getBoundingClientRect().top <= 750) {
-      if (i == 0) {
-        var bar = new ProgressBar.Circle(e, {
-          color: "#4D61FC",
-          trailColor: "#dee2e6",
-          trailWidth: 10,
-          duration: 1400,
-          easing: "easeInOut",
-          strokeWidth: 10,
-          from: { color: "#8DA5FD", a: 0 },
-          to: { color: "#4D61FC", a: 1 },
+  var bar = new ProgressBar.Circle(e, {
+    color: "#4D61FC",
+    trailColor: "#dee2e6",
+    trailWidth: 10,
+    duration: 1400,
+    easing: "easeInOut",
+    strokeWidth: 10,
+    from: { color: "#8DA5FD", a: 0 },
+    to: { color: "#4D61FC", a: 1 },
 
-          step: function (state, circle) {
-            circle.path.setAttribute("stroke", state.color);
-          },
-        });
-        bar.animate(0.7, { duration: 1500 });
-        i++;
-      }
-    }
+    step: function (state, circle) {
+      circle.path.setAttribute("stroke", state.color);
+    },
   });
+  try {
+    bar.animate(0.7, { duration: 1500 });
+  } catch (e) {
+    console.log(e.message);
+  }
 });
 
 let inputs = [];
@@ -158,7 +238,7 @@ let brandSection = {
   motorola: false,
   asus: false,
   huawei: false,
-  samsung: false,
+  samsumg: false,
 };
 let ramSection = { 3: false, 4: false, 6: false, 8: false, 12: false };
 let mcamera = {
@@ -219,23 +299,20 @@ let manipulate = (input) => {
   // console.log(brandSection);
   // console.log(ramSection);
   // console.log(features);
-  console.log(networkT);
 };
 let mobiles;
 let sendData = async () => {
-  let res = await axios.post(
-    "https://desolate-badlands-28322.herokuapp.com/range/filter",
-    {
-      brand: brandSection,
-      ram: ramSection,
-      mcamera: mcamera,
-      features: features,
-      displaySize: displaySize,
-      networkT: networkT,
-      min: actualForm.min.value,
-      max: actualForm.max.value,
-    }
-  );
+  let res = await axios.post("http://localhost:3000/range/filter", {
+    brand: brandSection,
+    ram: ramSection,
+    mcamera: mcamera,
+    features: features,
+    displaySize: displaySize,
+    networkT: networkT,
+    min: actualForm.min.value,
+    max: actualForm.max.value,
+  });
+
   let camedata = res.data;
   fillData(camedata);
   console.log(camedata);
@@ -243,19 +320,19 @@ let sendData = async () => {
 };
 
 let fillData = (cameData) => {
-  console.log(cameData);
+  showAppliedFilters();
+  document.querySelector(
+    ".results-no"
+  ).innerHTML = `Total Results:<span style="color:blue;">${cameData.length}</span>`;
   deleteChild(filteredResult);
   for (let i = 0; i < cameData.length; i++) {
     let newMobile = fake.cloneNode(true);
     newMobile.classList.remove("d-none");
-    newMobile.childNodes[1].childNodes[1].childNodes[1].src = cameData[i].image;
-    newMobile.childNodes[1].childNodes[3].childNodes[1].childNodes[1].innerText =
-      cameData[i].name;
-    newMobile.childNodes[1].childNodes[3].childNodes[1].childNodes[9].childNodes[1].href = `/${cameData[i]._id}`;
-    newMobile.childNodes[1].childNodes[3].childNodes[1].childNodes[9].childNodes[3].href = `/compare/?mobile=${cameData[i]._id}`;
-    newMobile.childNodes[1].childNodes[3].childNodes[1].childNodes[3].innerText +=
-      cameData[i].price;
 
+    newMobile.childNodes[1].childNodes[1].src = cameData[i].image;
+    newMobile.childNodes[3].childNodes[1].childNodes[1].innerText =
+      cameData[i].name;
+    newMobile.childNodes[3].childNodes[1].childNodes[3].innerHTML = `&#8377 ${cameData[i].price}`;
     filteredResult.append(newMobile);
   }
 };
@@ -268,15 +345,96 @@ function deleteChild(e) {
   }
 }
 
-let filtervalues = document.getElementsByTagName("main");
+let allSpans = document.querySelectorAll(".push>span");
+allSpans.forEach((e) => {
+  e.parentElement.childNodes[3].style.display = "none";
 
-function myFunction() {
-  var intElemScrollTop = filtervalues.scrollTop;
-  console.log(intElemScrollTop);
+  e.addEventListener("click", () => {
+    let toggle = e.parentElement.childNodes[3];
+
+    if (toggle.classList.contains("animation-block")) {
+      toggle.classList.remove("animation-block");
+      e.childNodes[1].style.transform = "rotate(0deg)";
+    } else {
+      toggle.classList.add("animation-block");
+
+      e.childNodes[1].style.transform = "rotate(90deg)";
+    }
+  });
+});
+const evt = new Event("input");
+document.querySelector(".clear-filter").addEventListener("click", () => {
+  allinputs.forEach((e) => {
+    e.checked = false;
+    e.dispatchEvent(evt);
+  });
+});
+
+function showAppliedFilters() {
+  let filterArray = CheckFiltered();
+  console.log(filterArray);
+
+  let filter = document.querySelector(".filter");
+  let applied = document.querySelector(".applied");
+  deleteChild(applied);
+  let newspan = document.createElement("span");
+  newspan.innerHTML = "filters";
+  applied.append(newspan);
+  for (let i = 0; i < filterArray.length; i++) {
+    let newFilter = filter.cloneNode(true);
+    newFilter.classList.remove("d-none");
+    newFilter.childNodes[1].innerText = filterArray[i];
+    applied.append(newFilter);
+  }
+  addClearFilterCloseEventListener();
 }
 
-let toggler = document.querySelector(".filter-toggler");
-toggler.addEventListener("click", () => {
-  document.querySelector("body").style.height = "100vh";
-  document.querySelector("body").style.overflow = "hidden";
+function CheckFiltered() {
+  let filtered = [];
+  allinputs.forEach((e) => {
+    if (e.checked == true) {
+      if (!filtered.includes(e.classList[0])) {
+        filtered.push(e.classList[0]);
+      }
+    }
+  });
+  return filtered;
+}
+
+let addClearFilterCloseEventListener = () => {
+  let filterClearButtons = document.querySelectorAll(".indi-filter-clear");
+  let applied = document.querySelector(".applied");
+  filterClearButtons.forEach((e) => {
+    e.addEventListener("click", () => {
+      let classInput = e.previousElementSibling.innerText;
+      let inputs = document.querySelectorAll(`input.${classInput}`);
+      inputs.forEach((e) => {
+        e.checked = false;
+        e.dispatchEvent(evt);
+      });
+
+      applied.removeChild(e.parentElement);
+    });
+  });
+};
+
+document.querySelectorAll(".color").forEach((e) => {
+  let color = e.childNodes[3].innerHTML;
+
+  e.childNodes[1].setAttribute("style", `background-color:${color}`);
+  if (color == "white") {
+    e.childNodes[1].setAttribute(
+      "style",
+      "background-color:white;border: 1px solid black"
+    );
+  }
 });
+
+function openNav1() {
+  document.getElementById("mySidenav1").style.width = "100%";
+}
+function closeNav1() {
+  document.getElementById("mySidenav1").style.width = "0";
+}
+
+window.scrollBy(0, 0.5);

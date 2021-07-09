@@ -16,6 +16,7 @@ router.get("/", async (req, res) => {
       recentlyViewed.push(mobile);
     }
   }
+  console.log(mobiles.length);
   const stories = await News.find({});
   res.render("home", {
     rViewed: recentlyViewed,

@@ -216,11 +216,13 @@
   width: fit-content;
   height: 100%;
   text-align: end;
+  font-size: small;
 }
+
 .color span:nth-child(1) {
   width: 10px;
   height: 10px;
-
+  font-size: 2px;
   display: inline-block;
   border-radius: 50%;
 }

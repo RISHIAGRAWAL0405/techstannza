@@ -1,15 +1,136 @@
-::-webkit-scrollbar-track {
-  background-color: inherit;
-  width: 2px;
+.sidenav1 {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: white; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav1 a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav1 a:hover {
+  color: darkgray;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav1 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav1 {
+    padding-top: 15px;
+  }
+  .sidenav1 a {
+    font-size: 18px;
+  }
 }
 
 .wholesection {
   display: flex;
-  height: 100%;
+  height: max-content;
   width: 100%;
   padding: 0;
   position: relative;
   justify-content: flex-start;
+}
+.filter-modal-button {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: blue;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: large;
+  border-radius: 10px;
+}
+.results-no {
+  margin-left: 4%;
+  margin-bottom: 0;
+}
+.clear-filter {
+  background-color: #5368fc;
+  border: none;
+  margin-left: 6%;
+  color: white;
+  font-weight: 600;
+  outline: none;
+  padding: 0px 10px;
+  border-radius: 10px;
+}
+.applied {
+  display: flex;
+  margin-left: 2.5%;
+  width: 65%;
+}
+.applied > span {
+  font-weight: 500;
+}
+.filter-info {
+  display: flex;
+  width: 100%;
+}
+.filter {
+  margin-left: 10px;
+}
+.filter:nth-of-type(1) {
+  margin-left: 5%;
+}
+.variants {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.variants > span {
+  margin-right: 20px;
+}
+.color {
+  /* align-self: center; */
+
+  width: fit-content;
+  margin-right: 20px;
+  height: 100%;
+  text-align: center;
+}
+.color span:nth-child(1) {
+  width: 10px;
+  height: 10px;
+
+  display: inline-block;
+  border-radius: 50%;
+}
+.color span:nth-child(2) {
+  font-weight: 400;
+}
+.filter span {
+  color: blue;
+}
+.info-div {
+  display: flex;
+  width: 20%;
+  margin-left: 50px;
+  align-items: center;
 }
 
 .filtervalues {
@@ -17,8 +138,8 @@
   background-color: whitesmoke;
   margin: 0;
   border-radius: 20px;
-  height: 100%;
-  position: relative;
+  height: fit-content;
+  position: sticky;
   margin-left: 50px;
   margin-top: 10px;
 }
@@ -121,7 +242,19 @@
 .filter-toggler {
   display: none;
   margin-left: 10%;
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: greenyellow;
+  cursor: pointer;
+  transition: 0.5s;
 }
+.filter-toggler:hover {
+  background-color: lightgreen;
+  transition: 0.5s;
+}
+
 .formInputs {
   display: flex;
   width: 100%;
@@ -336,8 +469,8 @@ input[type="range"]::-moz-range-thumb {
 
 .image-div {
   width: 40%;
-  height: 100%;
-  padding: 20px;
+  height: max-content;
+  padding: 20px 20px 5px 20px;
 }
 .image-div img {
   width: 100%;
@@ -355,7 +488,7 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
+  padding: 20px 20px 10px 20px;
   width: 70%;
 }
 
@@ -502,7 +635,10 @@ input[type="range"]::-moz-range-thumb {
 .ifeature {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
+  width: fit-content;
+  margin-right: 2%;
 }
 .ifeature ul {
   padding: 0;
@@ -515,6 +651,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .ifeature ul li {
   margin-bottom: 5px;
+  font-size: small;
 }
 
 @media screen and (max-width: 1200px) {
@@ -547,6 +684,7 @@ input[type="range"]::-moz-range-thumb {
   .filter-toggler {
     display: block;
     margin-left: 2.5%;
+    width: max-content;
   }
   .features {
     flex-wrap: wrap;
@@ -572,7 +710,7 @@ input[type="range"]::-moz-range-thumb {
     padding: 10px 2px;
   }
   .image-div img {
-    height: 200px;
+    height: 300px;
   }
   .each-text {
     padding: 0;
@@ -584,6 +722,19 @@ input[type="range"]::-moz-range-thumb {
   }
   .titles {
     margin-top: 10px;
+  }
+  .filter-info {
+    flex-wrap: wrap;
+  }
+  .info-div {
+    width: 95%;
+    align-self: center;
+
+    justify-content: space-between;
+    margin-left: 2.5%;
+  }
+  .results-no {
+    margin-left: 0;
   }
 }
 
